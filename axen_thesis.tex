@@ -38,7 +38,7 @@
 % Includes the file which contains all the document configurations and packages - make sure to edit this file
 \input{classicthesis-config}
 
-\addbibresource{Bibliography.bib} % The file housing your bibliography
+\addbibresource{bibliography.bib} % The file housing your bibliography
 %\addbibresource[label=ownpubs]{Self_Publications.bib} % Uncomment for optional self-publications
 
 %\hyphenation{Put special hyphenation here}
@@ -62,23 +62,23 @@
 %	PRE-CONTENT THESIS PAGES
 %----------------------------------------------------------------------------------------
 
-\include{FrontBackMatter/Titlepage} % Main title page
+\include{frontback/Titlepage} % Main title page
 
-\include{FrontBackMatter/Titleback} % Back of the title page
+\include{frontback/Titleback} % Back of the title page
 
-\cleardoublepage\include{FrontBackMatter/Dedication} % Dedication page
+\cleardoublepage\include{frontback/Dedication} % Dedication page
 
-%\cleardoublepage\include{FrontBackMatter/Foreword} % Uncomment and create a Foreword.tex to include a foreword
+%\cleardoublepage\include{frontback/Foreword} % Uncomment and create a Foreword.tex to include a foreword
 
-\cleardoublepage\include{FrontBackMatter/Abstract} % Abstract page
+\cleardoublepage\include{frontback/Abstract} % Abstract page
 
-\cleardoublepage\include{FrontBackMatter/Publications} % Publications from the thesis page
+\cleardoublepage\include{frontback/Publications} % Publications from the thesis page
 
-\cleardoublepage\include{FrontBackMatter/Acknowledgments} % Acknowledgements page
+\cleardoublepage\include{frontback/Acknowledgments} % Acknowledgements page
 
 \pagestyle{scrheadings} % Show chapter titles as headings
 
-\cleardoublepage\include{FrontBackMatter/Contents} % Contents, list of figures/tables/listings and acronyms
+\cleardoublepage\include{frontback/Contents} % Contents, list of figures/tables/listings and acronyms
 
 \cleardoublepage
 
@@ -95,7 +95,7 @@
 
 \part{Introduction}
 
-\include{Chapters/ch01_introduction}
+\include{chapters/ch01_introduction}
 
 \cleardoublepage % Empty page before the start of the next part
 
@@ -105,7 +105,7 @@
 
 %\part{Content} % Second part of the thesis
 
-%\include{Chapters/}
+%\include{chapters/}
 
 
 \cleardoublepage % Empty page before the start of the next part
@@ -118,17 +118,17 @@
 
 \part{Appendix} % New part of the thesis for the appendix
 
-\include{Chapters/app0A_dummy} % Dummy appendix to use to keep track of style
+\include{chapters/app0A_dummy} % Dummy appendix to use to keep track of style
 
 %----------------------------------------------------------------------------------------
 %	POST-CONTENT THESIS PAGES
 %----------------------------------------------------------------------------------------
 
-\cleardoublepage\include{FrontBackMatter/Bibliography} % Bibliography
+\cleardoublepage\include{frontback/Bibliography} % Bibliography
 
-\cleardoublepage\include{FrontBackMatter/Declaration} % Declaration
+\cleardoublepage\include{frontback/Declaration} % Declaration
 
-\cleardoublepage\include{FrontBackMatter/Colophon} % Colophon
+\cleardoublepage\include{frontback/Colophon} % Colophon
 
 %----------------------------------------------------------------------------------------
 

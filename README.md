@@ -4,12 +4,12 @@ Summary of four years on ATLAS, primarily a measurement of calorimeter response 
 
 ## Organization
 
-- `Chapters/` actual content in chapters
+- `chapters/` actual content in chapters
   - `ch01_introduction.tex` for a chapter
   - `app0A_dummy.tex` for an appendix
-- `FrontBackMatter/` stuff that surrounds the content, such as the acknowledgments
+- `frontback/` stuff that surrounds the content, such as the acknowledgments
 - `figures/` plots and images for all chapters
-- `Bibliography.bib`: the BibTex database for references
+- `bibliography.bib`: the BibTex database for references
 - `classicthesis.sty`: style definitions
 - `axen_thesis.tex`: the main filewhere all the content gets bundled together
 - `classicthesis-config.tex`: a central place to load packages
