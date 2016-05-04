@@ -92,7 +92,6 @@
 %----------------------------------------------------------------------------------------
 
 \ctparttext{You can put some informational part preamble text here.}
-
 \part{Introduction}
 
 \include{chapters/ch01_introduction}
@@ -101,12 +100,35 @@
 
 %------------------------------------------------
 
-%\ctparttext{You can put some informational part preamble text here.} % Text on the Part 2 page describing the content in Part 2
+\ctparttext{You can put some informational part preamble text here.}
+\part{Theoretical Context}
 
-%\part{Content} % Second part of the thesis
+\include{chapters/ch02_standardmodel}
+\include{chapters/ch03_supersymmetry}
+\include{chapters/ch04_longlived}
 
-%\include{chapters/}
+\ctparttext{You can put some informational part preamble text here.}
+\part{Experimental Structure and Reconstruction}
+\include{chapters/ch05_lhc}
+\include{chapters/ch06_atlas}
+\include{chapters/ch07_reconstruction}
 
+\ctparttext{You can put some informational part preamble text here.}
+\part{Calorimeter Response}
+\include{chapters/ch08_singlehadrons}
+\include{chapters/ch09_jes}
+
+\ctparttext{You can put some informational part preamble text here.}
+\part{Search for Long-Lived Particles}
+\include{chapters/ch10_simulation}
+\include{chapters/ch11_selection}
+\include{chapters/ch12_background}
+\include{chapters/ch13_results}
+\include{chapters/ch14_interpretation}
+
+\ctparttext{You can put some informational part preamble text here.}
+\part{Conclusions}
+\include{chapters/ch15_conclusion}
 
 \cleardoublepage % Empty page before the start of the next part
 
@@ -116,9 +138,10 @@
 
 \appendix
 
-\part{Appendix} % New part of the thesis for the appendix
+\part{Appendix}
+\include{chapters/app0A_inelastic}
+\include{chapters/app0X_dummy} % Dummy appendix to use to keep track of style
 
-\include{chapters/app0A_dummy} % Dummy appendix to use to keep track of style
 
 %----------------------------------------------------------------------------------------
 %	POST-CONTENT THESIS PAGES
