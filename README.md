@@ -28,4 +28,10 @@ Summary of four years on ATLAS, primarily a measurement of calorimeter response 
 
 The template used Palatino with a lot of small caps to handle titles and headings. I added xelatex support and moved to Crimson for a nicer font option. 
 
-In a future update I am considering using a sans-serif font like Avenir for titles and headings, instead of the small caps. I won't worry about this until I have some more content. 
+In a future update I am considering using a sans-serif font like Avenir for titles and headings, instead of the small caps. I won't worry about this until I have some more content.
+
+### Colors
+
+Using a basic color scheme that vaguely fits with UC Berkeley colors
+
+![Color Scheme](/figures/scheme.png?raw=true)

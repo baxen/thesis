@@ -183,8 +183,8 @@
 \PassOptionsToPackage{dvipsnames}{xcolor}
     \RequirePackage{xcolor} % [dvipsnames] 
 \definecolor{halfgray}{gray}{0.55} % chapter numbers will be semi transparent .5 .55 .6 .0
-\definecolor{webgreen}{rgb}{0,.5,0}
-\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{highlight}{HTML}{036564}
+\definecolor{title}{HTML}{033649}
 
 % ********************************************************************
 % Font Stuff
@@ -381,7 +381,7 @@
     \titleformat{\part}[display]
         {\normalfont\centering\large}%
         {\thispagestyle{empty}\partname~\MakeTextUppercase{\thepart}}{1em}%
-        {\color{RoyalBlue}\spacedallcaps}[\bigskip\normalfont\normalsize\color{Black}\begin{quote}\ct@parttext\end{quote}]
+        {\color{highlight}\spacedallcaps}[\bigskip\normalfont\normalsize\color{Black}\begin{quote}\ct@parttext\end{quote}]
     }{\relax}
     % chapters
     \ifthenelse{\boolean{@linedheaders}}%
@@ -452,7 +452,7 @@
 %      \renewcommand{\cftpartaftersnum}{\cftchapaftersnum}%
 %      \renewcommand{\cftpartaftersnumb}{\quad}%
 %      \setlength{\cftpartnumwidth}{\cftpartnumwidth}
-      \renewcommand{\cftpartfont}{\color{RoyalBlue}\normalfont}%
+      \renewcommand{\cftpartfont}{\color{highlight}\normalfont}%
       \renewcommand{\cftpartpagefont}{\normalfont}%
       \ifthenelse{\boolean{@dottedtoc}}{\relax}%
       {%
