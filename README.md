@@ -26,6 +26,6 @@ Summary of four years on ATLAS, primarily a measurement of calorimeter response 
 
 ### Font Choices
 
-The template used Palatino with a lot of small caps to handle titles and headings. I added xelatex support and moved to Baskerville but kept the same structure.
+The template used Palatino with a lot of small caps to handle titles and headings. I added xelatex support and moved to Crimson for a nicer font option. 
 
-In a future update I am considering switching to a more traditional method with a few font choices for the different headings. One combination to try is Source Sans and Source Serif for titles and body.
+In a future update I am considering using a sans-serif font like Avenir for titles and headings, instead of the small caps. I won't worry about this until I have some more content. 

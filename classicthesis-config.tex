@@ -22,8 +22,9 @@
 %	CHARACTER ENCODING
 %----------------------------------------------------------------------------------------
 
-\PassOptionsToPackage{utf8}{inputenc} % Set the encoding of your files. UTF-8 is the only sensible encoding nowadays. If you can't read äöüßáéçèê∂åëæƒÏ€ then change the encoding setting in your editor, not the line below. If your editor does not support utf8 use another editor!
-\usepackage{inputenc}
+% Disabled because xelatex
+%\PassOptionsToPackage{utf8}{inputenc} % Set the encoding of your files. UTF-8 is the only sensible encoding nowadays. If you can't read äöüßáéçèê∂åëæƒÏ€ then change the encoding setting in your editor, not the line below. If your editor does not support utf8 use another editor!
+%\usepackage{inputenc}
 
 %----------------------------------------------------------------------------------------
 %	DOCUMENT VARIABLES
@@ -31,7 +32,7 @@
 %	Each of the commands can be cited anywhere in the thesis
 %----------------------------------------------------------------------------------------
 
-\PassOptionsToPackage{eulerchapternumbers,listings,drafting,subfig,beramono,eulermath,parts}{classicthesis}
+\PassOptionsToPackage{eulerchapternumbers,listings,drafting,subfig,beramono,parts}{classicthesis}
 % Available options: drafting parts nochapters linedheaders eulerchapternumbers beramono eulermath pdfspacing minionprospacing tocaligned dottedtoc manychapters listings floatperchapter subfig
 % Might want to turn of xelatex and re-enable pdfspacing
 
@@ -99,8 +100,9 @@ natbib=true % natbib compatibility mode (\citep and \citet still work)
  
  %------------------------------------------------
 
-\PassOptionsToPackage{T1}{fontenc} % T2A for cyrillics
-\usepackage{fontenc}
+% Disabled because xelatex
+%\PassOptionsToPackage{T1}{fontenc} % T2A for cyrillics
+%\usepackage{fontenc}
 
 %------------------------------------------------
 
@@ -252,10 +254,11 @@ pdfproducer={LaTeX with hyperref and classicthesis}
 %	USING DIFFERENT FONTS
 %----------------------------------------------------------------------------------------
 
-% Customization for xelatex
-\usepackage{mathspec}
-\setallmainfonts(Digits,Latin,Greek)[Path = fonts/, UprightFont=LibreBaskerville-Regular, BoldFont={LibreBaskerville-Bold}, ItalicFont={LibreBaskerville-Italic}, SmallCapsFont={LibreBaskerville-Smallcaps}]{LibreBaskerville}
-
+% Requires xelatex!
+% Crimson for main, MnSymbol for math
+\usepackage{fontspec}
+\usepackage{crimson}
+\usepackage{MnSymbol}
 
 %\usepackage[oldstylenums]{kpfonts} % oldstyle notextcomp
 %\usepackage[osf]{libertine}
