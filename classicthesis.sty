@@ -378,30 +378,30 @@
         \newcommand{\ct@parttext}{\relax} % Thanks to Ivo
         \newcommand{\ctparttext}[1]{\renewcommand{\ct@parttext}{#1 \relax}} 
     \titleformat{\part}[display]
-        {\normalfont\centering\large}%
-        {\thispagestyle{empty}\partname~\MakeTextUppercase{\thepart}}{1em}%
-        {\color{highlight}\spacedallcaps}[\bigskip\normalfont\normalsize\color{Black}\begin{quote}\ct@parttext\end{quote}]
+        {\centering}%
+        {\thispagestyle{empty}\spacedallcaps{\partname~\thepart}}{1em}%
+        {\color{highlight}\Large\spacedallcaps}[\bigskip\normalfont\normalsize\color{Black}\begin{quote}\ct@parttext\end{quote}]
     }{\relax}
     % chapters
     \ifthenelse{\boolean{@linedheaders}}%
     {% lines above and below, number right
     \titleformat{\chapter}[display]%             
         {\relax}{\raggedleft{\color{halfgray}\chapterNumber\thechapter} \\ }{0pt}%
-        {\titlerule\vspace*{.9\baselineskip}\raggedright\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]%
+        {\titlerule\vspace*{.9\baselineskip}\raggedright\Large\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]%
     }{% something like Bringhurst  
     \titleformat{\chapter}[display]%
         {\relax}{\mbox{}\oldmarginpar{\vspace*{-3\baselineskip}\color{halfgray}\chapterNumber\thechapter}}{0pt}%
-        {\raggedright\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]% 
+        {\raggedright\Large\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]% 
     }
     % sections \FloatBarrier
     \titleformat{\section}
-        {\relax}{\textsf{\MakeTextLowercase{\thesection}}}{1em}{\spacedallcaps}
+        {\relax}{\Large\textsf{\thesection}}{1em}{\Large\spacedallcaps}
     % subsections
     \titleformat{\subsection}
-        {\relax}{\textsf{\MakeTextLowercase{\thesubsection}}}{1em}{\normalsize\itshape}
+        {\relax}{\textsf{\thesubsection}}{1em}{\spacedallcaps}
     % subsubsections
     \titleformat{\subsubsection}
-        {\relax}{\textsf{\MakeTextLowercase{\thesubsubsection}}}{1em}{\normalsize\itshape}        
+        {\relax}{\textsf{\thesubsubsection}}{1em}{\spacedallcaps}        
     % paragraphs
     \titleformat{\paragraph}[runin]
         {\normalfont\normalsize}{\theparagraph}{0pt}{\spacedallcaps}    
@@ -446,8 +446,8 @@
     % parts
     \ifthenelse{\boolean{@parts}}%
     {%
-      \renewcommand{\thepart}{\roman{part}}%
-      \renewcommand{\cftpartpresnum}{\scshape}%  \MakeTextLowercase
+      \renewcommand{\thepart}{\Roman{part}}%
+      \renewcommand{\cftpartpresnum}{\upshape}
 %      \renewcommand{\cftpartaftersnum}{\cftchapaftersnum}%
 %      \renewcommand{\cftpartaftersnumb}{\quad}%
 %      \setlength{\cftpartnumwidth}{\cftpartnumwidth}
