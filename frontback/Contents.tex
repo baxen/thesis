@@ -9,11 +9,11 @@
 \setcounter{secnumdepth}{3} % Depth of sections to number in the text itself - currently up to subsubsections
 
 \manualmark
-\markboth{\spacedlowsmallcaps{\contentsname}}{\spacedlowsmallcaps{\contentsname}}
+\markboth{\spacedallcaps{\contentsname}}{\spacedallcaps{\contentsname}}
 \tableofcontents 
 \automark[section]{chapter}
-\renewcommand{\chaptermark}[1]{\markboth{\spacedlowsmallcaps{#1}}{\spacedlowsmallcaps{#1}}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedlowsmallcaps{#1}}}
+\renewcommand{\chaptermark}[1]{\markboth{\spacedallcaps{#1}}{\spacedallcaps{#1}}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedallcaps{#1}}}
 
 \clearpage
 
@@ -69,7 +69,7 @@
 %\addcontentsline{toc}{chapter}{Acronyms} % Uncomment if you would like the acronyms to appear in the table of contents
 \pdfbookmark[1]{Acronyms}{acronyms} % Bookmark name visible in a PDF viewer
 
-\markboth{\spacedlowsmallcaps{Acronyms}}{\spacedlowsmallcaps{Acronyms}}
+\markboth{\spacedallcaps{Acronyms}}{\spacedallcaps{Acronyms}}
 
 \chapter*{Acronyms}
 

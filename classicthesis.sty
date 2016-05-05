@@ -53,7 +53,7 @@
     \newboolean{@eulermath} % use awesome Euler fonts for math
     \newboolean{@parts} % use part division for the text
     \newboolean{@minionpro} % setup for minion pro font
-    \newboolean{@minionprospacing} % use minion pro's textssc for letter spacing
+    \newboolean{@minionprospacing} % use minion pro's textsc for letter spacing
     \newboolean{@pdfspacing} % use pdftex for letterspacing (via microtype)
     \newboolean{@subfig} % setup for preloaded @subfig package
     \newboolean{@a5paper} % use those tiny DIN A5 pages
@@ -309,7 +309,7 @@
               
 % Enumeration environment with small caps
 \newenvironment{aenumerate}
-    {\def\theenumi{\textsc{\alph{enumi}}}%
+    {\def\theenumi{\textsf{\alph{enumi}}}%
      \enumerate}
     {\endenumerate}
 
@@ -321,9 +321,9 @@
 
 \ifthenelse{\boolean{@minionprospacing}}%
     {%
-        \PackageInfo{classicthesis}{Using MinionPro's textssc for character spacing.}%
-        \DeclareRobustCommand{\spacedallcaps}[1]{\textssc{\MakeTextUppercase{#1}}}%
-        \DeclareRobustCommand{\spacedlowsmallcaps}[1]{\textssc{\MakeTextLowercase{#1}}}%
+        \PackageInfo{classicthesis}{Using MinionPro's textsc for character spacing.}%
+        \DeclareRobustCommand{\spacedallcaps}[1]{\textsc{\MakeTextUppercase{#1}}}%
+        \DeclareRobustCommand{\spacedallcaps}[1]{\textsc{\MakeTextLowercase{#1}}}%
     }{%
         \ifthenelse{\boolean{@pdfspacing}}%
         {%
@@ -331,14 +331,9 @@
                                         Make sure your pdftex is version 1.40 or higher.}%
             \microtypesetup{expansion=false}%
             \DeclareRobustCommand{\spacedallcaps}[1]{\textls[160]{\MakeTextUppercase{#1}}}%
-            \DeclareRobustCommand{\spacedlowsmallcaps}[1]{\textls[80]{\scshape\MakeTextLowercase{#1}}}%
+            \DeclareRobustCommand{\spacedallcaps}[1]{\textls[80]{\scshape\MakeTextLowercase{#1}}}%
         }{%
-            \RequirePackage{soul} % for letterspacing 
-                \sodef\allcapsspacing{\upshape}{0.15em}{0.65em}{0.6em}%
-                \sodef\lowsmallcapsspacing{\scshape}{0.075em}{0.5em}{0.6em}%   
-                \DeclareRobustCommand{\spacedallcaps}[1]{\MakeTextUppercase{\allcapsspacing{#1}}}%
-                %\DeclareRobustCommand{\spacedlowsmallcaps}[1]{\MakeTextUppercase{\allcapsspacing{#1}}}%
-                \DeclareRobustCommand{\spacedlowsmallcaps}[1]{\MakeTextLowercase{\textsc{\lowsmallcapsspacing{#1}}}}%\protect
+          \DeclareRobustCommand{\spacedallcaps}[1]{\addfontfeatures{LetterSpace=7.5}\textsf{\MakeTextUppercase{#1}}}%          
         }%
     }
 
@@ -353,8 +348,8 @@
     %\setheadsepline{0pt}
     \ifthenelse{\boolean{@nochapters}}%
         {\relax}%
-        {\renewcommand{\chaptermark}[1]{\markboth{\spacedlowsmallcaps{#1}}{\spacedlowsmallcaps{#1}}}}
-    \renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedlowsmallcaps{#1}}} 
+        {\renewcommand{\chaptermark}[1]{\markboth{\spacedallcaps{#1}}{\spacedallcaps{#1}}}}
+    \renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedallcaps{#1}}} 
     \lehead{\mbox{\llap{\small\thepage\kern2em}\headmark\hfil}}
     \rohead{\mbox{\hfil{\headmark}\rlap{\small\kern2em\thepage}}}
     \renewcommand{\headfont}{\small}  
@@ -364,7 +359,7 @@
             \ifthenelse{\boolean{@nochapters}}%
             {\section*{\contentsname}}%nochapters
             {\chapter*{\contentsname}}%chapters
-            \@mkboth{\spacedlowsmallcaps{\contentsname}}{\spacedlowsmallcaps{\contentsname}}}
+            \@mkboth{\spacedallcaps{\contentsname}}{\spacedallcaps{\contentsname}}}
               
     
 % ********************************************************************
@@ -396,18 +391,18 @@
     }
     % sections \FloatBarrier
     \titleformat{\section}
-        {\relax}{\textsc{\MakeTextLowercase{\thesection}}}{1em}{\spacedlowsmallcaps}
+        {\relax}{\textsf{\MakeTextLowercase{\thesection}}}{1em}{\spacedallcaps}
     % subsections
     \titleformat{\subsection}
-        {\relax}{\textsc{\MakeTextLowercase{\thesubsection}}}{1em}{\normalsize\itshape}
+        {\relax}{\textsf{\MakeTextLowercase{\thesubsection}}}{1em}{\normalsize\itshape}
     % subsubsections
     \titleformat{\subsubsection}
-        {\relax}{\textsc{\MakeTextLowercase{\thesubsubsection}}}{1em}{\normalsize\itshape}        
+        {\relax}{\textsf{\MakeTextLowercase{\thesubsubsection}}}{1em}{\normalsize\itshape}        
     % paragraphs
     \titleformat{\paragraph}[runin]
-        {\normalfont\normalsize}{\theparagraph}{0pt}{\spacedlowsmallcaps}    
+        {\normalfont\normalsize}{\theparagraph}{0pt}{\spacedallcaps}    
     % descriptionlabels
-        \renewcommand{\descriptionlabel}[1]{\hspace*{\labelsep}\spacedlowsmallcaps{#1}}   % spacedlowsmallcaps textit textsc                  
+        \renewcommand{\descriptionlabel}[1]{\hspace*{\labelsep}\spacedallcaps{#1}}
     % spacing
     \ifthenelse{\boolean{@nochapters}}%
         {\relax}%
@@ -581,14 +576,14 @@
          }
          \newcommand\ChapS[1]{\oldchap*{#1}}%
          \newcommand\Chap[2][]{%
-                 \ifpdf\oldchap[\texorpdfstring{\spacedlowsmallcaps{#1}}{#1}]{#2}%
-                 \else\oldchap[\spacedlowsmallcaps{#1}]{#2}%
+                 \ifpdf\oldchap[\texorpdfstring{\spacedallcaps{#1}}{#1}]{#2}%
+                 \else\oldchap[\spacedallcaps{#1}]{#2}%
                  \fi%
          }%
         \ifxetex % thanks to Joerg Weber
         \renewcommand\Chap[2][]{%
-                     \ifxetex\oldchap[\texorpdfstring{\spacedlowsmallcaps{#1}}{#1}]{#2}%
-                     \else\oldchap[\spacedlowsmallcaps{#1}]{#2}%
+                     \ifxetex\oldchap[\texorpdfstring{\spacedallcaps{#1}}{#1}]{#2}%
+                     \else\oldchap[\spacedallcaps{#1}]{#2}%
                      \fi%
              }%
         \fi%
@@ -605,9 +600,9 @@
            \newcommand\PartS[1]{\oldpart*{#1}}%
                  \newcommand\Part[2][]{%
                \ifpdf\pdfstringdefDisableCommands{\let\thepart\@gobbletwo}%
-                     \oldpart[\texorpdfstring{\spacedlowsmallcaps{#1}}{#1}]{#2}% spacedallcaps spacedlowsmallcaps
+                     \oldpart[\texorpdfstring{\spacedallcaps{#1}}{#1}]{#2}% spacedallcaps spacedallcaps
                \else%
-                         \oldpart[\spacedlowsmallcaps{#1}]{#2}%
+                         \oldpart[\spacedallcaps{#1}]{#2}%
                \fi%
 %                \renewcommand{\ct@parttext}{\relax}% Thanks to Ivo!
                        \ctparttext{\relax}%
@@ -620,9 +615,9 @@
                 \ifxetex% thanks to Joerg Weber
                 \renewcommand\Part[2][]{%
                    \ifxetex\pdfstringdefDisableCommands{\let\thepart=\@gobbletwo}%
-                         \oldpart[\texorpdfstring{\spacedlowsmallcaps{#1}}{#1}]{#2}% spacedallcaps spacedlowsmallcaps
+                         \oldpart[\texorpdfstring{\spacedallcaps{#1}}{#1}]{#2}% spacedallcaps spacedallcaps
                    \else%
-                            \oldpart[\spacedlowsmallcaps{#1}]{#2}%
+                            \oldpart[\spacedallcaps{#1}]{#2}%
                    \fi%
                                 \ctparttext{\relax}%
            }%
@@ -630,12 +625,12 @@
      }{\relax}
              
     \newcommand{\tocEntry}[1]{% for bib, etc.
-        \ifpdf\texorpdfstring{\spacedlowsmallcaps{#1}}{#1}%
+        \ifpdf\texorpdfstring{\spacedallcaps{#1}}{#1}%
         \else{#1}\fi%
     }
         \ifxetex% thanks to Joerg Weber
             \renewcommand{\tocEntry}[1]{% for bib, etc.
-            \ifxetex\texorpdfstring{\spacedlowsmallcaps{#1}}{#1}%
+            \ifxetex\texorpdfstring{\spacedallcaps{#1}}{#1}%
         \else{#1}\fi%
     } \fi
     
