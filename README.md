@@ -17,6 +17,16 @@ Summary of four years on ATLAS, primarily a measurement of calorimeter response 
 
 ## Style Considerations
 
+### Colors
+
+Using a basic color scheme that vaguely fits with UC Berkeley colors
+
+![Color Scheme](/figures/scheme.png?raw=true)
+
+### Font Choices
+
+The template used Palatino with a lot of small caps to handle titles and headings. I added xelatex support and moved to Crimson for a nicer font option, with Julius Sans One for all headings. (Merriweather is another option if Julius end up being too light for real printouts.)
+
 ### From the template: 
 >Some things of this style might look unusual at first glance, many people feel so in the beginning. However, all things are intentionally designed to be as they are, especially these:
 >- No bold fonts are used. Italics or spaced small caps do the job quite well.
@@ -24,14 +34,3 @@ Summary of four years on ATLAS, primarily a measurement of calorimeter response 
 >- The tables intentionally do not use vertical or double rules. See the documentation for the `booktabs` package for a nice discussion of this topic.
 >- To provide the reader with a way easier access to page numbers in the table of contents, the page numbers are right behind the titles. Yes, they are **not** neatly aligned at the right side and they are **not** connected with dots that help the eye to bridge a distance that is not necessary
 
-### Font Choices
-
-The template used Palatino with a lot of small caps to handle titles and headings. I added xelatex support and moved to Crimson for a nicer font option. 
-
-In a future update I am considering using a sans-serif font like Avenir for titles and headings, instead of the small caps. I won't worry about this until I have some more content.
-
-### Colors
-
-Using a basic color scheme that vaguely fits with UC Berkeley colors
-
-![Color Scheme](/figures/scheme.png?raw=true)
