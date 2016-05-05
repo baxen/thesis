@@ -6,23 +6,25 @@
 \graffito{This appendix is temporary and is here to be used to check the style of the document.}
 
 
-Examples: \textit{Italics}, \spacedallcaps{All Caps}, \textsc{Small Caps}\footnote{Footnote example.}.
+Examples: \textit{Italics}, \textsc{Small Caps}, \spacedallcaps{All Caps} \footnote{Footnote example.}.
 Acronym testing: \ac{UML} -- \acs{UML} -- \acf{UML} -- \acp{UML}
-
-
-\lipsum[13-14]
 
 % ----------------------------------------
 
 \section{Appendix Section Test}
-\lipsum[15]
+Random text that should take up a few lines.
+The purpose is to see how sections and subsections flow with some actual context.
+Without some body copy between each heading it can be difficult to tell if the weight of the fonts, styles, and sizes use work well together.
 
-\graffito{More dummy text}
-\lipsum[16]
+\subsection{Appendix Subection Test}
+Random text that should take up a few lines.
+The purpose is to see how sections and subsections flow with some actual context.
+Without some body copy between each heading it can be difficult to tell if the weight of the fonts, styles, and sizes use work well together.
+
 
 % ----------------------------------------
 
-\section{Another Appendix Section Test}
+\section{A Table and Listing}
 \lipsum[17]
 
 \begin{table}
@@ -40,15 +42,12 @@ quaestio philosophia & facto & demonstrated \\
 \label{tab:moreexample}
 \end{table}
 
-\lipsum[18]
+There is also a Python listing below~\autoref{lst:useless}.
 
-There is also a useless Pascal listing below: \autoref{lst:useless}.
-
-\begin{lstlisting}[float=b,language=Pascal,frame=tb,caption={A floating example (\texttt{listings} manual)},label=lst:useless]
-for i:=maxint downto 0 do
-begin
-{ do nothing }
-end;
+\begin{lstlisting}[float=b,language=Python,frame=tb,caption={A floating example (\texttt{listings} manual)},label=lst:useless]
+for i in xrange(10):
+    print i, i*i, i*i*i
+print "done"
 \end{lstlisting}
 
 \section{Some Formulas}
