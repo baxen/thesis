@@ -1,0 +1,25 @@
+axes.axisbelow      : True
+axes.edgecolor      : black
+axes.facecolor      : white
+axes.grid           : True
+axes.prop_cycle     : cycler('color', ['6fa29f', 'e77c26', '84a169', 'a59592'])
+backend             : pgf
+font.family         : serif
+font.size           : 12	
+figure.figsize      : 8, 5
+grid.color          : e0e0e0
+grid.linestyle      : -
+grid.linewidth      : 1.0
+legend.frameon      : False
+legend.numpoints    : 1
+lines.linewidth     : 1.8
+patch.linewidth     : 0
+pgf.rcfonts         : False
+pgf.texsystem       : xelatex
+text.usetex         : True
+xtick.direction     : out
+xtick.major.size    : 6
+xtick.major.width   : 1
+xtick.minor.size    : 0
+ytick.major.size    : 0
+ytick.minor.size    : 0
