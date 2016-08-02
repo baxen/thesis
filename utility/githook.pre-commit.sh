@@ -11,6 +11,7 @@ python utility/pre-commit.py
 if [ $? -eq 0 ]; then
     git add axen_thesis.pdf
     git add figures/progress.png
+    git add utility/counts.json
 else
     echo "Failed to updated and build axen_thesis.pdf! Fix errors above before pushing."
     exit 1
