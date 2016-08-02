@@ -5,10 +5,10 @@
 #   - Record a word and figure count for progress monitoring
 #   - Update a progress plot (not yet implemented)
 #   - Rebuild axen_thesis.pdf with latex
-python ../../utility/pre-commit.py
+python utility/pre-commit.py
 
 # Add resulting changes
-if [ $? -e 0]; then
+if [ $? -eq 0 ]; then
     git add axen_thesis.pdf
     git add figures/progress.png
 else
