@@ -10,6 +10,7 @@ python utility/pre-commit.py
 # Add resulting changes
 if [ $? -eq 0 ]; then
     git add axen_thesis.pdf
+    git add classicthesis-config.tex
     git add figures/progress.png
     git add utility/counts.json
 else
