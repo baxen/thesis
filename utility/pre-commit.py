@@ -58,7 +58,7 @@ def progress(counts):
 
     # Set relative to goals
     goals = dict(words=20000, pages=170, figures=60)
-    for col, goal in goals.iteritems():
+    for col, goal in goals.items():
         df[col] /= goal
 
     fig, ax = plt.subplots()
@@ -70,7 +70,7 @@ def progress(counts):
 
 def main():
     # Increment version number. 
-    with open('classicthesis-config.tex','r') as infile:
+    with open('classicthesis-config.tex', 'r', encoding='utf-8') as infile:
         content = infile.read()
     version = r'\\newcommand{\\myVersion}{Version ([0-9]+).([0-9]+)\\xspace}'
     major, minor = (int(n) for n in re.search(version, content).group(1,2))
@@ -79,7 +79,7 @@ def main():
     else:
         minor += 1
     content = re.sub(version, version.replace(r'([0-9]+)',str(major),1).replace(r'([0-9]+)',str(minor),1), content)
-    with open('classicthesis-config.tex','w') as outfile:
+    with open('classicthesis-config.tex', 'w', encoding='utf-8') as outfile:
         outfile.write(content)
 
     # Load recorded counts
@@ -93,11 +93,11 @@ def main():
 
     # Get the counts and time
     out, _ = subprocess.Popen(['texcount', '-sum', '-total', '-merge', 'axen_thesis.tex'], stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
-    wc = int(re.search('Words in text: ([0-9]+)',out).group(1))
-    fc = int(re.search('Number of floats/tables/figures: ([0-9]+)',out).group(1))
+    wc = int(re.search(b'Words in text: ([0-9]+)',out).group(1))
+    fc = int(re.search(b'Number of floats/tables/figures: ([0-9]+)',out).group(1))
 
     out, _ = subprocess.Popen(['pdfinfo', 'axen_thesis.pdf'], stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
-    pc = int(re.search('Pages:\s*([0-9]+)',out).group(1))
+    pc = int(re.search(b'Pages:\s*([0-9]+)',out).group(1))
     
     time = pd.to_datetime('now')
 

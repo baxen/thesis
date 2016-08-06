@@ -23,7 +23,6 @@
 %----------------------------------------------------------------------------------------
 
 % Disabled because xelatex
-%\PassOptionsToPackage{utf8}{inputenc} % Set the encoding of your files. UTF-8 is the only sensible encoding nowadays. If you can't read äöüßáéçèê∂åëæƒÏ€ then change the encoding setting in your editor, not the line below. If your editor does not support utf8 use another editor!
 %\usepackage{inputenc}
 
 %----------------------------------------------------------------------------------------
@@ -48,7 +47,7 @@
 \newcommand{\myUni}{University of California, Berkeley\xspace}
 \newcommand{\myLocation}{Berkeley, CA\xspace}
 \newcommand{\myTime}{September 2016\xspace}
-\newcommand{\myVersion}{Version 0.14\xspace}
+\newcommand{\myVersion}{Version 0.15\xspace}
 
 %----------------------------------------------------------------------------------------
 %	USEFUL COMMANDS
@@ -60,6 +59,7 @@
 \newcommand{\Eg}{E.\,g.} 
 
 \newcommand*{\tsup}[1]{\textsuperscript{#1}}
+\newcommand*{\SM}{Standard Model}
 
 \newcounter{dummy} % Necessary for correct hyperlinks (to index, bib, etc.)
 \providecommand{\mLyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
@@ -70,13 +70,6 @@
 %----------------------------------------------------------------------------------------
 
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
-
-%------------------------------------------------
-
-%\PassOptionsToPackage{ngerman,american}{babel}  % Change this to your language(s)
-% Spanish languages need extra options in order to work with this template
-%\PassOptionsToPackage{spanish,es-lcroman}{babel}
-\usepackage{babel}
 
 %------------------------------------------------			
 
@@ -94,50 +87,25 @@ maxbibnames=10, % default: 3, et al.
 natbib=true % natbib compatibility mode (\citep and \citet still work)
 }{biblatex}
 \usepackage{biblatex}
- 
- %------------------------------------------------
-
 \PassOptionsToPackage{fleqn}{amsmath} % Math environments and more by the AMS 
  \usepackage{amsmath}
- 
- %------------------------------------------------
 
 % Disabled because xelatex
 %\PassOptionsToPackage{T1}{fontenc} % T2A for cyrillics
 %\usepackage{fontenc}
 
-%------------------------------------------------
-
 \usepackage{textcomp} % Fix warning with missing font shapes
-
-%------------------------------------------------
-
 \usepackage{scrhack} % Fix warnings when using KOMA with listings package  
-
-%------------------------------------------------
-
 \usepackage{xspace} % To get the spacing after macros right
-
-%------------------------------------------------
-
 \usepackage{mparhack} % To get marginpar right
-
-%------------------------------------------------
-
 \usepackage{fixltx2e} % Fixes some LaTeX stuff 
-
-%------------------------------------------------
-
 \PassOptionsToPackage{smaller}{acronym} % Include printonlyused in the first bracket to only show acronyms used in the text
 \usepackage{acronym} % Nice macros for handling all acronyms in the thesis
-
 %\renewcommand*{\acsfont}[1]{\textssc{#1}} % For MinionPro
 \renewcommand*{\aclabelfont}[1]{\acsfont{#1}}
-
-%------------------------------------------------
-
-%\PassOptionsToPackage{pdftex}{graphicx}
 \usepackage{graphicx} 
+\usepackage[left]{lineno}
+\linenumbers
 
 %----------------------------------------------------------------------------------------
 %	FLOATS: TABLES, FIGURES AND CAPTIONS SETUP
