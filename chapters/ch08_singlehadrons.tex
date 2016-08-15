@@ -5,12 +5,46 @@
 
 \section{Overview and Motivation}
 
+As discussed in Section~\ref{sec:jets}, colored particles produced in collisions hadronize into jets of multiple individual hadrons.
+As jets form a major component of many physics analyses at ATLAS, it is crucial to carefully calibrate the measurement of jet energies and to derive an uncertainty on that measurement.
+These uncertainties have often been the dominant systematic uncertainty in high-energy analyses at the LHC.
+
+One approach to understanding jet physics in the ATLAS calorimetry is to evaluate the calorimeter response to individual hadrons; measurements of individual hadrons can be used to build up an understanding of the jets that they form.
+The redundancy of the momentum provided by the tracking system and the energy provided by the calorimeter provides an opportunity to study calorimeter response using real collisions, as described further in Section~\ref{sec:inclusive}.
+
+A number of interesting factors compromise calorimeter respose, and extracting these separately provides insight into many aspects of jet modelling.
+First, many charged hadrons interact with the material of the detector prior to reaching the calorimeters and thus do not deposit any energy.
+Comparing this effect in data and simulation is a powerful tool in validating the interactions of particles with the material of the detector as well as the model of the detector geometry in simulation, see Section~\ref{sec:zero_fraction}.
+The particles which do reach the calorimeter deposit their energy into individual cells, which are then clustered to measure full energy deposits.
+Comparing the response in data to simulated hadrons provides a direct evaluation of several aspects of simulation: noise in the calorimeters, the showering of hadronic particles, and the energy deposited by particles in matter, among others (Section~\ref{sec:response}). 
+Additionally, comparing the effect of clustering in data and simulation can indirectly test the simulation's modelling of the shape of hadronic showers, see Section~\ref{sec:clustering}.
+These measurements are extended to explore several additional effects, such as the dependence on charge or the individual calorimeter layer in Section~\ref{sec:additional}. 
+
+The above studies all use an inclusive selection of charged particles, which are compromised predominantly of pions, kaons, and (anti)protons. It is also interesting to measure the particle types separately to evaluate the simulated interactions of each particle, particularly at low energies where differences between species are very relevant. Pions and (anti)protons can be identified through decays of long-lived particles, in particular $\Lambda$, $\overline{\Lambda}$, and $K_{S}^{0}$, and then used to measure response as described above. This is discussed in detail in Section~\ref{sec:identified}.
+
+Together, these measurements in data provide a thorough understanding of the way hadrons interact with the ATLAS detector and can be used to build up a description of jets, as seen in Chapter~\ref{ch:jes}. The results in this chapter use data collected at 7 and 8 TeV collected in 2010 and 2012, respectively. Both are included as the calorimeter was repaired and recalibrated between those two data-taking periods. Both sets of data are compared to an updated simulation that includes new physics models provided by \texttt{Geant4}~\cite{GEANT4} and improvements in the detector description~\cite{PERF-2011-08,PERF-2013-05}. These results can be compared to a similar measurement performed in 2009 and 2010~\cite{PERF-2011-05}, which used the previous version of the simulation framework~\cite{SOFT-2010-01}.
+
+
 % ----------------------------------------
 
 \section{Inclusive Hadron Response}
+\label{sec:inclusive}
+
+\subsection{Zero Fraction}
+\label{sec:zero_fraction}
+
+\subsection{Calorimeter Response}
+\label{sec:response}
+
+\subsubsection{Clustering}
+\label{sec:clustering}
+
+\subsubsection{Additional Studies}
+\label{sec:additional}
 
 % ----------------------------------------
 
 \section{Identified Particle Response}
+\label{sec:identified}
 
 % ----------------------------------------
