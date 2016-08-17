@@ -21,8 +21,6 @@
 \label{ch:singlehadrons}
 % --------------------------------------------------------------------------------
 
-\section{Overview and Motivation}
-
 As discussed in Section~\ref{sec:jets}, colored particles produced in collisions hadronize into jets of multiple individual hadrons.
 As jets form a major component of many physics analyses at ATLAS, it is crucial to carefully calibrate the measurement of jet energies and to derive an uncertainty on that measurement.
 These uncertainties have often been the dominant systematic uncertainty in high-energy analyses at the LHC.
@@ -256,14 +254,13 @@ The agreement between data and simulation improves noticeably when at least one 
 \centering
 \subfloat[]{
   \includegraphics[width=0.48\textwidth]{figures/dvmc_epcor_layer01_calib02_eta01_q00_nc00_trt02.pdf}
-  \label{fig-eoverp_corrected_lcw_smallEta}
 }
 ~
 \subfloat[]{
   \includegraphics[width=0.48\textwidth]{figures/dvmc_epcor_layer01_calib02_eta01_q00_nc02_trt02.pdf}
 }
 \caption{\epcor calculated using LCW-calibrated topological clusters as a function of track momentum for tracks with (a) zero or more associated topological clusters or (b) one or more associated topological clusters.}
-\label{fig-eoverp_corrected_lcw}
+\label{fig:eoverp_corrected_lcw}
 \end{figure}
 
 
@@ -290,7 +287,7 @@ As expected, the tracks with fewer hits are poorly modeled in the simulation as 
   \includegraphics[width=0.48\textwidth]{figures/trt_dvmc_epcor_layer01_calib01_eta01_q00_nc00_trt02.pdf}
 }
 \caption{Comparison of the \epcor for tracks with (a) less than and (b) greater than 20 hits in the TRT.}
-\label{fig-zerofracTRT}
+\label{fig:eoverp_trt}
 \end{figure}
 
 Another interesting aspect of the simulation is the description of antiprotons at low momentum, where \QGSP and \FTFP have significant differences.
@@ -455,7 +452,7 @@ The agreement between data and simulation is significantly worse for the \pim di
   \includegraphics[width=0.48\textwidth]{figures/dvmc12r_epcor_p_pim_eta01.pdf}
 }
 \caption{\epcor as a function of track momentum for (a) \pip\ tracks and (b) \pim\ tracks.}
-\label{fig-epcor_pim}
+\label{fig:identified_epcor}
 \end{figure}
 
 \subsection{Additional Species in Simulation}
