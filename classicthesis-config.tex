@@ -47,7 +47,7 @@
 \newcommand{\myUni}{University of California, Berkeley\xspace}
 \newcommand{\myLocation}{Berkeley, CA\xspace}
 \newcommand{\myTime}{September 2016\xspace}
-\newcommand{\myVersion}{Version 0.19\xspace}
+\newcommand{\myVersion}{Version 0.20\xspace}
 
 %----------------------------------------------------------------------------------------
 %	USEFUL COMMANDS
@@ -66,32 +66,16 @@
 \providecommand{\mLyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
 \newlength{\abcd} % for ab..z string length calculation
 
-\def\TeV{\ifmmode {\mathrm{\ Te\kern -0.1em V}}\else
-                   \textrm{Te\kern -0.1em V}\fi}%                                                                                            
-\def\GeV{\ifmmode {\mathrm{Ge\kern -0.1em V}}\else
-                   \textrm{Ge\kern -0.1em V}\fi}%                                                                                            
-\def\MeV{\ifmmode {\mathrm{Me\kern -0.1em V}}\else
-                   \textrm{Me\kern -0.1em V}\fi}%                                                                                            
-\def\keV{\ifmmode {\mathrm{\ ke\kern -0.1em V}}\else
-                   \textrm{ke\kern -0.1em V}\fi}%                                                                                            
-\def\eV{\ifmmode  {\mathrm{\ e\kern -0.1em V}}\else
-                   \textrm{e\kern -0.1em V}\fi}%                                                                                             
+\newcommand*{\TeV}{\ensuremath{\mathrm{Te\kern -0.05em V}}\xspace}
+\newcommand*{\GeV}{\ensuremath{\mathrm{Ge\kern -0.05em V}}\xspace}
+\newcommand*{\MeV}{\ensuremath{\mathrm{Me\kern -0.05em V}}\xspace}
+\newcommand*{\keV}{\ensuremath{\mathrm{ke\kern -0.05em V}}\xspace}
+
 \let\tev=\TeV
 \let\gev=\GeV
 \let\mev=\MeV
 \let\kev=\keV
 \let\ev=\eV
-
-\def\TeVc{\ifmmode {\mathrm{\ Te\kern -0.1em V}/c}\else
-                   {\textrm{Te\kern -0.1em V}/$c$}\fi}%                                                                                      
-\def\GeVc{\ifmmode {\mathrm{\ Ge\kern -0.1em V}/c}\else
-                   {\textrm{Ge\kern -0.1em V}/$c$}\fi}%                                                                                      
-\def\MeVc{\ifmmode {\mathrm{\ Me\kern -0.1em V}/c}\else
-                   {\textrm{Me\kern -0.1em V}/$c$}\fi}%                                                                                      
-\def\keVc{\ifmmode {\mathrm{\ ke\kern -0.1em V}/c}\else
-                   {\textrm{ke\kern -0.1em V}/$c$}\fi}%                                                                                      
-\def\eVc{\ifmmode  {\mathrm{\ e\kern -0.1em V}/c}\else
-                   {\textrm{e\kern -0.1em V}/$c$}\fi}%  
 
 %----------------------------------------------------------------------------------------
 %	PACKAGES

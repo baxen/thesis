@@ -3,8 +3,10 @@
 \label{ch:jes}
 % --------------------------------------------------------------------------------
 
-\section{Jet Composition}
+\section{Motivation}
 
+As jets form a major component of many physics analyses at ATLAS, it is crucial to carefully calibrate the measurement of jet energies and to derive an uncertainty on that measurement.
+These uncertainties have often been the dominant systematic uncertainty in high-energy analyses at the LHC.
 Dijet and multijet balance techniques provide a method to constrain the jet energy scale and its uncertainty in data, and provide the default values used for ATLAS jet measurements at most energies~\cite{PERF-2012-01}.
 These techniques are limited by their reliance on measuring jets in data, so they are statistically limited in estimating the jet energy scale at the highest jet energies.
 This chapter presents another method for estimating the jet energy scale and its uncertainty which builds up a jet from its components and thus can be naturally extended to high jet momentum.
@@ -13,6 +15,7 @@ Throughout this chapter the jets studied are simulated using \texttt{Pythia8} wi
 As described in Section~\ref{sec:jets}, jets are formed from topological clusters of energy in the calorimeters using the anti-$k_t$ algorithm.
 These clusters originate from a diverse spectrum of particles, in terms of both species and momentum, leading to significantly varied jet properties and response between jets of similar produced momentum.
 Figure~\ref{fig:particle_spectra} shows the simulated distribution of particles within jets at a few examples energies.
+The \ep measurements provide a thorough understanding of the dominant particle content of jets, the charged hadrons. 
 
 \begin{figure}[ht]
 \centering
@@ -33,7 +36,7 @@ Figure~\ref{fig:particle_spectra} shows the simulated distribution of particles 
 
 Simulated jets are not necessarily expected to correctly model the energy deposits in the calorimeters, because of the various discrepancies discussed in Chapter~\ref{ch:singlehadrons}.
 To evaluate a jet energy response, the simulated jet energies are compared to a corrected jet built up at the particle level.
-Each cluster is associated to the truth particle which deposited it, and the energy in that cluster is then corrected for a number of effects based on measurements in data. 
+Each cluster in a jet is associated to the truth particle which deposited it, and the energy in that cluster is then corrected for a number of effects based on measurements in data. 
 The primary corrections come from the single hadron response measurements in addition to response measured using the combined test beam which covers higher momentum particles~\cite{CTB}.
 These corrections include both a shift, in order to make the simulation match the average response in data, and an uncertainty associated with the ability to constrain the difference between data and simulation.
 Some of the dominant sources of uncertainty are itemized below, and the full list considered is described in detail in the associated paper~\cite{PERF-2015-05}. 
@@ -45,10 +48,10 @@ No uncertainties are added for the difference between particle composition of je
 \item The main \epav comparison uncertainties, binned in $p$ and $|\eta|$, as derived from the combined test beam results, from 20 to 350~\GeV\ (``CTB'' from Ref.~\cite{CTB}).
 \item The difference in the zero-fraction between data and MC simulation from 500~\MeV\ to 20~\GeV\ (``$E/p$ Zero Fraction'').
 \item The uncertainty in the EM calorimeter response from the potential mis-modelling of threshold effects in topological clustering (``$E/p$ Threshold'').
-\item The uncertainty in the calorimeter response to neutral hadrons based on studies of physics model variations(``Neutral'').
-\item An additional uncertainty in the response to neutral \pKL in the calorimeter based on studies of physics model variations(``$K_\text{L}$'').
+\item The uncertainty in the calorimeter response to neutral hadrons based on studies of physics model variations (``Neutral'').
+\item An additional uncertainty in the response to neutral \pKL in the calorimeter based on studies of physics model variations (``$K_\text{L}$'').
 \item The uncertainty in the $p$ measurement from misalignment of the ID (``$E/p$ Misalignment'').
-\item A flat uncertainty for all particles above the energy range or outside the longitudinal range probed with the combined test beam (included in ``Hadrons, $p>350$~\GeV'').
+\item A flat uncertainty for all particles above the energy range or outside the longitudinal range probed with the combined test beam (``Hadrons, $p>350$~\GeV'').
 \end{itemize}
 
 From these terms, the jet energy scale and uncertainty is built up from individual energy deposits in simulation. 
