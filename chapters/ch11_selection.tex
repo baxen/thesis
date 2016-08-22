@@ -1,6 +1,26 @@
 \chapter{Event Selection}
 
 \label{ch:selection}
+
+The \ac{LLP}s targeted by this search differ in their interactions with the detector from other, \ac{SM} particles primarily because of their large mass. 
+That large mass results in a low $\beta$ when produced at the energies available at the \ac{LHC}, and such slow-moving particles heavily ionize in detector material when charged. 
+Each layer of the pixel detector provides a measurement of that ionization, through \ac{ToT}, as discussed in Section~\ref{sec:pixel}. 
+The ionization in the pixel detector, quantified in terms of \dedx, provides the major focus for this search technique, both because of its discriminating power and also because of the large range of lifetimes where it can be used.
+
+The \dedx variable needs to be augmented with a few additional selection requirements to form a complete search. 
+Ionization is not currently available in any form during triggering, so this search instead relies on \met to trigger the events out of necessity. 
+Although triggering on \met is not particularly efficient, \met is often large for many production mechanisms of \ac{LLP}s, as discussed in Section~\ref{sec:characteristics}.
+
+Ionization is most effective in rejecting backgrounds for well-measured, high-momentum tracks, so some basic requirements on quality and kinematics are placed on the particles considered in this search. 
+In particular a newly introduced tracking variable (referred to as \Nss and defined in detail in Section~\ref{sec:track_requirements}) is very effective in removing highly-ionizing backgrounds caused by overlapping tracks. 
+A few additional requirements are placed on the tracks considered for \ac{LLP} candidates that increase background rejection by targeting specific types of \ac{SM} particles (Section~\ref{sec:sm_rejection}). 
+These techniques provide a significant analysis improvement over previous iterations of ionization-based searches on ATLAS by providing additional background rejection with minimal loss in signal efficiency. 
+
+The ionization measurement with the Pixel detector can be calibrated to provide an estimator of $\beta\gamma$. $\beta\gamma$, together with the momentum measurement provided by tracking, can be used to reconstruct a mass for each track which traverses the pixel detector. 
+That mass variable will be peaked at the \ac{LLP} mass for any signal, and provides an additional tool to search for an excess.
+In addition to an explicit requirement on ionization, this search constructs a mass-window for each targeted mass range in order to evaluate any excess of events and to set limits. 
+Construction, calibration, and requirements for the mass variable are discussed in Section~\ref{sec:mass_requirement}.
+
 % --------------------------------------------------------------------------------
 
 \section{Trigger}
@@ -8,10 +28,12 @@
 % ----------------------------------------
 
 \section{Kinematics and Isolation}
+\label{sec:track_requirements}
 
 % ----------------------------------------
 
 \section{Standard Model Rejection}
+\label{sec:sm_rejection}
 
 % ----------------------------------------
 
@@ -20,4 +42,5 @@
 \subsection{dE/dx Calibration}
 
 \subsection{Mass Estimation}
+\label{sec:mass_requirement}
 % ----------------------------------------
