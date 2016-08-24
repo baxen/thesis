@@ -68,7 +68,7 @@ The specific values for each requirement in signal region were optimized conside
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.68\textwidth]{figures/selection_met_nm1_log.pdf}
+\includegraphics[width=\fullfig]{figures/selection_met_nm1_log.pdf}
 \caption{The distribution of \met for data and simulated signal events, after the trigger requirement.}
 \label{fig:nm1_met}
 \end{figure}
@@ -95,7 +95,7 @@ Figure~\ref{fig:dedx_nsplit} shows the dependence of ionization on \Nsplit; as \
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.68\textwidth]{figures/dedx_nsplit_data.pdf}
+\includegraphics[width=\fullfig]{figures/dedx_nsplit_data.pdf}
 \caption{The dependence of \dedx on $N_{\mathrm{split}}$ in data after basic track hit requirements have been applied.}
 \label{fig:dedx_nsplit}
 \end{figure}
@@ -105,21 +105,43 @@ Comparing the distribution for ``baseline tracks'', tracks with only the above r
 The isolated tracks are very close to the \dedx distribution of identified muons, which are extremely well isolated on average. 
 Figure~\ref{fig:dedx_isolation} also includes the distribution of \dedx in an example signal simulation to demonstrate how effective \dedx is as a discriminating variable with this isolation applied. 
 The background falls rapidly for $\dedx > 1.8$ \MeVgcm while the majority of the signal, approximately 90\% depending on the mass, falls above that threshold.
+Over 90\% of \ac{LLP} tracks in simulated signal events pass the \Nsplit-based isolation requirement.
+
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.68\textwidth]{figures/dedx_isolation.pdf}
+\includegraphics[width=\fullfig]{figures/dedx_isolation.pdf}
 \caption{The distribution of \dedx with various selections applied in data and simulated signal events.}
 \label{fig:dedx_isolation}
 \end{figure}
 
+A few additional kinematic requirements are imposed to help reduce \ac{SM} backgrounds. 
+The momentum of the candidate track must be at least 150 \GeV, and the uncertainty on that measurement must be less than 50\%. 
+The distribution of momentum is shown in Figure~\ref{fig:nm1_p} for tracks in data and simulated signal events after the previously discussed requirements on clusters, transverse momentum, and isolation have been imposed.
+The signal particles are much harder on average than their backgrounds because of the high energy interactions required to produce them.
+The transverse mass, \mt, defined as 
+
+\begin{equation}
+ \mt = \sqrt{2 \pt \met (1-\cos(\Delta\phi (\met,\mathrm{track})) ) }
+\end{equation}
+
+\noindent is required to be greater than 130 \GeV to reject contributions from the decay of W bosons.
+Figure~\ref{fig:nm1_mt} shows the distribution of \mt for data and simulated events. \textbf{More comments to follow.}
 
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.68\textwidth]{figures/selection_p_nm1.pdf}
+\includegraphics[width=\fullfig]{figures/selection_p_nm1.pdf}
 \caption{The distribution of track momentum for data and simulated signal events, after previous selection requirements have been applied.}
 \label{fig:nm1_p}
+\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[draft, width=\fullfig]{figures/selection_mt_nm1.pdf}
+\caption{The distribution of $M_T$ for data and simulated signal events, after previous selection requirements have been applied.}
+\label{fig:nm1_mt}
 \end{figure}
 
 % ----------------------------------------
@@ -127,30 +149,74 @@ The background falls rapidly for $\dedx > 1.8$ \MeVgcm while the majority of the
 \section{Standard Model Rejection}
 \label{sec:sm_rejection}
 
+Because the search selects events with just a single, highly-ionizing track, backgrounds can be formed by a wide variety of \ac{SM} processes when various charged particles have a few randomly large deposits of energy in the pixel detector.
+Those backgrounds can be effectively rejected by targeting the types of particles produced rather than the processes which produce them, as \acp{LLP} will have significant differences compared to any \ac{SM} particle.
+These rejections focus on using additional features of the event, other than the kinematics or ionization of the candidate track, as it provides a powerful source of background rejection with very high signal efficiency.
+The lifetime of the particle can significantly change its detector characteristics, as discussed in Section~\ref{sec:characteristics}.
+To accomodate these differences, the \ac{SM} rejections defined in this section are split to form two signal regions, one for long-lifetimes particles, the ``stable'' region, and one for intermediate lifetime particles, the ``metastable'' region.
 
+Jets can be very effectively rejected by considering the larger-scale isolation of the candidate track.
+In this case the isolation focuses on the production of nearby particles as a jet-veto, rather than isolation from overlapping tracks to reduce high-ionization backgrounds.
+As explained in Section~\ref{sec:characteristics}, the fragmentation process which produces an \rhadron is very hard and thus is not expected to produce additional particles.
+The jet-veto uses the summed momentum of tracks with a cone of $\Delta R < 0.25$, referred to as \ptcone, which is shown in Figure~\ref{fig:nm1_isopt} for data and simulated signal events. 
+In the data this value has a peak at zero from isolated tracks such as leptons, and a long tail from jets which contains as much as 80\% of the background above 20 \GeV at this stage of the selection.
+In signal events \ptcone is strongly peaked at zero and significantly less than 1\% is above 20 \GeV. 
+This makes a requirement of $\ptcone < 20$ \GeV one of the most effective methods to reject background without losing signal efficiency.
+For the stable signal region, this cut is further tightened to $\ptcone < 5$ \GeV as it is the most effective variable remaining to extend the search reach for long lifetimes. 
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.68\textwidth]{figures/selection_isopt_nm1.pdf}
-\caption{The distribution of summed tracked momentum within a cone of $\Delta R < 0.2$ around the candidate track for data and simulated signal events, after previous selection requirements have been applied.}
+\includegraphics[width=\fullfig]{figures/selection_isopt_nm1.pdf}
+\caption{The distribution of summed tracked momentum within a cone of $\Delta R < 0.25$ around the candidate track for data and simulated signal events, after previous selection requirements have been applied.}
 \label{fig:nm1_isopt}
 \end{figure}
+
+Even for fully isolated particles, there are additional methods to reject each type of particle using information in the muon system and calorimeters.
+Muons can be identified very reliably using the tracks in the muon system, as described in Section~\ref{sec:muons}.
+For intermediate lifetimes the \acp{LLP} do not survive long enough to reach the muon system, and so muons are vetoed by rejecting tracks that associate to a muon with medium muon identification requirements.
+For longer lifetimes, this rejection is not applied because \acp{LLP} which reach the muon system can be identified as muons as often as 30\% of the time in simulated samples.
+
+Calorimeter-based particle rejection relies on the expected small deposits of energy from \acp{LLP}. 
+When the lifetime is long enough to reach the calorimeter, a \ac{LLP} deposits little of its energy as it traverses the material, as discussed in Section~\ref{sec:characteristics}. 
+Even when the particle does decay before the calorimeter, the majority of its energy is carried away by the \ac{LSP} and not deposited in the calorimeter.
+In both cases the energy is expected to be distributed across the layers of the calorimeters and not peaked in just one layer. 
+This can be quantified in terms of \ep, the ratio of calorimeter energy of a nearby jet to the track momentum, and \emfrac, the fraction of energy in that jet within the electromagnetic calorimeter.
+When no jets fall within a cone of 0.05 of the particle, \ep and \emfrac are both defined as zero.
+\ep is expected to be above 1.0 for typical \ac{SM} particles because of calibration and the contributions from other nearby particles.
+At these momenta there is no significant zero fraction due to interactions with the detector or insufficent energy deposits (see Section~\ref{sec:zero_fraction}). 
+\emfrac is peaked close to 1.0 for electrons, and distributed between 10\% and 90\% for hadrons.
+
+These trends can be seen in the two dimensional distribution for signal in Figure~\ref{fig:eoverp_emfrac} for stable and metastable (10 ns) events.
+The majority of \rhadrons in both samples fall into the bin for $\ep = 0$ and $\emfrac = 0$ because the majority of the time there is no associated jet. 
+When there is an associated jet \ep is typically still below 0.1, and the \emfrac is predominantly under 0.8.
+Figure~\ref{fig:eoverp_emfrac} also includes simulated Z decays to electrons or tau leptons.
+From the decays to electrons it is clear that the majority of electrons have \emfrac above 0.9.
+The tau decays include a variety of products.
+Muons can be seen in the bin where $\ep = 0$ and $\emfrac = 0$ because they do not have an associated jet.
+Electrons fall into the range where $\ep > 1$ and $\emfrac > 0.9$.
+Hadronic tau decays are the most common, and fall in the range of $0.1 < \emfrac < 0.9$ and $\ep > 1.0$. 
 
 \begin{figure}[htb]
 \centering
 \subfloat[]{
-  \includegraphics[width=0.48\textwidth]{figures/zee_eoverp_emfrac.pdf}
+  \includegraphics[width=\halffig]{figures/zee_eoverp_emfrac.pdf}
 }
 \subfloat[]{
-  \includegraphics[width=0.48\textwidth]{figures/ztautau_eoverp_emfrac.pdf}
+  \includegraphics[width=\halffig]{figures/ztautau_eoverp_emfrac.pdf}
 }\\
 \subfloat[]{
-  \includegraphics[width=0.48\textwidth]{figures/rhad_eoverp_emfrac.pdf}
+  \includegraphics[width=\halffig]{figures/stable_eoverp_emfrac.pdf}
 }
-\caption{The normalized, two-dimensional distribution of $E/p$ and EM fraction for simulated (a) $Z\rightarrow ee$, (b) $Z\rightarrow \tau\tau$ and (c) 1200 GeV R-Hadron events.}
-\label{fig:nm1_isopt}
+\subfloat[]{
+  \includegraphics[draft, width=\halffig]{figures/metastable_eoverp_emfrac.pdf}
+}
+\caption{The normalized, two-dimensional distribution of $E/p$ and \emfrac for simulated (a) $Z\rightarrow ee$, (b) $Z\rightarrow \tau\tau$, (c) 1200 GeV Stable R-Hadron events, and (d) 1200 GeV, 10 ns R-Hadron events.}
+\label{fig:eoverp_emfrac}
 \end{figure}
 
+These differences motivate an electron rejection by requiring an \emfrac below 0.9.
+Similarly, isolated hadrons are rejected by requiring $\ep < 1.0$.
+These requirements combine to remove the majority of isolated electrons and hadrons but retain over 95\% of the simulated signal across a range of masses and lifetimes.
 
 % ----------------------------------------
 
