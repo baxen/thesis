@@ -39,14 +39,7 @@ As discussed in Section~\ref{sec:characteristics}, signal events can produce \me
 The decays of \rhadrons to neutralinos can produce missing energy when the neutralinos go undetected in the calorimeters.
 \acp{LLP} which do not decay before the calorimeters also can produce missing energy because they do not deposit much energy. 
 Either case to some extent relies on kinematic degrees of freedom to produce missing energy, as the pair-produced \acp{LLP} tend to balance each other in the transverse plain.
-That balance results in a relatively low efficiency for long-lifetime particles, roughly 40\%, and efficiencies between 65\% and 95\% for shorter lifetimes depending on both the mass and the lifetime, as seen in Figure~\ref{fig:trigger_efficiency}. 
-
-\begin{figure}[h]
-\centering
-\includegraphics[draft, width=.68\textwidth]{figures/trigger_efficiency.pdf}
-\caption{The trigger efficiency of the \met trigger as a function of mass and lifetime.}
-\label{fig:trigger_efficiency}
-\end{figure}
+That balance results in a relatively low efficiency for long-lifetime particles, roughly 40\%, and efficiencies between 65\% and 95\% for shorter lifetimes depending on both the mass and the lifetime.
 
 % ----------------------------------------
 
@@ -125,9 +118,10 @@ The transverse mass, \mt, defined as
  \mt = \sqrt{2 \pt \met (1-\cos(\Delta\phi (\met,\mathrm{track})) ) }
 \end{equation}
 
-\noindent is required to be greater than 130 \GeV to reject contributions from the decay of W bosons.
-Figure~\ref{fig:nm1_mt} shows the distribution of \mt for data and simulated events. \textbf{More comments to follow.}
-
+\noindent estimates the mass of a decay of to a single charged particle and an undetected particle and is required to be greater than 130 \GeV to reject contributions from the decay of W bosons.
+Figure~\ref{fig:nm1_mt} shows the distribution of \mt for data and simulated signal events.
+The signal is distributed over a wide range of \mt, with about 90\% above the threshold value of 130 \GeV. 
+The data shows a dual-peaked structure, where the first peak comes from W boson decays and the second peak is a kinematic shaping from the requirements on \met and the track \pt in dijet events.
 
 \begin{figure}[h]
 \centering
@@ -139,7 +133,7 @@ Figure~\ref{fig:nm1_mt} shows the distribution of \mt for data and simulated eve
 
 \begin{figure}[h]
 \centering
-\includegraphics[draft, width=\fullfig]{figures/selection_mt_nm1.pdf}
+\includegraphics[width=\fullfig]{figures/selection_mt_nm1.pdf}
 \caption{The distribution of $M_T$ for data and simulated signal events, after previous selection requirements have been applied.}
 \label{fig:nm1_mt}
 \end{figure}
@@ -188,7 +182,9 @@ At these momenta there is no significant zero fraction due to interactions with 
 
 These trends can be seen in the two dimensional distribution for signal in Figure~\ref{fig:eoverp_emfrac} for stable and metastable (10 ns) events.
 The majority of \rhadrons in both samples fall into the bin for $\ep = 0$ and $\emfrac = 0$ because the majority of the time there is no associated jet. 
-When there is an associated jet \ep is typically still below 0.1, and the \emfrac is predominantly under 0.8.
+In the stable sample, when there is an associated jet, \ep is typically still below 0.1, and the \emfrac is predominantly under 0.8.
+In the metastable sample, on the other hand, \ep is larger but still typically below 0.1 because of actual jets produced during the decay.
+The \emfrac is much lower on average in this case, below 0.1, because the 10 ns lifetime particles rarely decay before passing through the electromagnetic calorimeter.
 Figure~\ref{fig:eoverp_emfrac} also includes simulated Z decays to electrons or tau leptons.
 From the decays to electrons it is clear that the majority of electrons have \emfrac above 0.9.
 The tau decays include a variety of products.
@@ -208,7 +204,7 @@ Hadronic tau decays are the most common, and fall in the range of $0.1 < \emfrac
   \includegraphics[width=\halffig]{figures/stable_eoverp_emfrac.pdf}
 }
 \subfloat[]{
-  \includegraphics[draft, width=\halffig]{figures/metastable_eoverp_emfrac.pdf}
+  \includegraphics[width=\halffig]{figures/metastable_eoverp_emfrac.pdf}
 }
 \caption{The normalized, two-dimensional distribution of $E/p$ and \emfrac for simulated (a) $Z\rightarrow ee$, (b) $Z\rightarrow \tau\tau$, (c) 1200 GeV Stable R-Hadron events, and (d) 1200 GeV, 10 ns R-Hadron events.}
 \label{fig:eoverp_emfrac}
@@ -222,8 +218,77 @@ These requirements combine to remove the majority of isolated electrons and hadr
 
 \section{Ionization}
 
-\subsection{dE/dx Calibration}
+The final requirements on the candidate track are the primary discriminating variables, the ionization in the pixel detector and the corresponding mass. 
+That ionization is measured in terms of \dedx, which was shown for data and simulated signal events in Figure~\ref{fig:dedx_isolation}.
+\dedx is dramatically greater for the high mass signal particles than the backgrounds, which start to fall immediately after the minimally ionizing peak at 1.1 \MeVgcm. 
+The \dedx for candidate tracks must be greater than a pseudorapidity-dependent threshold, specifically $1.80 - 0.11 |\eta| + 0.17 \eta^2 - 0.05 |\eta|^3 $~\MeV~g$^{-1}$~cm$^{-2}$, in order to correct for an approximately 5\% dependence of the \ac{MIP} peak on $\eta$. 
+The requirement was chosen as part of the signal region optimization, and manages to reduce the backgrounds by a factor of 100 while remaining 70-90\% efficient for simulated signal events depending on the mass.
 
 \subsection{Mass Estimation}
 \label{sec:mass_requirement}
+The mean value of ionization in silicon is governed by the Bethe-Bloch formula and the most probable value follows a Landau-Vavilov distribution~\cite{pdg}. 
+Those forms inspire a parametric description of \dedx in terms of $\beta\gamma$, 
+
+\begin{equation}
+(\dedx)_\mathrm{MPV}(\beta \gamma) = {p_1\over \beta^{p_3}}\mathrm{ln}(1+[p_2\beta\gamma]^{p_5})-p_4 \label{eq:bbfun}
+\end{equation}
+
+\noindent which performs well in the range $0.3< \beta\gamma<1.5$.
+This range includes the expected range of $\beta\gamma$ for the particles targetted for this search, with $\beta\gamma \approx 2.0$ for lower mass particles (O(100 \GeV)) and up to $\beta\gamma \approx 0.5$ for higher mass particles (O(1000 \GeV)). 
+The parameters, $p_i$, are fit using a 2015 data sample of low-momentum pions, kaons, and protons as described in Ref.~\cite{ATLAS-CONF-2011-016}. 
+Figure~\ref{fig:dedx_momentum} shows the two-dimensional distribution of \dedx and momentum along with the above fitted values for $(\dedx)_\mathrm{MPV}$.
+
+\begin{figure}
+\centering
+\includegraphics[width=\fullfig]{figures/dedx_momentum.pdf}
+\caption{Two-dimensional distribution of $\dedx$ versus charge signed momentum (qp) for minimum-bias tracks. The fitted distributions of the most probable values for pions, kaons and protons are superimposed.}
+\label{fig:dedx_momentum}
+\end{figure}
+
+The above equation~(\ref{eq:bbfun}) is then numerically inverted to estimate $\beta\gamma$ and then mass for each candidate track.
+In simulated signal events, the mean of this mass value reproduces the generated mass up to around 1800 \GeV to within 3\%, and 3\% shift is applied to correct for this difference.
+The mass distributions prior to this correction are shown for a few stable mass points in Figure~\ref{fig:mass_dedx}.
+The large widths of these distributions come from the high variability in energy deposits in the pixel detector, but the means converge to the expected values.
+
+\begin{figure}
+\centering
+\includegraphics[width=\fullfig]{figures/mass_dedx.pdf}
+\caption{The distribution of mass estimated using \dedx for simulated stable \rhadrons with masses between 1000 and 1600 \GeV.}
+\label{fig:mass_dedx}
+\end{figure}
+
+This analysis evaluates expected yields and the resulting cross sectional limits using windows in this mass variable.
+The windows are formed by fitting mass distributions like those in Figure~\ref{fig:mass_dedx} to Gaussian distribution and taking al events that fall within $\pm 1.4 \sigma$ of the mean.
+As can be seen in Figure~\ref{fig:mass_dedx}, typical values for this width are $\sigma \approx 300-500$ \GeV depending on the generated mass.
+
+\section{Summary}
+
+The numbers of events passing each requirement through ionization are shown in Table~\ref{tab:cutflow} for the full 2015 dataset and a simulated 1600 \GeV, 10 ns lifetime \rhadron sample. 
+The table highlights the overall acceptance $\times$ efficiency for signal events, which for this example is 19\%.
+The major losses of signal events occur first because of acceptance as only about 65\% of events produce a charged \rhadron and in the metastable case only some of those particles propagate through the pixel detector depending on the lifetime.
+The losses in efficiency come primarily from requiring a well-measured, high-momentum track.
+Between \ac{SM} rejection and ionization, this signal region reduces the background of tracks which pass the kinematic requirements down by an additional factor of almost 2000.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l r r}
+  \hline
+  Selection & Exp. Signal Events & Observed Events in \lumi~fb\tsup{-1} \\
+  \hline
+  Generated                    & 26.0 $\pm$ 0.3          & \\
+  \met Trigger                 & 24.8 $\pm$ 0.3 ($95\%$) & \\
+  $\met > 130$ \GeV            & 23.9 $\pm$ 0.3 ($92\%$) & \\
+  Track Quality and $\pt > 50$ & 10.7 $\pm$ 0.2 ($41\%$) & 368324 \\
+  Isolation Requirement        & 9.0  $\pm$ 0.2 ($35\%$) & 108079 \\
+  Track $p > 150$ \GeV         & 6.6  $\pm$ 0.2 ($25\%$) & 47463 \\
+  $\mt > 130$ \GeV             & 5.8  $\pm$ 0.2 ($22\%$) & 18746 \\
+  Electron and Hadron Veto     & 5.5  $\pm$ 0.2 ($21\%$) & 3612 \\
+  Muon Veto                    & 5.5  $\pm$ 0.2 ($21\%$) & 1668 \\
+  Ionization Requirement       & 5.0  $\pm$ 0.1 ($19\%$) & 11 \\
+  \hline
+\end{tabular}
+\caption{The expected number of events at each level of the selection for metastable 1600~\GeV, 10 ns \rhadrons, along with the number of events observed in data, for \lumi~fb\tsup{-1}. The simulated yields are shown with statistical uncertainties only. The total efficiency $\times$ acceptance is also shown for the signal.}
+\label{tab:cutflow}
+\end{table}
+
 % ----------------------------------------
