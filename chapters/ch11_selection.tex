@@ -261,12 +261,10 @@ This analysis evaluates expected yields and the resulting cross sectional limits
 The windows are formed by fitting mass distributions like those in Figure~\ref{fig:mass_dedx} to Gaussian distribution and taking al events that fall within $\pm 1.4 \sigma$ of the mean.
 As can be seen in Figure~\ref{fig:mass_dedx}, typical values for this width are $\sigma \approx 300-500$ \GeV depending on the generated mass.
 
-\section{Summary}
+\section{Efficiency}
 
 The numbers of events passing each requirement through ionization are shown in Table~\ref{tab:cutflow} for the full 2015 dataset and a simulated 1600 \GeV, 10 ns lifetime \rhadron sample. 
 The table highlights the overall acceptance $\times$ efficiency for signal events, which for this example is 19\%.
-The major losses of signal events occur first because of acceptance as only about 65\% of events produce a charged \rhadron and in the metastable case only some of those particles propagate through the pixel detector depending on the lifetime.
-The losses in efficiency come primarily from requiring a well-measured, high-momentum track.
 Between \ac{SM} rejection and ionization, this signal region reduces the background of tracks which pass the kinematic requirements down by an additional factor of almost 2000.
 
 \begin{table}[h]
@@ -290,5 +288,30 @@ Between \ac{SM} rejection and ionization, this signal region reduces the backgro
 \caption{The expected number of events at each level of the selection for metastable 1600~\GeV, 10 ns \rhadrons, along with the number of events observed in data, for \lumi~fb\tsup{-1}. The simulated yields are shown with statistical uncertainties only. The total efficiency $\times$ acceptance is also shown for the signal.}
 \label{tab:cutflow}
 \end{table}
+
+
+There is a strong dependence of this efficiency on lifetime and mass, with efficiencies dropping to under 1\% at low lifetimes.
+Figure~\ref{fig:efficiency} shows the dependence on both mass and lifetime for all signal samples considered in this search.
+The dependence on mass is relatively slight and comes predominantly from the increasing fraction of \rhadrons which pass the ionization cut with increasing mass.
+The trigger and \met requirements are most efficient for particles that decay before reaching the calorimeters.
+However, the chance of a particle to be reconstructed as a high-quality track decreases significantly at low lifetimes as the particle does not propagate sufficiently through the inner detector.
+These effects lead to a maximum in the selection efficiency for lifetimes around 10-30 ns.
+
+\begin{figure}
+\centering
+\subfloat[]{
+  \includegraphics[width=\halffig]{figures/efficiency_mass.pdf}
+}
+\subfloat[]{
+  \includegraphics[width=\halffig]{figures/efficiency_lifetime.pdf}
+}
+\label{fig:efficiency}
+\caption{The acceptance $\times$ efficiency as a function of \rhadron (a) mass and (b) lifetime. (a) shows all of the combinations of mass and lifetime considered in this search, and (b) highlights the lifetime dependence for 1000 \GeV and 1600 \GeV \rhadrons.}
+\end{figure}
+
+The inefficiency of this signal region at short lifetimes comes almost exclusively from an acceptance effect, in that the particles do not reach the necessarily layers of the SCT.
+This can be seen more clearly by defining a fiducial region which includes events with at least one \rhadron that is produced with non-zero charge, $\pt > 50$ \GeV, $p > 150$ \GeV, $|\eta| < 2.5$, and a decay distance greater than 37 cm in the transverse plane.
+At short (1 ns) lifetimes, the acceptance into this region is as low as 4\%. 
+Once this acceptance is accounted for, the selection efficiency ranges from 25\% at lifetimes of 1 ns up to 45\% at lifetimes of 10 ns. 
 
 % ----------------------------------------
