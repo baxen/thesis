@@ -22,7 +22,7 @@ In addition to an explicit requirement on ionization, this search constructs a m
 
 The strategy discussed here is optimized for lifetimes of $O(1)$ - $O(10)$ ns. 
 Pixel ionization is especially useful in this regime as particles only need to propagate through the first seven layers of the inner detector, about 37 cm from the beam axis. 
-The search is still competitive with other searches for \acp{LLP} at longer lifetimes, because the primary discriminating variables are still applicable even for particles that do not decay within the detector. 
+The search is still competitive with other searches for \acp{LLP} at longer lifetimes, because the primary discriminating variables are still applicable even for particles that do not decay within the detector~\cite{stable2016}. 
 Although the basic strategy remains the same for all lifetimes, two signal regions are defined to optimize separately for intermediate and long lifetime particles.
 
 
@@ -30,11 +30,11 @@ Although the basic strategy remains the same for all lifetimes, two signal regio
 
 \section{Trigger}
 
-Triggering remains one of the primary difficulties in defining an event selection with high signal efficiency in a search for \acp{LLP}. 
+Triggering remains a significant difficulty in defining an event selection with high signal efficiency in a search for \acp{LLP}. 
 There are no triggers available in the current ATLAS system that can fire directly from a high momentum track with large ionization (Section~\ref{sec:trigger}). 
-Although in some configurations a charged \ac{LLP} can fire muon triggers, this requirement introduces significant model dependence on both the allowed lifetimes and the interactions in the calorimeter.
+Although in some configurations a charged \ac{LLP} can fire muon triggers, this requirement introduces significant model dependence on both the allowed lifetimes and the interactions in the calorimeter~\cite{rhad_atlas}.
 
-For a search targetting particles which may decay prior to reaching the muon system, the most efficient available trigger is based on missing energy.
+For a search targetting particles which may decay prior to reaching the muon system, the most efficient available trigger is based on missing energy~\cite{rhad_atlas}.
 As discussed in Section~\ref{sec:characteristics}, signal events can produce \met by two primary mechanisms.
 The decays of \rhadrons to neutralinos can produce missing energy when the neutralinos go undetected in the calorimeters.
 \acp{LLP} which do not decay before the calorimeters also can produce missing energy because they do not deposit much energy. 
@@ -235,7 +235,7 @@ Those forms inspire a parametric description of \dedx in terms of $\beta\gamma$,
 
 \noindent which performs well in the range $0.3< \beta\gamma<1.5$.
 This range includes the expected range of $\beta\gamma$ for the particles targetted for this search, with $\beta\gamma \approx 2.0$ for lower mass particles (O(100 \GeV)) and up to $\beta\gamma \approx 0.5$ for higher mass particles (O(1000 \GeV)). 
-The parameters, $p_i$, are fit using a 2015 data sample of low-momentum pions, kaons, and protons as described in Ref.~\cite{ATLAS-CONF-2011-016}. 
+The parameters, $p_i$, are fit using a 2015 data sample of low-momentum pions, kaons, and protons as described in Ref.~\cite{dedxnote}. 
 Figure~\ref{fig:dedx_momentum} shows the two-dimensional distribution of \dedx and momentum along with the above fitted values for $(\dedx)_\mathrm{MPV}$.
 
 \begin{figure}
@@ -305,8 +305,8 @@ These effects lead to a maximum in the selection efficiency for lifetimes around
 \subfloat[]{
   \includegraphics[width=\halffig]{figures/efficiency_lifetime.pdf}
 }
-\label{fig:efficiency}
 \caption{The acceptance $\times$ efficiency as a function of \rhadron (a) mass and (b) lifetime. (a) shows all of the combinations of mass and lifetime considered in this search, and (b) highlights the lifetime dependence for 1000 \GeV and 1600 \GeV \rhadrons.}
+\label{fig:efficiency}
 \end{figure}
 
 The inefficiency of this signal region at short lifetimes comes almost exclusively from an acceptance effect, in that the particles do not reach the necessarily layers of the SCT.
