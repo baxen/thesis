@@ -4,9 +4,8 @@
 % --------------------------------------------------------------------------------
 
 The event selection discussed in the previous section focuses on detector signatures, emphasizing a single high-momentum, highly-ionizing track.
-That track is then required to be in some way inconsistent with the expected properties of \ac{SM} particles, with various requirements designed to reject jets, hadrons, electrons, and muons (Section~\ref{sec:sm_rejection}.
-Were these selections perfectly effective, the signal region would be entirely empty in data.
-So the background from this search comes entirely from reducible backgrounds that are outliers of various distributions like momentum, $\dedx$, and \ptcone.
+That track is then required to be in some way inconsistent with the expected properties of \ac{SM} particles, with various requirements designed to reject jets, hadrons, electrons, and muons (Section~\ref{sec:sm_rejection}).
+So the background from this search comes entirely from reducible backgrounds that are outliers of various distributions like $\dedx$, \emfrac, and \ptcone.
 The simulation can be tuned in various ways to do an excellent job of modeling the average properties of each particle type~\cite{atlas_sim}, but it is not necessarily expected to accurately reproduce outliers.
 For these reasons, the background estimation used for this search is estimated entirely using data.
 
@@ -34,10 +33,10 @@ Specifically, muons are selected requiring Medium muon identification, electrons
 
 Figure~\ref{fig:background_species} shows the distributions of momentum and \dedx for these categories in data, after requiring the event level selection as well as the track requirements on $\pt$, hits, and \Nsplit, as discussed in Section~\ref{sec:track_requirements}.
 Simulated signal events are included for reference.
-These distribution are only illustrative of the differences between types, as the rejection requirements could alter their shape, especially for momentum which enters directly into \ep and can inderectly affect muon identification.
-However they do show a clear difference in both distributions.
-Momentum is expected to vary significantly because of the production mechanisms for the different species.
-\dedx is different between types because of incomplete isolation; although the requirement on $\Nsplit$ helps to reduce the effect it does not completely remove the effect of overlaps.
+These distribution are only illustrative of the differences between types, as the rejection requirements could alter their shape. This is especially significant for momentum which enters directly into \ep and can inderectly affect muon identification.
+However the various types show clear differences in both distributions.
+Momentum is expected to vary significantly because of the production mechanisms for the different species. \textbf{Note for Laura: Interesting that the momentum tail is so much higher for electrons than muons, any idea why that would happen?}
+\dedx is different between types because of incomplete isolation; although the requirement on $\Nsplit$ helps to reduce the contribution of nearby particles it does not completely remove the effect of overlaps.
 Muons are better isolated and thus have the smallest fraction of \dedx above the threshold of 1.8 \MeVgcm; hadrons and electrons have a larger fraction above this threshold.
 
 \begin{figure}[h]
@@ -62,12 +61,12 @@ The background method will not have significant dependence on the relative contr
 The data-driven background estimation relies on the independence of ionization and other aspects of the event.
 For standard model particles with momenta above 50 \GeV, \dedx is not correlated with momentum.
 So, the proposed method to estimate the mass distribution of the signal region is to use momentum from a track with low \dedx (below the threshold value) and to combine it with a random \dedx value from a \dedx template.
-The resulting track is just as likely as the original, and so a number of such random generations forms a distribution of mass for the signal region.
+The resulting track is just as likely as the original, so a number of such random generations forms a distribution of mass for the signal region.
 
 Algorithmically this method is implemented by forming two distinct \acp{CR}.
 The first \ac{CR}, CR1, is formed by applying the entire event selection from Chapter~\ref{ch:selection} up to the \dedx and mass requirements.
 The \dedx requirement is instead inverted for this region.
-Because of the independence of \dedx, the tracks in this control region have the same kinematic distribution as the tracks in the signal region, and are used to measure a two-dimensional template of momentum and $\eta$. 
+Because of the independence of \dedx, the tracks in this control region have the same kinematic distribution as the tracks in the signal region, and are used to measure a two-dimensional template of $p$ and $\eta$. 
 The second \ac{CR}, CR2, is formed from the event selection through the \dedx requirement, but with an inverted \met requirement.
 The tracks in this control region are expected to have similar \dedx distributions to the signal region, and so this region is used to measure a two-dimensional template of \dedx and $\eta$. 
 
@@ -75,11 +74,11 @@ The contribution of any signal to the control regions is minimized by the invert
 Only less than 10\% of simulated signal events have either \dedx or \met below the threshold values in the original signal region, while the backgrounds are significantly enhanced by inverting those requirements.
 The signal contamination is less than 1\% in both control regions for all of the simulated masses and lifetimes considered in this analysis.
 
-With those measured templates, the shape of the mass estimation is generated by first selecting a random $p$, $\eta$ combination from CR1. 
+With those measured templates, the shape of the mass estimation is generated by first selecting a random $(p,\ \eta)$ combination from CR1. 
 This momentum value is combined with a \dedx value taken from the appropriate distribution of \dedx for the selected $\eta$ from CR2. 
 The use of $\eta$ in both random samplings controls for any correlation between $p$, \dedx, and $\eta$. 
 Those values are then used to calculate a mass in the same way that is done for regular tracks in data, see Section~\ref{sec:mass_requirement}.
-As this procedure includes all \dedx values, the cut at $1.8 \MeVgcm$ is then enforced to fully model the signal region.
+As this procedure includes all \dedx values, the cut at 1.8 \MeVgcm is then enforced to fully model the signal region.
 The generated mass distribution is then normalized by scaling the background estimate to the data in the region $M < 160$ \GeV, where signals of this type have already been excluded~\cite{SUSY-2014-09}.
 This normalization takes place before the ionization requirement.
 
@@ -87,12 +86,46 @@ This normalization takes place before the ionization requirement.
 
 \section{Validation}
 
-The validity of the background estimation can be evaluated in both data and simulation.
-The underlying assumptions, that random combinations of \dedx and momentum can predict a mass distribution in another region, can be tested using simulated samples where concerns like multiple particle types can be controlled.
+The validity of the background estimation technique can be evaluated in both data and simulation.
+The underlying assumption that random combinations of \dedx and momentum can predict a mass distribution in another region can be tested using simulated samples where concerns like multiple particle types can be controlled.
 Using the same technique in another set of signal-depleted regions in data then extends this confidence to the more complicated case where several particle species are inherently included.
 
 \subsection{Closure in Simulation}
+The first test of the procedure is done using a simulated sample of $W\rightarrow\mu\nu$ decays.
+These types of events provide the ingredients required to test the background estimate, \met and isolated tracks, with high statistics.
+In this example there is no signal, so simulated events in the orthogonal \acp{CR} are used to estimate the shape of the mass distribution of the simulated events in the signal region.
+To reflect the different topology for W boson decays, the \acp{CR} use slightly modified definitions.
+In all \acp{CR}, the requirement of $p > 150$ \GeV and the \ac{SM} rejection requirements are removed.
+Additionally, for the signal region the requirement on \met is relaxed to 30 \GeV and the corresponding inverted requirement on CR2 is also set at 30 \GeV.
+
+With these modified selections, the simulated and randomly generated distributions of \mdedx are shown in Figure~\ref{fig:closure_mass}. 
+This figure includes the mass distributions before and after the requirement on \dedx, which significantly shapes the distributions.
+In both cases the background estimation technique reproduces the shape of \mdedx in the signal region.
+Their is a small difference in the positive tail of the mass distribution prior to the ionization cut, where the random events underestimate the fraction of tracks with mass above 150 \GeV by about 20\%.
+After the ionization requirement, however, this discrepancy is not present and the two distributions agree to within statistical uncertainties.
+
+\begin{figure}[h]
+\centering
+\subfloat[]{
+  \includegraphics[width=\halffig]{figures/closure_mass_noion.pdf}
+}
+\subfloat[]{
+  \includegraphics[width=\halffig]{figures/closure_mass.pdf}
+}\\
+\caption{The distribution of \mdedx (a) before and (b) after the ionization requirement for tracks in simulated W boson decays and for the randomly generated background estimate.}
+\label{fig:closure_mass}
+\end{figure}
+
+The ability of the technique to reproduce the shape in simulated events shows that the technique works as expected.
+No significant biases are acquired in using low \dedx events to select kinematic templates or in using low \met events to select ionization templates, as either would result in a mismodeling of the shape of the mass distribution.
+The simulated events contain only one particle type, however, so this test only establishes that the technique works well when the the \acp{CR} are populated by exactly the same species.
 
 \subsection{Validation Region in Data}
+The second test of the background estimate is performed using data in an orthogonal validation region.
+The validation region, and the corresponding \acp{CR}, are formed using the same selection requirements as in the nominal method but with a modified requirement on momentum, $50 < p < 150$ \GeV.
+This allows the technique to be checked in a region with very similar properties but that is signal depleted, as the majority of the signal has momentum above 150 \GeV while the backgrounds are enhanced below that threshold.
+Any biases on the particle composition of the \acp{CR} will be reflected in the \acp{CR} used to estimate the mass distribution in the validation region.
+
+% Show the plots, talk about how the good agreement means the particle species are similar in CR2 
 
 % ----------------------------------------
