@@ -3,12 +3,15 @@
 \label{ch:selection}
 
 The \acp{LLP} targeted by this search differ in their interactions with the detector from \ac{SM} particles primarily because of their large mass. 
-When produced at the energies available at the \ac{LHC}, that large mass results in a low $\beta$ and such slow-moving particles heavily ionize in detector material. 
+When produced at the energies available at the \ac{LHC}, that large mass results in a low $\beta$. 
+Such slow-moving particles heavily ionize in detector material. 
 Each layer of the pixel detector provides a measurement of that ionization, through \ac{ToT}, as discussed in Section~\ref{sec:pixel}. 
-The ionization in the pixel detector, quantified in terms of \dedx, provides the major focus for this search technique, both for its discriminating power and also because of the large range of lifetimes where it can be used. The \dedx variable needs to be augmented with a few additional selection requirements to form a complete search. 
+The ionization in the pixel detector, quantified in terms of \dedx, provides the major focus for this search technique.
+It is effective both for its discriminating power and also because of the large range of lifetimes where it can be used. 
+However \dedx needs to be augmented with a few additional selection requirements to form a complete search. 
 
 Ionization is not currently available in any form during triggering, so this search instead relies on \met to trigger signal events.
-Although triggering on \met is not particularly efficient, \met is often large for many production mechanisms of \acp{LLP}, as discussed in Section~\ref{sec:characteristics}.
+Although triggering on \met can be inefficient, \met is often large for many production mechanisms of \acp{LLP}, as discussed in Section~\ref{sec:characteristics}.
 
 Ionization is most effective in rejecting backgrounds for well-measured, high-momentum tracks, so some basic requirements on quality and kinematics are placed on the particles considered in this search. 
 In particular a newly introduced tracking variable is very effective in removing highly-ionizing backgrounds caused by overlapping tracks. 
@@ -17,7 +20,7 @@ These techniques provide a significant analysis improvement over previous iterat
 
 The ionization measurement with the Pixel detector can be calibrated to provide an estimator of $\beta\gamma$. That estimate, together with the momentum measurement provided by tracking, can be used to reconstruct a mass for each track which traverses the pixel detector. 
 That mass variable will be peaked at the \ac{LLP} mass for any signal, and provides an additional tool to search for an excess.
-In addition to an explicit requirement on ionization, this search constructs a mass-window for each targeted mass range in order to evaluate any excess of events and to set limits. 
+In addition to an explicit requirement on ionization, this search constructs a mass-window for each targeted signal mass in order to evaluate any excess of events and to set limits. 
 %Construction, calibration, and requirements for the mass variable are discussed in Section~\ref{sec:mass_requirement}.
 
 The strategy discussed here is optimized for lifetimes of $O(1)$ - $O(10)$ ns. 
@@ -34,7 +37,7 @@ Triggering remains a significant difficulty in defining an event selection with 
 There are no triggers available in the current ATLAS system that can fire directly from a high momentum track with large ionization (Section~\ref{sec:trigger}). 
 Although in some configurations a charged \ac{LLP} can fire muon triggers, this requirement introduces significant model dependence on both the allowed lifetimes and the interactions in the calorimeter~\cite{rhad_atlas}.
 
-For a search targetting particles which may decay prior to reaching the muon system, the most efficient available trigger is based on missing energy~\cite{rhad_atlas}.
+For a search targeting particles which may decay prior to reaching the muon system, the most efficient available trigger is based on missing energy~\cite{rhad_atlas}.
 As discussed in Section~\ref{sec:characteristics}, signal events can produce \met by two primary mechanisms.
 The decays of \rhadrons to neutralinos can produce missing energy when the neutralinos go undetected in the calorimeters.
 \acp{LLP} which do not decay before the calorimeters also can produce missing energy because they do not deposit much energy. 
@@ -46,17 +49,17 @@ That balance results in a relatively low efficiency for long-lifetime particles,
 \section{Kinematics and Isolation}
 \label{sec:track_requirements}
 
-After the trigger requirement, each event is required to have a primary vertex reconstructed from at least two well-measured tracks in the inner detector, each with $\pt > 400$ MeV. 
+After the trigger requirement, each event is required to have a primary vertex reconstructed from at least two well-measured tracks in the inner detector, each with $\pt > 400$ \MeV. 
 If more than one such vertex exists, the primary vertex is taken to be the one with the largest summed track momentum for all tracks associated to that vertex. 
-The offline reconstructed \met is required to be above 130 GeV to additionally reject \ac{SM} backgrounds.
+The offline reconstructed \met is required to be above 130 \GeV to additionally reject \ac{SM} backgrounds.
 The transverse missing energy is calculated using fully reconstructed and calibrated offline objects, as described in Section~\ref{sec:missing_energy}. 
 In particular the \met definition in this selection uses jets reconstructed with the anti-$k_t$ algorithm with radius $R = 0.4$ from clusters of energy in the calorimeter (Section~\ref{sec:jets}) and with $p_T > 20$ \GeV, as well as reconstructed muons, electrons, and tracks not identified as another object type.
 
 The \met distributions are shown for data and a few simulated signals in Figure~\ref{fig:nm1_met}, after the trigger requirement.
-The cut placed at 130 GeV is 95\% efficient for metastable and 90\% efficient for stable particles, because of the missing energy generating mechanisms discussed previously.
-The distribution of data in this figure and subsequent figures in this section can be interpreted as the distribution of backgrounds, as any signal contamination would be negligible if present at these early stages of the selection (prior to the final requirement on mass). 
+The cut placed at 130 \GeV is 95\% efficient for metastable and 90\% efficient for stable particles, because of the missing energy generating mechanisms discussed previously.
+The distribution of data in this figure and subsequent figures in this section can be interpreted as the distribution of backgrounds, as any signal contamination would be negligible if present at these early stages of the selection (prior to the final requirement on ionization). 
 The background falls rapidly with missing energy, motivating the direct requirement on \met for the signal region.
-Although a tigher requirement than the specified value of 130 \GeV would seem to increase the search potential from these early distributions, other requirements are more optimal when taken as a whole.
+Although a tighter requirement than the specified value of 130 \GeV would seem to increase the search potential from these early distributions, other requirements are more optimal when taken as a whole.
 The specific values for each requirement in signal region were optimized considering the increase in discovery reach for tightening the requirement on each discriminating variable. \textbf{NOTE: Is it interesting to discuss the signal region optimization process in detail? I could add another section on how the values were determined, although in truth it is at least partially historical precedence.}
 
 \begin{figure}[h]
@@ -84,7 +87,7 @@ This technique, however, fails to remove the background from tracks that overlap
 A new method, added in Run 2, identifies cluster shapes that are likely formed by multiple tracks based on a neural network classification algorithm. 
 The number of clusters that are classified this way in the pixel detector for a given track is called \Nsplit.
 As the shape of clusters requires significantly less spatial separation to identify overlaps than it does to reconstruct two fully resolved tracks, this variable is more effective at rejecting backgrounds from overlaps.
-Figure~\ref{fig:dedx_nsplit} shows the dependence of ionization on \Nsplit; as \Nsplit increases the mean of \dedx grows significantly up to twice the expected value when $\Nsplit = 4$. 
+Figure~\ref{fig:dedx_nsplit} shows the dependence of ionization on \Nsplit; as \Nsplit increases the most probable value of \dedx grows significantly up to twice the expected value when $\Nsplit = 4$. 
 
 \begin{figure}[h]
 \centering
@@ -93,7 +96,7 @@ Figure~\ref{fig:dedx_nsplit} shows the dependence of ionization on \Nsplit; as \
 \label{fig:dedx_nsplit}
 \end{figure}
 
-This requirement is very succesful in reducing the long positive tail of the \dedx distributions, as can be seen in Figure~\ref{fig:dedx_isolation}.
+This requirement is very successful in reducing the long positive tail of the \dedx distributions, as can be seen in Figure~\ref{fig:dedx_isolation}.
 Comparing the distribution for ``baseline tracks'', tracks with only the above requirements on clusters applied and before the requirement on \Nsplit, to the distribution with $\Nsplit = 0$, it is clear that the fraction of tracks with large \dedx is reduced be several orders of magnitude.
 The isolated tracks are very close to the \dedx distribution of identified muons, which are extremely well isolated on average. 
 Figure~\ref{fig:dedx_isolation} also includes the distribution of \dedx in an example signal simulation to demonstrate how effective \dedx is as a discriminating variable with this isolation applied. 
@@ -143,11 +146,11 @@ The data shows a dual-peaked structure, where the first peak comes from W boson 
 \section{Standard Model Rejection}
 \label{sec:sm_rejection}
 
-Because the search selects events with just a single, highly-ionizing track, backgrounds can be formed by a wide variety of \ac{SM} processes when various charged particles have a few randomly large deposits of energy in the pixel detector.
+Because this search selects events with just a single, highly-ionizing track, backgrounds can be formed by a wide variety of \ac{SM} processes when various charged particles have a few randomly large deposits of energy in the pixel detector.
 Those backgrounds can be effectively rejected by targeting the types of particles produced rather than the processes which produce them, as \acp{LLP} will have significant differences compared to any \ac{SM} particle.
-These rejections focus on using additional features of the event, other than the kinematics or ionization of the candidate track, as it provides a powerful source of background rejection with very high signal efficiency.
+These rejections focus on using additional features of the event, other than the kinematics or ionization of the candidate track, as they can provide a powerful source of background rejection with very high signal efficiency.
 The lifetime of the particle can significantly change its detector characteristics, as discussed in Section~\ref{sec:characteristics}.
-To accomodate these differences, the \ac{SM} rejections defined in this section are split to form two signal regions, one for long-lifetimes particles, the ``stable'' region, and one for intermediate lifetime particles, the ``metastable'' region.
+To accommodate these differences, the \ac{SM} rejections defined in this section are split to form two signal regions, one for long-lifetimes particles, the ``stable'' region, and one for intermediate lifetime particles, the ``metastable'' region.
 
 Jets can be very effectively rejected by considering the larger-scale isolation of the candidate track.
 In this case the isolation focuses on the production of nearby particles as a jet-veto, rather than isolation from overlapping tracks to reduce high-ionization backgrounds.
@@ -177,12 +180,12 @@ In both cases the energy is expected to be distributed across the layers of the 
 This can be quantified in terms of \ep, the ratio of calorimeter energy of a nearby jet to the track momentum, and \emfrac, the fraction of energy in that jet within the electromagnetic calorimeter.
 When no jets fall within a cone of 0.05 of the particle, \ep and \emfrac are both defined as zero.
 \ep is expected to be above 1.0 for typical \ac{SM} particles because of calibration and the contributions from other nearby particles.
-At these momenta there is no significant zero fraction due to interactions with the detector or insufficent energy deposits (see Section~\ref{sec:zero_fraction}). 
+At these momenta there is no significant zero fraction due to interactions with the detector or insufficient energy deposits (see Section~\ref{sec:zero_fraction}). 
 \emfrac is peaked close to 1.0 for electrons, and distributed between 10\% and 90\% for hadrons.
 
 These trends can be seen in the two dimensional distribution for signal in Figure~\ref{fig:eoverp_emfrac} for stable and metastable (10 ns) events.
 The majority of \rhadrons in both samples fall into the bin for $\ep = 0$ and $\emfrac = 0$ because the majority of the time there is no associated jet. 
-In the stable sample, when there is an associated jet, \ep is typically still below 0.1, and the \emfrac is predominantly under 0.8.
+In the stable sample, when there often is an associated jet, \ep is typically still below 0.1, and the \emfrac is predominantly under 0.8.
 In the metastable sample, on the other hand, \ep is larger but still typically below 0.1 because of actual jets produced during the decay.
 The \emfrac is much lower on average in this case, below 0.1, because the 10 ns lifetime particles rarely decay before passing through the electromagnetic calorimeter.
 Figure~\ref{fig:eoverp_emfrac} also includes simulated Z decays to electrons or tau leptons.
@@ -206,7 +209,7 @@ Hadronic tau decays are the most common, and fall in the range of $0.1 < \emfrac
 \subfloat[]{
   \includegraphics[width=\halffig]{figures/metastable_eoverp_emfrac.pdf}
 }
-\caption{The normalized, two-dimensional distribution of $E/p$ and \emfrac for simulated (a) $Z\rightarrow ee$, (b) $Z\rightarrow \tau\tau$, (c) 1200 GeV Stable R-Hadron events, and (d) 1200 GeV, 10 ns R-Hadron events.}
+\caption{The normalized, two-dimensional distribution of $E/p$ and \emfrac for simulated (a) $Z\rightarrow e e$, (b) $Z\rightarrow \tau\tau$, (c) 1200 \GeV Stable R-Hadron events, and (d) 1200 \GeV, 10 ns R-Hadron events.}
 \label{fig:eoverp_emfrac}
 \end{figure}
 
@@ -230,11 +233,11 @@ The mean value of ionization in silicon is governed by the Bethe-Bloch formula a
 Those forms inspire a parametric description of \dedx in terms of $\beta\gamma$, 
 
 \begin{equation}
-(\dedx)_\mathrm{MPV}(\beta \gamma) = {p_1\over \beta^{p_3}}\mathrm{ln}(1+[p_2\beta\gamma]^{p_5})-p_4 \label{eq:bbfun}
+(\dedx)_\mathrm{MPV}(\beta \gamma) = {p_1\over \beta^{p_3}}\ln(1+[p_2\beta\gamma]^{p_5})-p_4 \label{eq:bbfun}
 \end{equation}
 
 \noindent which performs well in the range $0.3< \beta\gamma<1.5$.
-This range includes the expected range of $\beta\gamma$ for the particles targetted for this search, with $\beta\gamma \approx 2.0$ for lower mass particles (O(100 \GeV)) and up to $\beta\gamma \approx 0.5$ for higher mass particles (O(1000 \GeV)). 
+This range includes the expected range of $\beta\gamma$ for the particles targeted for this search, with $\beta\gamma \approx 2.0$ for lower mass particles (O(100 \GeV)) and up to $\beta\gamma \approx 0.5$ for higher mass particles (O(1000 \GeV)). 
 The parameters, $p_i$, are fit using a 2015 data sample of low-momentum pions, kaons, and protons as described in Ref.~\cite{dedxnote}. 
 Figure~\ref{fig:dedx_momentum} shows the two-dimensional distribution of \dedx and momentum along with the above fitted values for $(\dedx)_\mathrm{MPV}$.
 
@@ -245,7 +248,7 @@ Figure~\ref{fig:dedx_momentum} shows the two-dimensional distribution of \dedx a
 \label{fig:dedx_momentum}
 \end{figure}
 
-The above equation~(\ref{eq:bbfun}) is then numerically inverted to estimate $\beta\gamma$ and then mass for each candidate track.
+The above equation~(\ref{eq:bbfun}) is then numerically inverted to estimate $\beta\gamma$ and the mass for each candidate track.
 In simulated signal events, the mean of this mass value reproduces the generated mass up to around 1800 \GeV to within 3\%, and 3\% shift is applied to correct for this difference.
 The mass distributions prior to this correction are shown for a few stable mass points in Figure~\ref{fig:mass_dedx}.
 The large widths of these distributions come from the high variability in energy deposits in the pixel detector, but the means converge to the expected values.
@@ -258,7 +261,7 @@ The large widths of these distributions come from the high variability in energy
 \end{figure}
 
 This analysis evaluates expected yields and the resulting cross sectional limits using windows in this mass variable.
-The windows are formed by fitting mass distributions like those in Figure~\ref{fig:mass_dedx} to Gaussian distribution and taking al events that fall within $\pm 1.4 \sigma$ of the mean.
+The windows are formed by fitting mass distributions like those in Figure~\ref{fig:mass_dedx} to Gaussian distributions and taking all events that fall within $\pm 1.4 \sigma$ of the mean.
 As can be seen in Figure~\ref{fig:mass_dedx}, typical values for this width are $\sigma \approx 300-500$ \GeV depending on the generated mass.
 
 \section{Efficiency}
@@ -309,7 +312,7 @@ These effects lead to a maximum in the selection efficiency for lifetimes around
 \label{fig:efficiency}
 \end{figure}
 
-The inefficiency of this signal region at short lifetimes comes almost exclusively from an acceptance effect, in that the particles do not reach the necessarily layers of the SCT.
+The inefficiency of this signal region at short lifetimes comes almost exclusively from an acceptance effect, in that the particles do not reach the necessary layers of the SCT.
 This can be seen more clearly by defining a fiducial region which includes events with at least one \rhadron that is produced with non-zero charge, $\pt > 50$ \GeV, $p > 150$ \GeV, $|\eta| < 2.5$, and a decay distance greater than 37 cm in the transverse plane.
 At short (1 ns) lifetimes, the acceptance into this region is as low as 4\%. 
 Once this acceptance is accounted for, the selection efficiency ranges from 25\% at lifetimes of 1 ns up to 45\% at lifetimes of 10 ns. 

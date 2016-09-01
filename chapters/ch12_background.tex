@@ -5,35 +5,20 @@
 
 The event selection discussed in the previous section focuses on detector signatures, emphasizing a single high-momentum, highly-ionizing track.
 That track is then required to be in some way inconsistent with the expected properties of \ac{SM} particles, with various requirements designed to reject jets, hadrons, electrons, and muons (Section~\ref{sec:sm_rejection}).
-So the background from this search comes entirely from reducible backgrounds that are outliers of various distributions like $\dedx$, \emfrac, and \ptcone.
+So the background for this search comes entirely from reducible backgrounds that are outliers of various distributions like $\dedx$, \emfrac, and \ptcone.
 The simulation can be tuned in various ways to do an excellent job of modeling the average properties of each particle type~\cite{atlas_sim}, but it is not necessarily expected to accurately reproduce outliers.
 For these reasons, the background estimation used for this search is estimated entirely using data.
-
-% Background sources
-%  1) Discuss what can be a background
-%  2) Tell the story of dE/dx vs type
-
-% Prediction Method
-%  3) Explain uncorrelated dE/dx and how it can predict
-%  4) Define the control regions
-%  5) Explain random procedure and normalization
-
-% Validation
-%  6) Caveats about compositon of dE/dx templates
-%  7) Show a closure test in MC (no worries about particle type)
-%  8) Show validation (and claim t gives some confidence in particle type)
-
 
 \section{Background Sources}
 
 Charged particles with lifetimes long enough to form tracks in the inner detector can be grouped into three major categories based on their detector interactions: hadrons, electrons, and muons. 
 Every particle that enters into the background for this search belongs to one of these types.
 Relatively pure samples of each of these types can be formed in data by inverting the various rejection techniques in Section~\ref{sec:sm_rejection}.
-Specifically, muons are selected requiring Medium muon identification, electrons requiring $\ep > 1.0$ and $\emfrac > 0.95$, and hadrons requiring $\ep > 1.0$ and $\emfrac < 0.95$. 
+Specifically, muons are selected requiring medium muon identification, electrons requiring $\ep > 1.0$ and $\emfrac > 0.95$, and hadrons requiring $\ep > 1.0$ and $\emfrac < 0.95$. 
 
 Figure~\ref{fig:background_species} shows the distributions of momentum and \dedx for these categories in data, after requiring the event level selection as well as the track requirements on $\pt$, hits, and \Nsplit, as discussed in Section~\ref{sec:track_requirements}.
 Simulated signal events are included for reference.
-These distribution are only illustrative of the differences between types, as the rejection requirements could alter their shape. This is especially significant for momentum which enters directly into \ep and can inderectly affect muon identification.
+These distribution are only illustrative of the differences between types, as the rejection requirements could alter their shape. This is especially significant for momentum which enters directly into \ep and can indirectly affect muon identification.
 However the various types show clear differences in both distributions.
 Momentum is expected to vary significantly because of the production mechanisms for the different species. \textbf{Note for Laura: Interesting that the momentum tail is so much higher for electrons than muons, any idea why that would happen?}
 \dedx is different between types because of incomplete isolation; although the requirement on $\Nsplit$ helps to reduce the contribution of nearby particles it does not completely remove the effect of overlaps.
@@ -47,7 +32,7 @@ Muons are better isolated and thus have the smallest fraction of \dedx above the
 \subfloat[]{
   \includegraphics[width=\halffig]{figures/p_species.pdf}
 }\\
-\caption{The distribution of (a) \dedx and (b) momentum for tracks in data and simulated signal after requiring the event level selection and the track selection on \pt, hits, and \Nsplit. Each subfigure shows the normalized distributions for tracks classified as hadrons, electrons, and muons in data and \rhadrons in the simulated signal.}
+\caption{The distribution of (a) \dedx and (b) momentum for tracks in data and simulated signal after requiring the event level selection and the track selection on \pt, hits, and \Nsplit. Each sub-figure shows the normalized distributions for tracks classified as hadrons, electrons, and muons in data and \rhadrons in the simulated signal.}
 \label{fig:background_species}
 \end{figure}
 
@@ -87,7 +72,7 @@ This normalization takes place before the ionization requirement.
 \section{Validation}
 
 The validity of the background estimation technique can be evaluated in both data and simulation.
-The underlying assumption that random combinations of \dedx and momentum can predict a mass distribution in another region can be tested using simulated samples where concerns like multiple particle types can be controlled.
+The underlying assumption that random combinations of \dedx and momentum can predict a mass distribution in an orthogonal region can be tested using simulated samples where concerns like multiple particle types can be controlled.
 Using the same technique in another set of signal-depleted regions in data then extends this confidence to the more complicated case where several particle species are inherently included.
 
 \subsection{Closure in Simulation}
@@ -116,16 +101,33 @@ After the ionization requirement, however, this discrepancy is not present and t
 \label{fig:closure_mass}
 \end{figure}
 
-The ability of the technique to reproduce the shape in simulated events shows that the technique works as expected.
+This ability to reproduce the shape of the mass distribution in simulated events shows that the technique works as expected.
 No significant biases are acquired in using low \dedx events to select kinematic templates or in using low \met events to select ionization templates, as either would result in a mismodeling of the shape of the mass distribution.
 The simulated events contain only one particle type, however, so this test only establishes that the technique works well when the the \acp{CR} are populated by exactly the same species.
 
 \subsection{Validation Region in Data}
 The second test of the background estimate is performed using data in an orthogonal validation region.
-The validation region, and the corresponding \acp{CR}, are formed using the same selection requirements as in the nominal method but with a modified requirement on momentum, $50 < p < 150$ \GeV.
-This allows the technique to be checked in a region with very similar properties but that is signal depleted, as the majority of the signal has momentum above 150 \GeV while the backgrounds are enhanced below that threshold.
-Any biases on the particle composition of the \acp{CR} will be reflected in the \acp{CR} used to estimate the mass distribution in the validation region.
+The validation region, and the corresponding \acp{CR}, are formed using the same selection requirements as in the nominal method but with a modified requirement on momentum, $50 < p [\GeV] < 150$.
+This allows the technique to be checked in a region with very similar properties but where the signal is depleted, as the majority of the signal has momentum above 150 \GeV while the backgrounds are enhanced below that threshold.
+Any biases on the particle composition of the \acp{CR} for the signal region will be reflected in the \acp{CR} used to estimate the mass distribution in the validation region.
 
 % Show the plots, talk about how the good agreement means the particle species are similar in CR2 
 
+Figure~\ref{fig:validation_mass} shows the measured and randomly generated mass distributions for data before and after the ionization requirement.
+The background estimate does an excellent job of modeling the actual background before the ionization requirement, with good agreement to within the statistical uncertainties out to the limit of the mass distribution.
+There are very few events in the validation region after the ionization requirement, but the few observed events are consistent with the background prediction.
+The good agreement in this validation region provides a confirmation that the technique works even in the full-complexity case with multiple particle types entering the distributions.
+Any bias from changes in particle composition between regions is small compared to statistical uncertainties.
+
+\begin{figure}[h]
+\centering
+\subfloat[]{
+  \includegraphics[width=\halffig]{figures/validation_mass_noion.pdf}
+}
+\subfloat[]{
+  \includegraphics[width=\halffig]{figures/validation_mass.pdf}
+}\\
+\caption{The distribution of \mdedx (a) before and (b) after the ionization requirement for tracks in the validation region and for the randomly generated background estimate.}
+\label{fig:validation_mass}
+\end{figure}
 % ----------------------------------------
