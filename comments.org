@@ -9,13 +9,13 @@
 ** TODO in general you are not describing the figure sand what we learn from them in sufficient detail. If you show positive and negative charges in a figure together I expect to learn from the text how they compare.
 ** TODO all figures are a bit small. If you increase the right margin this will make them all bigger. You should also aim to use really 100% of the text width.
 ** TODO for the <E/p> do you include the energies <=0 or only positive energies? Need to clarify early on when introducing variable.
-** TODO l333: physics => energy measurements
-** TODO l334: calorimetry => calorimeters
-** TODO l347: into individual cells: you mean to say that they deposit energy in several adjacent cells which are then clustered, right? And, the energy of the cluster is taken to be the energy of the particle. See if you can reformulate text along those lines.
-** TODO l348: grammar incorrect => Comparing the energy response of hadrons in data to that of simulated hadrons provides...
-** TODO l349: omit mention of noise here as noise is much better measured in other ways (e.g. when there are no collisions at all!)
-** TODO l351: remove ":such as dependence on charge" as this is least interesting. I think you can just remove the entire sentence "These measurements....8.2.4.1"
-** TODO l355: the particle types => the response to various identified particle types
+** DONE l333: physics => energy measurements
+** DONE l334: calorimetry => calorimeters
+** DONE l347: into individual cells: you mean to say that they deposit energy in several adjacent cells which are then clustered, right? And, the energy of the cluster is taken to be the energy of the particle. See if you can reformulate text along those lines.
+** DONE l348: grammar incorrect => Comparing the energy response of hadrons in data to that of simulated hadrons provides...
+** DONE l349: omit mention of noise here as noise is much better measured in other ways (e.g. when there are no collisions at all!)
+** DONE l351: remove ":such as dependence on charge" as this is least interesting. I think you can just remove the entire sentence "These measurements....8.2.4.1"
+** DONE l355: the particle types => the response to various identified particle types
 ** TODO l360-362: remove sentence as not needed.
 ** TODO l367: These => The present
 ** TODO l373: remove "to facilitate.... hadrons" as this was not the primary purpose, and certainly not the only purpose. The main reason was for Heavy Ion and/or soft QCD measurements I think.
