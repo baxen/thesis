@@ -3,11 +3,102 @@
 \label{ch:simulation}
 % --------------------------------------------------------------------------------
 
-\section{Overview and Characteristics}
+As discussed in Section~\ref{sec:limitations}, various limitations in the \ac{SM} suggest a need for new particles at the \TeV scale. 
+A wide range of extensions to the \acl{SM} predict that these new particles can have lifetimes greater than approximately one-hundredth of a nanosecond.
+These include theories with universal extra-dimensions~\cite{extra_dim1, extra_dim2}, with new fermions~\cite{newfermions}, and with leptoquarks~\cite{leptoquark}.
+Many \ac{SUSY} theories also produce these \acp{LLP}, in both R-Parity violating~\cite{rpv1, rpv2, rpv3} and R-Parity conserving~\cite{rpc1, rpc2, rpc3, rpc4} formulations.
+Split supersymmetry~\cite{split1, split2}, for example, predicts long-lived gluinos with O(\TeV) masses.
+This search focuses specifically on the \ac{SUSY} case, but many of the results are generic to any model with \acp{LLP}. 
+
+Long-lived gluinos or squarks carry color-charge and will thus hadronize into color neutral bound states called \rhadrons.
+These are composit particles like the usual hadrons but with one supersymmetric constituent, for example $\tilde{g}q\bar{q}$ and $\tilde{q}\bar{q}$.
+Through this hadronization process, the neutral gluino can acquire a charge.
+Gluino pair production, $p p\rightarrow \tilde{g}\tilde{g}$ has the largest cross sectional increase with the increase in energy to 13 TeV, and so this search focuses on gluino \rhadrons.
+Planned future updates will extend the case to explicitly included squark and chargino models, but the method covers any long-lived, charged, massive particle.
+
+\section{Event Topology}
 \label{sec:characteristics}
+
+% Thoughts right now
+% Need to describe initial state: momentum, charge, isolation
+% Discuss interactions with each sub detector in order
+% Discuss various topologies from different lifetimes?
+% Event level variables: trigger, missing energy, ionization, e/p, ...
+
+The majority of SUSY models predict that gluinos will be produced in pairs at the \ac{LHC}, through processes like $p p \rightarrow q\bar{q} \rightarrow \tilde{g}\tilde{g}$ and $p p \rightarrow g g \rightarrow \tilde{g}\tilde{g}$, where the gluon mode dominates for the collision energy and gluino masses considered for this search.
+During their production, the long-lived gluinos hadronize into color singlet bound states including $\tilde{g}q\bar{q}$, $\tilde{g}qqq$, and even $\tilde{g}g$~\cite{rhadron}.
+The probability to form the gluon-only bound states is a free parameter usually taken to be 0.1, while the meson states are favored among the \rhadrons~\cite{rhad_atlas}.
+The charged and neutral states are approximately equally likely for mesons, so the \rhadrons will be charged roughly 50\% of the time.
+
+These channels produce \rhadrons with large \pt, comparable to their mass, so that they typically propagate with $0.2 < \beta < 0.9$~\cite{rhad_atlas}.
+The fragmentation that produces that hadrons is very hard, so the jet structure around the \rhadron is minimal, with less than 5 \GeV of summed particle momentum expected in a cone of $\Delta R < 0.25$ around the \rhadron~\cite{rhad_atlas}.
+After hadronization, depending on the gluino lifetime, the \rhadrons then decay into hadrons and a \ac{LSP}~\cite{rhadron}.
+
+In summary, the expected event for pair-produced long-lived gluinos is very simple: two isolated, high-momentum \rhadrons that propagate through the detector before decaying to jets.
+The observable features of such events depend strongly on the interaction of the \rhadron with the material of the detector and also its lifetime.
+Section~\ref{sec:rh_interactions} describes the interactions of \rhadrons which reach the various detector elements in \ac{ATLAS} and Section~\ref{sec:rh_lifetimes} provides a summary of the observable event descriptions for \rhadrons of various lifetimes.
+
+\subsection{Detector Interactions}
+\label{sec:rh_interactions}
+
+After approximately 0.2 ns, the \rhadron reaches the pixel detector.
+Because of its comparatively low $\beta$, it heavily ionizes in the silicon if charged, according to the Bethe equation~\cite{pdg}.
+This large ionization can be measured through \ac{ToT} as described in Section~\ref{sec:pixel_dedx}.
+The large ionization is one characteristic feature of \acp{LLP}.
+
+Throughout the next few nanoseconds, the \rhadron propagates through the remainder of the inner detector.
+A charged \rhadron will provide hits in each of these systems as would any other charged particle, and can be reconstructed as a track.
+The track reconstruction provides a measurement of its trajectory and thus its momentum as described in Section~\ref{sec:tracks}.
+\textbf{Note: At this point I am failing to mention that the TRT provides a possible dE/dx measurement, because no one uses it as far as I know.}
+
+As of roughly 20 ns, the \rhadron enters the calorimeter where it interacts hadronically with the material.
+Because of its large mass and momentum, the \rhadron does not typically stop in the calorimeter, but rather deposits energy through repeated interactions.
+Each of these interactions can potentially change its quark content and thus change the sign of the \rhadron, so that the charge at exit is typically uncorrelated with the charge at entry~\cite{rhad_atlas}.
+The total energy deposited in the calorimeters during the propagation is small compared to the kinetic energy of the \rhadron, around 20-40 \GeV, so that \ep is typically less than 0.1~\cite{rhad_atlas}.
+
+Then, 30 ns after the collision, it reaches the muon system, where it can be reconstructed as a muon track.
+Because of the charge-flipping interactions in the calorimeter, this track may have the opposite sign of the track reconstructed in the inner detector, or there may be a track present when there was none in the inner detector and vice-versa.
+The propagation time at the characteristically lower $\beta$ results in a significant delay compared to muons, and that delay can be assessed in terms of a time-of-flight measurement.
+Because of the probability of charge-flip and late arrival, there is a significant chance that an \rhadron which was produced with a charge will not be identified as a muon.
+
+\subsection{Lifetime Dependence}
+\label{sec:rh_lifetimes}
+
+The above description assumed a lifetime long enough for the \rhadron to exit the detector, which through this search is referred to as ``stable'', even though the particle may decay after exiting the detector.
+There are several unique signatures at shorter lifetimes where the \rhadron decays in various parts of the inner detector; these lifetimes are referred to as ``metastable''.
+
+The shortest case where the \rhadron is considered metastable is for lifetimes around 0.01 ns, where the particle decays before reaching any of the detector elements.
+Although the \rhadrons are produced opposite each other in the transverse plane, each \rhadron decays to a jet and an \ac{LSP} which can result in large missing energy.
+Additionally, the precision of the tracking system allows the displaced vertex of the \rhadron decay to be reconstructed from the charged particles in the jet.
+Previous searches on \ac{ATLAS} have used the displaced vertex to target \ac{LLP} decays~\cite{SUSY-2014-02}.
+
+The next distinguishable case occurs at lifetimes greater than 0.1 ns, where the \rhadron forms a partial track in the inner detector.
+If the decay products are sufficiently soft, they may not be reconstructed, and this forms a unique signature of a disappearing track.
+A dedicated search on \ac{ATLAS} used the disappearing track signature to search for \ac{LLP} in Run 1~\cite{SUSY-2013-01}.
+\textbf{Note: might not be worth mentioning the disapearing track here since it is actually a chargino search, the soft pion is pretty unique to charginos.}
+
+If the decay products are not soft, the \rhadron daughters form jets, resulting in an event-level signature of up to two high-momentum tracks, jets, and significant missing energy.
+The missing energy has the same origin as in the case of 0.01 ns lifetimes, from the decay to unmeasured particles, and can be large.
+The high-momentum tracks will also have the characteristicly high-ioniziation of massive, long-lived paticles in the inner detector.
+Several previous searches on \ac{ATLAS} from Run 1 have used this signature to search for \rhadrons~\cite{SUSY-2012-01, SUSY-2013-22}, including a dedicated search for metastable particles~\cite{SUSY-2014-09}.
+
+If the lifetime is longer than a few nanoseconds, in the range of 30-50 ns, the \rhadron decay can occur in or after the calorimeters, but prior to reaching the muon system.
+This case is similar to the above, although the jets may not be reconstructed, and is covered in the same search strategies.
+The events still often have large missing energy, although it is generated through different mechanisms.
+The \rhadrons do not deposit much energy in the calorimeters, so a neutral \rhadron will not enter into the missing energy calculation.
+A charged \rhadron opposite a neutral \rhadron will thus generate significant missing energy, and close to 50\% of pair-produced \rhadron events fall into this category.
+If both \rhadrons are neutral then the missing energy will be low because neither is detected.
+Two charged \rhadrons will also result in low missing energy because both are reconstructed as tracks and will balance each other in the transverse plane.
+A small fraction of the time, one of the charged \rhadron tracks may fail quality requirements and thus be excluded from the missing energy calculation and again result in signficant missing energy.
+
+The longest lifetimes, the stable case, has all of the features of the 30-50 ns case but with the addition of muon tracks for any \rhadrons that exit the calorimeter with a charge.
+That muon track can provide additional information from time-of-flight measurements to help identify \acp{LLP}.
+Some searches on \ac{ATLAS} have included this information to improve the search reach for stable particles~\cite{SUSY-2013-22, stable2016}.
+
 
 % ----------------------------------------
 
 \section{Simulation}
+% Discuss the details of mass/lifetime points for the R-Hadrons
 
 % ----------------------------------------

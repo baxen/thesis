@@ -16,46 +16,64 @@
 ** DONE l349: omit mention of noise here as noise is much better measured in other ways (e.g. when there are no collisions at all!)
 ** DONE l351: remove ":such as dependence on charge" as this is least interesting. I think you can just remove the entire sentence "These measurements....8.2.4.1"
 ** DONE l355: the particle types => the response to various identified particle types
-** TODO l360-362: remove sentence as not needed.
-** TODO l367: These => The present
-** TODO l373: remove "to facilitate.... hadrons" as this was not the primary purpose, and certainly not the only purpose. The main reason was for Heavy Ion and/or soft QCD measurements I think.
-** TODO l377: in the => for the 
-** TODO l379: Was the reconstruction not also updated? Also, say that the updated geometry is the final best understanding of run-1.
-** TODO l381: needs to say that these processes are all generated with the admixture as pythia does. Maybe better is that you just say minimum bias and refer to the chapter on the inelastic pp cross section measurement which then details the processes presumably. 
-** TODO l384: each run => each dataset (?)
-** TODO l384: are matched... simulations => are chosen such that they match those of the corresponding dataset.
-** TODO l400: enter into the response => are selected for the response (?)
-** TODO l409: is this just any track or does it also have to pass some selection criteria?
-** TODO l422: particles => tracks (in two places)
-** TODO l422: what does "within a given subset of particles" mean? You mean e.g. for 1<p<5 GeV? I think then just remove it or say "for the selected tracks" btu then also need to say at the end of l423 "for those tracks"
-** TODO l424: remove "particle"
-** TODO l426: noise => cell noise
-** TODO l429: what do you mean with the "additional layers"? Do you mean the cells with >0 energy? 
-** TODO fig. 2: I think this figure is in the wrong place. It does not illustrate the clustering (as it says at l432/433) at all but instead shows the background determination. It uses a lot of terms not yet introduced, and so I suggest you move it to section 8.2.3. And, maybe you can find a better figure to illustrate the topoclustering I suggest either the recent paper or the ATLAS detector paper.
-** TODO fig. 2 caption: I think the caption does not really do the figure justice either. E.g. it does not show what "E" is or what "p" is.
-** TODO l442: what does "similar" mean? Remove it?
-** TODO l443: we don't really know that they are noise clusters. Maybe say instead "are associated to a cluster with an energy below the noise threshold which then becomes negative after the noise subtraction." That's more correct, right?
-** TODO l463: measurements => and for positively and negatively charged particles
-** TODO l464: which provides a ... interaction lengths => which is used to obtain results for interaction lengths ranging between 0.1 and 0.65~$\lambda$.
-** TODO l467: here you argue that the differnce must come from the hadr. interaction model. However, youa re showing FTFP_BERT and QGSP_BERT and they look pretty much the same. I suspect that this is because at low p they actually both use the BERT model. I think you need a comment on this though.
-** TODO l469: I find it hard to notice a difference. And, you say that there is a difference between FTFP and QGSP at low p but they seem to be very similar!? BTW, it is not great that the y-axis range is different for a) and b), maybe this makes it hard for me to see this? I would actually prefer to reduce the scale to +-30% or so (maybe +20% and -40% is better) to really see the data
-** TODO fig. 2: the most striking thing for me is that the data/MC agreement gets worse at higher p. Can you comment on this?
-** TODO fig. 2c+d: x-axis needs units "\lambda"
-** TODO (for curiosity: did you ever make the plot vs lambda only using tracks with p>5 GeV?)
-** TODO l476: remove => removing an 
-** TODO l497: Figure 5 => Figure 5 for data and MC with the two different physics lists. 
-** TODO Fig. 5: it would be good to comment on the values themselves when you describe in the text, i.e. say that it is about 0.1 at the lowest p and then decreases to ~0.03. (In fact I am wondering if you ever looked at just the mean E versus p instead of E/p as E should be constant vs p if it is only background! So, my question is if the decrease with p is fully explained by the fact that E=const. and p is increasing?)
-** TODO l500: what does this mean? You just mean that the flux of pi0s in pythia is not right? Or, you mean that in pythia there is a coherence that there is not in data? 
-** TODO sec. 8.2.4, first paragraph: it would be nice to show the actual corrected E/p distribution rather than just the mean value compared to the raw spectrum to see that in particular the tail is reduced.
-** TODO l513: would be nice to show a plot of the E/p excluding the <=0 energies to show this.
-** TODO fig. 6a: there is a noticeable difference between the 2010 and 2012 data of ~5%? You don't comment on this in the text?
-** TODO l522: moves => moves the mean value of 
-** TODO l522: remove "which is the purpose of the calibration" or say "as desired"
-** TODO l525: here would be a good place to now conclude that the difference in the E/p mean comes all from the zero fraction (and then remove the text at l513 which says it already but without demonstrating it)
-** TODO l526: Maybe make this "8.2.5" as there is no 8.2.4.2?
-** TODO l527: need reference for the "several previous measurements". Also, for the next statement you need a reference. Otherwise it sounds like speculation which is not good in science.
-** TODO l535-540: this makes it sounds like we are not placing any cut on the TRT hits but we do have the cut at >20. So, text needs a bit rewording to make this clear. Also, the particles can get stuck in the coil and then the TRT would not matter.
-** TODO l538: where... are more likely => which selects tracks that are more likely to have undergone a hadronic interaction
+** DONE l360-362: remove sentence as not needed.
+** DONE l367: These => The present
+** DONE l373: remove "to facilitate.... hadrons" as this was not the primary purpose, and certainly not the only purpose. The main reason was for Heavy Ion and/or soft QCD measurements I think.
+** DONE l377: in the => for the 
+** DONE l379: Was the reconstruction not also updated? Also, say that the updated geometry is the final best understanding of run-1.
+** DONE l381: needs to say that these processes are all generated with the admixture as pythia does. Maybe better is that you just say minimum bias and refer to the chapter on the inelastic pp cross section measurement which then details the processes presumably. 
+** DONE l384: each run => each dataset (?)
+** DONE l384: are matched... simulations => are chosen such that they match those of the corresponding dataset.
+** DONE l400: enter into the response => are selected for the response (?)
+** DONE l409: is this just any track or does it also have to pass some selection criteria?
+** DONE l422: particles => tracks (in two places)
+** DONE l422: what does "within a given subset of particles" mean? You mean e.g. for 1<p<5 GeV? I think then just remove it or say "for the selected tracks" btu then also need to say at the end of l423 "for those tracks"
+** DONE l424: remove "particle"
+** DONE l426: noise => cell noise
+** DONE l429: what do you mean with the "additional layers"? Do you mean the cells with >0 energy? 
+** FOLLOWUP fig. 2: I think this figure is in the wrong place. It does not illustrate the clustering (as it says at l432/433) at all but instead shows the background determination. It uses a lot of terms not yet introduced, and so I suggest you move it to section 8.2.3. And, maybe you can find a better figure to illustrate the topoclustering I suggest either the recent paper or the ATLAS detector paper.
+** FOLLOWUP fig. 2 caption: I think the caption does not really do the figure justice either. E.g. it does not show what "E" is or what "p" is.
+** DONE l442: what does "similar" mean? Remove it?
+** DONE l443: we don't really know that they are noise clusters. Maybe say instead "are associated to a cluster with an energy below the noise threshold which then becomes negative after the noise subtraction." That's more correct, right?
+** DONE l463: measurements => and for positively and negatively charged particles
+** DONE l464: which provides a ... interaction lengths => which is used to obtain results for interaction lengths ranging between 0.1 and 0.65~$\lambda$.
+** DONE l467: here you argue that the differnce must come from the hadr. interaction model. However, youa re showing FTFP_BERT and QGSP_BERT and they look pretty much the same. I suspect that this is because at low p they actually both use the BERT model. I think you need a comment on this though.
+** DONE l469: I find it hard to notice a difference. And, you say that there is a difference between FTFP and QGSP at low p but they seem to be very similar!? BTW, it is not great that the y-axis range is different for a) and b), maybe this makes it hard for me to see this? I would actually prefer to reduce the scale to +-30% or so (maybe +20% and -40% is better) to really see the data
+   Note here: I agree on the figure comments about the scale, and that is what I tried to do originally for the paper.
+   During review we were asked to change it to the current setup to show all the errorbars.
+   I wasn't sure if I should stick to public figures
+** DONE fig. 2: the most striking thing for me is that the data/MC agreement gets worse at higher p. Can you comment on this?
+** DONE fig. 2c+d: x-axis needs units "\lambda"
+** DONE (for curiosity: did you ever make the plot vs lambda only using tracks with p>5 GeV?)
+   Nope we never checked. Could take a look
+** DONE l476: remove => removing an 
+** DONE l497: Figure 5 => Figure 5 for data and MC with the two different physics lists. 
+** DONE Fig. 5: it would be good to comment on the values themselves when you describe in the text, i.e. say that it is about 0.1 at the lowest p and then decreases to ~0.03. (In fact I am wondering if you ever looked at just the mean E versus p instead of E/p as E should be constant vs p if it is only background! So, my question is if the decrease with p is fully explained by the fact that E=const. and p is increasing?)
+   I think there's a constant term from general backgrounds but also a piece that scales with p from fragmentation?
+   You can see this by comparing the bin at 3 GeV (0.04) to the bin at 6 (0.035) which is higher than it would be if it were just constant I think.
+   This is definitely what the MC thinks, since E/p_BG is flat from 2 to 10
+** DONE l500: what does this mean? You just mean that the flux of pi0s in pythia is not right? Or, you mean that in pythia there is a coherence that there is not in data? 
+   Tried to clarify - the process that produces the charged hadron also produces a pi0 pointing in about the same direction (coherent radiation)
+   and pythia thinks these are either more common or more energetic than we see in data.
+** DONE sec. 8.2.4, first paragraph: it would be nice to show the actual corrected E/p distribution rather than just the mean value compared to the raw spectrum to see that in particular the tail is reduced.
+   I don't think we can come up with a correct actual E/p per particle, only in the aggregate. 
+   We can only estimate <E/p>_BG in bins of p, eta since it uses MIPs and doesn't have a value for each particle.
+   I could make a plot of E/p - <E/p>_BG from the right bin, but it would just be left-shifted
+** FOLLOWUP l513: would be nice to show a plot of the E/p excluding the <=0 energies to show this.
+   This is seen a bit later in Figure 7 and mentioned in the text, but a version of this at the emscale would be nice to include here I agree.
+   Note to self: if I don't add this plot I need to fix the text "The good agreement in that case again demonstrates..."
+** DONE fig. 6a: there is a noticeable difference between the 2010 and 2012 data of ~5%? You don't comment on this in the text?
+** DONE l522: moves => moves the mean value of 
+** DONE l522: remove "which is the purpose of the calibration" or say "as desired"
+** DONE l525: here would be a good place to now conclude that the difference in the E/p mean comes all from the zero fraction (and then remove the text at l513 which says it already but without demonstrating it)
+** DONE l526: Maybe make this "8.2.5" as there is no 8.2.4.2?
+** DONE l527: need reference for the "several previous measurements". 
+   Oops wasn't clear that I meant the previous measurements in this document. Clarified.
+** DONE l527 Also, for the next statement you need a reference. Otherwise it sounds like speculation which is not good in science.
+   Added a reference, but to our own paper which makes this claim.
+   Also made the phrasing less speculative
+** DONE l535-540: this makes it sounds like we are not placing any cut on the TRT hits but we do have the cut at >20. So, text needs a bit rewording to make this clear. Also, the particles can get stuck in the coil and then the TRT would not matter.
+** FOLLOWUP l538: where... are more likely => which selects tracks that are more likely to have undergone a hadronic interaction
 ** TODO fig. 8: it would be interesting actually to see the 0-fraction for the two cases. That is presumably much larger for the tracks with <20 TRT hits?
 ** TODO l549: and each compared to the data
 ** TODO l550: if you want to comment on the difference betwen the two charges it would be *much* better to directly overlay the two charges, e.g. on the left for data and on the right for MC or something. It is very hard to see what you say given the small size of the plots etc. 

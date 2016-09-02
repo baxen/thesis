@@ -37,24 +37,25 @@ It is also possible to measure the response to various identified particle types
 Pions and (anti)protons can be identified through decays of long-lived particles, in particular $\Lambda$, $\overline{\Lambda}$, and $K_{S}^{0}$, and then used to measure response as described above.
 This is discussed in detail in Section~\ref{sec:identified}.
 
-Together, these measurements in data provide a thorough understanding of the way hadrons interact with the ATLAS detector and can be used to build up a description of jets, as seen in Chapter~\ref{ch:jes}.
 The results in this chapter use data collected at 7 and 8 \TeV collected in 2010 and 2012, respectively.
 Both are included as the calorimeter was repaired and recalibrated between those two data-taking periods.
 Both sets of data are compared to an updated simulation that includes new physics models provided by \texttt{Geant4}~\cite{GEANT4} and improvements in the detector description~\cite{PERF-2011-08,PERF-2013-05}.
-These results are published in \ac{EPJC}~\cite{PERF-2015-05} and can be compared to a similar measurement performed in 2009 and 2010~\cite{PERF-2011-05}, which used the previous version of the simulation framework~\cite{SOFT-2010-01}.
+The present results are published in \ac{EPJC}~\cite{PERF-2015-05} and can be compared to a similar measurement performed in 2009 and 2010~\cite{PERF-2011-05}, which used the previous version of the simulation framework~\cite{SOFT-2010-01}.
 
 % ----------------------------------------
 \section{Dataset and Simulation}
 
 \subsection{Data Samples}
-The two datasets used in this chapter are taken from dedicated low-pileup runs where the fraction of events with multiple interactions was negligible, to facilitate measurement of isolated hadrons.
+The two datasets used in this chapter are taken from dedicated low-pileup runs where the fraction of events with multiple interactions was negligible.
+These datasets are used rather than those containing full-pileup events to facilitate measurement of isolated hadrons.
 The 2012 dataset at $\sqrt{s} = 8$ \TeV contains 8 million events and corresponds to an integrated luminosity of 0.1 nb\tsup{-1}.
 The 2010 dataset at $\sqrt{s} = 7$ \TeV contains 3 million events and corresponds to an integrated luminosity of 3.2 nb\tsup{-1}.
-The latter dataset was also used in the 2010 results~\cite{PERF-2011-05}, but it has since been reanalyzed with an updated detector description for the material and alignment.
+The latter dataset was also used for the 2010 results~\cite{PERF-2011-05}, but it has since been reanalyzed with an updated reconstruction including the final, best understanding of the detector description for the material and alignment from Run 1.
 
 \subsection{Simulated Samples}
 The two datasets above are compared to simulated single-, double-, and non-diffractive events generated with \texttt{Pythia8}~\cite{PYTHIA8} using the A2 configuration of hadronization~\cite{AU2} and the MSTW 2008 parton-distribution function set~\cite{MSTW,MSTW2}.
-The conditions and energies for each run are matched in the two simulations.
+The admixture of the single-, double-, and non-diffractive events uses the default relative contributions from \texttt{Pythia8}.
+The conditions and energies for the two simulations are chosen so that they match those of the corresponding dataset.
 
 To evaluate the interaction of hadrons with detector material, the simulation uses two different collections of hadronic physics models, called physics lists, in \texttt{Geant4 9.4}~\cite{G4hadronics}.
 The first, \QGSP, combines the Bertini intra-nuclear cascade~\cite{BERT21,BERT22,BERT23} below 9.9 \GeV, a parametrized proton inelastic model from 9.5 to 25 \GeV~\cite{GHEISHA20}, and a quark-gluon string model above 12 \GeV~\cite{QGS15,QGS16,QGS17,QGS18,QGS19}. 
@@ -67,12 +68,12 @@ The event selection for this study is minimal, as the only requirement is select
 Such events are triggered by requiring at least two hits in the minimum-bias trigger scintillators. 
 After trigger, each event is required to have exactly one reconstructed vertex, and that vertex is required to have four or more associated tracks.
 
-The particles which enter into the response measurements are first identified as tracks in the inner detector.
+The particles which are selected for the response measurements are first identified as tracks in the inner detector.
 The tracks are required to have at least 500 \MeV of transverse momentum.
 To ensure a reliable momentum measurement, these tracks are required to have at least one hit in the pixel detector, six hits in the SCT, and small longitudinal and transverse impact parameters with respect to the primary vertex~\cite{PERF-2011-05}.
 For the majority of the measurements in this chapter, the track is additionally required to have 20 hits in the TRT, which significantly reduces the contribution from tracks which undergo nuclear interactions.
 This requirement and its effect is discussed in more detail in Section~\ref{sec:additional}. 
-In addition, tracks are rejected if there is another track which extrapolates to the calorimeter within a cone of $\Delta R = \sqrt{(\Delta\phi)^2 + (\Delta\eta)^2} < 0.4$.
+In addition, tracks are rejected if there is any other reconstructed track which extrapolates to the calorimeter within a cone of $\Delta R = \sqrt{(\Delta\phi)^2 + (\Delta\eta)^2} < 0.4$.
 This requirement guarantees that the contamination of energy from nearby charged particles is negligible~\cite{PERF-2011-05}.
 
 % ----------------------------------------
@@ -83,12 +84,12 @@ This requirement guarantees that the contamination of energy from nearby charged
 The calorimeter response is more precisely defined as the ratio of the measured calorimeter energy to the true energy carried by the particle, although this true energy is unknown. 
 For charged particles, however, the inner detector provides a very precise measurement of momentum (with uncertainty less than 1\%) that can be used as a proxy for true energy.
 The ratio of the energy deposited by the charged particle in the calorimeter, $E$, to its momentum measured in the inner detector $p$, forms the calorimeter response measure called \ep.
-Though the distribution of \ep contains a number of physical features, this study focuses on the trends in two aggregated quantities: \epav, the average of \ep within a given subset of particles, and the zero fraction, the fraction of particles with no associated energy in the calorimeter.
+Though the distribution of \ep contains a number of physical features, this study focuses on the trends in two aggregated quantities: \epav, the average of \ep for the selected tracks, and the zero fraction, the fraction of tracks with no associated energy in the calorimeter for those tracks.
 
-The calorimeter energy assigned to a track particle is defined using clusters. 
-The clusters are formed using a 4--2--0 algorithm~\cite{TopoClusters} that begins with seeds requiring at least 4 times the average calorimeter noise. 
+The calorimeter energy assigned to a track is defined using clusters. 
+The clusters are formed using a 4--2--0 algorithm~\cite{TopoClusters} that begins with seeds requiring at least 4 times the average calorimeter cell noise. 
 The neighboring cells with at least twice that noise threshold are then added to the cluster, and all bounding cells are then added with no requirement. 
-This algorithm minimizes noise contributions through its seeding process, and including the additional layers improves the energy resolution~\cite{Speckmayer}.
+This algorithm minimizes noise contributions through its seeding process, and including the bounding cells improves the energy resolution~\cite{Speckmayer}.
 The clusters are associated to a given track if they fall within a cone of $\Delta R = 0.2$ of the extrapolated position of the track, which includes about 90\% of the energy on average~\cite{PERF-2011-05}.
 This construction is illustrated in Figure~\ref{fig:eoverp_cartoon}.
 
@@ -109,7 +110,7 @@ This construction is illustrated in Figure~\ref{fig:eoverp_cartoon}.
 The \ep distributions measured in both data and simulation are shown in Figure~\ref{fig:eoverp} for two example bins of track momentum and for tracks in the central region of the detector. 
 These distributions show several important features of the \ep observable.
 The large content in the bin at $E=0$ comes from tracks that have no associated cluster, which occurs due to interactions with detector material prior to reaching the calorimeter or the energy deposit being insufficiently large to generate a seed, and are discussed in Section~\ref{sec:zero_fraction}.
-The small negative tail comes from similar tracks that do not deposit any energy in the calorimeter but are randomly associated to a noise cluster.
+The small negative tail also comes from tracks that do not deposit any energy in the calorimeter but are randomly associated to a cluster with an energy below the noise threshold.
 The long positive tail above 1.0 comes from the contribution of neutral particles.
 Nearby neutral particles deposit (sometimes large) additional energy in the calorimeter but do not produce tracks in the inner detector, so they cannot be rejected by the track isolation requirement.
 Additionally the peak and mean of the distribution falls below 1.0 because of the loss of energy not found within the cone as well as the non-compensation of the calorimeter.
@@ -137,15 +138,13 @@ Additionally, the simulated clusters have less noise on average, although this i
 The fraction of particles with no associated clusters, or similarly those with $E \leq 0$, reflects the modeling of both the detector geometry and hadronic interactions.
 The zero fraction is expected to rise as the amount of material a particle traverses increases, while it is expected to decrease as the particle energy increases.
 This dependence can be seen in Figure~\ref{fig:zerofracincl}, where the zero fraction in data and simulation is shown as a function of momentum and the amount of material measured in interaction lengths.
-The trends are similar between the 2010 and 2012 measurements.
+The trends are similar between 2010 and 2012 and for positively and negatively charged particles.
 The zero fraction decreases with energy as expected.
-The amount of material in the detector increases with $\eta$, which provides a distribution of interaction lengths.
+The absolute discrepancy in zero fraction decreases with momentum from 5\% to less than 1\%, but this becomes more pronounced in the ratio as the zero fraction shrinks quickly with increasing momentum.
+There is a small constant difference between the data and simulation in both interaction models that becomes more pronounced 
+The amount of material in the detector increases with $\eta$, which is used to obtain results for interaction lengths ranging between 0.1 and 0.65~$\lambda$.
 As the data and simulation have significant disagreement in the zero fraction over a number of interaction lengths, the difference must be primarily from the modeling of hadronic interactions with detector material and not just the detector geometry.
-
-There is also a noticeable difference between positive and negative tracks at low momentum, which reflects the difference in response between protons and antiprotons.
-Antiprotons have significant model differences in the two physics lists, \QGSP and \FTFP, and this is evident in the lowest momentum bin of the data to simulation ratio.
-This difference is explored further in Section~\ref{sec:identified}.
-
+Although two different hadronic interaction models are shown in the figure, they have very similar discrepancies to data because both use the same description (the BERT model) at low momentum.
 
 \begin{figure}[htbp]
 \centering
@@ -172,7 +171,7 @@ This difference is explored further in Section~\ref{sec:identified}.
 \subsection{Neutral Background Subtraction}
 \label{sec:neutral_bg}
 
-The isolation requirement on hadrons is only effective in remove energy contribution from nearby charged particles. 
+The isolation requirement on hadrons is only effective in removing an energy contribution from nearby charged particles. 
 Nearby neutral particles, predominantly photons from \piz decays, also add their energy to the calorimeter clusters, but mostly in the electromagnetic calorimeter. 
 It is possible to measure this contribution, on average, using late-showering hadrons that minimally ionize in the electromagnetic calorimeter. 
 Such particles are selected by requiring that they deposit less than 1.1 \GeV in the EM calorimeter within a cone of $\Delta R < 0.1$ around the track. 
@@ -184,10 +183,12 @@ To estimate the contribution to the whole cone considered for the response measu
 This quantity, \epbg, measured in aggregate over a number of particles, gives the contribution to \epav from neutral particles in the EM calorimeter. 
 Similar techniques were used in the individual layers of the hadronic calorimeters to show that the background from neutrals is negligible in those layers~\cite{PERF-2011-05}. 
 
-The distribution of this background estimate is shown in Figure~\ref{fig:eoverp_background}. 
+The distribution of this background estimate is shown in Figure~\ref{fig:eoverp_background} for data and simulation with the two different physics lists.
+The contribution from neutral particles falls from 0.1 at low momentum to around 0.03 for particles above 7 \GeV. 
 Although the simulation captures the overall trend, it significantly overestimates the neutral contribution for tracks with momentum between 2 and 8 \GeV.
 This effect was also seen in the tails of the \ep distributions in Figure~\ref{fig:eoverp}.
-This difference is likely due to the modeling of coherent neutral particle radiation in \texttt{Pythia8}, as the discrepancy does not depend on $\eta$ and thus is unlikely to be a mismodeling of the detector.
+This difference is likely due to modeling of coherent neutral particle radiation in \texttt{Pythia8} that overestimates the production of \piz near the production of the charged particles.
+The discrepancy does not depend on $\eta$ and thus is unlikely to be a mismodeling of the detector.
 This difference can be subtracted to form a corrected average \ep, as in Section~\ref{sec:response}.
 
 \begin{figure}[htbp]
@@ -219,6 +220,7 @@ This corrected $\epcor \equiv \epav - \epbg$ measures the average calorimeter re
 It is the most direct measurement of calorimeter response in that it is the energy measured for fully isolated hadrons. 
 The correction is performed separately in data and simulation, so that the mismodeling of the neutral background in simulation is removed from the comparison of response. 
 The simulation overestimates the response at low momentum by about 5\%, an effect that can be mostly attributed to the underestimation of the zero fraction mentioned previously.
+For $|\eta| < 0.6$, the data-simulation agreement has a larger discrepancy by about 5\% for 2010 than 2012, although this is not reproduced in at higher pseudorapidity. 
 
 \begin{figure}[htbp]
 \centering
@@ -245,8 +247,9 @@ The simulation overestimates the response at low momentum by about 5\%, an effec
 The response measurement above used topological clustering at the EM scale, that is clusters were formed to measure energy but no corrections were applied to correct for expected effects like energy lost outside of the cluster or in uninstrumented material. 
 It is also interesting to measure \epcor using \ac{LCW} energies, which accounts for those effects by calibrating the energy based on the properties of the cluster such as energy density and depth in the calorimeter.
 Figure~\ref{fig:eoverp_corrected_lcw} shows these distributions for tracks with zero or more clusters and separately for tracks with one or more clusters.
-The calibration moves \epcor significantly closer to 1.0, which is the purpose of the calibration.
+The calibration moves the mean value of \epcor significantly closer to 1.0 as desired.
 The agreement between data and simulation improves noticeably when at least one cluster is required, as this removes the contribution from the mismodeling of the zero fraction. 
+The good agreement in that case again demonstrates that the difference in \epcor between data and simulation is caused predominantly by the difference in zero fraction.
 
 \begin{figure}[h]
 \centering
@@ -262,16 +265,16 @@ The agreement between data and simulation improves noticeably when at least one 
 \end{figure}
 
 
-\subsubsection{Additional Studies}
+\subsection{Additional Studies}
 \label{sec:additional}
 
-As has been seen in several previous measurements, the simulation does not correctly model the chance of a low momentum hadron to reach the calorimeter.
-Because of the consistent discrepancy across pseudorapidity and interaction lengths, this seems to be best explained by incomplete understanding of hadronic interactions with the detector.
+As has been seen in several measurements in previous sections, the simulation does not correctly model the chance of a low momentum hadron to reach the calorimeter.
+Because of the consistent discrepancy across pseudorapidity and interaction lengths, this can be best explained by incomplete understanding of hadronic interactions with the detector~\cite{PERF-2015-05}.
 For example, a hadron that scatters off of a nucleus in the inner detector can be deflected through a significant angle and not reach the expected location in the calorimeter.
 In addition, these interactions can produce secondary particles that are difficult to model.
 
-The requirement on the number of hits in the TRT reduces these effects by preferentially selecting tracks that do not undergo nuclear interactions.
-It is interesting to check how well the simulation models tracks with low numbers of TRT hits, where the nuclear interactions are much more likely. 
+The requirement used throughout the previous sections  on the number of hits in the TRT reduces these effects by preferentially selecting tracks that do not undergo nuclear interactions.
+It is interesting to check how well the simulation models tracks with low numbers of TRT hits, which selects tracks that are more likely to have undergone a hadronic interaction.
 Figure~\ref{fig:eoverp_trt} compares the distributions with $N_{\mathrm{TRT}} < 20$ to $N_{\mathrm{TRT}} > 20$ for real and simulated particles.
 As expected, the tracks with fewer hits are poorly modeled in the simulation as \epcor differs by as much as 25\% at low momentum.
 
