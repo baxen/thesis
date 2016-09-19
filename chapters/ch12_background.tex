@@ -10,7 +10,7 @@ The simulation can be tuned in various ways to do an excellent job of modeling t
 For this reasons, the background estimation used for this search is estimated entirely using data.
 
 \section{Background Sources}
-
+\label{sec:background_sources}
 \ac{SM} charged particles with lifetimes long enough to form tracks in the inner detector can be grouped into three major categories based on their detector interactions: hadrons, electrons, and muons. 
 Every particle that enters into the background for this search belongs to one of these types.
 Relatively pure samples of tracks from each of these types can be formed in data by inverting the various rejection techniques in Section~\ref{sec:sm_rejection}.
@@ -23,7 +23,7 @@ This is especially significant for momentum which enters directly into \ep and c
 However the various types show clear differences in both distributions.
 The distributions of momentum are not necessarily expected to match between the various types because the production mechanisms for each type result in different kinematic distributions.
 \dedx is also different between types because of incomplete isolation; although the requirement on $\Nsplit$ helps to reduce the contribution of nearby particles it does not completely remove the effect of overlaps.
-Muons are better isolated because they do not have the additional particle froms hadronization present for hadrons and they are significantly less likely do interact with the detector and produce secondary particles compared to hadrons and electrons.
+Muons are better isolated because they do not have the additional particle from hadronization present for hadrons and they are significantly less likely do interact with the detector and produce secondary particles compared to hadrons and electrons.
 Thus muons have the smallest fraction of \dedx above the threshold of 1.8 \MeVgcm; hadrons and electrons have a larger fraction above this threshold.
 
 \begin{figure}[h]
@@ -44,7 +44,7 @@ The background method will not have significant dependence on the relative contr
 % ----------------------------------------
 
 \section{Prediction Method}
-
+\label{sec:background_method}
 The data-driven background estimation relies on the independence between ionization and other kinematic variables in the event.
 For standard model particles with momenta above 50 \GeV, \dedx is not correlated with momentum; though there is a slight relativistic rise as momentum increases, the effect is small compared to the width of the distribution of ionization energy deposits..
 So, the proposed method to estimate the mass distribution of the signal region is to use momentum from a track with low \dedx (below the threshold value) and to combine it with a random \dedx value from a \dedx template.
@@ -70,6 +70,9 @@ As this procedure includes all \dedx values, the cut at 1.8 \MeVgcm is then enfo
 The generated mass distribution is then normalized by scaling the background estimate to the data in the region $M < 160$ \GeV, where signals of this type have already been excluded~\cite{SUSY-2014-09}.
 This normalization uses the distributions of mass generated without the ionization requirement.
 
+The statistical uncertainties on these background distributions are calculated by independently fluctuating each bin of the input templates according to their Poisson uncertainties. 
+These fluctuations are repeated a large number of times, and the uncertainty on the resulting distribution is taken as the \ac{RMS} deviation of the fluctuations from the average.
+As the procedure uses one million random combinations to generate the distributions, The statistical uncertainty from the actual random generations is negligible compared to the uncertainty from measuring the templates.
 % ----------------------------------------
 
 \section{Validation}
