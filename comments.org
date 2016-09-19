@@ -131,3 +131,80 @@
 ** TODO fig. 20 caption: The JES => The JES response 
 ** TODO fig. 21: this caption should say a bit more and also the y-axis label needs to be pT and not log(pT).
 
+
+* Chapter 11
+** DONE l824: nice to provide a range (or even better a plot) of betas for a given mass ?
+** DONE l829: I would say effective for its discriminating power and for its use in reconstructing particle mass. A feature is it can be used for many masses and lifetimes.
+** DONE l830: Momentum is argubably also a key selection variable, I think it's worth mentioning its importance early on.
+** DONE l831: "form a complete search" means what? to reduce background? make this more precise as it doesn't mean much now.
+** DONE l832: not sure this is true. In principle I think that dE/dx could be available at the high level trigger level, as it runs a version of the standard reco. It's not used, but I'm not sure you can say it's not available
+** DONE l834: "can be inefficient", "often large" --> do you make these more quantitative later on?
+** DONE l836: This sentence is a little confusing, because ionization is not more effective for high momentum tracks, it's just that there are low momentum tracks w/ high ionizationd from SM. Not sure that comes under the word "effective" (though effective may apply for quality cuts though.)
+** DONE l838: "In particular" --> this sentence isn't a subset of the previous one, I found the "in particular" confusing
+** DONE l863: "remains" -- reword unless you discussed this for previous analses earlier
+** DONE l686: do you say elsewhere why this introduces a model dependence on calo interaction? if not, better to spell it out here
+** DONE l875-879: mention ISR jets here somewhere?
+** DONE Section 11.1: I think this section needs to be expanded a little, and could be extended a lot. You need to define somewhere how the MET trigger works (how is MET defined and built?), and what the thresholds are at different levels for the trigger we used. Might also be nice to discuss the turn on or show a plot of MET in signal before trigger requirement.
+** DONE l894: these numbers are true for all masses and lifetimes? also, worth explicitly saying eff. are after trigger (otherwise people not reading closley are confused because the numbers seem high)
+** DONE l905: I think it is worth mentioning why it's OK that we don't cut on the trigger plateau, and including one of your trigger plateau plots.
+** DONE l905: I think it is interesting to add a section on signal region optimization, as you put a fair amount of work into the process.
+** DONE l931: include a few examples of physics processes that can give these types of tracks? (photon conversions, pion decays?)
+** DONE l933: maybe check with Simone,but I think it should be "multiple particles" instead of "multiple tracks" as you just said the tracks can not be resolved
+** DONE l933: what variables does the NN use to make this classification? would be nice to explain a bit what the NN is doing.
+** DONE l946: maybe not use the word isolation as you're using a non-standard isolatoin tool and people might think you mean the standard one?
+** DONE 11.3: First sentence is not a complete set of the backgrounds, and first few sentences are a bit confusing. Different cuts target different backgrounds. You can get backgrounds from heavy low momentum particles (protons etc), which is why we cut on p. You can get backgrounds from overlapping particles (--> cut on isolation and split/shared.) You can get backgrounds from Landau tail too, which is what I think you're referring to, but I would rewrite the intro sentence(s) to this section to be a more complete list, or make it clear you're talking about a subset of backgrounds. Also, I would mention specifically the tail of the Landau distribution (as this is different than random high dE/dx from electronic noise, etc..)
+** DONE Also, maybe you want to rename the section; all the cuts reject standard model particles; this section focues on electron, hadron, and muon vetos specifically.
+** DONE l982; give a number for long-life time v. intermeidate life time?
+** DONE l986: this setence is a bit confusing, you are trying to distinguish from the nsplit/ nshared hits cut? maybe add that in explicilty? I think otherwise the way it's written is a little confusing
+** DONE l989: additional particles with momentum above x? (some very low momentum hadrons could also be produced I think?)
+** DONE l990: did you define delta R already?
+** DONE l994: "significantly less than 1% of signal events have pTCone above 20 GeV" or something... right now there's a subject/verb problem with the "and" (it's not the pTCone that's 1%)
+** DONE l995: one of the most effective? what are the other effective ways? why choose this over those? Maybe better to say, "a very effective way..."
+** DONE l998: there's no way around the fact that it seems odd to tighten it for the stable case but not for metastable... I think it's OK the way you've written it, but someone might ask why not for metastable?  so you could address that quesiton in the text if you want (but I understand why you may not want to!)
+** DONE l1004: maybe you should define what is a medium muon? (pT, eta, quality?)
+** DONE l1018: why beacuse of calibration? Might be worth spelling out.
+** DONE 1019: define zero fraction
+** DONE l1023-1039: this section is quite good, but dense. It may be clearer to someone who hasn't thought it through already if you make seperate paragrapsh to discuss fem and E/p, but on the other hand may not be worth the effort...
+** DONE l1044: listing the candidation mass as a final requirement is a bit misleading, as it sounds like it's a discrete cut like the ionizaiton, rather than a sliding window for each mass hypothesis.
+** DONE l1056: technically it's just the Bethe formula now I think for some reason Bloch got dropped...
+** DONE l1059: why this range of Beta? Does it not perform well in other ranges?
+** DONE l1058: if I were your advisor, I would ask how you get from the Landau-Vavilov and Bethe distribution to this parameteric 
+        I assume you talk about how to measure dE/dx (per pixel using ToT, but also the truncuated mean approach, and the details of IBL v. Pixel for track dE/dx) in another section?
+** DONE l1068: might be nice to add the plot of reco. mass v. true mass to justify this 3% correction
+** DONE l1071: is the width from dE/dx or from momentum measurement?
+** DONE 1075: clarify that this is done with signal MC
+** DONE l1082: not sure why you are highlighting the rejection power of SM and ionization together?
+** DONE l1089: it's the ioniziation cut that causes the most mass dependence? not momentum or MET (at low mass?)
+** DONE l1103: might be nice to include some of your accepctance / efficiency tables here, for more complete info than we put into the paper version
+
+
+* Chapter 12
+** DONE 1110: "So" --> "Therefore"; so is too colloquial
+** DONE 1111: "like" --> "including"; same as above
+** DONE 1114: "these reasons" --> "this reason" (unless you listed more than one? I only see the lack of reproduction of outliers?)
+** DONE 1117: I would add "Standard Model" charged particles to the very beginning, since our signal doesn't fall into this category. Maybe overkill, but I think better to be explicit.
+** DONE 1120: I would say "samples of tracks from each"
+** DONE 1132-1133: What do you mean, momnetum is expected to vary significantly? Can you be more precise / descriptive?
+** DONE 1137: why are muons better isolated? Spell it out.
+** DONE 1146: "independence of ionization and other aspects of the event" --> "independence between ionization and other kinematic variables in the event"
+** DONE 1148: "dE/dx is not correlated with momentum" -- that's not really true. I would say, to the level that we can measure it, or to the level that is significant, or that it's not very correlated.... but because of relativisitic rise you can't make that statement as is.
+** DONE 1153: probably better to make this clearer; you get a sample of dE/dx and p from the random generations, then use those to estimate mass based on the parameterization
+** DONE 1162-1163: need to reword slightly; the dE/dx template is not just in the signal region, also in the low dE/dx region used for normalization (techincally only the high dE/dx part is in the signal region)
+** DONE 1179 and 1181: confusing chronology; you say "is then normalized" and then "this normalization takes place before"
+** DONE 1205: "Their" --> "There"
+** FOLLOWUP 1207: Why does the background method underestimate the tail of the mass distribution? Why does this go away after the ionization requirement? You should at least provide some hypotheses.
+** DONE Do you discuss the uncertainties on the background estimate seperately? I think it's important to spell out the way that the statistical uncertainty is estimated, as well as the different systematics. But maybe you have a seperate uncertainty section. If so, reference it at the end here.
+   In the next chapter, trying to avoid the forward reference.
+** DONE About electron muon pt tails 
+   muons: badly reconstructed p at high momentum. Muons are hard to reconstruct at high p, and the W' search makes very tight selections to ensure good reco.
+   electrons: maybe background slipping in? I'm not as familiar with problems of high p electron performance, but it could be that you have some hadron contaimination. But I'm not sure how that could influence the tail you see.
+
+
+* Extensions
+** E/p
+*** vs Pileup
+*** q/g/b response
+** Event Selection
+*** Optimization Procedure
+** Background Method
+*** Detailed SR distributions
