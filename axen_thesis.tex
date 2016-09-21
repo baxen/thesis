@@ -28,11 +28,12 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[
-		twoside,openright,titlepage,numbers=noenddot,headinclude,%1headlines,
+                twoside,openright, BCOR=5mm,
+                titlepage,numbers=noenddot,headinclude,%1headlines,
 	 	footinclude=true,cleardoublepage=empty,
 		dottedtoc, % Make page numbers in the table of contents flushed right with dots leading to them
-		BCOR=5mm,paper=a4,fontsize=11pt, % Binding correction, paper type and font size
-		ngerman,american, % Languages, change this to your language(s)
+                paper=a4,fontsize=11pt, % Binding correction, paper type and font size
+		american, % Languages, change this to your language(s)
 		]{scrreprt} 
                 
 % Includes the file which contains all the document configurations and packages - make sure to edit this file
@@ -134,8 +135,7 @@
 
 \part{Appendix}
 \include{chapters/app0A_inelastic}
-\include{chapters/app0X_dummy} % Dummy appendix to use to keep track of style
-
+\include{chapters/app0B_yields}
 
 %----------------------------------------------------------------------------------------
 %	POST-CONTENT THESIS PAGES
