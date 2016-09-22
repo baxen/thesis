@@ -46,14 +46,14 @@ The deviations compared to the nominal method are found to be 4\%, and this is t
 
 \subsubsection{Muon Fraction}
 
-The stable region of the analysis explicitly includes tracks identified as muons, which have a known difference in their \dedx distribution from non-muon tracks (Section~\ref{sec:background_sources}).
+The stable region of the analysis explicitly includes tracks identified as muons, which have a known difference in their \dedx distributions compared to non-muon tracks (Section~\ref{sec:background_sources}).
 To account for a difference in muon fraction between the background region and the signal region for this selection, the \dedx templates for muons and non-muons are measured separately and then the relative fraction of each is varied in the random generation.
 The muon fraction is varied by its statistical uncertainty and the resulting difference of 3\% in background yield is taken as the systematic uncertainty.
 
-\subsubsection{\ac{IBL} Corrections}
+\subsubsection{\acs{IBL} Corrections}
 
-The ac{IBL}, described in Section~\ref{sec:pixel}, received a significant dose of radiation during the data collection in 2015.
-The irradiation effect the electronics and can alter the \dedx measurement which includes the \ac{ToT} from the \ac{IBL}.
+The \ac{IBL}, described in Section~\ref{sec:pixel}, received a significant dose of radiation during the data collection in 2015.
+The irradiation can cause a drift in the frontend electronics and thus alter the \dedx measurement which includes the \ac{ToT} output by the \ac{IBL}.
 These effects are corrected for in the nominal analysis by scaling the \dedx measurements by a constant factor derived for each run to match the average \dedx value to a reference run where the \ac{IBL} was known to be stable to this effect.
 However, this corrective factor does not account for inter-run variations.
 To account for this potential drift of \dedx, the correction procedure is repeated by varying the corrections up and down by the maximal run-to-run variation from the full data-taking period, which results in an uncertainty of 3.8\%.
@@ -110,7 +110,7 @@ The simulated events were generated prior to data collection with an estimate of
 This estimate does not match the value of pileup during actual data collection, but a large fraction of the simulated events would be discarded in order to match the distribution in data.
 Therefore the simulated signal events are not reweighted for pileup by default in the analysis.
 The effect of the pileup on signal efficiency is not expected to depend on the mass or lifetime of the generated signal events, which allows all of the generated signal events to be used together to assess the pileup dependence.
-To account for the potential effect of the difference between the number of interactions per bunch crossing between data and simulation, the difference in yield between the nominal signal events and the reweighted events averaged over all masses and lifetimes is taken as a systematic uncertainty on the yield for each mass and lifetime (1.1\%).
+To account for the potential effect of the difference in the number of interactions per bunch crossing between data and simulation, the difference in yield between the nominal signal events and the reweighted events averaged over all masses and lifetimes is taken as a systematic uncertainty on the yield for each mass and lifetime (1.1\%).
 
 \subsubsection{Trigger Efficiency Reweighting}
 As described in Section~\ref{sec:track_requirements}, the selection for this analysis does not require a sufficiently large value of \met to be above the plateau of trigger efficiency.
@@ -130,7 +130,7 @@ This results in an uncertainty of only 0.9\% as the majority of events are well 
 
 \subsubsection{Missing Transverse Momentum Scale}
 
-The \ac{ATLAS} \ac{CP} group provides a default recommendation for systematic variations of jets and missing energy (\textbf{note: I'm not quite sure what to cite for this - I don't see any papers from the jet/met group after this was implemented}). These variations enter into this analysis only in the requirement on \met. The effect of the measured scale of \met is evaluated by varying the \met scale according to the one sigma variations provided by all \ac{CP} recommendations on objects affecting event kinematics in simulated signal events. The \met is reconstructed from fully reconstructed objects so any systematic uncertainties affecting jets, muons, electrons, or the \met soft terms are included. The only non-negligible contributions found using this method are itemized in Table~\ref{tab:met_syst_contributions} for an example signal sample (1200 GeV, Stable R-Hadron), where the systematic is measured as the relative difference in the final signal efficiency after apply the associated variation through the CP tools. The only variations that are significant are the grouped jet systematic variations, which combine recommended jet systematic uncertainties into linearly independent variations. 
+The \ac{ATLAS} \ac{CP} group provides a default recommendation for systematic variations of jets and missing energy (\textbf{note: I'm not quite sure what to cite for this - I don't see any papers from the jet/met group after this was implemented}). These variations enter into this analysis only in the requirement on \met. The effect of the measured scale of \met is evaluated by varying the \met scale according to the one sigma variations provided by all \ac{CP} recommendations on objects affecting event kinematics in simulated signal events. Missing energy is reconstructed from fully reconstructed objects so any systematic uncertainties affecting jets, muons, electrons, or the \met soft terms are included. The only non-negligible contributions found using this method are itemized in Table~\ref{tab:met_syst_contributions} for an example signal sample (1200 GeV, Stable R-Hadron), where the systematic is measured as the relative difference in the final signal efficiency after applying the associated variation through the CP tools. The only variations that are significant are the grouped jet systematic variations, which combine recommended jet systematic uncertainties into linearly independent variations. 
 
 \begin{table}
   \begin{center}
@@ -169,12 +169,12 @@ This is found to have a less than 0.04\% effect on signal acceptance, on average
 This is found to have no effect on signal acceptance, so again the systematic is again negligible.
 
 \subsubsection{Muon Veto}
-The metastable signal region requires that the candidate tracks are not identified as medium muons because for the majority of \rhadrons in the lifetime range included in that region do not reach the muon spectrometers before they decay. 
+The metastable signal region requires that the candidate tracks are not identified as medium muons because the majority of \rhadrons in the lifetime range included in that region do not reach the muon spectrometers before they decay. 
 However, the exponential tail of the \rhadron lifetime distribution results in some \rhadrons traversing the muon spectrometer. 
 These can still fail the muon medium identification because they can fail on the requirement on the number of precision hits required to pass the loose selection because they arrive late to the muon spectrometer.
-This can be seen in Figure~\ref{fig:muonVeto_eff}, which shows the efficiency of the muon veto as a function of $\frac{1}{\beta}$, for two simulated stable \rhadron samples.
+This can be seen in Figure~\ref{fig:muonVeto_eff}, which shows the efficiency of the muon veto as a function of $1/\beta$, for two simulated stable \rhadron samples.
 
-\begin{figure}
+\begin{figure}[hbtp]
 \centering
 \includegraphics[width=\fullfig]{figures/veff_invbeta.png}
 \caption{The efficiency of the muon veto for $R$-hadrons of two different masses, as a function of $\frac{1}{\beta}$ for simulated \rhadron tracks.}
@@ -182,22 +182,22 @@ This can be seen in Figure~\ref{fig:muonVeto_eff}, which shows the efficiency of
 \end{figure}
 
 Thus, the efficiency of the muon veto depends on the timing resolution of the spectrometer, so an uncertainty is applied to the signal efficiency to cover differences in timing resolution between data and simulation. 
-First, a sample of $Z\rightarrow\mu\mu$ events is selected in data in which one of the muons has a late arrival time measured in \ac{MDT}. 
+First, a sample of $Z\rightarrow\mu\mu$ events is selected in data in which one of the muons has a late arrival time measured in the \ac{MDT}. 
 Then the reconstructed $\beta$ distribution is compared to the distribution in simulated $Z\rightarrow\mu\mu$ events; the difference between these two distributions reflects the difference in timing resolution between data and simulation.
 To emulate this difference in simulated signal events, the magnitude of the difference is used to scale and shift the true $\beta$ distribution of \rhadrons in simulation. 
 Signal events are then reweighted based on this varied $\beta$ distribution, and the difference in the efficiency of the muon veto selection is compared with the nominal and reweighted true $\beta$ distributions. 
 The difference in muon veto efficiency is taken as a systematic uncertainty of the muon veto. 
+ 
+The comparison of reconstructed $\beta$ between data and simulation is performed separately in the barrel, transition, and endcap regions of the spectrometer, and the reweighting of the true $\beta$ distribution in signal is done per region. 
+The comparison of average reconstructed \ac{MDT} $\beta$ between data and simulation for the barrel region is shown in Figure~\ref{fig:mdt_beta} for $Z\rightarrow\mu\mu$ events.
+As expected, The uncertainty is found to be negligible for $R$-hadrons with short lifetimes, and is only significant for lifetimes above 30 ns.
 
-\begin{figure}
+\begin{figure}[hbtp]
 \centering
 \includegraphics[width=\fullfig]{figures/beta_muonveto.pdf}
 \caption{The average reconstructed MDT $\beta$ distribution for $Z\rightarrow\mu\mu$ events in which one of the muons is reconstructed as a slow muon, for both data and simulation. A gaussian fit is superimposed.}
 \label{fig:mdt_beta}
 \end{figure}
- 
-The comparison of reconstructed $\beta$ between data and simulation is performed separately in the barrel, transition, and endcap regions of the spectrometer, and the reweighting of the true $\beta$ distribution in signal is done per region. 
-The comparisons of average reconstructed \ac{MDT} $\beta$ between data and simulation for each of the three detector regions in Figure~\ref{fig:mdt_beta} for $Z\rightarrow\mu\mu$ events.
-As expected, The uncertainty is found to be negligible for $R$-hadrons with short lifetimes, and is only significant for lifetimes above 30 ns.
 
 \subsubsection{Luminosity}
 The luminosity uncertainty is provided by a luminosity measurement on \ac{ATLAS} and was measured to be 5\% at the time of the publication of this analysis.
@@ -230,7 +230,7 @@ These counts are summarized in Table~\ref{tab:yields}.
 \end{table}
 
 The mass estimated using \dedx (Section~\ref{sec:mass_requirement}) provides the final discriminating variable, where the signal would be expected as an excess in the falling exponential tail of the expected background.
-The observed distribution of masses is shown in Figure~\ref{fig:signal_mass} along with the predicted distribution from the background estimate for each signal region.
+The observed distribution of masses is shown in Figure~\ref{fig:signal_mass}, along with the predicted distribution from the background estimate for each signal region.
 Both include a few example simulated signal distributions, which show the scale of an excess were the \rhadron signals present.
 Their is no statistically significant evidence of an excess in the data over the background estimation.
 From this distribution it is clearly possible to rule out signals with lower masses, around 1200 \GeV, which have larger cross sections.
@@ -243,6 +243,7 @@ From this distribution it is clearly possible to rule out signals with lower mas
   \includegraphics[width=\halffig]{figures/sr_mass_metastable.pdf}
 }
 \caption{The observed mass distribution of events in data and the generated background distribution in (a) the stable and (b) the metastable signal region. A few example simulated signal distributions are superimposed.}
+\label{fig:signal_mass}
 \end{figure}
 
 % ----------------------------------------
@@ -251,7 +252,7 @@ From this distribution it is clearly possible to rule out signals with lower mas
 
 Because there is no observed significant excess of events in the signal region, this analysis sets upper limits on the allowed cross section for \rhadron production.
 These limits are set for each mass point by counting the observed events in data, along with the expected background and simulated signal events, in windows of mass.
-The mass windows are formed by fitting the distribution of signal events to a Gaussian distribution, and the window is then $\pm 1.4\sigma$ around the center of that Guassian.
+The mass windows are formed by fitting the distribution of signal events to a Gaussian distribution, and the window is then $\pm 1.4\sigma$ around the center of that Gaussian.
 Two examples of the windows formed by this procedure are shown in Tables~\ref{tab:window_10ns}-\ref{tab:window_stable}, for the stable and 10 ns working points.
 The corresponding counts of observed data, expected background, and simulated signal for those same working points are shown in Tables~\ref{tab:counts_stable}-\ref{tab:counts_10ns}.
 Appendix~\ref{app:yields} includes the mass windows and counts for all of the considered signal points.
@@ -354,11 +355,10 @@ For the 10 ns and stable cross section limits, both the observed limit and expec
 There the cross sectional limits are lower because of the increased available luminosity, while the signal cross sections were also much lower because of the lower collision energy.
 
 \begin{figure}
-\begin{center}
-  \includegraphics[width=\fullfig]{figures/xsec_limit_stable.pdf}
-\end{center}
-\label{fig:xsec_limit_stable}
+\centering
+\includegraphics[width=\fullfig]{figures/xsec_limit_stable.pdf}
 \caption{The observed and expected cross section limits as a function of mass for the stable simulated signal. The predicted cross section values for the corresponding signals are included.}
+\label{fig:xsec_limit_stable}
 \end{figure}
 
 \begin{figure}
@@ -368,8 +368,8 @@ There the cross sectional limits are lower because of the increased available lu
 \subfloat{\includegraphics[width=\halffig]{figures/xsec_limit_10ns.pdf}}\\
 \subfloat{\includegraphics[width=\halffig]{figures/xsec_limit_30ns.pdf}}
 \subfloat{\includegraphics[width=\halffig]{figures/xsec_limit_50ns.pdf}}\\
-\label{fig:xsec_limit_metastable}
 \caption{The observed and expected cross section limits as a function of mass for each generated lifetime. The predicted cross section values for the corresponding signals are included.}
+\label{fig:xsec_limit_metastable}
 \end{figure}
 
 
@@ -383,7 +383,7 @@ These mass limits range from only 740 \GeV at the lowest lifetimes considered, w
 The observed and expected mass limits for each lifetime point are detailed in Table~\ref{tab:mass_limits}, which also lists which selection region was used for each lifetime.
 These excluded range of masses as a function of lifetime is also shown in Figure~\ref{fig:mass_limits}.
 The Run 1 limits are included for comparison; the limits have increased by about 200 \GeV on average.
-The search has also improved since the Run 1 version in optimizing the region between 30 \GeV and detector-stable lifetimes by introducing the second signal region.
+The search has also improved since the previous incarnation from Run 1 in optimizing the region between 30 \GeV and detector-stable lifetimes by introducing the second signal region.
 The definition of the stable region prevents the significant drop in mass limit that occurred above 30 \GeV in the Run 1 analysis.
 
 \begin{table}[htp]
@@ -418,7 +418,7 @@ The definition of the stable region prevents the significant drop in mass limit 
 \section{Context for Long-Lived Searches}
 This search plays an important role in the current, combined \ac{ATLAS} search for long lived particles.
 The mass limits provided by various \ac{ATLAS} searches for long-lived gluino \rhadrons can be seen in Figure~\ref{fig:combined_rhadrons}.
-This search provides the most competitive limit for lifetimes between 3 ns and all the way up through very long lifetimes, where it is still competitive with dedicated searches for stable particles.
+This search provides the most competitive limit for lifetimes between 3 ns up through very long lifetimes, where it is still competitive with dedicated searches for stable particles.
 The limits placed on gluino production are very similar to the limits on promptly decaying models.
 
 \begin{figure}[htbp]
