@@ -51,7 +51,7 @@ Those requirements are listed in Table~\ref{tab:performance_goals}.
   Tracking & $\sigma_{\pt}/\pt = 0.05\% \pt + 1\%$ & $2.5$ & - \\
   EM Calorimetry & $\sigma_{E}/E = 10\%/\sqrt{E} + 0.7\%$ & $3.2$ & $2.5$ \\
   Hadronic Calorimetry & & \\
-  \quad Barrel and End-Cap & $\sigma_{E}/E = 50\%/\sqrt{E} + 3\%$ & $3.2$ & $3.2$ \\
+  \quad Barrel and Endcap & $\sigma_{E}/E = 50\%/\sqrt{E} + 3\%$ & $3.2$ & $3.2$ \\
   \quad Forward & $\sigma_{E}/E = 100\%/\sqrt{E} + 10\%$ & $3.1 - 4.9$ & $3.1 - 4.9$ \\
   Muon Spectrometer & $\sigma_{\pt}/\pt = 10\%$ at $p_T = 1\ \TeV$ & $2.7$ & $2.4$ \\
   \hline
@@ -82,7 +82,7 @@ Many aspects of the detector are independent of the this coordinate to first ord
 The remaining direction is typically specified using rapidity or pseudorapidity, where rapidity is defined as
 
 \begin{equation}\label{eq:rapidity}
-y = \frac{1}{2} \ln \frac{E + p_z}/{E - p_z}
+y = \frac{1}{2} \ln \frac{E + p_z}{E - p_z}
 \end{equation}
 
 \noindent Rapidity is particularly useful to indicate the component along the $z$ direction because differences in rapidity are invariant to boosts along the $z$-direction.
@@ -105,7 +105,7 @@ Pseudorapidity is also preferable to $\theta$ because of the afformentioned boos
 A particle travelling along the beampipe has $\eta = \inf$ and a particle travelling perpendicular to the beampipe has $\eta = 0$.
 The extent of the tracker, $|\eta| < 2.5$, corresponds to approximately $0.05 \pi < \theta [\mathrm{rad}] < 0.95 \pi$ and the extent of the calorimeters, $|\eta| < 4.9$ corresponds to approximately $0.005 \pi < \theta [\mathrm{rad}] < 0.995 \pi$.
 Many detector components are broken into multiple subsystems to provide coverage at greater $|\eta|$.
-The lower $|\eta|$ region is referred to as the barrel, typically with $|\eta| \lesssim 2$, and the greater $|\eta|$ region is often referred to as the end-cap.
+The lower $|\eta|$ region is referred to as the barrel, typically with $|\eta| \lesssim 2$, and the greater $|\eta|$ region is often referred to as the endcap.
 
 The initial energy and momentum of a proton-proton collision along the $z$ direction is unknown in hadron colliders because different energies and momentums can be carried by the partons.
 Along the transverse plane, however, the vector sum of momentum will be zero.
@@ -118,8 +118,8 @@ In addition, \pt alone determines the amount of curvature in the magnetic field,
 The magnet system used in \ac{ATLAS} is designed to provide a substantial magnetic field in the two regions where the trajectory of particles is measured, the inner detector and the muon spectrometer.
 The magnetic field provides a curvature to the trajectory of charged particles and allows the precision tracking measurements to make high resolutions measurements of \pt.
 To provide a magnetic field in these regions, \ac{ATLAS} uses a hybrid system with four separate, superconducting magnets.
-A single solenoid provides a 2 T axial magnetic field for the inner detector, while a barrel toroid and two end-cap toroids produce a magnetic field of 0.5 and 1 T, respectively, for the muon detectors.
-This geometry is illustrated in Figure~\ref{fig:magnets_overview}.
+A single solenoid provides a 2 T axial magnetic field for the inner detector, while a barrel toroid and two endcap toroids produce a magnetic field of 0.5 and 1 T, respectively, for the muon detectors.
+This geometry is illustrated in Figure~\ref{fig:magnets_overview}, and the parameters of the three magnet systems are summarized in Table~\ref{tab:magnet_parameters}.
 
 \begin{figure}[hbtp]
 \centering
@@ -128,29 +128,11 @@ This geometry is illustrated in Figure~\ref{fig:magnets_overview}.
 \label{fig:magnets_overview}
 \end{figure}
 
-The central solenoid uses a single-layer coil with a current of 7.730 kA to generate the 2 T axial field at the center of the magnet. 
-The single-layer coil design enables a minimal amount of material to be used in the solenoid's construction, which is important because the solenoid is placed between the inner detector and the calorimeters.
-At normal incidence the magnet has only 0.66 radiation lengths worth of material, where one radiation length is the mean distance over which a high-energy electron loses all but $1/e$ of its energy through material interactions~\cite{pdg}.
-The coil is made of a high-strength aluminum stabilized NbTi superconductor which was optimized to achieve a high field with minimal thickness.
-The axial magnetic field produced by the solenoid bends charged particles in the $\phi$ direction.
-
-The barrel toroid consists of eight coils which generate a 0.5 T magnetic field in the cylindrical region around the calorimeters with an approximately 20 kA current.
-The coils are separated only by air to reduce the scattering of muons as they propogate through the region.
-The coils are made of an aluminum stabilized NbTiCu superconductor and each is separately housed in a vacuum and cold chamber.
-This magnetic configuration produces a field in the $\phi$ and so curves muons traversing the volume primarily in the $\eta$ direction.
-
-The end-cap toroids follow a similar design to the barrel toroid, with eight separate NbTiCu coils, but in this case all eight are housed within a single cold mass.
-This extra structure is necessary to withstand the Lorentz forces exerted by the magnets. 
-These magnets are rotated 22.5\% relative to the barrel toroid to provide a uniform field in the transition between the two systems. 
-The end-cap toroids also produce a field in the $\phi$ direction and curve muons primarily in the $\eta$ direction.
-
-The major parameters of the three magnet systems are summarized in Table~\ref{tab:magnet_parameters}.
-
 \begin{table}
 \centering
 \begin{tabular}{lcccc}
 \hline
-Parameter & Unit & Solenoid & Barrel Toroid & End-Cap Toroids \\
+Parameter & Unit & Solenoid & Barrel Toroid & Endcap Toroids \\
 \hline
 Inner Diamater & m & 2.4 & 9.4 & 1.7 \\
 Outer Diamater & m & 2.6 & 20.1 & 10.7 \\
@@ -163,44 +145,155 @@ Current & kA & 7.7 & 20.5 & 20.0 \\
 Stored Energy & MJ & 38 & 1080 & 206 \\
 \hline
 \end{tabular}
+\label{tab:magnet_parameters}
 \end{table}
 
+The central solenoid uses a single-layer coil with a current of 7.730 kA to generate the 2 T axial field at the center of the magnet. 
+The single-layer coil design enables a minimal amount of material to be used in the solenoid's construction, which is important because the solenoid is placed between the inner detector and the calorimeters.
+At normal incidence the magnet has only 0.66 radiation lengths worth of material, where one radiation length is the mean distance over which a high-energy electron loses all but $1/e$ of its energy through material interactions~\cite{pdg}.
+The coil is made of a high-strength aluminum stabilized NbTi superconductor which was optimized to achieve a high field with minimal thickness.
+The axial magnetic field produced by the solenoid bends charged particles in the $\phi$ direction.
+
+The barrel toroid consists of eight coils which generate a 0.5 T magnetic field in the cylindrical region around the calorimeters with an approximately 20 kA current.
+The coils are separated only by air to reduce the scattering of muons as they propogate through the region.
+The coils are made of an aluminum stabilized NbTiCu superconductor and each is separately housed in a vacuum and cold chamber.
+This magnetic configuration produces a field in the $\phi$ and so curves muons traversing the volume primarily in the $\eta$ direction.
+
+The endcap toroids follow a similar design to the barrel toroid, with eight separate NbTiCu coils, but in this case all eight are housed within a single cold mass.
+This extra structure is necessary to withstand the Lorentz forces exerted by the magnets. 
+These magnets are rotated 22.5\% relative to the barrel toroid to provide a uniform field in the transition between the two systems. 
+The endcap toroids also produce a field in the $\phi$ direction and curve muons primarily in the $\eta$ direction.
 
 % ----------------------------------------
 
 \section{Inner Detector}
 
-
+The \ac{ATLAS} inner detector provides excellent momentum resolution as well as accurate primary and secondary vertex measurements through robust pattern recognition that identifies tracks left by charged particles. 
+These tracks fulfill a number of important roles in the \ac{ATLAS} measurement system: they measure the momentum of charged particles inluding electrons and muons, they can identify electrons or photon conversions, they assign various particles and jets to different vertices, and they provide a correction to \met measurements from low energy particles. 
+The system has to be accurate enough to separate tracks from dozens of verticies and to resolve each vertex individually, as well as accurate enough to measure the \pt of very high momentum tracks which curve very little even in the large magnetic field.
+This is accomplished by several independent layers of tracking systems.
+Closest to the interaction point is the very high granulity Pixel detector, which is followed by the \ac{SCT} layers.
+These subdetectors both use discrete space-points to reconstruct track patterns.
+The final layer, the \ac{TRT}, uses many layers of straw tube elements interleaved with transition radiation material to provide continuous tracking.
+The arrangement of these subdetectors is shown in Figure~\ref{fig:id_overview}.
+To provide the desired hermetic coverage, the subdetectors are divided into barrel and endcap geometries.
+Figure~\ref{fig:id_detail_schematic} shows the layout of the subdetectors in more detail, and illustrates how tracks at various pseudorapidities can traverse the subdetectors; tracks with $\eta > 1.1$ begin to traverse the endcap subdetectors rather than those in the barrel, and tracks with $\eta > 1.7$ use primarily endcap elements. 
+The \ac{IBL} was not present during the original commisioning of the inner detector and is not shown in this figure.
 
 \begin{figure}[hbtp]
 \includegraphics[width=\fullfig]{figures/id_overview.pdf}
-\caption{}
+\caption{The arrangement of the subdetectors of the \ac{ATLAS} inner detector. Each of the subdetectors is labelled in the cut-away view of the system.}
 \label{fig:id_overview}
 \end{figure}
 
 \begin{figure}[hbtp]
 \includegraphics[width=\fullfig]{figures/id_detail_schematic.pdf}
-\caption{}
+\caption{A quarter section of the \ac{ATLAS} inner detector which shows the layout of each of the subdetectors in detail. The lower panel shows an enlarged view of the pixel detector. Example trajectories for a particle with $\eta = 1.0, 1.5, 2.0, 2.5$ are shown. The \ac{IBL}, which was added after the original detector commisioning, is not shown.}
 \label{fig:id_detail_schematic}
 \end{figure}
 
+Figure ~\ref{fig:id_slice} shows a computer generated three-dimensional view of the inner detector along the beam axis, which emphasizes the straw tube structure of the \ac{TRT} as well as the overlapping geometry of the \ac{SCT}.
+This figure also includes the \ac{IBL}, which was added during the long shutdown and provides an additional measurement layer in the Pixel detector as of the beginning of Run 2. 
+Figure ~\ref{fig:id_slice_long} shows an alternative computer generated three-dimensional view transverse to the beam axis which emphasizes the endcap structures of the \ac{SCT} and \ac{TRT}. 
 
 \begin{figure}[hbtp]
 \includegraphics[width=\fullfig]{figures/id_slice.png}
-\caption{}
+\caption{A computer generated three-dimensional view of the inner detector along the line of the beam axis. The subdetectors and their positions are labelled.}
 \label{fig:id_slice}
 \end{figure}
 
 
 \begin{figure}[hbtp]
 \includegraphics[width=\fullfig]{figures/id_slice_long.pdf}
-\caption{}
+\caption{An alternative computer generated three-dimensional view of the inner detector transverse to the beam axis. The subdetectors and their positions are labelled.}
 \label{fig:id_slice_long}
 \end{figure}
+
+As the closest system to the interaction point, it is crucial for the inner detector to use as little material as possible to avoid scattering of charged particles or photon conversions before they reach the remaining subdetectors.
+The various components, including the readout electronics, cooling infrastructure, gas volumes, and support structures,  were designed to use as little material as possible. 
+Even with these optimizations, the combination of stringent performance requirements and the harsh radiation environment in the inner detector requires a significant amount of material.
+This material causes many electrons to lose most of their energy before reaching the electromagnetic calorimeter and approximately 40\% of photons convert into an electron-positron pair while traversing the inner detector.
+Figure~\ref{fig:id_material} shows the integrated radiation lengths traversed by a straight track in the inner detector as a function of $\eta$, grouped by subdetector.
+There is a large increase in the amount of material for support structures around $|\eta| = 1.7$, where the inner detector transitions from barrel to endcap.
+
+
+\begin{figure}
+\centering
+\includegraphics[width=\fullfig]{figures/id_material_subdetector.png}
+\caption{The integrated radiation lengths traversed by a straight track at the exit of the ID envelope, including the services and thermal enclosures. The distribution is shown as a function of $|\eta|$ and averaged over $\phi$. The breakdown indicates the contributions of individual sub-detectors, including services in their active volume.}
+\label{fig:id_material}
+\end{figure}
+
+The inner detector is designed to work as a cohesive unit to provide complete tracking information for charged particulars, and the subdetectors are complementary.
+Table~\ref{tab:id_parameters} summarizes the parameters of each of the subdetectors as well as the parameters of the combined inner detector. 
+Table ~\ref{tab:id_performance} summarizes the expected performance that can be acheived by the inner detector as a whole.
+
+\begin{table}[h]
+\begin{tabular}{lcccc}
+\hline
+Parameter & Inner Detector & Pixel & \ac{SCT} & \ac{TRT} \\
+\hline
+Inner Radius & 3.1 cm & 3.1 cm & 30 cm & 56 cm \\
+$|\eta|$ Coverage & - & 2.5 & 2.5 & 2.0 \\
+Cell Width & - & 50 \um & 80 \um & 4 mm \\
+Cell Length & - & 400 \um & 12 cm & 70 cm \\
+Material at $|\eta| = 0.0$ & 0.3 $X/X_0$ & & & \\
+Material at $|\eta| = 1.7$ & 1.2 $X/X_0$ & & & \\
+Material at $|\eta| = 2.5$ & 0.5 $X/X_0$ & & & \\
+\hline
+Number of Hits & 48 & 4 & 8 & 36 \\
+Channels & 99 M & 92 M & 6.3 M & 350 k \\
+\hline
+\end{tabular}
+\caption{A summary of the parameters of the inner detector and each of the subdetectors~\cite{atlas_experiment}.}
+\label{fig:id_parameters}
+\end{table}
+
+\begin{table}[h]
+\begin{tabular}{lll}
+\hline
+Parameter & Particle & Value \\
+\hline
+Reconstruction Efficiency & Muon, $\pt = 1\ \GeV$ & 96.8\% \\
+  & Pion, $\pt = 1\ \GeV$ & 84.0\% \\
+  & Electron, $\pt = 5\ \GeV$ & 90.0\% \\
+Momentum Resolution & $\pt = 1\ \GeV$, $|\eta| \approx 0$ & 1.3\% \\
+  & $\pt = 1\ \GeV$, $|\eta| \approx 2.5$ & 2.0\% \\
+  & $\pt = 100\ \GeV$, $|\eta| \approx 0$ & 3.8\% \\
+  & $\pt = 100\ \GeV$, $|\eta| \approx 2.5$ & 11\% \\
+Transverse \acs{IP} Resolution & $\pt = 1\ \GeV$, $|\eta| \approx 0$ & 75 \um\% \\
+  & $\pt = 1\ \GeV$, $|\eta| \approx 2.5$ & 200 \um \\
+  & $\pt = 1000\ \GeV$, $|\eta| \approx 0$ & 11 \um \\
+  & $\pt = 1000\ \GeV$, $|\eta| \approx 2.5$ & 11 \um \\
+Longitudinal \acs{IP} Resolution & $\pt = 1\ \GeV$, $|\eta| \approx 0$ & 150 \um\% \\
+  & $\pt = 1\ \GeV$, $|\eta| \approx 2.5$ & 900 \um \\
+  & $\pt = 1000\ \GeV$, $|\eta| \approx 0$ & 90 \um \\
+  & $\pt = 1000\ \GeV$, $|\eta| \approx 2.5$ & 190 \um \\
+\hline
+\end{tabular}
+\caption{A summary of the expected performance of the combined inner detector~\cite{gpd_lhc}. Included are the reconstruction effiencies for multiple particle types as well as the momentum and \ac{IP} resolution for various momenta.}
+\label{fig:id_parameters}
+\end{table}
 
 
 \subsection{Pixel Detector}
 \label{sec:pixel}
+The Pixel detector is the closest detector to the interaction point and therefore is designed to provide extremely high granularity while simultaneously handling a very large dose of radiation from collisions.
+It consists of four layers of silicon pixel modules, each of which provides a precision measurement on the trajectory of any charged particle.
+In the barrel region, the four layers are located at radial distances of 31 mm, 51 mm, 89 mm, and 123 mm. 
+The three outer layers also include endcap elements, illustrated in Figure~\ref{fig:id_detail_schematic}, which are located at 495 mm, 580 mm, and 650 mm away from the interaction point. 
+
+The pixel sensor technology uses a p-n junction of n-type bulk that contains both p\tsup{+} and n\tsup{+} impurities.
+This combination is crucial in maintaining performance after a significant radiation dose, as the n\tsup{+} implants allow the sensor to continue function after the n-type bulk has been converted to a p-type bulk by the accumulation of radiation.
+
+The size of the pixels in the original three layers are 50 \um x 400 \um in the $r-\phi$ and $z$ directions, respectively.
+Those pixels are bump-bonded to front-end readout chips, the FE-I3, which contains a total of 2880 pixels per chip. 
+In the three original pixel layers, the chips are grouped into modules composed of 16 chips each with 46,080 pixels per module and a total size of 20 mm x 60 mm x 250 \um. 
+The modules are further arranged into long rectangular structures that run parallel to the beamline called staves.
+By tiling several staves with an offset of 20\textdegree, the stave geometry provides full azimuthal coverage in the barrel region while accomodating the readout and cable systems.
+The endcap regions are instead arranged into petals and then into wheels. 
+This arrangement can be seen in Figure~\ref{fig:pixel_overview} which shows a computer-generated, cut-away image of the outer three layers of the pixel detector.
+Together these three layers contain 1744 modules between the barrel and two endcap sections.
 
 \begin{figure}[hbtp]
 \includegraphics[width=\fullfig]{figures/pixel_overview.pdf}
@@ -208,20 +301,92 @@ Stored Energy & MJ & 38 & 1080 & 206 \\
 \label{fig:pixel_overview}
 \end{figure}
 
+The innermost layer, the \ac{IBL}, was added during the long shutdown before Run 2, and provides the fourth track measurement.
+It was inserted directly into the existing pixel detector by removing the existing beam pipe and replacing it with a significantly smaller version.
+This insertion can be seen in action in Figure~\ref{fig:ibl_insertion}, which emphasizes the extreme precision required to place the the 70 cm long layer with only 2 mm of clearance.
+The \ac{IBL} was commissioned to provide continued tracking robustness and high precision in the higher luminosity environment of Run 2~\cite{ibl_tdr}.
+The proximity of this layer to the collisions necessitated an even higher granularity and better radiation hardness than the other pixel layers.
+And the strict space requirements to add an active sensing layer so close to the interaction point required a sensor chip with a much higher active area and a larger overall area per chip.
+These requirements led to the development of a new chip type, the FE-I4 (compared to the FE-I3 chips used in the original pixel detector) with improved radiation hardness and a larger active footprint of 90\%.
+The \ac{IBL} is comprised of 448 of these individual chips arranged in 14 staves, with 26,880 pixels per chip and a chip size of 18.5 mm x 41.3 mm x 200 \um.
+The staves, like in the other layers of the pixel detector, are offset by 14\textdegree to provide full azimuthal coverage.
+This arrangement can be seen in Figure~\ref{fig:ibl_geometry}, which shows two computer-generated images of the \ac{IBL} geometry and includes the some of the remaining pixel layers.
+
+
 \begin{figure}[hbtp]
+\centering
 \includegraphics[width=\fullfig]{figures/ibl_insertion.jpg}
-\caption{}
+\caption{An image of the insertion of the \ac{IBL} into the current pixel detector.}
 \label{fig:ibl_insertion}
 \end{figure}
 
 
+\begin{figure}[hbtp]
+\centering
+\subfloat[]{\includegraphics[width=\halffig]{figures/ibl_transverse.png}}\\
+\subfloat[]{\includegraphics[width=\halffig]{figures/ibl_longitudinal.png}}
+\caption{A three-dimensional computer-generated image of the geometry of the \ac{IBL} with a view (a) mostly transverse to the beam pipe (b) mostly parallel to the beam pipe.}
+\label{fig:ibl_geometry}
+\end{figure}
+
 \subsection{Semiconductor Tracker}
 
+The \ac{SCT}, the subdetector which immediately surrounds the Pixel detector, provides additional discrete measurements of the trajectory of a charged particle.
+Because the \ac{SCT} is further away from the interaction point, the spatial resolution does not need to be as high as in the pixel detector, and so the \ac{SCT} uses micro-strips instead of pixels. 
+Although pixels provide a more accurate measurement, the number of pixels and readout channels required to cover the cylidrical area at the radius of the \ac{SCT} layers would be prohibitively complicated and expensive.
+
+Each individual silicon strip sensor contains 768 individual readout strips with a total area of 6.36 cm x 6.40 cm and a pitch of 80 \um. 
+Pairs of these sensors are then bonded together to form a combined strip with a length of 12.8 cm.
+Two of these combined strips are then placed back to back with a relative tilt of 40 mrad.
+This geometry is illustrated in an exploded-out view in Figure~\ref{fig:sct_geometry}.
+The purpose of angular offset of the consecutive layers is to allow the strip sensor areas to more accurately measure the position of a particle by comparing the overlap of the two strips which were traversed by a track.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=\fullfig]{figures/sct_geometry.png}
+\caption{An exploded view of the geometry of the \ac{SCT} double layers in the barrel region.}
+\label{fig:sct_geometry}
+\end{figure}
+
+Four of these double layers are placed in the barrel region, with radii of 284 mm, 355 mm, 427 mm, and 498 mm. 
+Together these layers provide eight additional measurements for each track that traverses the central $|\eta|$ region.
+In the endcap region, the layers are arranged in wheels, with the double layers similarly offset to provide improved resolution.
+With these configurations, the \ac{SCT} achieves a spatial resolution of 17 \um in the $r-\phi$ direction and 580 \um in the $z$ direction.
+
 \subsection{Transition Radiation Tracker}
+
+The final component of the inner detector, the \ac{TRT}, provides continuous tracking using straw drift tubes.
+The tubes are made of Kapton and aluminum with a diameter of 4 mm and are filled with a gas mixture of 70\% Xe, 27\% CO\tsub{2}, and 3\% 0\tsub{2}. 
+At the center of each tube is a gold-plated anode tungsten wire 30 \um in diameter.
+When a charged particle passes through these tubes, it ionizes the gas within.
+The ions produced drift in the electric field established between the wire and the tube wall, and the large electric field near the wire produces avalanche multiplication and results in an electric current on the wire that is read out by the electronics and provides a track measurement.
+The time it takes the ionization to drift to the wire can be used to estimate the distance from the wire that the particle passed through the tube; this gives a resolution on the distance of approximately 130\um.
+Combining several such measurements between consecutive hits in the \ac{TRT} tubes allows the trajectory of the particle to be reconstructed.
+
+In addition to the continuous tracking, the detector can use transition radiation produced when a particle passes between the layers to distinguish between electrons and heavier charged particles.
+The space between the tubes is filled with CO\tsub{2}, and so has a different dielectric constant than the gas within the tubes which contains Xe.
+At the transition between those media, a relativistic particle emits radiation proportional to $\gamma$, so inversely proportional to mass at a fixed momentum.
+The photons produced in this transition then produces an ionization cascade which is significantly larger than the signal for the minimally-ionizing charged particles.
+To distinguish between these two cases, the \ac{TRT} defines two signal thresholds, a low threshold for the typical signal produced by a \ac{MIP} and a high threshold for the the signal produced by transition radiation.
+A high momentum electron is expected to produce approximately 7 to 10 high threshold hits as it traverses the \ac{TRT}, and thus these hits provide a way to distinguish electrons from other charged particles. 
+
+The \ac{TRT} contains 351,000 tubes in total, divided between the barrel and endcap regions. 
+In the barrel region, the tubes are 144 cm long and arranged in 73 layers parallel to the beampipe.
+In the endcap region, the tubes are 37 cm long and arranged in 160 layers transverse to the beampipe.
+These configurations can be seen in Figure~\ref{fig:id_slice} and Figure~\ref{fig:id_slice_long}. 
+With this geometry the \ac{TRT} achieves a resolution of 130 \um  in the $r-\phi$ direction.
 
 % ----------------------------------------
 
 \section{Calorimetry}
+
+The combination of calorimeter systems used in \ac{ATLAS} can measure the energy of electrons, photons, hadrons, and hadronic jets with complete coverage up to $|\eta| < 4.9$ and across $\phi$.
+Unlike the inner detector, the calorimeters are capable of measuring neutral particles.
+To accomplish precision measurements of these particle types, the \ac{ATLAS} calorimeter system uses four individual calorimeters, a \ac{LAr} \acl{EM} calorimeter in the barrel region, a tile hadronic calorimeter in the barrel region, a \ac{LAr} hadronic endcap calorimeter, and a \ac{LAr} forward calorimeter.
+Together these provide hermetic coverage for the \ac{ATLAS} detector.
+The configuration of these calorimeters is illustrated in Figure~\ref{fig:calo_overview}. 
+%Table~\ref{tab:calorimeter_parameters} summarizes the parameters of these systems.
+\textbf{Note: I could make this section much longer. It might be nice to include a more complete description of showers for example. I will extend this section if their is space at the end.}
 
 \begin{figure}[hbtp]
 \includegraphics[width=\fullfig]{figures/calo_overview.pdf}
@@ -229,61 +394,143 @@ Stored Energy & MJ & 38 & 1080 & 206 \\
 \label{fig:calo_overview}
 \end{figure}
 
+% This seems unnecessary, I will come back and add it if anyone asks for it.
+%\begin{table}[hbtp]
+%\begin{tabular}{lclll}
+%\hline
+%Component & Layers & Coverage & Granularity & Depth \\
+%\hline
+%\multicolumn{5}{c}{\ac{EM} Barrel Calorimeter}\\
+%Layer 1 & 1 & $|\eta| < 1.475$ & 0.003 x 0.1 & 4.3 $X_0$ \\
+%Layer 2 & 1 & $|\eta| < 1.475$ & 0.025 x 0.025 & 16 $X_0$ \\
+%Layer 3 & 1 & $|\eta| < 1.475$ & 0.05 x 0.025 & 2 $X_0$ \\
+%\multicolumn{5}{c}{\ac{EM} Endcap Calorimeter}\\
+%Layer 1 & 1 & $1.375 < |\eta| < 3.2$ & 0.003 x 0.1 & 4.0 $X_0$ \\
+%Layer 2 & 1 & $1.375 < |\eta| < 3.2$ & 0.025 x 0.025 & 20 $X_0$ \\
+%Layer 3 & 1 & $1.5 < |\eta| < 2.5$ & 0.05 x 0.025 & 2 $X_0$ \\
+%\multicolumn{5}{c}{Hadronic Tile Calorimeter}\\
+%\multicolumn{5}{c}{EM Barrel Calorimeter}\\
+%\multicolumn{5}{c}{EM Barrel Calorimeter}\\
+%\hline
+%\end{tabular}
+%\caption{The granularity is measured in units of $\Delta\eta x \Delta\phi$.}
+%\end{table}
+
+The calorimeters are designed to absorb and measure the energy carried by a particle, and completely stop the particle's propagation in the process.
+This requires a significant amount of material to provide interactions.
+These interactions then produce secondary particles, which can produces secondary particles in turn, and thus form a cascade of particles called an \ac{EM} or hadronic shower, depending on the governing mechanism.
+Electromagnetic and hadronic showers have very different properties and require different technologies to measure them accurately.
+All of the calorimeters in the \ac{ATLAS} calorimeter system are sampling calorimeters, that is they use alternating layers of absorbing and active material.
+The dense absorbing layers initiate the showers while the active layers measure the energy of the produced particles.
+A fraction of the energy is lost in the inactive layers, so the energy measurement from the active layers has to be corrected to estimate the actual energy of the particle.
+
+The \ac{EM} calorimeter provides around 20 radiation lengths ($X_0$) while the hadronic calorimeter provides around 10 interaction lengths ($\lambda_0$. 
+As mentioned previously, radiation lengths measure the distance over which an electromagnetically interacting particle loses a characteristic fraction of its energy.
+Interaction lengths, on the other hand, measure the mean distance travelled by a hadronic particle before undergoing a nuclear interaction~\cite{pdg}.
+Figure~\ref{fig:calo_interactionlengths} show the radiation lengths in the layers of the \ac{EM} calorimeter in the barrel region as well as the interaction lengths for all calorimeters.
+
 
 \begin{figure}[hbtp]
-\includegraphics[width=\fullfig]{figures/calo_interactionlengths.pdf}
-\caption{}
+\subfloat[]{\includegraphics[width=\halffig]{figures/calo_radiationlengths.pdf}}
+\subfloat[]{\includegraphics[width=\halffig]{figures/calo_interactionlengths.pdf}}
+\caption{The depth of (a) the electromagnetic barrel calorimeter in radiation lengths and (b) all calorimeters in interaction lengths as a function of pseudorapidity.}
 \label{fig:calo_interactionlengths}
 \end{figure}
 
+\subsection{Electromagnetic Calorimeter}
+
+The electromagnetic calorimeters use alternating layers of \acl{LAr} and lead in an accordion shape. 
+The accordion shape allows a construction that provides complete coverage in the $\phi$ direction while also providing many alternating layers for the a particle to pass through.
+The configuration is detailed in Figure~\ref{fig:calo_barrel_schematic}.
+When an electron or photon passes through the lead, it produces an electromagnetic shower.
+The particles produced in those showers then pass into and ionize the \acl{LAr}; the ions produced can then be collected by an electrode in the \acl{LAr} layer to provide the actual energy measurement.
+
 \begin{figure}[hbtp]
 \includegraphics[width=\fullfig]{figures/calo_barrel_schematic.pdf}
-\caption{}
+\caption{A schematic of the \ac{LAr} calorimeter in the barrel region, highlighting the accordion structure.}
 \label{fig:calo_barrel_schematic}
 \end{figure}
 
-\begin{figure}[hbtp]
-\includegraphics[width=\fullfig]{figures/calo_endcap_overview.pdf}
-\caption{}
-\label{fig:calo_endcap_overview}
-\end{figure}
+The barrel region is covered by a presampler and three separate sampling layers with decreasing segmentation.
+The presampler is just a thin layer of \acl{LAr} which measures the energy of any electromagnetic showers which are initiated before the particle reaches the calorimeter due to interactions with the detector material.
+The first layer is the strip layer, which has fine segmentation in $\eta$ to enhance the identification of shower shapes and to provide a precise $\eta$ measurement for reconstructing photons and electrons.
+The strip layer has only 4 radiation lengths worth of material, and has a segmentation of $\Delta\eta = 0.003$ and $\Delta\phi = 0.1$. 
+The second layer is also finely segmented, with a segmentation of $\Delta\eta = 0.025$ and $\Delta\phi = 0.025$, and a thickness of 16 $X_0$.
+This layer is designed to contain an electromagnetic shower and to measure the majority of the energy for photons and electrons.
+The third layer is only 2 $X_0$ thick and measures the energy of electromagnetic showers which leak out of the second layer, and helps to separate electromagnetic showers from hadronic showers. 
+The structure of the \ac{LAr} endcap calorimeter is similar except that the layers are arranged parallel to the beampipe to measure energy deposits from high $\eta$ particles.
 
-
-\subsection{Electromagnetic Calorimeters}
-
-\begin{figure}[hbtp]
-\includegraphics[width=\fullfig]{figures/tile_segmentation.pdf}
-\caption{}
-\label{fig:tile_segmentation}
-\end{figure}
-
+%\begin{figure}[hbtp]
+%\includegraphics[width=\fullfig]{figures/calo_endcap_overview.pdf}
+%\caption{}
+%\label{fig:calo_endcap_overview}
+%\end{figure}
 
 \subsection{Hadronic Calorimeters}
 
-\subsection{Forward Calorimeters}
+The hadronic calorimeters use a few different technologies to satisfy the resolution demands in the different areas of the detector, and together they cover the region $|\eta| < 2.7$.
+In the barrel region, for $|\eta| < 1.7$, the hadronic calorimeters are constructed of alternating tiles of steel and plastic scintillator. 
+Like in the electromagnetic calorimeter, the dense layer initiates a shower (in this case the dense layer is the steel and the shower is hadronic) of particles which pass into and ionize the following layer.
+The ioniziation in the plastic scintillator instead produces a light signal proportional to the amount of ionization produced by the shower, and this signal is measured using photomultipliers and provides the actual energy measurement.
+The construction of a tile in the calorimeter is shown Figure~\ref{fig:hadronic_tile}, which highlights the alternating layers of steel and scintillator.
+
+\begin{figure}[hbtp]
+\includegraphics[width=\fullfig]{figures/hadronic_tile.png}
+\caption{A schematic of a hadronic tile module which shows the alternating layers of steel and plastic scintillator.}
+\label{fig:hadronic_tile.png}
+\end{figure}
+
+This tile calorimeter, as well as the remaining hadronic calorimeters, have a much coarser granularity than the electromagnetic calorimeters.
+The high granularity is not needed for an accurate energy measurement, and the hadronic calorimeters are not designed to distinguish particle types like the electromagnetic calorimeters.
+The tile granularity is approximately $\Delta\eta = 0.1$ and $\Delta\phi = 0.1$, and the segmentation in depth and $\eta$ is shown in Figure~\ref{fig:tile_segmentation}.
+
+\begin{figure}[hbtp]
+\includegraphics[width=\fullfig]{figures/tile_segmentation.pdf}
+\caption{The segmentation in depth and $\eta$ of the tile-calorimeter modules in the central (left) and extended (right) barrels.}
+\label{fig:tile_segmentation}
+\end{figure}
+
+The remaining hadronic calorimeters all use the same alternating, sampling structure but with different active and inactive materials.
+The hadronic endcap calorimeter covers the range of $1.5 < |\eta| < 3.2$ and uses an inactive layer of copper and an active layer of \acl{liquid argon}.
+The forward calorimeter covers the range of $3.1 < |\eta| < 4.9$ and uses a dense matrix of copper and tungsten filled with \acl{LAr}. 
 
 % ----------------------------------------
 
 \section{Muon Spectrometer}
 
+Among \ac{SM} particles, only muons and neutrinos consistently pass through the calorimeters.
+Because the neutrinos are also electrically neutral, there is no feasible option to measure them directly in \ac{ATLAS}.
+The muons, on the other hand, are charged and are thus already measured as a track in the inner detector.
+The muon spectrometer provides a way to consistently identify those muon tracks and to also provide an additional measurement of their momentum.
+
+The muon spectrometer contains four subdetectors that cover the barrel and endcap regions up to $|\eta| < 2.7$.
+In the barrel region, the muon spectrometer uses a combination of \acp{RCP} and \acp{MDT} to provide both a coarse, fast measurement for triggering and a precise momentum measurement for offline event reconstruction.
+Similarly, in the endcap region, the \acp{TGC}, \acp{MDT}, and \acp{CSC} allow for triggering and precise measurements.
+The overall layout of the muon systems are shown in the cut-away diagram in Figure~\ref{fig:muon_overview}, and Figure~\ref{fig:muon_side_schematic} shows a precise schematic of the layout of each of the detecting elements.
+
+
 \begin{figure}[hbtp]
 \includegraphics[width=\fullfig]{figures/muon_overview.pdf}
-\caption{}
+\caption{A cut-away diagram of the muon systems on \ac{ATLAS}.}
 \label{fig:muon_overview}
-\end{figure}
-
-
-\begin{figure}[hbtp]
-\includegraphics[width=\fullfig]{figures/muon_barrel_schematic.pdf}
-\caption{}
-\label{fig:muon_barrel_schematic}
 \end{figure}
 
 \begin{figure}[hbtp]
 \includegraphics[width=\fullfig]{figures/muon_side_schematic.pdf}
-\caption{}
+\caption{A quarter view of the muon spectrometer which higlights the layout of each of the detecting elements. The BOL, BML, BIL, EOL, EML, and EIL are all \ac{MDT} elements, where the acronyms encode their positions.}
 \label{fig:muon_side_schematic}
 \end{figure}
+
+\subsection{\acl{RPC} and \acl{TGC}}
+
+The \ac{RPC} and \ac{TGC} detectors are designed to provide coarse measurements of the positions of muons within 15-25 ns, so that they can be used for triggering.
+
+
+%\begin{figure}[hbtp]
+%\includegraphics[width=\fullfig]{figures/muon_barrel_schematic.pdf}
+%\caption{}
+%\label{fig:muon_barrel_schematic}
+%\end{figure}
 
 
 % ----------------------------------------
