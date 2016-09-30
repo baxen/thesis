@@ -114,6 +114,7 @@ In addition, \pt alone determines the amount of curvature in the magnetic field,
 
 
 \section{Magnetic Field}
+\label{sec:magnetic_field}
 
 The magnet system used in \ac{ATLAS} is designed to provide a substantial magnetic field in the two regions where the trajectory of particles is measured, the inner detector and the muon spectrometer.
 The magnetic field provides a curvature to the trajectory of charged particles and allows the precision tracking measurements to make high resolutions measurements of \pt.
@@ -501,12 +502,15 @@ The forward calorimeter covers the range of $3.1 < |\eta| < 4.9$ and uses a dens
 Among \ac{SM} particles, only muons and neutrinos consistently pass through the calorimeters.
 Because the neutrinos are also electrically neutral, there is no feasible option to measure them directly in \ac{ATLAS}.
 The muons, on the other hand, are charged and are thus already measured as a track in the inner detector.
-The muon spectrometer provides a way to consistently identify those muon tracks and to also provide an additional measurement of their momentum.
+The muon spectrometer provides a way to consistently identify muon tracks and also a way to provide an additional measurement of their momentum.
 
-The muon spectrometer contains four subdetectors that cover the barrel and endcap regions up to $|\eta| < 2.7$.
+The muon spectrometer contains four subdetectors that cover the barrel and endcap regions.
 In the barrel region, the muon spectrometer uses a combination of \acp{RCP} and \acp{MDT} to provide both a coarse, fast measurement for triggering and a precise momentum measurement for offline event reconstruction.
-Similarly, in the endcap region, the \acp{TGC}, \acp{MDT}, and \acp{CSC} allow for triggering and precise measurements.
+Similarly, in the endcap region, the \acp{TGC}, \acp{MDT}, and \acp{CSC} allow for both triggering and precise measurements.
+The \acp{CSC} are used only in the innermost layer of the endcap region between $2.0 < |\eta| < 2.7$ where the particle flux is too large for the \acp{MDT} to provide accurate measurements.
 The overall layout of the muon systems are shown in the cut-away diagram in Figure~\ref{fig:muon_overview}, and Figure~\ref{fig:muon_side_schematic} shows a precise schematic of the layout of each of the detecting elements.
+The geometric arrangement shown provides consistent coverage for muons produced up to $|\eta| < 2.7$, and takes full advantage of the bending of the muons in the toroidal magnetic field, described in Section~\ref{sec:magnetic_field}, to measure their momentum.
+Figure~\ref{fig:muon_barrel_schematic} shows a cross-section of the arrangement of the muon spectrometer in the barrel; the layers are divided into eight small and eight large chambers that are overlapped to provide complete coverage in $\phi$. 
 
 
 \begin{figure}[hbtp]
@@ -521,31 +525,128 @@ The overall layout of the muon systems are shown in the cut-away diagram in Figu
 \label{fig:muon_side_schematic}
 \end{figure}
 
-\subsection{\acl{RPC} and \acl{TGC}}
+\begin{figure}[hbtp]
+\includegraphics[width=\fullfig]{figures/muon_barrel_schematic.pdf}
+\caption{A schematic of the cross-section of the muon spectrometer in the barrel region.}
+\label{fig:muon_barrel_schematic}
+\end{figure}
 
-The \ac{RPC} and \ac{TGC} detectors are designed to provide coarse measurements of the positions of muons within 15-25 ns, so that they can be used for triggering.
 
+\subsection{\acl{MDT}}
+\label{sec:mdt}
+The momentum measurements in the barrel region are provided by three consectuive layers of \ac{MDT} elements, located at approximately 5 m, 7 m, and 9 m from the interaction point.
+Each of these layers is a composite of two multilayers of drift tubes: two layers of three to four layers of tubes, as shown in Figure~\ref{fig:mdt_schematic}.
+These aluminum tubes are 3 cm in diamete, with lengths between 0.9 and 6.2 m, and are filled with a mixture of ArCO\tsub{2} kept at 3 bar absolute pressure.
+A central tungsten-rhenium wire with a diameter of 50 \um runs along the length of the tube, and is kept at a potential of 3080 V.
 
-%\begin{figure}[hbtp]
-%\includegraphics[width=\fullfig]{figures/muon_barrel_schematic.pdf}
-%\caption{}
-%\label{fig:muon_barrel_schematic}
-%\end{figure}
+\begin{figure}[hbtp]
+\includegraphics[width=\fullfig]{figures/mdt_schematic.pdf}
+\caption{A schematic of a single \ac{MDT} chamber, which shows the multilayers of drift tubes as well as the alignment system.}
+\label{fig:mdt_schematic}
+\end{figure}
 
+A muon traversing these tubes ionizes the gas, and the ionization electrons then drift in the electric field toward the central wire.
+Close to the wire, the electric field is strong enough to cause the original ionization electrons to ionize additional electrons, producing an avalanche that can be measured as a current along the wire. 
+The time of arrival of that current depends on how far the muon entered from the wire, and can be used to achieve a position resolution of 80\um in an individual tube.
+The combination of the measurements in the consecutive layers of tubes improves this position resolution to 35\um.
+
+To achieve a good resolution over the entire length of a muon track, the relative positions of the tubes of the muon spectrometer must be known to an accuracy of 30\um. 
+This is achieved by an optical laser alignment system placed in each of the individual chambers and throughout the cavern.
+These monitor any changes in position or alignment due to effects like gravitational sag, temperature shifts, and the magnetic field.
+The configuration of the alignment system within an individual chamber is also shown in Figure~\ref{fig:muon_barrel_schema}.
+
+\subsection{\acl{RPC}}
+
+The \ac{RPC} is the outermost detecting layer in the muon spectrometer in the barrel region, and provides a fast measurement of the $\phi$ position of muons for triggering.
+The speed of the measurement, with a time resolution of just a few nanoseconds, requires a poor spatial resolution of approximately 1 cm. 
+There are three \acp{RPC} layers in the muon spectrometer, two located on either side of the central \ac{MDT} layer and one located outside the final \ac{MDT} layer, as shown in Figure~\ref{fig:muon_side_schematic}.
+The \acp{RPC} consist of two layers of parallel plates filled with a gas mixture of C\tsub{2}H\tsub{2}F\tsub{4}.
+A muon passing through these systems ionizes the gas, like in the \ac{MDT}, which causes an avalanche of ionization electrons in the electric field maintained between the plates.
+Metal strips on the outside of the chamber capacitively couple to the accumulated charge, and are read out to measure the $\eta$ and $\phi$ positions of the muon track. 
+
+\subsection{\acl{CSC}}
+The majority of the momentum measurements in the endcap region are provided by the \acp{MDT}.
+In the most forward region of the muon spectrometer, between $2.0 < \eta < 2.7$, the particle flux is very high due to contributions from low energy photons and neutrons.
+The \ac{MDT} can only sustain a hit rate of approximately 150 Hz/cm\tsup{2} because of limitations in the drift times of the gas and the capacity of the readout electronics. 
+The \acp{CSC} were designed to handle higher hit rates, up to 1000 Hz/cm\tsup{2}, and provide the necessary coverage in that high flux region.
+
+The \ac{CSC} consists of several multiwire proportional chambers, where the wires are oriented in the radial direction out from the beampipe.
+There are eight large and eight small chambers, arranged to partially overlap in the $\phi$ direction, as shown in Figure~\ref{fig:mcsc_schematic}.
+Like in the \ac{MDT}, a muon traversing the system produces ionization in the gas; here, however, the ionization is collected on a number of wires.
+These wires couple to cathodes on the chambers which are segmented into strips in two directions.
+The relative amount of charge on each of the neighboring strips can be used to interpolate to the position of the muon in both $\eta$ and $\phi$. 
+
+\begin{figure}[hbtp]
+\includegraphics[width=\fullfig]{figures/csc_schematic.png}
+\caption{A schematic of the \ac{CSC} endcap, showing the overlapping arrangement of the eight large and eight small chambers.}
+\label{fig:csc_schematic}
+\end{figure}
+
+\subsection{\acl{TGC}}
+Like in the barrel region, a separate, fast detector is required to provide position measurements of muons for trigger in the endcap region.
+This is provided by the \ac{TGC} which consists of seven layers in the middle station of the endcap, two doublet layers and one triplet layer, and a single doublet layer in the inner endcap station.
+Figure~\ref{fig:tgc_schematic} shows the arrangement of the triple and doublet layers of the \acp{TGC}.
+
+\begin{figure}[hbtp]
+\includegraphics[width=\fullfig]{figures/tgc_schematic.pdf}
+\caption{A schematic of the \ac{TGC} doublet and triplet layers.}
+\label{fig:tgc_schematic}
+\end{figure}
+
+Like the \acp{CSC}s, the \acp{TGC} are multiwire proportional chambers with a wire-to-cathode distance of 1.4 mm and a wire-to-wire distance of 1.8 mm.
+Readout strips on the outside of the chambers run perpendicular to the wires, and couple to the charge collected on the wires to provide a position measurement in the $\eta$ direction.
+The current induced on the wires is also readout to provide a position measurement in the $\phi$ direction.
+The high electric field and small wire-to-wire distance give it the required good time resolution to be used for triggering events. 
 
 % ----------------------------------------
 
 \section{Trigger}
 \label{sec:trigger}
 
-\subsection{Trigger Scheme}
+It is not possible for the detector and the associated computing systems to record the terabytes of data that the 40 MHz of proton-proton collisions produce every second.
+Instead, a small fraction of these events are selected by the trigger system to be recorded and later analyzed.
+Selecting interesting events at such a high rate poses a signifcant challenge for the both the detector design and the implementation of a trigger decision and data acquisition system.
+The trigger must balance the time needed to decide to keep an event, to avoid losing information, with the filtering accuracy to consistently select a full menu of physics events that can be used for the wide array of searches and measurements targetted by \ac{ATALS}. 
+
+The \ac{ATLAS} trigger system, as of Run 2, consists of two levels of decision making. 
+The first level, referred to as L1, is hardware based and uses inputs from a subset of the detector elements to narrow the considered event rate from the original 40 MHz down to 100 kHz.
+The 100 kHz rate is the maximal rate that the event information can be transferred from the detector.
+The second level, referred to as the \ac{HLT}, makes the final decisions on which events to keep for analysis and selects a rate of around 1 kHz.
+The collection of selection criteria used to make the L1 decisions feed into subsequent selection criteria in the \ac{HLT}, and the set of these combinations of L1 and \ac{HLT} critera from the trigger menu which defines exactly what events are recorded on \ac{ATLAS}.
+The entirety of the trigger menu used for 2015 data collection is shown in Table~\ref{tab:trigger_menu}, which summarizes the selection requirements at both levels and additionally shows the peak measured rates contributed by each.
+
+\begin{table}[hbtp]
+\includegraphics[width=\fullfig]{figures/trigger_menu.pdf}
+\caption{The trigger menu for the 2015 data collection with $L = 5 x 10^{33}\lcms$. Both the L1 and \ac{HLT} selection requirements and their trigger rates are shown measured at the specified luminosity are shown. The typical offline selections represent a typical set of offline requirements imposed after the trigger in an analysis.}
+\label{tab:trigger_menu}
+\end{table}
+
+At L1, the trigger system uses information primarily from the calorimeters and muon spectrometer to select high \pt jets, electrons, photons, and muons. 
+The electromagnetic calorimeter uses reduced granularity energy measurements as well as isolation requirements to select electrons and photons.
+The hadronic calorimeter also uses a combination of reduced granularity energy measurements and isolation to select high momentum jets and hadronically decaying tau leptons. 
+The calorimeters are also used to provide triggers based on missing energy: the coarse granularity energy measurements are used to calculate a directional sum of energies and to trigger on a significant imbalance.
+Only the \acp{RPC} and \acp{TGC} muon subdetectors contribute to the decision at L1, and are used to identify high momentum muons.
+The contributions to the triggering rate of the various types of L1 triggers are shown in Figure~\ref{fig:trigger_l1rate}. 
+The total rate is indicated in black and is lower than the sum of individual rates because their is signifcant overlap between different trigger channels. 
+The majority of the rate comes from lepton and photon triggers.
 
 \begin{figure}[hbtp]
-\includegraphics[width=\fullfig]{figures/l1_diagram.pdf}
-\caption{}
-\label{fig:l1_diagram}
+\includegraphics[width=\fullfig]{figures/trigger_l1rate.pdf}
+\caption{The L1 Trigger rate broken down into the types of triggers as a function of the luminosity block for the 2015 data collection period.}
+\label{fig:trigger_l1rate}
 \end{figure}
 
-\subsection{Missing Transverse Energy Triggers}
+After an event is chosen by the L1 trigger, the detector measurements from the bunch crossing which fired the trigger is read out from the front-end electronics and stored on read-out boards.
+This inclusive information is necessary to make more the more precise event selections than is possible with the reduced information at L1.
+The \ac{HLT} then uses this information with software algorithms to decide whether or not to permanently record the event.
+The L1 trigger also forwards which decision was made and \acp{RoI} to the \ac{HLT}, which allows the \ac{HLT} to focus on particular algorithms and particular sections of the detector to greatly improve the algorithmic selection speed.
+The additional information available to the \ac{HLT} allows it to implement additional trigger targets, such as identified jets from the decays of b-hadrons.
+The contributions to the triggering rate of the various types of \ac{HLT} triggers are shown in Figure~\ref{fig:trigger_l1rate}. 
+
+\begin{figure}[hbtp]
+\includegraphics[width=\fullfig]{figures/trigger_hltrate.pdf}
+\caption{The HLT Trigger rate broken down into the types of triggers as a function of the luminosity block for the 2015 data collection period.}
+\label{fig:trigger_l1rate}
+\end{figure}
 
 % ----------------------------------------
