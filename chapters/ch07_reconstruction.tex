@@ -101,6 +101,7 @@ This fitted beamspot then provides a constraint for the second attempt to locate
 % ----------------------------------------
 
 \section{Electrons and Photons}
+\label{sec:egamma}
 
 Electrons are measured as both a charged particle track and energy deposits in the electromagnetic calorimeter.
 Photons, on the other hand, leave energy deposits in the electromagnetic calorimeter but do not produce a corresponding track.
@@ -207,18 +208,93 @@ The energy needs to be corrected for the various losses expected in the calorime
 The simplest correction, scaling the measured energy by the sampling fraction, brings the cluster energies to the \ac{EM} scale.
 It is called the \ac{EM} scale because it does a good job of describing the energy of electromagnetic showers. 
 
-Another scale is defined for hadronic processes, the \ac{LCW} scale, that helps to correct for the expected variations in hadronic energy deposits from effects like the differing proportions of \piz, \pip, and \pim in the shower. 
+Another scale is defined for hadronic processes, the \ac{LCW} scale, that helps to correct for the expected variations in hadronic energy deposits.
 The \ac{LCW} correction first determines if the shower is hadronic or electromagnetic, based on the depth of the shower and the cluster energy density.
 For hadronic showers, the energy is corrected for calorimeter non-compensation, an effect which reduces the measured energy of hadronic showers because some of the energy goes into invisible processes like the break up of nuclei.
-Then, all showers are corrected...
+All clusters are then corrected for energy that may be deposited in uninstremented regions in that cluster's location in the calorimter, and they are also corrected with an estimate of how much energy falls outside the extent of the cluster based on its shape and the deposit type.
 
+\subsection{Jet Algorithms}
+Using the topological clusters as inputs, a jet algorithm groups them together into a collection of adjacent energy deposits that is intended to correspond to a single process.
+Jet algorithms need a few key characteristics to be useable for physics analysis.
+First, the jets produced by the algorithm should have little dependence on the addition of soft particles to the event (infrared safety), as a negligible addition of energy should not significantly modify the event topology.
+Similarly, the jets produced by the algorithm should also not significantly depend on mostly collinear splitting of an input particle (collinear safety); that is, a single quark splitting into two nearly parallel quarkss should not change the resulting jets, which are intended to cpature only the properties of the aggregate and not those of individual particles.
+And finally the algorithm needs to be sufficiently simple and fast to be used for the large rate of collected proton-proton collisions on \ac{ATLAS}.
 
+The most commonly used algorithm on \ac{ATLAS} that satisfies these requirements is called the anti-$k_t$ algorithm, and is discussed in further detail in Reference~\cite{antikt}.
+The anti-$k_t$, in brief, relies on iteratively combining the input objects that are closest together, where closest is defined by the a particular distance metric, $d_{i,j}$.
+The combinations stop when the closest remaining object is the beam itself, where the distance to the beam is called $d_{i,B}$. 
+An entire class of algorithms follows this procedure with the following distance metrics
 
+\begin{align}\label{eq:antikt}
+d_{i,j} &= \min(k_{ti}^{2p}, k_{tj}^{2p}) \frac{\Delta_{ij}^2}{R^2} \\
+d_{i,B} &= k_{ti}^{2p}
+\end{align}
 
+where $\Delta_{i,j} = (y_i - y_j)^2 + (\phi_i - \phi_j)^2$, $k_{ti}$ is the transverse momentum of the object, $y$ is the rapidity, and $p$ is a parameter of the algorithm.
+Anti-$k_t$ is the particular case where $p = -1$, and is a choice that results in an algorithm that is both infrared and collinear safe.
+
+The algorithm is repeated until there are no input objects remaining, which results in a series of jets. 
+Each jet has a complete four momentum from the combination of its input clusters. 
+The jet energies then need to be calibrated to attempt to match the energy of the object which produced the jet.
+
+\subsection{Jet Energy Scale}
+
+Though the \ac{LCW} scheme attempts to correct the topoclusters to reflect the true deposited energy, the correction does not fully account for energy lost within the calorimeters.
+Because of these effects, the original reconstructed jet energy does not reflect the true energy of the particle which initiated the jet.
+Therefore it is necessary to additionally correct the reconstructed jet itself, in addition to the corrections on the inputs.
+This correction is referred to as the \ac{JES}, which combines several individual steps of calibration.
+
+The first calibration step corrections the direction of the jet to ensure that it points back to the primary vertex.
+Next, the energy of the jet is corrected for pileup by subtracting the expected contribution from pileup (measured in simulation) based on the momentum, $\eta$, and area of the jet as well as the number of reconstructed vertices and expected number of interactions per crossing.
+The largest single correction is the absolute $\eta$ and \ac{JES} correction, where the jet energy and pseudorapidity is corrected to attempt to match the energy and pseudorapidity of the parton which produced it.
+The correction is measured in simulation by comparing the reconstructed jet energies to the energy of the truth particle which produced it.
+However the simulation is not relied on alone to estimate this correction, and an additional step applies an additional energy correction based on in-situ measurements in data.
+These corrections come from various techniques which measure jet energies indirectly by balancing them with other, well-measured objects.
+In the central region ($|\eta| < 1.2$, jets are balanced against photons and the leptonic decays of Z bosons and high momentum jets ($p_T > 210$ GeV) are also balanced against multiple smaller jets in multijet events.
+Jets at larger pseudorapidities, above $|\eta| = 1.2$, are calibrated by balancing them with lower pseudorapidity jets.
+
+These steps introduce a number of systematic uncertainties, referred to as the \ac{JES} uncertainty.
+The largest of these comes from the in-situ measurements, which are statistically limited in measuring high momentum and high pseudorapidity jets.
+The total, fractional \ac{JES} uncertainty is shown as a function of $p_T$ in Figure~\ref{fig:reco_jesunc}.
+The uncertainty falls to a minimum value of just over 1.0\% around a few hundred \GeV, and raises again at high momentum because of the difficulty of measuring jet balance in data above 2-3 \TeV.
+The uncertainty is also minimized at low $|\eta|$, and grows at large $|\eta|$ again where making in-situ measurements is difficult.
+This technique does not actually provide a measurement of the uncertainty for the highest energy jets, above 3 \TeV, because there are not enough measured data events to provide them.
+An alternative method for deriving the \ac{JES} and \ac{JES} uncertainty that can be used even for very high $p_T$ jets will be discussed in Chapter~\ref{ch:jes}.
+
+\begin{figure}
+\includegraphics[width=\fullfig]{figures/reco_jes_pt.png}
+\caption{The total, fractional \ac{JES} uncertainties estimated for 2015 data as a function of jet $p_T$.}
+\label{fig:reco_jesunc}
+\end{figure}
 
 % ----------------------------------------
 
 \section{Missing Transverse Energy}
 \label{sec:missing_energy}
+
+Among \ac{SM} particles, only the neutrino cannot be directly measured in the \ac{ATLAS} detector. 
+Because the neutrino carries neither electric nor color charge, it is very unlikely to interact with the tracking detectors or the calorimeters, and instead passes through the detector completely unobserved.
+Some particles which have been conjectured to exist, like the \ac{LSP} in many \ac{SUSY} models, would also have the same behavior.
+Therefore, it is important for \ac{ATLAS} to provide some way to assess the momentum carried away by an neutral, colorless particles.
+This can be accomplished through a measurement of missing energy in the transverse direction, or \met, which quantifies the momentum imbalance of the observed particles.
+From the conservation of momentum and the lack of the initial momentum in the transverse plane in the proton-proton collisions, any imblance of momentum can be inferred to be carried away by an unmeasured particle.
+
+\met is more precisely defined as the magnitude of the vector sum of the $(p_x,p_y)$ components of each observed object's momentum.
+The definition is simple, but their can be significant complexity in defining the inputs.
+As of Run 2, \ac{ATLAS} uses a common algorithmic approach to carefully calculate missing energy, but each analysis is free to define it's own inputs.
+For the analysis discussed throughout this thesis, the missing energy inputs consist of the electrons, photons, muons, and jets discussed in the previous sections, in addition to a track-based soft term.
+
+To produce the most precise measurement of \met, it is important to use the best representation of the momentum of each of the input objects, which can often be reconstructed as multiple different types in a single event.
+For example, an electron can be reconstructed separately as an electron (Section~\ref{sec:egamma}) and a jet (Section~\ref{sec:jets}), but the electron representation has the highest precision for reconstructing the true electron momentum.
+To ensure no duplications in the \met definition, the inputs are collectively considered for overlap removal.
+Only the most precise object type is kept for objects that fall within a cone of $\Delta R < 0.2$ for pairs of electrons and jets and a cone of $\Delta R < 0.4$ for other pair types.
+
+The fully reconstructed objects do not include all of the energy within the events, as some clusters do not enter into a jet and some tracks are not classified as electrons or muons.
+These momentum carried by these objects is accounted for in a soft-term, which tallies all of the energy carried by the particles too soft to form seperate objects.
+The track soft term uses only tracking information to estimate the contribution of soft objects, and does so by vectorially summing the momentum of all well-reconstructed tracks with momentum above 400 \MeV.
+
+All of these contributions together give a single \met value for a given event.
+The direction of that missing energy is taken as opposite the vector sum of all the constituents, to correspond to the momentum an invisible particle would have to have to make the event balanced.
+Depending on the context, this missing energy can be considered the energy of a neutrino or an \ac{LSP}, with a large missing energy being a common signal criteria for searches for new physics.
 
 % ----------------------------------------
