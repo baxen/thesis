@@ -3,6 +3,17 @@
 \label{ch:standardmodel}
 % --------------------------------------------------------------------------------
 
+The \ac{SM} of particle physics seeks to explain the symmetries and interactions of fundamental particles. 
+The \ac{SM} provides predictions in particle physics for interactions up to the Planck scale (10\tsup{15}-10\tsup{19} \GeV).
+It has been tested by several generations of experiments and has been remarkably successful; no significant deviations from its predictions have been found.
+
+The theory itself is a quantum field theory grown from an underlying symmetry, $SU(3) \times SU(2) \times U(1)$, that generates all of the interactions consistent with experimental observations.
+These interactions are referred to as the Strong, Weak, and Electromagnetic forces.
+Each postulated symmetry necessitates the existence of an associated conserved charge, which appear as properties of the observed particles in nature. 
+
+Although this model has been very predictive, the theory is incomplete; for example, it is not able to describe gravity or astronomically observed dark matter. 
+These limitations suggest a need for an extension or new theory to describe physics at higher energies.
+
 %\section{Particles}
 %\label{sec:particles}
 %
@@ -31,7 +42,7 @@ This makes the Lagrangian the central  piece of the discussion of gauge invarian
 \end{align}
 
 \noindent where $\psi$ is the wavefunction and $D^{\mu}$ is the covariant derivative, both of which transform under a symmetry operation.
-There are a number of immediate and suprisingly powerful consequences of requiring that the Lagrangian is invariant under a symmetry operation.
+There are a number of immediate and surprisingly powerful consequences of requiring that the Lagrangian is invariant under a symmetry operation.
 
 \section{Gauge Invariance and Forces}
 
@@ -55,7 +66,7 @@ The piece of the Lagrangian involving a derivative will return an extra term tha
       &\neq \mL 
 \end{align*}
 
-\noindent So, in order to enforce the required symmetry, the typical approach is to construct a covariant derivative, that is to add a term to the derivative operator so that the unwanted term in $\mL'$ is exactly cancelled. 
+\noindent So, in order to enforce the required symmetry, the typical approach is to construct a covariant derivative, that is to add a term to the derivative operator so that the unwanted term in $\mL'$ is exactly canceled. 
 A generic form for such a derivative is given by
 
 \[ D^\mu = \partial^{\mu} - iqA^\mu \]
@@ -67,11 +78,11 @@ A generic form for such a derivative is given by
  \mL' &= \mL +\gamma^\mu (- i\partial_\mu\alpha(x) - iqA'_{\mu} + iqA_\mu)\bar{\psi}\psi 
 \end{align}
 
-\noindent and because the transformation of $A^\mu$ is unspecified, we will have that $\mL = \mL'$ whenever
+\noindent and because the transformation of $A^\mu$ is unspecified, $\mL = \mL'$ whenever
 
 \[  A'_\mu =  A_{\mu} - \frac{1}{q}\partial_\mu\alpha(x) \]
 
-The above procedure demonstrated that beginning with the Lagrangian for a free fermion and imposing a local $U(1)$ symmetry required the existence of a vector field $A^\mu$, and specified it's tranformation under the $U(1)$ gauge group.
+The above procedure demonstrated that beginning with the Lagrangian for a free fermion and imposing a local $U(1)$ symmetry required the existence of a vector field $A^\mu$, and specified it's transformation under the $U(1)$ gauge group.
 The additional term in the derivative can expanded to form a completely separate term in the Lagrangian,
 
 \begin{align}
@@ -86,17 +97,17 @@ It is natural to also introduce a term to the Lagrangian at this point to descri
 - \frac{1}{16\pi} F^{\mu\nu}F_{\mu\nu} \quad \mathrm{with} \quad F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
 \end{align}
 
-\noindent which then also describes the electromagnetic interactions in a vacuum and the propogation of a photon.
+\noindent which then also describes the electromagnetic interactions in a vacuum and the propagation of a photon.
 The photon is an example of a gauge boson, a spin-0 particle required to exist by a gauge symmetry of the Lagrangian and one that corresponds to a force.
 In summary, requiring the $U(1)$ symmetry was enough to recover all of electromagnetism and to predict the existence of a photon in the \ac{SM}. 
 
-The interaction term that was placed into the Lagrangian by this procedure can be conveniently summarized with Feynman diagrams, which diagramatically represent a transition from an initial state to a final state.
+The interaction term that was placed into the Lagrangian by this procedure can be conveniently summarized with Feynman diagrams, which diagrammatically represent a transition from an initial state to a final state.
 All diagrams that start with the same initial state and end with the same final state must be considered, but more complicated diagrams can be built by linking together the simplest versions.
 A diagram that corresponds to the above term, $(q\bar{\psi}\gamma^\mu\psi)A^\mu$, is shown in Figure~\ref{fig:feyn_aff}, for an interaction with a generic fermion.
 
 \begin{figure}
 %\includegraphics[width=\fullfig]{}
-\caption{A Feynman diagraming representing the interaction of the $A$ field with a generic fermion, $f$.} 
+\caption{A Feynman diagram representing the interaction of the $A$ field with a generic fermion, $f$.} 
 \label{fig:feyn_aff}
 \end{figure}
 
@@ -108,30 +119,15 @@ In practice, it is necessary to consider the entire $SU(2)\times U(1)$ symmetry 
 Enforcing the symmetry on the Lagrangian requires the introduction of a covariant derivative, this time with four total distinct terms, one for each of the generators of $SU(2)\times U(1)$.
 The result is a series of terms in the Lagrangian which describe the interaction of a fermion with four vector fields, the $W_1$, $W_2$, $W_3$, and $B$ fields.
 These fields can mix in the quantum sense, and linear combinations form the $W^+$, $W^-$, $Z$, and $A$ fields that are considered actual particles in the \ac{SM}\footnote{These states are the actual particles because they are mass eigenstates, but the full explanation of this will have to wait for the discussion of the Higgs mechanism.}.
-The interactions between these fields and fermions are summarized in Figure~\ref{fig:feyn_electroweak}.
-
-\begin{figure}
-%\includegraphics[width=\fullfig]{}
-\caption{The interactions of the electroweak gauge bosons with generic fermions.} 
-\label{fig:feyn_electroweak}
-\end{figure}
 
 \subsection{$SU(3)$ and the Strong Force}
 
 The same procedure can be applied starting with the $SU(3)$ symmetry requirement, where eight additional fields must be introduced, one for each of the generators of $SU(3)$.
 The resulting Lagrangian describes \ac{QCD} and predicts the existence of eight gauge bosons known collectively as gluons. 
-The interactions between these fields and fermions are summarized in Figure~\ref{fig:feyn_strong}.
-
-\begin{figure}
-%\includegraphics[width=\fullfig]{}
-\caption{The interaction of the strong gauge bosons, the gluons, with generic fermions.} 
-\label{fig:feyn_strong}
-\end{figure}
-
 
 \section{Noether's Theorem, Charges, and Matter}
 
-Another direct consequence of the symmetries stipulated in the \ac{SM} are a series of conserved quantities, Noether charges, named after the mathemetician and physicst Emmy Noether.
+Another direct consequence of the symmetries stipulated in the \ac{SM} are a series of conserved quantities, Noether charges, named after the mathematician and physicist Emmy Noether.
 The charges arise as a direct consequence of Noether's theorem, which can be informally stated as 
 \begin{quote}
 \textit{For every symmetry of the Lagrangian, there exists a corresponding physical quantity whose value is conserved in time.}
@@ -140,8 +136,6 @@ The charges arise as a direct consequence of Noether's theorem, which can be inf
 This relationship can also be thought of as operating in the other direction, the existence of a conserved charge can be shown to generate the symmetry in the Lagrangian.
 This theorem is actually quite striking in a somewhat unexpected relation between simple geometric symmetries and physically observable conservation laws. 
 For example, the theorem connects the translation invariance of the Lagrangian in space to the conservation of momentum and the translation invariance in time to the conservation of energy. 
-
-\textbf{Quick derivation of conservation of charge here.}
 
 In the context of the \ac{SM}, the required symmetries of $U(1)\times SU(2) \times SU(3)$ correspond to the charges that are considered properties of all elementary particles.
 The most familiar of these properties is the electric charge, Q, which is one of the conserved quantities of $SU(2)\times U(1)$.
@@ -152,7 +146,7 @@ The matter in the observable universe consists of a collection of particles whic
 The particles typically thought of as matter are all fermions: particles with spin-1/2.
 All of the fermions belong to one of two groups, quarks and leptons, and one of three generations.
 Each of the generations have similar properties but significantly different masses; the particles in consecutive generations have increasing mass.
-Quarks are distinquished from leptons in that they carry color charge, in addition to  electric charge and weak isospin.
+Quarks are distinguished from leptons in that they carry color charge, in addition to  electric charge and weak isospin.
 The particles in the \ac{SM} are summarized in Figure~\ref{fig:particle_content}, and the matter particles are the twelve types of fermions displayed on the left side of the graphic.
 
 \begin{figure}[h]
@@ -197,66 +191,165 @@ Because the right-handed neutrinos would have no charge of any type, it is not c
 
 \section{Higgs Mechanism and Mass}
 
+The description of the electroweak forces above left out an important part of the observed nature of the electroweak force.
+Many physical experiments observed phenomena corresponding to the interaction of the weak bosons that were best explained if they had significant masses.
+A large mass for the W and Z bosons would explain the relative weakness of their interactions compared to the electromagnetic field.
+The Lagrangian's discussed above did not include a mass term for the gauge bosons, and in fact such a term would not be allowed by the requirement of gauge invariance. 
+This was a significant problem for the \ac{SM}, and the symmetry of the electroweak sector would have to be broken in order to allow for non zero masses for some of the gauge bosons.
+
+One mechanism to allow for this spontaneous symmetry breaking is the Higgs mechanism, which posits the existence of an additional scalar field.
+It begins with a $SU(2)\times U(1)$ invariant Lagrangian of the form 
+
+\begin{equation}
+  \mL = |D_\mu\phi|^2 - \frac{1}{2}\mu^2\phi^+\phi - \frac{1}{4}\lambda(\phi^+\phi)^2
+\end{equation}
+
+\noindent where $\phi$ is the new scalar field and, importantly, $\mu^2$ is negative.
+This leads to a minimum value of the field at a non-zero value of $\phi$, specifically where
+
+\begin{equation}
+ \langle \phi \rangle = \frac{1}{\sqrt{2}} \begin{pmatrix}0\\v\end{pmatrix} \quad \mathrm{with} \quad v = \frac{2\mu^2}{\lambda}
+\end{equation}
+
+\noindent Expanding the original Lagrangian about its expectation value, 
+
+\begin{equation}
+  \langle \phi \rangle = \frac{1}{\sqrt{2}} \begin{pmatrix}0\\v + H\end{pmatrix}
+\end{equation}
+
+\noindent gives potential terms in the Lagrangian like 
+
+\begin{equation}
+  \mL_{H} = -\frac{1}{2}m_H^2 H^2 - \sqrt{\frac{\lambda}{2}}m_H H^3 - \frac{1}{4}\lambda H^4
+\end{equation}
+
+\noindent where $m_H = \sqrt{2}\mu$.
+The form of this Lagrangian shows that the non-zero expectation value of the $\phi$ field has introduced a massive scalar field $H$ with self interaction terms.
+It has an additional important consequence on the description of the gauge bosons, through the expansion of the term involving the covariant derivative:
+
+\begin{equation}
+  |D_\mu\phi|^2 \supset \frac{1}{8}\left(g^2(W_{1\mu}W_1^\mu + W_{2\mu}W_2^\mu) + (g'B_\mu - gW_3{\mu})^2\right)
+\end{equation}
+
+where the $W_i$ and $B$ fields are the original $SU(2)\times U(1)$ gauge fields mentioned previously.
+The above equation can be rearranged using linear combinations of the fields to from mass terms for the gauge bosons, and the mass eigenstates are exactly the $W^\pm$, $Z$, and $A$ fields.
+Only the $A$ field, corresponding to the photon, results in a zero mass, and the remaining three fields acquire masses.
+Because the originally introduced Lagrangian, written in terms of $\phi$, was clearly gauge invariant, this resulting configuration must also be gauge invariant.
+
+This is the Higgs mechanism, where the introduction of a gauge invariant scalar field with a non-zero expectation value can generate masses for the gauge bosons without violating the underlying symmetries.
+The particle that is associated with the perturbations of this field, $H$, is called the Higgs boson, and is said to generate the masses of the remaining bosons.
+The resulting masses are listed in Figure~\ref{fig:particle_content}.
+Because this mechanism was so successful in describing the observed properties of the $W$ and $Z$ bosons, it has been considered part of the \ac{SM} for decades, although the actual Higgs boson was only recently observed in 2012, confirming the theory.
+
+The Higgs mechanism is also responsible for generating the masses of the fermions.
+The original mass terms that were listed in the Lagrangian for fermions are replaced with Yukawa coupling terms, which introduce interactions between the $\phi$ field and the fermions.
+Like with the gauge bosons, the non-zero expectation value of the field yields mass terms, and the expansion about that value introduces interaction terms between the fermions and the Higgs boson.
+The masses are different between each fermion because each has a different Yukawa coupling, which results in the masses listed in Figure~\ref{fig:particle_content}.
+
 \section{Phenomenology}
 
+The \ac{SM} Lagrangian described above contains all of the information necessary to describe particle physics through the path integral formulation. 
+However, a tremendous amount of complexity emerges from that description because of the diverse allowed interactions between the ensemble of particles in the \ac{SM}.
+A qualitative understanding of the phenomenology produced by those interactions is immensely helpful in understanding the analysis of particle physics.
+
+\subsection{Electroweak Physics}
+
+The masses of the $W$ and $Z$ bosons result in significantly different processes for the weak fields than the electromagnetic field, despite their interactions being similar before symmetry breaking.
+The massless photon is stable, and can propagate in a vacuum, resulting in the familiar long range interactions of electromagnetism.
+The $W$ and $Z$ bosons, however, are unstable, as they have large enough masses to decay to fermions, such as the decays shown in Figure~\ref{fig:feyn_weak}.
+For this reason, photons can be observed directly, while the other bosons are sufficiently short-lived that they can only be measured from their decay products.
+
+\begin{figure}
+%\includegraphics[width=\fullfig]{}
+\caption{The Feynman diagrams representing the decays of the W and Z bosons to fermions. Here $f$ indicates a generic fermion, $\bar{f}$ its antiparticle, and $f'$ the partner of that fermion in the same generation.}
+\label{fig:feyn_aff}
+\end{figure}
+
+Because the $W$ and $Z$ bosons interact with both quarks and leptons, they are responsible for the production of leptons in proton-proton collisions.
+$Z$ bosons produce pairs of opposite sign, same flavor leptons.
+$W$ bosons, on the other hand, produce a single lepton and the corresponding neutrino.
+
+\subsection{Strong Physics}
+
+The phenomenology of the strong sector differs significantly from the weak sector because the gluons are massless but color charged.
+Because of this, gluons can interact with each other, and contributions from multiple gluon interactions lead to a significant growth in the strength of the field at low energies.
+The dependence of the field strength on the energy scale is described by renormalization, and in \ac{QCD} the coupling is only small at high energies.
+Above around the \GeV scale, the interactions of quarks become perturbative, similar to the electroweak fields; this phenomenon is known as asymptotic freedom.
+
+At lower energies, however, the strength of the strong interaction is so significant that the interactions of color-charged particles create additional particles until they form neutral bound-states.
+This process is known as hadronization, and explains why no quarks are observed isolated in nature: they all form bound states of hadrons like protons, neutrons, and pions.
+The hadronization process can produce a significant number of particles, so that a single energetic quark recoiling against another quark can generate a cascade of dozens of hadrons.
+Because of the initial boost of such an energetic configuration, the resulting hadrons are collimated, and conical spray of particles often referred to as a jet.
+
+\subsection{Proton-Proton Collisions}
+
+Proton-proton collisions are a convenient way to generate high energy interactions to probe the \ac{SM} and to search for new physics.
+At the energies that will be discussed in this analysis, the substructure of the protons is very important to the description of the resulting interactions.
+At lowest order, protons are composed of two up quarks and one down quark, but this description is incomplete.
+The actual bound state includes a chaotic sea of additional quarks and gluons, each of which carries a variable fraction of the proton's energy.
+When a proton-proton collision takes place, it is these constituents that interact with each other, resulting in a highly variable collision energy even when the proton-proton energy is consistent.
+
+The fraction of the energy carried by each constituent varies moment to moment, but can be modelled probabilistically by \acp{PDF}.
+These are difficult to predict theoretically, as the \ac{QCD} calculations are extremely complex, and instead are measured in hard-scattering experiments.
+They are usually represented by how often a given type of particle carries a fraction $x$ of the total proton energy.
+Those fraction change significantly with the scale of the interaction; the \acp{PDF} of proton-proton collisions at both $Q^2 = 10$ \GeV\tsup{2} and $Q^2 = 10^4$ \GeV\tsup{2} are shown in Figure~\ref{fig:pdfs}.
+
+\begin{figure}
+\includegraphics[width=\fullfig]{figures/pdfs.png}
+\caption{The \acp{PDF} for proton-proton collisions at $Q^2 = 10$ \GeV\tsup{2} and $Q^2 = 10^4$ \GeV\tsup{2}. Each shows the fraction of particles which carry a fraction $x$ of the total proton energy at the specified scale~\cite{pdfs}.}
+\label{fig:pdfs}
+\end{figure}
 
 
-% --------------------------------------------------------------------------------
-% Old Intro
+\section{Limitations}
 
-%The \ac{SM} of particle physics seeks to explain the symmetries and interactions of fundamental particles. 
-%The \ac{SM} provides predictions in particle physics for interactions up to the Planck scale (10\tsup{15}-10\tsup{19} \GeV).
-%It has been tested by several generations of experiments and has been remarkably succesful; no significant deviations from its predictions have been found.
-%
-%The theory itself is a quantum field theory grown from an underlying symmetry, $SU(3) \times SU(2) \times U(1)$, that generates all of the interactions consistent with experimental observations.
-%Each postulated symmetry necessitates the existance of an associated conserved charge, through Noether's theorem, which appear as properties of the observed particles in nature. 
-%These interactions are referred to as the Strong, Weak, and Electromagnetic forces, which are discussed in Section~\ref{sec:interactions}. 
-%
-%Although this model has been very predictive, the theory is incomplete; for example, it is not able to describe gravity or astronomically observed dark matter. 
-%These limitations are discussed in more detail in Section~\ref{sec:limitations}. 
-%
+Despite the great success of the relatively simple \ac{SM} in describing such a broad range of emergent phenomena, it is clear that the picture it presents of the interactions of fundamental particles is incomplete.
+The \ac{SM} contains concerning coincidences that suggest a more ordered underlying substructure that is not expressed in the current form.
+It also fails to explain a number of cosmological measurements of the nature of matter in the universe.
+These limitations suggest the need for new, \ac{BSM} physics that would provide a more complete description at higher energies.
 
 
-% Old section on particles, before the redesign
-%\section{Particles}
-%\label{sec:particles}
-%
-%The most familiar matter in the universe is made up of protons, neutrons, and electrons. 
-%Protons and neutrons are composite particles, however, and are made up in turn by particles called quarks. 
-%Quarks carry both electric charge and color charge, and are bound in color-neutral combinations called baryons. 
-%The electron is an example of a lepton, and carries only electric charge. 
-%Another type of particle, the neutrino, does not form atomic structures in the same way that quarks and leptons do because it carries no color or electric charge. 
-%Collectively, these types of particles are known as fermions, the group of particles with half-integer spin. 
-%
-%There are three generations of fermions, although familiar matter is formed predominantly by the first generation. 
-%The generations are identical except for their masses, which increase in each generation by convention. 
-%In addition, each of these particles is accompanied by an antiparticle, with opposite-sign quantum numbers but the same mass.
-%
-%The fermions compromise what is typically considered matter, but there are additional particles that are mediators of interactions between those fermions.
-%These mediators are known as the gauge bosons, gauge in that their existance is required by gauge invariance (discussed further in Section~\ref{sec:interactions}) and bosons in that they have integer spin.
-%The boson which mediates the electromagnetic force is the photon, the first boson to be discovered; it has no electric charge, no mass, and a spin of 1.
-%There are three spin-1 mediators of the weak force, the two W bosons and the Z boson. 
-%The W bosons have electric charge of $\pm$ 1 and a mass of $80.385 \pm 0.015$ GeV, while the Z boson is neutral and has a mass of $91.1876 \pm 0.0021$ GeV. 
-%The strong force is mediated by eight particles called gluons, which are massless and electrically neutral but do carry color charge. 
-%
-%The final particle present in the \ac{SM} is the Higgs boson, which was recently observed for the first time by experiments at CERN in 2012. 
-%It is electrically neutral, has a mass of $125.7 \pm 0.4$ Gev, and is the only spin-0 particle observed so far. 
-%The Higgs boson is the gauge boson associated with the mechanism that gives a mass to the W and Z bosons.
-%
-%
-%Together these particles form the entire content of the \ac{SM}, and are summarized in Figure~\ref{fig:particle_content}. These are the particles that constitute the observable universe and all the so-far-observed interactions within it.
-%
-%
-%% ----------------------------------------
-%
-%\section{Interactions}
-%\label{sec:interactions}
-%
-%The interactions predicted and described by the \ac{SM} are fundamentally tied to the particles within it, both in that they describe the way those particles can influence each other and also in that the existence of the interactions requires the existence of some particles (the gauge bosons). 
-%
-%% ----------------------------------------
-%
-%\section{Limitations}
-%\label{sec:limitations}
+\subsection{Theoretical Concerns}
 
-% ----------------------------------------
+There have been no successful integrations of the \ac{SM}'s description of the electroweak and strong forces with the description of gravity, and it is still unclear how to account for the effects of gravity at the Plank scale of approximately $10^{19}$ \GeV, where it can no longer be ignored. 
+The Plank scale is an important cutoff for the \ac{SM}, as it is clear that the \ac{SM} must break down somewhere between the current highest energy tests of the \ac{SM}, around 1 \TeV, and the Plank scale.
+
+One example of this is the Higgs mass, which is determined in the \ac{SM} by a sum of it's bare mass and the interactions in the vacuum with all massive particles.
+As their must be new physics at the Plank scale to describe gravity, some of those corrections would include contributions at a scale seventeen orders of magnitude above the mass of the Higgs.
+Either the bare mass of the Higgs boson precisely cancels those contributions to leave a remainder seventeen orders of magnitudes smaller, or a new theory exists at a lower scale the shields the Higgs mass from those terms.
+A theory where such a unlikely cancellation of free parameters occurs is called fine-tuned, and one that is free from such cancellations is called natural.
+Theories where the mass of the Higgs is natural are usually preferred, as the suggest an underlying, coherent structure.
+
+There is also a compelling argument that the $SU(3)\times SU(2) \times U(1)$ gauge structure of the \ac{SM} might originate from a single, unified gauge theory.
+For example, it is possible to represent that gauge structure as a $SU(5)$ gauge group with only a few inconsistencies with the current implementation.
+This unification is suggested by the scaling of the coupling constants for each of the forces under renormalization, they come close to converging to a single value at higher energies, as seen in Figure~\ref{fig:unification_sm}. 
+An additional correction to the scaling of the coupling constants from new physics above the \TeV scale could cause them to merge into a single value at high energies. 
+
+\begin{figure}
+\includegraphics[width=\fullfig]{figures/unification_sm.jpg}
+\caption{The running of the coupling constants in the \ac{SM} up to the Planck scale.}
+\label{fig:unification_sm}
+\end{figure}
+
+\subsection{Cosmological Observations}
+
+The \ac{SM} contains a symmetry in the description of matter and antimatter that is not reflected in cosmological observations.
+The process of the standard model create or remove matter and antimatter in equal amounts, so a universe that begins with an equal quantity of each should result in a universe with an approximate balance of matter and antimatter.
+However, cosmological observations of the relative amount of each type clearly show that the directly observable mass of the universe is overwhelmingly made of matter.
+As this difference is largely a difference in the generation of baryons and anti-baryons, this discrepancy is often referred to as the baryogenesis problem.
+
+A number of astrophysical observations of large scale gravitational interactions suggest the presence of a significant amount of non-luminous matter that interacts with the normal matter only gravitationally.
+The first evidence of this came from the observation of galactic rotation curves, the velocities of stars as a function of the radius from the center of a galaxy.
+These can be directly predicted from the amount of matter contained within the sphere up to the radius of the star.
+An estimate based only on the luminous matter in the galaxies would predict a dependence that falls off with the radius, but the observed curves show a mostly constant distribution of velocities~\cite{rotation_curves}, as seen in Figure~\ref{fig:rotational_curve}.
+The higher velocities than predicted by the luminous matter can be explained by a halo of dark matter that extends significantly outside the galactic disk.
+
+\begin{figure}
+\includegraphics[width=\fullfig]{figures/rotation_curves.png}
+\caption{The distribution of velocities of stars as a function of the radius from the center of the galaxy. The contributions to the velocity from the various components of matter in the galaxy are shown~\cite{rotation_curves}.}
+\label{fig:unification_sm}
+\end{figure}
+
+This dark matter accounts for a majority of the matter in the universe, and is incompatible with the matter particles predicted by the \ac{SM}.
+Many observations support its existence, but there have been no direct detections of a particle which could account for the large quantity of gravitationally interacting dark matter.
+The \ac{SM} would have to require a significant extension to include the particles needed to explain dark matter and the processes needed to explain the observed matter-antimatter asymmetry. 
