@@ -1,14 +1,14 @@
 * Chapter 8
-** TODO In general when you show a figure you really need to describe all aspects of it, e.g. in all these figures you can comment on
+** DONE In general when you show a figure you really need to describe all aspects of it, e.g. in all these figures you can comment on
    a) if data agree with either of the two models
    b) if the two models agree with each other
    c) if 2010 and 2012 data agree
    d) if there is any dependence on the x-axis value
-** TODO the space on the right margin is very large. Can you please reduce it for now as it otherwise thros off my "calibration" on the number of pages somewhat!
-** TODO in the introduction of a chapter, please don't just say "see XYZ" in the middle (e.g. as l346). Instead the introduction should just outline what comes and at the end you can say for instance "Sec. 8.1 describes the data and simulation. 8.2 and 8.3 present the results for the response measurements for inclusive and identified particles, respectively." or even describe it in more detail. But saying it just in the middle of a paragraph with a forward reference is not helpful as surely at this stage you are not proposing for people to look at this before reading the rest. If at all possible it is always good to avoid any forward referencing (apart from in the way I illustrate above).
-** TODO in general you are not describing the figure sand what we learn from them in sufficient detail. If you show positive and negative charges in a figure together I expect to learn from the text how they compare.
-** TODO all figures are a bit small. If you increase the right margin this will make them all bigger. You should also aim to use really 100% of the text width.
-** TODO for the <E/p> do you include the energies <=0 or only positive energies? Need to clarify early on when introducing variable.
+** DONE the space on the right margin is very large. Can you please reduce it for now as it otherwise thros off my "calibration" on the number of pages somewhat!
+** DONE in the introduction of a chapter, please don't just say "see XYZ" in the middle (e.g. as l346). Instead the introduction should just outline what comes and at the end you can say for instance "Sec. 8.1 describes the data and simulation. 8.2 and 8.3 present the results for the response measurements for inclusive and identified particles, respectively." or even describe it in more detail. But saying it just in the middle of a paragraph with a forward reference is not helpful as surely at this stage you are not proposing for people to look at this before reading the rest. If at all possible it is always good to avoid any forward referencing (apart from in the way I illustrate above).
+** DONE in general you are not describing the figure sand what we learn from them in sufficient detail. If you show positive and negative charges in a figure together I expect to learn from the text how they compare.
+** DONE all figures are a bit small. If you increase the right margin this will make them all bigger. You should also aim to use really 100% of the text width.
+** DONE for the <E/p> do you include the energies <=0 or only positive energies? Need to clarify early on when introducing variable.
 ** DONE l333: physics => energy measurements
 ** DONE l334: calorimetry => calorimeters
 ** DONE l347: into individual cells: you mean to say that they deposit energy in several adjacent cells which are then clustered, right? And, the energy of the cluster is taken to be the energy of the particle. See if you can reformulate text along those lines.

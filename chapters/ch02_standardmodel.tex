@@ -46,13 +46,13 @@ There are a number of immediate and surprisingly powerful consequences of requir
 
 \section{Gauge Invariance and Forces}
 
-The simplest possible Lagrangian is the free Dirac Lagrangian, which describes a relativistic fermion in a vacuum.
+The simplest possible relativistic, quantum Lagrangian is the free Dirac Lagrangian, which describes a relativistic fermion in a vacuum.
 
 \begin{align}\label{eq:free_dirac} 
 \mL = i\bar{\psi}\slashed{\partial}\psi -m\bar{\psi}\psi 
 \end{align}
 
-\noindent A fermion denotes a particle with spin-1/2, and the kinematic term in the Lagrangian correctly describes the free propagation of a fermionic particle with mass $m$. 
+\noindent A fermion denotes a particle with spin-1/2, and the kinematic term is chosen to correctly describe the free propagation of a fermionic particle with mass $m$. 
 This equation is clearly invariant under a global $U(1)$ transformation, that is changing $\psi$ by a complex phase has no effect. 
 The derivative operator commutes with a constant phase factor, and wherever $\psi$ appears it's complex conjugate also appears so as to cancel out the change of phase. 
 However, the Lagrangian as written is not invariant under the local $U(1)$ symmetry postulated for the \ac{SM}, which can be written as $U = e^{i\alpha(x)}$. 
@@ -97,7 +97,7 @@ It is natural to also introduce a term to the Lagrangian at this point to descri
 - \frac{1}{16\pi} F^{\mu\nu}F_{\mu\nu} \quad \mathrm{with} \quad F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
 \end{align}
 
-\noindent which then also describes the electromagnetic interactions in a vacuum and the propagation of a photon.
+\noindent This then also describes the electromagnetic interactions in a vacuum and the propagation of a photon.
 The photon is an example of a gauge boson, a spin-0 particle required to exist by a gauge symmetry of the Lagrangian and one that corresponds to a force.
 In summary, requiring the $U(1)$ symmetry was enough to recover all of electromagnetism and to predict the existence of a photon in the \ac{SM}. 
 
@@ -106,7 +106,7 @@ All diagrams that start with the same initial state and end with the same final 
 A diagram that corresponds to the above term, $(q\bar{\psi}\gamma^\mu\psi)A^\mu$, is shown in Figure~\ref{fig:feyn_aff}, for an interaction with a generic fermion.
 
 \begin{figure}
-%\includegraphics[width=\fullfig]{}
+\includegraphics[width=\halffig]{figures/feyn_aff.pdf}
 \caption{A Feynman diagram representing the interaction of the $A$ field with a generic fermion, $f$.} 
 \label{fig:feyn_aff}
 \end{figure}
@@ -260,9 +260,10 @@ The $W$ and $Z$ bosons, however, are unstable, as they have large enough masses 
 For this reason, photons can be observed directly, while the other bosons are sufficiently short-lived that they can only be measured from their decay products.
 
 \begin{figure}
-%\includegraphics[width=\fullfig]{}
+\includegraphics[width=\halffig]{figures/feyn_wdecay.pdf}
+\includegraphics[width=\halffig]{figures/feyn_zdecay.pdf}\\
 \caption{The Feynman diagrams representing the decays of the W and Z bosons to fermions. Here $f$ indicates a generic fermion, $\bar{f}$ its antiparticle, and $f'$ the partner of that fermion in the same generation.}
-\label{fig:feyn_aff}
+\label{fig:feyn_weak}
 \end{figure}
 
 Because the $W$ and $Z$ bosons interact with both quarks and leptons, they are responsible for the production of leptons in proton-proton collisions.
@@ -302,6 +303,7 @@ Those fraction change significantly with the scale of the interaction; the \acp{
 
 
 \section{Limitations}
+\label{sec:limitations}
 
 Despite the great success of the relatively simple \ac{SM} in describing such a broad range of emergent phenomena, it is clear that the picture it presents of the interactions of fundamental particles is incomplete.
 The \ac{SM} contains concerning coincidences that suggest a more ordered underlying substructure that is not expressed in the current form.
@@ -327,7 +329,7 @@ An additional correction to the scaling of the coupling constants from new physi
 
 \begin{figure}
 \includegraphics[width=\fullfig]{figures/unification_sm.jpg}
-\caption{The running of the coupling constants in the \ac{SM} up to the Planck scale.}
+\caption{An approximation of the running of the coupling constants in the \ac{SM} up to the Planck scale~\cite{unification_plot}.}
 \label{fig:unification_sm}
 \end{figure}
 
@@ -347,7 +349,7 @@ The higher velocities than predicted by the luminous matter can be explained by 
 \begin{figure}
 \includegraphics[width=\fullfig]{figures/rotation_curves.png}
 \caption{The distribution of velocities of stars as a function of the radius from the center of the galaxy. The contributions to the velocity from the various components of matter in the galaxy are shown~\cite{rotation_curves}.}
-\label{fig:unification_sm}
+\label{fig:rotational_curve}
 \end{figure}
 
 This dark matter accounts for a majority of the matter in the universe, and is incompatible with the matter particles predicted by the \ac{SM}.
