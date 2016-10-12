@@ -4,11 +4,11 @@
 % --------------------------------------------------------------------------------
 
 The four major \ac{LHC} experiments at \ac{CERN} seek to use the never before matched energies and luminosities of the new collider to explore the boundaries of particle physics and to gain insight into the fundamental forces of nature.
-Two of these experiments, \ac{ATLAS} and \ac{CMS}, are general purpose detectors that seek to measure a variety of processes in the up to 14 \TeV proton-proton collisions that occur as much as 40 million times per second at the \ac{LHC} at the design luminosity of $10^{34}$ \lcms. 
-\ac{ATLAS} employs a hermetic detector design, one which encloses the particle collisions as completely as possible with detecting elements, that allows it to study a wide range of physics from \ac{SM} and Higgs measurements to searches for new physics in models like \acl{SUSY}~\cite{atlas_experiment}.
+Two of these experiments, \ac{ATLAS} and \ac{CMS}, are general purpose detectors that seek to measure a variety of processes in the up to 13 \TeV proton-proton collisions that occur as much as 800 million times per second at the \ac{LHC} at the design luminosity of $10^{34}$ \lcms. 
+\ac{ATLAS} employs a hermetic detector design, one which encloses the particle collisions as completely as possible with detecting elements, that allows it to study a wide range of physics from \ac{SM} and Higgs measurements to searches for new physics in models like \ac{SUSY}~\cite{atlas_experiment}.
 
 Accommodating this wide variety of goals is a challenge for the design of the detector.
-The wide range of energies involved requires high measurement precision over several orders of magnitude and the ability to measure a variety of particle types.
+The wide range of energies involved requires high measurement precision over several orders of magnitude, and the numerous physics processes require an ability to measure a variety of particle types.
 At the time of the construction of \ac{ATLAS}, the Higgs boson had yet to be discovered, but the diphoton decay mode was (correctly) expected to be important and necessitated a high resolution photon measurement.
 The potential for decays of new heavy gauge bosons, W' and Z', required a similarly high momentum resolution for leptons with momentum up to several \TeV.
 Hadronic decay modes of several possible new high energy particles could result in very energetic jets, again up to several \TeV, and reconstructing the decay resonances would again require good energy resolution.
@@ -18,8 +18,8 @@ Measuring \met implicitly requires a good resolution on all \ac{SM} particles th
 And at the lower end of the energy spectrum, precision \ac{SM} measurements would require good resolution of a variety of particle types at energies as low as a few \GeV, so the design needs to accommodate roughly three orders of magnitude.
 
 This broad spectrum of measurements requires a variety of detector systems working together to form a cohesive picture of each collision. 
-Two large magnet systems provide magnetic fields that provide a curvature to the propagation of charged particles and allows for precision momentum measurements by other systems.
-The inner detector uses a combination of tracking technologies to reconstruct particle trajectories and verticies for charged particles.
+Two large magnet systems produce magnetic fields that provide a curvature to the propagation of charged particles and allows for precision momentum measurements by other systems.
+The inner detector uses a combination of tracking technologies to reconstruct particle trajectories and vertices for charged particles.
 A variety of calorimeters measure the energies of hadrons, electrons, and photons over a large solid angle.
 A large muon spectrometer identifies muons and uses the second magnet system to provide an independent measurement of their momentum from the inner detector and improve the resolution. 
 The layout of all of these systems is shown in Figure~\ref{fig:atlas_overview}.
@@ -70,16 +70,16 @@ Designing, constructing, and installing the detector took the combined effort of
 \section{Coordinate System}
 
 The coordinate system defined for the \ac{ATLAS} detector is used throughout all of the sections of this thesis.
-The choice of coordinate system reflects the cylindrical symmetry of the \ac{ATLAS} detector, and is oriented by the direction of the beamline which defines the $z$-direction.
+The system begins with the choice of a $z$ axis along the the beamline.
 The positive $z$ side of the detector is commonly referred to as the $A$-side, and the negative $z$ side is referred to as the $C$-side.
 The $x-y$ plane is then the plane transverse to the beam direction, with the $x$ direction defined as pointing from the interaction point to the center of the \ac{LHC} ring and the $y$ direction defined as pointing upwards.
 The nominal interaction point is the origin of this system.
 
-It is more convenient in practice to use a cylindrical coordinate system.
-The angle from the $z$-axis is $\theta$.
+It is more convenient in practice to use a cylindrical coordinate system; this choice of coordinate system reflects the cylindrical symmetry of the \ac{ATLAS} detector.
+The distance from the beamline is the radius, $r$', and the angle from the $z$-axis is $\theta$.
 The azimuthal angle uses the usual definition, with $\phi$ running around the $z$-axis and $\phi = 0$ corresponding to the $x$-axis.
 Many aspects of the detector are independent of the this coordinate to first order.
-The remaining direction is typically specified using rapidity or pseudorapidity, where rapidity is defined as
+The $\theta$ direction is typically specified using rapidity or pseudorapidity, where rapidity is defined as
 
 \begin{equation}\label{eq:rapidity}
 y = \frac{1}{2} \ln \frac{E + p_z}{E - p_z}
@@ -101,7 +101,7 @@ It is often useful to refer to differences in solid angle using the pseudorapidi
 
 
 The pseudorapidity is also invariant to boosts along the $z$-axis for high momentum particles, and is preferable to rapidity because it does not depend on the specific choice of particle.
-Pseudorapidity is also preferable to $\theta$ because of the aforementioned boost-invariance and also because particle production is roughly uniform in equal-width intervals of $\eta$ up to about $\eta = 5.0$. 
+Pseudorapidity is also preferable to $\theta$ because particle production is roughly uniform in equal-width intervals of $\eta$ up to about $\eta = 5.0$. 
 A particle traveling along the beampipe has $\eta = \inf$ and a particle traveling perpendicular to the beampipe has $\eta = 0$.
 The extent of the tracker, $|\eta| < 2.5$, corresponds to approximately $0.05 \pi < \theta [\mathrm{rad}] < 0.95 \pi$ and the extent of the calorimeters, $|\eta| < 4.9$ corresponds to approximately $0.005 \pi < \theta [\mathrm{rad}] < 0.995 \pi$.
 Many detector components are broken into multiple subsystems to provide coverage at greater $|\eta|$.
@@ -117,9 +117,9 @@ In addition, \pt alone determines the amount of curvature in the magnetic field,
 \label{sec:magnetic_field}
 
 The magnet system used in \ac{ATLAS} is designed to provide a substantial magnetic field in the two regions where the trajectory of particles is measured, the inner detector and the muon spectrometer.
-The magnetic field provides a curvature to the trajectory of charged particles and allows the precision tracking measurements to make high resolutions measurements of \pt.
+The magnetic field provides a curvature to the trajectory of charged particles and allows the precision tracking elements to make high resolutions measurements of \pt.
 To provide a magnetic field in these regions, \ac{ATLAS} uses a hybrid system with four separate, superconducting magnets.
-A single solenoid provides a 2 T axial magnetic field for the inner detector, while a barrel toroid and two endcap toroids produce a magnetic field of 0.5 and 1 T, respectively, for the muon detectors.
+A single solenoid provides a 2 T axial, uniform magnetic field for the inner detector, while a barrel toroid and two endcap toroids produce a non-uniform magnetic field of 0.5 and 1 T, respectively, for the muon detectors.
 This geometry is illustrated in Figure~\ref{fig:magnets_overview}, and the parameters of the three magnet systems are summarized in Table~\ref{tab:magnet_parameters}.
 
 \begin{figure}[hbtp]
@@ -154,14 +154,15 @@ The central solenoid uses a single-layer coil with a current of 7.730 kA to gene
 The single-layer coil design enables a minimal amount of material to be used in the solenoid's construction, which is important because the solenoid is placed between the inner detector and the calorimeters.
 At normal incidence the magnet has only 0.66 radiation lengths worth of material, where one radiation length is the mean distance over which a high-energy electron loses all but $1/e$ of its energy through material interactions~\cite{pdg}.
 The coil is made of a high-strength aluminum stabilized NbTi superconductor which was optimized to achieve a high field with minimal thickness.
-The axial magnetic field produced by the solenoid bends charged particles in the $\phi$ direction.
+The axial magnetic field produced by the solenoid bends charged particles in the $\phi$ direction, following a circular path with a radius specified by Maxwell's equations (see Equation~\ref{eg:magnetic_bending}). 
 
-The barrel toroid consists of eight coils which generate a 0.5 T magnetic field in the cylindrical region around the calorimeters with an approximately 20 kA current.
+The barrel toroid consists of eight coils which generate a 0.5 T magnetic field, on average, in the cylindrical region around the calorimeters with an approximately 20 kA current.
 The coils are separated only by air to reduce the scattering of muons as they propagate through the region.
 The coils are made of an aluminum stabilized NbTiCu superconductor and each is separately housed in a vacuum and cold chamber.
 This magnetic configuration produces a field in the $\phi$ and so curves muons traversing the volume primarily in the $\eta$ direction.
 
-The endcap toroids follow a similar design to the barrel toroid, with eight separate NbTiCu coils, but in this case all eight are housed within a single cold mass.
+The endcap toroids follow a similar design to the barrel toroid and produce a 1.0 T magnetic field, on average. 
+Each has eight separate NbTiCu coils, and in this case all eight are housed within a single cold mass.
 This extra structure is necessary to withstand the Lorentz forces exerted by the magnets. 
 These magnets are rotated 22.5\% relative to the barrel toroid to provide a uniform field in the transition between the two systems. 
 The endcap toroids also produce a field in the $\phi$ direction and curve muons primarily in the $\eta$ direction.
@@ -173,10 +174,10 @@ The endcap toroids also produce a field in the $\phi$ direction and curve muons 
 
 The \ac{ATLAS} inner detector provides excellent momentum resolution as well as accurate primary and secondary vertex measurements through robust pattern recognition that identifies tracks left by charged particles. 
 These tracks fulfill a number of important roles in the \ac{ATLAS} measurement system: they measure the momentum of charged particles including electrons and muons, they can identify electrons or photon conversions, they assign various particles and jets to different vertices, and they provide a correction to \met measurements from low energy particles. 
-The system has to be accurate enough to separate tracks from dozens of verticies and to resolve each vertex individually, as well as accurate enough to measure the \pt of very high momentum tracks which curve very little even in the large magnetic field.
+The system has to be accurate enough to separate tracks from dozens of vertices, to resolve each vertex individually, and to measure the \pt of very high momentum tracks which curve very little even in the large magnetic field.
 This is accomplished by several independent layers of tracking systems.
-Closest to the interaction point is the very high granularity Pixel detector, which is followed by the \ac{SCT} layers.
-These subdetectors both use discrete space-points to reconstruct track patterns.
+Closest to the interaction point is the very high granularity Pixel detector, including the newly added \acl{IBL}, which is followed by the \ac{SCT} layers.
+These silicon subdetectors both use discrete space-points to reconstruct track patterns.
 The final layer, the \ac{TRT}, uses many layers of straw tube elements interleaved with transition radiation material to provide continuous tracking.
 The arrangement of these subdetectors is shown in Figure~\ref{fig:id_overview}.
 To provide the desired hermetic coverage, the subdetectors are divided into barrel and endcap geometries.
@@ -213,7 +214,7 @@ Figure ~\ref{fig:id_slice_long} shows an alternative computer generated three-di
 \end{figure}
 
 As the closest system to the interaction point, it is crucial for the inner detector to use as little material as possible to avoid scattering of charged particles or photon conversions before they reach the remaining subdetectors.
-The various components, including the readout electronics, cooling infrastructure, gas volumes, and support structures,  were designed to use as little material as possible. 
+The various components, including the readout electronics, cooling infrastructure, gas volumes, and support structures,  were designed to accommodate this need for minimal components.
 Even with these optimizations, the combination of stringent performance requirements and the harsh radiation environment in the inner detector requires a significant amount of material.
 This material causes many electrons to lose most of their energy before reaching the electromagnetic calorimeter and approximately 40\% of photons convert into an electron-positron pair while traversing the inner detector.
 Figure~\ref{fig:id_material} shows the integrated radiation lengths traversed by a straight track in the inner detector as a function of $\eta$, grouped by subdetector.
@@ -264,11 +265,11 @@ Momentum Resolution & $\pt = 1\ \GeV$, $|\eta| \approx 0$ & 1.3\% \\
   & $\pt = 1\ \GeV$, $|\eta| \approx 2.5$ & 2.0\% \\
   & $\pt = 100\ \GeV$, $|\eta| \approx 0$ & 3.8\% \\
   & $\pt = 100\ \GeV$, $|\eta| \approx 2.5$ & 11\% \\
-Transverse \acs{IP} Resolution & $\pt = 1\ \GeV$, $|\eta| \approx 0$ & 75 \um\% \\
+Transverse \acs{IP} Resolution & $\pt = 1\ \GeV$, $|\eta| \approx 0$ & 75 \um \\
   & $\pt = 1\ \GeV$, $|\eta| \approx 2.5$ & 200 \um \\
   & $\pt = 1000\ \GeV$, $|\eta| \approx 0$ & 11 \um \\
   & $\pt = 1000\ \GeV$, $|\eta| \approx 2.5$ & 11 \um \\
-Longitudinal \acs{IP} Resolution & $\pt = 1\ \GeV$, $|\eta| \approx 0$ & 150 \um\% \\
+Longitudinal \acs{IP} Resolution & $\pt = 1\ \GeV$, $|\eta| \approx 0$ & 150 \um \\
   & $\pt = 1\ \GeV$, $|\eta| \approx 2.5$ & 900 \um \\
   & $\pt = 1000\ \GeV$, $|\eta| \approx 0$ & 90 \um \\
   & $\pt = 1000\ \GeV$, $|\eta| \approx 2.5$ & 190 \um \\
@@ -288,6 +289,8 @@ The three outer layers also include endcap elements, illustrated in Figure~\ref{
 
 The pixel sensor technology uses a p-n junction of n-type bulk that contains both p\tsup{+} and n\tsup{+} impurities.
 This combination is crucial in maintaining performance after a significant radiation dose, as the n\tsup{+} implants allow the sensor to continue function after the n-type bulk has been converted to a p-type bulk by the accumulation of radiation.
+In either configuration, when a charged particle passes through the bulk, it ionizes thousands of electron-hole pairs. 
+The electrons and holes are pulled in opposite directions by the electric field established between the anode and cathode of the junction, which then produces a current that can be measured and recorded by readout electronics.
 
 The size of the pixels in the original three layers are 50 \um x 400 \um in the $r-\phi$ and $z$ directions, respectively.
 Those pixels are bump-bonded to front-end readout chips, the FE-I3, which contains a total of 2880 pixels per chip. 
@@ -300,7 +303,7 @@ Together these three layers contain 1744 modules between the barrel and two endc
 
 \begin{figure}[hbtp]
 \includegraphics[width=\fullfig]{figures/pixel_overview.pdf}
-\caption{}
+\caption{A cut away image of the outer three layers of the pixel detector.}
 \label{fig:pixel_overview}
 \end{figure}
 
@@ -341,13 +344,13 @@ Although pixels provide a more accurate measurement, the number of pixels and re
 Each individual silicon strip sensor contains 768 individual readout strips with a total area of 6.36 cm x 6.40 cm and a pitch of 80 \um. 
 Pairs of these sensors are then bonded together to form a combined strip with a length of 12.8 cm.
 Two of these combined strips are then placed back to back with a relative tilt of 40 mrad.
-This geometry is illustrated in an exploded-out view in Figure~\ref{fig:sct_geometry}.
+This geometry is illustrated in an expanded view in Figure~\ref{fig:sct_geometry}.
 The purpose of angular offset of the consecutive layers is to allow the strip sensor areas to more accurately measure the position of a particle by comparing the overlap of the two strips which were traversed by a track.
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=\fullfig]{figures/sct_geometry.png}
-\caption{An exploded view of the geometry of the \ac{SCT} double layers in the barrel region.}
+\caption{An expanded view of the geometry of the \ac{SCT} double layers in the barrel region.}
 \label{fig:sct_geometry}
 \end{figure}
 
@@ -364,7 +367,7 @@ At the center of each tube is a gold-plated anode tungsten wire 30 \um in diamet
 When a charged particle passes through these tubes, it ionizes the gas within.
 The ions produced drift in the electric field established between the wire and the tube wall, and the large electric field near the wire produces avalanche multiplication and results in an electric current on the wire that is read out by the electronics and provides a track measurement.
 The time it takes the ionization to drift to the wire can be used to estimate the distance from the wire that the particle passed through the tube; this gives a resolution on the distance of approximately 130\um.
-Combining several such measurements between consecutive hits in the \ac{TRT} tubes allows the trajectory of the particle to be reconstructed.
+Combining several such measurements between consecutive hits in the \ac{TRT} tubes allows the trajectory of the particle to be reconstructed with much better resolution than is available in each individual tube.
 
 In addition to the continuous tracking, the detector can use transition radiation produced when a particle passes between the layers to distinguish between electrons and heavier charged particles.
 The space between the tubes is filled with CO\tsub{2}, and so has a different dielectric constant than the gas within the tubes which contains Xe.
@@ -390,7 +393,7 @@ To accomplish precision measurements of these particle types, the \ac{ATLAS} cal
 Together these provide hermetic coverage for the \ac{ATLAS} detector.
 The configuration of these calorimeters is illustrated in Figure~\ref{fig:calo_overview}. 
 %Table~\ref{tab:calorimeter_parameters} summarizes the parameters of these systems.
-\textbf{Note: I could make this section much longer. It might be nice to include a more complete description of showers for example. I will extend this section if their is space at the end.}
+\textbf{Note: I could make this section much longer. It might be nice to include a more complete description of showers for example. I will extend this section if there is space at the end.}
 
 \begin{figure}[hbtp]
 \includegraphics[width=\fullfig]{figures/calo_overview.pdf}
@@ -424,7 +427,7 @@ The calorimeters are designed to absorb and measure the energy carried by a part
 This requires a significant amount of material to provide interactions.
 These interactions then produce secondary particles, which can produces secondary particles in turn, and thus form a cascade of particles called an \ac{EM} or hadronic shower, depending on the governing mechanism.
 Electromagnetic and hadronic showers have very different properties and require different technologies to measure them accurately.
-All of the calorimeters in the \ac{ATLAS} calorimeter system are sampling calorimeters, that is they use alternating layers of absorbing and active material.
+All of the calorimeters in the \ac{ATLAS} calorimeter system are sampling calorimeters: they use alternating layers of absorbing and active material.
 The dense absorbing layers initiate the showers while the active layers measure the energy of the produced particles.
 A fraction of the energy is lost in the inactive layers, so the energy measurement from the active layers has to be corrected to estimate the actual energy of the particle.
 
@@ -444,7 +447,7 @@ Figure~\ref{fig:calo_interactionlengths} show the radiation lengths in the layer
 \subsection{Electromagnetic Calorimeter}
 
 The electromagnetic calorimeters use alternating layers of \acl{LAr} and lead in an accordion shape. 
-The accordion shape allows a construction that provides complete coverage in the $\phi$ direction while also providing many alternating layers for the a particle to pass through.
+The accordion shape provides complete coverage in the $\phi$ direction while also providing many alternating layers for the a particle to pass through.
 The configuration is detailed in Figure~\ref{fig:calo_barrel_schematic}.
 When an electron or photon passes through the lead, it produces an electromagnetic shower.
 The particles produced in those showers then pass into and ionize the \acl{LAr}; the ions produced can then be collected by an electrode in the \acl{LAr} layer to provide the actual energy measurement.
@@ -456,7 +459,7 @@ The particles produced in those showers then pass into and ionize the \acl{LAr};
 \end{figure}
 
 The barrel region is covered by a presampler and three separate sampling layers with decreasing segmentation.
-The presampler is just a thin layer of \acl{LAr} which measures the energy of any electromagnetic showers which are initiated before the particle reaches the calorimeter due to interactions with the detector material.
+The presampler is a thin layer of \acl{LAr} which measures the energy of any electromagnetic showers which are initiated before the particle reaches the calorimeter due to interactions with the detector material.
 The first layer is the strip layer, which has fine segmentation in $\eta$ to enhance the identification of shower shapes and to provide a precise $\eta$ measurement for reconstructing photons and electrons.
 The strip layer has only 4 radiation lengths worth of material, and has a segmentation of $\Delta\eta = 0.003$ and $\Delta\phi = 0.1$. 
 The second layer is also finely segmented, with a segmentation of $\Delta\eta = 0.025$ and $\Delta\phi = 0.025$, and a thickness of 16 $X_0$.
@@ -551,7 +554,7 @@ A central tungsten-rhenium wire with a diameter of 50 \um runs along the length 
 A muon traversing these tubes ionizes the gas, and the ionization electrons then drift in the electric field toward the central wire.
 Close to the wire, the electric field is strong enough to cause the original ionization electrons to ionize additional electrons, producing an avalanche that can be measured as a current along the wire. 
 The time of arrival of that current depends on how far the muon entered from the wire, and can be used to achieve a position resolution of 80\um in an individual tube.
-The combination of the measurements in the consecutive layers of tubes improves this position resolution to 35\um.
+The combination of the measurements in the consecutive layers of tubes improves this position resolution to 35 \um transverse to the tubes, with a resolution of 1 m along the tube direction.
 
 To achieve a good resolution over the entire length of a muon track, the relative positions of the tubes of the muon spectrometer must be known to an accuracy of 30\um. 
 This is achieved by an optical laser alignment system placed in each of the individual chambers and throughout the cavern.
@@ -561,7 +564,7 @@ The configuration of the alignment system within an individual chamber is also s
 \subsection{\acl{RPC}}
 
 The \ac{RPC} is the outermost detecting layer in the muon spectrometer in the barrel region, and provides a fast measurement of the $\phi$ position of muons for triggering.
-The speed of the measurement, with a time resolution of just a few nanoseconds, requires a poor spatial resolution of approximately 1 cm. 
+The speed of the measurement, with a time resolution of just a few tens of nanoseconds, requires a poor spatial resolution of approximately 1 cm. 
 There are three \acp{RPC} layers in the muon spectrometer, two located on either side of the central \ac{MDT} layer and one located outside the final \ac{MDT} layer, as shown in Figure~\ref{fig:muon_side_schematic}.
 The \acp{RPC} consist of two layers of parallel plates filled with a gas mixture of C\tsub{2}H\tsub{2}F\tsub{4}.
 A muon passing through these systems ionizes the gas, like in the \ac{MDT}, which causes an avalanche of ionization electrons in the electric field maintained between the plates.
@@ -606,7 +609,7 @@ The high electric field and small wire-to-wire distance give it the required goo
 \section{Trigger}
 \label{sec:trigger}
 
-It is not possible for the detector and the associated computing systems to record the terabytes of data that the 40 MHz of proton-proton collisions produce every second.
+It is not possible for the detector and the associated computing systems to record the terabytes of data that the 40 MHz event rate produces every second.
 Instead, a small fraction of these events are selected by the trigger system to be recorded and later analyzed.
 Selecting interesting events at such a high rate poses a significant challenge for the both the detector design and the implementation of a trigger decision and data acquisition system.
 The trigger must balance the time needed to decide to keep an event, to avoid losing information, with the filtering accuracy to consistently select a full menu of physics events that can be used for the wide array of searches and measurements targeted by \ac{ATLAS}. 
@@ -614,9 +617,9 @@ The trigger must balance the time needed to decide to keep an event, to avoid lo
 The \ac{ATLAS} trigger system, as of Run 2, consists of two levels of decision making. 
 The first level, referred to as L1, is hardware based and uses inputs from a subset of the detector elements to narrow the considered event rate from the original 40 MHz down to 100 kHz.
 The 100 kHz rate is the maximal rate that the event information can be transferred from the detector.
-The second level, referred to as the \ac{HLT}, makes the final decisions on which events to keep for analysis and selects a rate of around 1 kHz.
+The second, software-based level, referred to as the \ac{HLT}, makes the final decisions on which events to keep for analysis and selects a rate of around 1 kHz.
 The collection of selection criteria used to make the L1 decisions feed into subsequent selection criteria in the \ac{HLT}, and the set of these combinations of L1 and \ac{HLT} criteria from the trigger menu which defines exactly what events are recorded on \ac{ATLAS}.
-The entirety of the trigger menu used for 2015 data collection is shown in Table~\ref{tab:trigger_menu}, which summarizes the selection requirements at both levels and additionally shows the peak measured rates contributed by each.
+The trigger menu used for 2015 data collection is shown in Table~\ref{tab:trigger_menu}, which summarizes the selection requirements at both levels and additionally shows the peak measured rates contributed by each.
 
 \begin{table}[hbtp]
 \centering
@@ -628,6 +631,7 @@ The entirety of the trigger menu used for 2015 data collection is shown in Table
 At L1, the trigger system uses information primarily from the calorimeters and muon spectrometer to select high \pt jets, electrons, photons, and muons. 
 The electromagnetic calorimeter uses reduced granularity energy measurements as well as isolation requirements to select electrons and photons.
 The hadronic calorimeter also uses a combination of reduced granularity energy measurements and isolation to select high momentum jets and hadronically decaying tau leptons. 
+
 The calorimeters are also used to provide triggers based on missing energy: the coarse granularity energy measurements are used to calculate a directional sum of energies and to trigger on a significant imbalance.
 Only the \acp{RPC} and \acp{TGC} muon subdetectors contribute to the decision at L1, and are used to identify high momentum muons.
 The contributions to the triggering rate of the various types of L1 triggers are shown in Figure~\ref{fig:trigger_l1rate}. 
