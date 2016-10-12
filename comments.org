@@ -1,3 +1,26 @@
+* Chapter 5
+** DONE L563 : probably break this sentence in two
+** DONE L570 : maybe cite LEP somehow, like the TDR or something?
+** DONE L580 : maybe just cite them at first mention, idk what's better though
+** DONE L586 : something like "first full run" to avoid objections about 2008 quench
+** DONE L651 : drop "Specifically" since this is a new section
+** DONE L663 : drop "In all"
+** DONE L690 : cite RF cavities?
+** DONE L733-743 : beta vs beta star would probably be unclear to someone unfamiliar with this notation
+** DONE L735 : isn't it technically the normalized emittance in this equation? in particular, might be nice to note that epsilon_n decreases with energy (part of why we have such higher insta lumi at 13 TeV etc)
+** DONE L751 vs next paragraph : f_rev is pretty important and we did have 50ns data too, so maybe mention it here?
+** DONE L762 : might be good to be consistent with the use of bunches vs buckets (jargon anyway, so maybe in quotes or something the first time)
+** DONE L768 : "In practice,"
+** DONE L768 : we have gotten to full design lumi now, right?
+** DONE L771 : units for lumi??
+** DONE L727 vs L772 : insta lumi vs int lumi.  It might be easiest to just always attach one of these
+** DONE L774 : rewrite sentence
+** DONE L777 : I would write '"good" for physics ' since this not really explained beforehand. it's really jargon since we use a the Good-RL
+** DONE L780 : This sentence is pretty confusing to me
+** DONE L782 : mu isn't really a name for pileup. probably just have a sentence like "Pileup is the term used to describe the additional interactions per bunch crossing, which can be quantified by the number of additional proton-proton interactions npv"
+** DONE L783 vs L784 : use of "event" differs here.  Use event for each bunch crossing, and something like "additional proton-proton interaction" for pileup
+** DONE Might actually want to rewrite this section on pileup?
+
 * Chapter 8
 ** DONE In general when you show a figure you really need to describe all aspects of it, e.g. in all these figures you can comment on
    a) if data agree with either of the two models
