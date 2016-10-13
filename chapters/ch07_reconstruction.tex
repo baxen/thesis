@@ -6,29 +6,39 @@
 The ATLAS experiment combines measurements in the subdetectors to form a cohesive picture of each physics event. 
 The majority of particles that traverse the detector leave behind some combination of ionization hits in the tracking detectors or energy deposits in the calorimeters, and these measurements can be used to reconstruct physical quantities like the particle's energy, momentum, or trajectory.
 Even the type of the particle can be distinguished by comparing the various ways that different species of stable particles interact with the subdetectors.
-Reconstruction is the process which takes the electronic outputs of the detector and collects them into individual physics objects.
+Reconstruction is the series of algorithms which take the electronic outputs of the detector and assigns them into individual physics objects.
 The physics objects summarize the properties of particles produced by the collision or subsequent decays, either for individual isolated particles like leptons, or for a collection of the cascade of products produced in the decay of an energetic hadron, called a jet. 
 These are the objects and quantities most often used in analysis to make measurements of \ac{SM} processes or to search for new physics.
 
 % ----------------------------------------
 
-\section{Tracks and Vertices}
+\section{Charged Particles}
 \label{sec:tracks}
 
 As described in Section~\ref{sec:inner_detector}, charged particles that traverse the inner detector leave behind hits in the subdetectors.
 Each of these hits translates into a position measurement along the trajectory of that particle, with position resolutions depending on the subdetector that provided the measurement. 
-Track reconstruction uses these position measurements to cluster hits in consecutive layers of the detector into a trajectory consistent with a particle curving in a magnetic field~\cite{newt, tracking_performance}.
+Track reconstruction uses these position measurements to collect hits in consecutive layers of the detector into a trajectory consistent with a particle curving in a magnetic field~\cite{newt, tracking_performance}.
+This reconstructed trajectory is called a track.
 The number of hits in the inner detector for each event makes a combinatorial method completely infeasible: the algorithms that form tracks must be significantly more intelligent so that event reconstruction does not exhaust computing resources.
 
 The first and primary algorithm employed in track reconstruction is called the inside-out method, which begins with the assumption that the track originated from the interaction point.
 Its purpose is to identify primary particles, those which originate in the proton-proton collisions and with a lifetime long enough to reach the inner detector.
-Combinations of three space points are considered from measurements in the Pixel detector and the first layer of the \ac{SCT}, and form the seed for a track. 
-The seed is then extrapolated into the \ac{SCT} and hits in each layer are considered to be added to the track using a combinatorial Kalman filter~\cite{tracking_performance}.
-After all of the \ac{SCT} layers have been considered, tracks are filtered to reduce ambiguities from other nearby tracks or from combinatorial coincidences.
-Then the tracks are extended into the \ac{TRT} in the same way.
+Combinations of three hits are considered from measurements in the Pixel detector and the \ac{SCT}, and form the seed for a track. 
+Specifically, the seeding algorithm looks for a seed using three pixel hits, two pixel hits and one \ac{SCT} hit, or three \ac{SCT} hits.
+The seed is then extrapolated forwards and backwards into the Pixel and \ac{SCT} detectors depending on the seed location, and hits in each layer are considered to be added to the track using a combinatorial Kalman filter~\cite{tracking_performance}.
+After all of the silicon layers have been considered, tracks are filtered to reduce ambiguities from other nearby tracks or from combinatorial coincidences.
+Then the tracks are extended outwards into the \ac{TRT} in the same way.
 This algorithm is how the hits are chosen to be incorporated into a single track.
 Once the hits are collected, a fitting algorithm calculates the track parameters which best model the locations of the hits and their resolutions.
+The fitting uses five parameters, $(d_0, z_0, \phi, \theta, q/p)$, to specify a track in a perigee representation: $d_0$ and $z_0$ are the transverse and longitudinal impact parameters at the closest approach to the nominal beam axis, $\phi$ and $\theta$ are the usual angular coordinates, and $q/p$ is the charge divided by the momentum.
+These parameters are illustrated in Figure~\ref{fig:perigee_rep}.
 Those parameters directly determine the direction and momentum of the particle which produced the track.
+
+\begin{figure}
+\includegraphics[width=\fullfig]{figures/perigee_rep.png}
+\caption{An illustration of the perigee representation of track parameters for an example track. The charge is not directly shown, but is indicated by the direction of curvature of the track~\cite{atlas_extrapolation}.}
+\label{fig:perigee_rep}
+\end{figure}
 
 This inside-out algorithm is complemented by an outside-in algorithm, which is used to find tracks from secondary particles, those produced in the decays or interactions of the primary particles inside the detector. 
 As the name indicates, the outside-in algorithm begins by seeding tracks in the outermost layers of the inner detector, in the \ac{TRT}. 
@@ -53,7 +63,7 @@ If the missing hit corresponds to an inactive module, however, it is not counted
 \subsection{Pixel Neural Network}
 
 The hits in the Pixel detector are not typically confined to a single pixel, but rather the charge is spread over several pixels per layer which are grouped together into clusters.
-The clustering of these pixels for isolated tracks is relatively straightforward, but complications can arise in the high track density environment where hits from multiple particles can overlap in a single cluster.
+The clustering of these pixels for isolated tracks is relatively straightforward, but complications can arise in the high occupancy environment where hits from multiple particles can overlap in a single cluster.
 Figure~\ref{fig:pixel_cluster_types} shows examples of clusters generated by a single isolated particle, two nearly overlapping particles, and a particle which emits a $\delta$-ray. 
 A $\delta$-ray is a secondary electron which is generated with enough energy to escape a significant distance away from the original particle and to generate additional ionization.
 
@@ -63,14 +73,14 @@ A $\delta$-ray is a secondary electron which is generated with enough energy to 
 \label{fig:pixel_cluster_types}
 \end{figure}
 
-A series of neural-networks analyzes the shape of the clusters to determine how many particles produced the cluster and to find the positions of each of the particles within the cluster.
+A series of neural-networks analyzes the shape of the clusters to determine how many particles produced the cluster and to estimate the positions of each of the particles within the cluster.
 These allow for an identification of clusters caused by more than one particle or by a particle that emits a $\delta$-ray.
 In a high-density tracking environment, the multiple position outputs can be used as the locations of individual hits to allow reconstruction of tracks which almost overlap and with a much better separation than is possible without the splitting of individual clusters.
 
 \subsection{Pixel dE/dx}
 \label{sec:pixel_dedx}
 
-A hit in the Pixel detector correspons to the voltage generated from ionization current rising above a threshold value that is tuned to consistently record the passing of \acp{MIP}. 
+A hit in the Pixel detector corresponds to the voltage generated from ionization current rising above a threshold value that is tuned to consistently record the passing of \acp{MIP}. 
 A larger amount of charge deposited results in a larger voltage, and a larger signal remains above the threshold for a longer period of time.
 The \ac{ToT} is read out of the Pixel detector, and can be used to provide a measurement of the charge deposited in each pixel.
 The charge measurements from each of the pixels included in a pixel cluster are summed to form one charge measurement per layer of the pixel detector.
@@ -79,7 +89,9 @@ The \ac{IBL} only has sixteen available values (4 bits) of \ac{ToT} to readout, 
 To help alleviate this lack of range, the \ac{IBL} also records if is in overflow: when the ionization is sufficient to generate a \ac{ToT} above the largest value that can be recorded in the 4 bits.
 
 The measurements across multiple layers are combined to form an average value of \dedx for the track as a whole.
-To reduce the influence of the typical long Landau tails of the distribution of \dedx deposits~\cite{pdg}, the average is calculated as a truncated mean.
+Depending on where a charge particle is produced, it will traverse four Pixel layers and create four clusters on average.
+It can produce as few as two clusters in the Pixel detector if it passes through inactive modules, and as many as five if is in a region of the detector where multiple modules overlap.
+To reduce the influence of the typical long Landau tails of the distribution of \dedx deposits~\cite{pdg}, the average is calculated as a truncated mean of these clusters.
 The value measured in the \ac{IBL} is removed if it is in overflow, as the measured value is not reliable in that case.
 If a track has five measurements in the pixel detector, the two highest cluster values are removed.
 If a track has two, three, or four measurements in the pixel detector, only the single highest cluster value is removed.
@@ -93,7 +105,7 @@ Vertices are divided into two groups, primary vertices which correspond to the a
 Primary vertices are particularly important, as they can provide a precise location for the interaction which generated the observed particles.
 Understanding that location is crucial in understanding the geometry of the event.
 
-Primary vertices are reconstructed by iteratively identifying seeds from reconstructed tracks.
+Primary vertices are reconstructed by iteratively identifying seeds from reconstructed tracks~\cite{ATLAS-CONF-2010-069}.
 Each track's extrapolated $z$ position at the beamline forms a seed, and nearby tracks are fitted using that position as a point along their trajectory.
 The goodness of fit with that vertex is considered for each track, measured in $\chi^2$. 
 The final position of the vertex is determined by a fit to all of the considered tracks, where the contribution from each track is weighted according to the $\chi^2$ compatibility with that vertex.
@@ -111,14 +123,14 @@ The fitted beamspot then provides a constraint for the second attempt to locate 
 
 Electrons are measured as both a charged particle track and energy deposits in the electromagnetic calorimeter.
 Photons, on the other hand, leave energy deposits in the electromagnetic calorimeter but do not produce a corresponding track.
-Because the electromagnetic interactions with the calorimeter of both photons and electrons produces more photons and electrons, the behavior in the calorimeter is very similar and their is signifcant overlap in the reconstruction techniques for each.
+Because the electromagnetic interactions with the calorimeter of both photons and electrons produces more photons and electrons, the behavior in the calorimeter is very similar and their is significant overlap in the reconstruction techniques for each.
 
-The reconstruction of a photon or an electron in the calorimeter is based on clustering algorithms which identify groups of energy deposits~\cite{PERF-2013-03}.
+The reconstruction of a photon or an electron in the calorimeter is based on clustering algorithms which identify groups of energy deposits~\cite{PERF-2013-03, ATLAS-CONF-2014-032, ATLAS-CONF-2012-123}.
 For this purpose, the entire electromagnetic calorimeter is subdivided into a grid of 200 by 256 towers in the $\eta$ and $\phi$ directions, respectively, where the individual grid units have a size of $\Delta\eta = 0.025$ and $\Delta\phi = 0.025$.
 These towers correspond to individual cells in the middle, coarsest layer of the \ac{EM} calorimeter, and in the remaining layers the cells are grouped together cover the same area in $\eta-\phi$ space.
 The clustering begins by finding seeds with a sliding-window algorithm based on the towers: a window of 3 by 5 towers is formed and translated until the sum of the energy within the window is maximized.
 If that energy is above 2.5 \GeV, then that region becomes a seed.
-The choice of 2.5 \GeV was chosen to compromise between maximizing reconstruction efficiency while minimizing fake electron seeds from electronic noise or pileup.
+The choice of 2.5 \GeV was chosen to compromise between maximizing reconstruction efficiency while minimizing fake electron seeds from electronic noise or soft hadrons from additional interactions.
 The seeds are rejected if the energy measured in the hadronic calorimeter behind the seed is large, as this typically indicates a hadron rather than an electron or photon.
 
 Next, the inner detector tracks within a cone of $\Delta R = 0.3$ are compared to the location and energy of the seed.
@@ -155,8 +167,8 @@ It also requires a good match between the track and the calorimeter energy depos
 
 Muons produced in \ac{ATLAS} first traverse the inner detector and leave behind a track as described in Section~\ref{sec:tracks}.
 The muon then passes through the calorimeter, leaving behind a small, characteristic amount of energy, and then passes through the muon spectrometer where it produces hits in the \acp{MDT} or \acp{CSC}.
-Muon tracks are formed from local segments of hits in each layer of the \acp{MDT} or \acp{CSC}, and then the final muon spectrometer track is formed by combining the two local segments.
-When a track is reconstructed in both the inner detector and the muon spectrometer, they are combined to form a combined muon.
+Muon tracks are formed from local segments of hits in each layer of the \acp{MDT} or \acp{CSC}, and then the final muon spectrometer track is formed by combining the two local segments~\cite{PERF-2015-10}.
+When a track is reconstructed in both the inner detector and the muon spectrometer, the track is refitted to include the hits in both the inner detector and the muon spectrometer, and forms a combined muon.
 
 In a few regions of the detector, a muon may fail to leave behind both a complete inner detector and muon system track.
 For a very small fraction of the acceptance of the muon system, there is only one layer of muon chambers and a global muon system track is not formed.
@@ -193,10 +205,10 @@ The purpose of topological clustering is to group cells in all three dimensions 
 The procedure must be robust enough to reject noise fluctuations in the cell energy measurements that can come from both electronic noise and additional low energy particles produced in pileup activity.
 The background level of calorimeter noise is called \signoise, and is an important component of the topological clustering.
 
-The topological clusters are formed in a three step process called the 4-2-0 threshold scheme, which uses three energy thresholds to build up a cluster from cells.
+The topological clusters are formed in a three step process called the 4-2-0 threshold scheme, which uses three energy thresholds to build up a cluster from cells~\cite{PERF-2014-07}.
 First, any cells with a measured energy above 4\signoise are identified as seed cells. 
 The cells adjacent to the seed cells with a measured energy above 2\signoise are called secondary cells.
-All of the cells which are adjacent to a secondary cell with $E_\mathrm{cell} > 2\signoise$ are also labelled secondary cells.
+All of the cells which are adjacent to a secondary cell with $E_\mathrm{cell} > 2\signoise$ are also labeled secondary cells.
 Tertiary cells are those immediately adjacent to a seed or secondary cell with a measured energy above zero.
 Adjacency in this sense is defined in three dimensions, cells are adjacent if they are neighbors within a layer but also if they have the same $\eta-\phi$ coordinates but are in adjacent layers or even in an adjacent layer in another calorimeter.
 
@@ -221,14 +233,14 @@ For hadronic showers, the energy is corrected for calorimeter non-compensation, 
 All clusters are then corrected for energy that may be deposited in uninstrumented regions in that cluster's location in the calorimeter, and they are also corrected with an estimate of how much energy falls outside the extent of the cluster based on its shape and the deposit type.
 
 \subsection{Jet Algorithms}
-Using the topological clusters as inputs, a jet algorithm groups them together into a collection of adjacent energy deposits that is intended to correspond to a single process.
+Using the topological clusters as inputs, a jet algorithm groups them together into a collection of adjacent energy deposits that is intended to correspond to a single process~\cite{ATL-PHYS-PUB-2015-036}.
 Jet algorithms need a few key characteristics to be usable for physics analysis.
 First, the jets produced by the algorithm should have little dependence on the addition of soft particles to the event (infrared safety), as a negligible addition of energy should not significantly modify the event topology.
-Similarly, the jets produced by the algorithm should also not significantly depend on mostly collinear splitting of an input particle (collinear safety); that is, a single quark splitting into two nearly parallel quarks should not change the resulting jets, which are intended to capture only the properties of the aggregate and not those of individual particles.
+Similarly, the jets produced by the algorithm should also not significantly depend on mostly collinear splitting of an input particle (collinear safety); that is, a single quark replaced by two, parallel quarks with half the original's momentum should not change the resulting jets, which are intended to capture only the properties of the aggregate and not those of individual particles.
 And finally the algorithm needs to be sufficiently simple and fast to be used for the large rate of collected proton-proton collisions on \ac{ATLAS}.
 
 The most commonly used algorithm on \ac{ATLAS} that satisfies these requirements is called the anti-$k_t$ algorithm, and is discussed in further detail in Reference~\cite{antikt}.
-The anti-$k_t$, in brief, relies on iteratively combining the input objects that are closest together, where closest is defined by a particular distance metric, $d_{i,j}$.
+The anti-$k_t$, in brief, relies on iteratively combining the input objects that are closest together, where closest is defined by a particular distance metric, $d_{i,j}$, where the index $i$ represents the combination constructed so far and $j$ is an additional object being considered.
 The combinations stop when the closest remaining object is the beam itself, where the distance to the beam is called $d_{i,B}$. 
 An entire class of algorithms follows this procedure with the following distance metrics
 
@@ -241,7 +253,7 @@ where $\Delta_{i,j} = (y_i - y_j)^2 + (\phi_i - \phi_j)^2$, $k_{ti}$ is the tran
 Anti-$k_t$ is the particular case where $p = -1$, and is a choice that results in an algorithm that is both infrared and collinear safe.
 
 The algorithm is repeated until there are no input objects remaining, which results in a series of jets. 
-Each jet has a complete four momentum from the combination of its input clusters. 
+Each jet has a complete four momentum from the combination of its input clusters, where the combinations assume a mass of zero.
 The jet energies then need to be calibrated to attempt to match the energy of the object which produced the jet.
 
 \subsection{Jet Energy Scale}
@@ -249,11 +261,11 @@ The jet energies then need to be calibrated to attempt to match the energy of th
 Though the \ac{LCW} scheme attempts to correct the topoclusters to reflect the true deposited energy, the correction does not fully account for energy lost within the calorimeters.
 Because of these effects, the original reconstructed jet energy does not reflect the true energy of the particle which initiated the jet.
 Therefore it is necessary to additionally correct the reconstructed jet itself, in addition to the corrections on the inputs.
-This correction is referred to as the \ac{JES}, which combines several individual steps of calibration.
+This correction is referred to as the \ac{JES}, which combines several individual steps of calibration~\cite{ATLAS-CONF-2015-002}.
 
 The first calibration step corrections the direction of the jet to ensure that it points back to the primary vertex.
-Next, the energy of the jet is corrected for pileup by subtracting the expected contribution from pileup (measured in simulation) based on the momentum, $\eta$, and area of the jet as well as the number of reconstructed vertices and expected number of interactions per crossing.
-The largest single correction is the absolute $\eta$ and \ac{JES} correction, where the jet energy and pseudorapidity is corrected to attempt to match the energy and pseudorapidity of the parton which produced it.
+Next, the energy of the jet is corrected for pileup by subtracting the expected contribution from pileup based on the momentum, $\eta$, and area of the jet as well as the number of reconstructed vertices and expected number of interactions per crossing.
+The largest single correction is the absolute $\eta$ and scale correction, where the jet energy and pseudorapidity is corrected to attempt to match the energy and pseudorapidity of the parton which produced it.
 This correction is measured in simulation by comparing the reconstructed jet energies to the energy of the truth particle which produced it.
 However the simulation is not relied on alone to estimate this correction, and an additional step applies an additional energy correction based on in-situ measurements in data.
 These corrections come from various techniques which measure jet energies indirectly by balancing them with other, well-measured objects.
@@ -279,7 +291,7 @@ An alternative method for deriving the \ac{JES} and \ac{JES} uncertainty that ca
 \section{Missing Transverse Energy}
 \label{sec:missing_energy}
 
-Among \ac{SM} particles, only the neutrino cannot be directly measured in the \ac{ATLAS} detector. 
+Among stable \ac{SM} particles, only the neutrino cannot be directly measured in the \ac{ATLAS} detector. 
 Because the neutrino carries neither electric nor color charge, it is very unlikely to interact with the tracking detectors or the calorimeters, and instead passes through the detector completely unobserved.
 Some particles which have been conjectured to exist, like the \ac{LSP} in many \ac{SUSY} models, would also have the same behavior.
 Therefore, it is important for \ac{ATLAS} to provide some way to assess the momentum carried away by a neutral, colorless particle.
