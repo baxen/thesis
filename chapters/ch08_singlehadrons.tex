@@ -73,19 +73,6 @@ The clusters are formed using a 4--2--0 algorithm~\cite{TopoClusters} that begin
 The neighboring cells with at least twice that noise threshold are then added to the cluster, and all bounding cells are then added with no requirement. 
 This algorithm minimizes noise contributions through its seeding process, and including the bounding cells improves the energy resolution~\cite{Speckmayer}.
 The clusters are associated to a given track if they fall within a cone of $\Delta R = 0.2$ of the extrapolated position of the track, which includes about 90\% of the energy on average~\cite{PERF-2011-05}.
-This construction is illustrated in Figure~\ref{fig:eoverp_cartoon}.
-
-\begin{figure}[htbp]
-\centering
-\subfloat[]{
-  \includegraphics[width=.4\textwidth]{figures/SignalDiagram.png}
-}
-\subfloat[]{
-  \includegraphics[width=.4\textwidth]{figures/BGDiagram.png}
-}
-\caption{An illustration (a) of the \ep variable used throughout this paper. The red energy deposits come from the charged particle targeted for measurement, while the blue energy deposits are from nearby neutral particles and must be subtracted. The same diagram (b) for the neutral-background selection, described in Section~\ref{sec:neutral_bg}.}
-\label{fig:eoverp_cartoon}
-\end{figure}
 
 \subsection{E/p Distribution}
 
@@ -122,8 +109,7 @@ The zero fraction is expected to rise as the amount of material a particle trave
 This dependence can be seen in Figure~\ref{fig:zerofracincl}, where the zero fraction in data and simulation is shown as a function of momentum and the amount of material measured in interaction lengths.
 The trends are similar between 2010 and 2012 and for positively and negatively charged particles.
 The zero fraction decreases with energy as expected.
-The absolute discrepancy in zero fraction decreases with momentum from 5\% to less than 1\%, but this becomes more pronounced in the ratio as the zero fraction shrinks quickly with increasing momentum.
-There is a small constant difference between the data and simulation in both interaction models that becomes more pronounced 
+The absolute discrepancy in zero fraction between data and simulation decreases with momentum from 5\% to less than 1\%, but this becomes more pronounced in the ratio as the zero fraction shrinks quickly with increasing momentum.
 The amount of material in the detector increases with $\eta$, which is used to obtain results for interaction lengths ranging between 0.1 and 0.65~$\lambda$.
 As the data and simulation have significant disagreement in the zero fraction over a number of interaction lengths, the difference must be primarily from the modeling of hadronic interactions with detector material and not just the detector geometry.
 Although two different hadronic interaction models are shown in the figure, they have very similar discrepancies to data because both use the same description (the BERT model) at low momentum.
@@ -155,9 +141,22 @@ Although two different hadronic interaction models are shown in the figure, they
 
 The isolation requirement on hadrons is only effective in removing an energy contribution from nearby charged particles. 
 Nearby neutral particles, predominantly photons from \piz decays, also add their energy to the calorimeter clusters, but mostly in the electromagnetic calorimeter. 
+The arrangement of energy deposits is shown in Figure~\ref{fig:eoverp_cartoon}, which illustrates both energy deposits from the hadronic particle and additional deposits from neutral particles.
 It is possible to measure this contribution, on average, using late-showering hadrons that minimally ionize in the electromagnetic calorimeter. 
 Such particles are selected by requiring that they deposit less than 1.1 \GeV in the EM calorimeter within a cone of $\Delta R < 0.1$ around the track. 
 To ensure that these particles are well measured, they are additionally required to deposit between 40\% and 90\% of their energy in the hadronic calorimeter within the same cone. 
+
+\begin{figure}[htbp]
+\centering
+\subfloat[]{
+  \includegraphics[width=.4\textwidth]{figures/SignalDiagram.png}
+}
+\subfloat[]{
+  \includegraphics[width=.4\textwidth]{figures/BGDiagram.png}
+}
+\caption{An illustration (a) of the geometry of energy deposits in the calorimeter. The red energy deposits come from the charged particle targeted for measurement, while the blue energy deposits are from nearby neutral particles and must be subtracted. The same diagram (b) for the neutral-background selection, described in Section~\ref{sec:neutral_bg}.}
+\label{fig:eoverp_cartoon}
+\end{figure}
 
 These particles provide a clean sample to measure the nearby neutral background because they do not deposit energy in the area immediately surrounding them in the EM calorimeter, as shown in Figure~\ref{fig:eoverp_cartoon}.
 So, the energy deposits in the region $0.1 < \Delta R < 0.2$ can be attributed to neutral particles alone.
@@ -171,7 +170,7 @@ Although the simulation captures the overall trend, it significantly overestimat
 This effect was also seen in the tails of the \ep distributions in Figure~\ref{fig:eoverp}.
 This difference is likely due to modeling of coherent neutral particle radiation in \texttt{Pythia8} that overestimates the production of \piz near the production of the charged particles.
 The discrepancy does not depend on $\eta$ and thus is unlikely to be a mismodeling of the detector.
-This difference can be subtracted to form a corrected average \ep, as in Section~\ref{sec:response}.
+This difference can be subtracted to form a corrected average of \ep.
 
 \begin{figure}[htbp]
 \centering
@@ -229,9 +228,8 @@ For $|\eta| < 0.6$, the data-simulation agreement has a larger discrepancy by ab
 The response measurement above used topological clustering at the EM scale, that is clusters were formed to measure energy but no corrections were applied to correct for expected effects like energy lost outside of the cluster or in uninstrumented material. 
 It is also interesting to measure \epcor using \ac{LCW} energies, which accounts for those effects by calibrating the energy based on the properties of the cluster such as energy density and depth in the calorimeter.
 Figure~\ref{fig:eoverp_corrected_lcw} shows these distributions for tracks with zero or more clusters and separately for tracks with one or more clusters.
-The calibration moves the mean value of \epcor significantly closer to 1.0 as desired.
+The calibration moves the mean value of \epcor significantly closer to 1.0 as desired, but the discrepancy between data and simulation remains in the comparison that includes tracks with zero associated clusters.
 The agreement between data and simulation improves noticeably when at least one cluster is required, as this removes the contribution from the mismodeling of the zero fraction. 
-The good agreement in that case again demonstrates that the difference in \epcor between data and simulation is caused predominantly by the difference in zero fraction.
 
 \begin{figure}[h]
 \centering
@@ -257,8 +255,9 @@ In addition, these interactions can produce secondary particles that are difficu
 
 The requirement used throughout the previous sections  on the number of hits in the TRT reduces these effects by preferentially selecting tracks that do not undergo nuclear interactions.
 It is interesting to check how well the simulation models tracks with low numbers of TRT hits, which selects tracks that are more likely to have undergone a hadronic interaction.
-Figure~\ref{fig:eoverp_trt} compares the distributions with $N_{\mathrm{TRT}} < 20$ to $N_{\mathrm{TRT}} > 20$ for real and simulated particles.
+Figure~\ref{fig:eoverp_trt} compares the distributions with $N_{\mathrm{TRT}} < 20$ to $N_{\mathrm{TRT}} > 20$ for real and simulated particles\footnote{The distribution with $N_{\mathrm{TRT}} > 20$ is the same as shown in Figure~\ref{fig:eoverp_corrected} (a) and is included again here for the comparison.}.
 As expected, the tracks with fewer hits are poorly modeled in the simulation as \epcor differs by as much as 25\% at low momentum.
+They also have significantly lower \epcor on average, because they are much less likely to have an associated cluster.
 
 \begin{figure}[h]
 \centering
@@ -276,8 +275,10 @@ As expected, the tracks with fewer hits are poorly modeled in the simulation as 
 Another interesting aspect of the simulation is the description of antiprotons at low momentum, where \QGSP and \FTFP have significant differences.
 This can be seen to have an effect in the inclusive response measurement when separated into positive and negative charge.
 The \epcor distributions for positive and negative particles are shown in Figure~\ref{fig:eoverp_corrected_charge}, where a small difference between \QGSP and \FTFP can be seen in the distribution for negative tracks.
-This is demonstrated more clearly in Figure~\ref{fig:eoverp_charge}, which shows the \ep distribution in the two simulations separated by charge.
-There is a clear difference around $\ep > 1.0$, which can be explained by the additional energy deposited by the annihilation of the antiproton in the calorimeter that is modeled well only in \FTFP.
+The figure also includes data, and the simulation overestimates \epcor mostly due to an underestimation in zero fraction.
+There is an approximately 5\% difference between the 2010 and 2012 simulated events.
+The difference between positive and negative particles is demonstrated more clearly in Figure~\ref{fig:eoverp_charge}, which shows the \ep distribution in the two simulations separated by charge.
+There is a small difference around $\ep > 1.0$, which can be explained by the additional energy deposited by the annihilation of the antiproton in the calorimeter that is modeled well only in \FTFP.
 This is also explored with data using identified antiprotons in Section~\ref{sec:identified}. 
 
 \begin{figure}[h]
@@ -307,15 +308,14 @@ This is also explored with data using identified antiprotons in Section~\ref{sec
 \end{figure}
 
 The \epav results in previous sections have considered the electromagnetic and hadronic calorimeters together as a single energy measurement, to emphasize the total energy deposited for a given particle. 
-However, the deposits in each calorimeter are available separately and \epav can be constructed for each layer. 
+However, the deposits in each calorimeter are measured separately and \epav can be constructed for each layer separately. 
 As the layers are composed of different materials and are modeled separately in the detector geometry, confirmation that the simulation matches the data well in each layer adds confidence in both the description of hadronic interactions with the two different materials and also the geometric description of each. 
 
 The technique discussed in Section~\ref{sec:neutral_bg} for selecting \ac{MIP}s in the electromagnetic calorimeter is also useful in studying deposits in the hadronic calorimeter.
-Those \ac{MIP}s deposit almost all of their energy exclusively in the hadronic calorimeter.
-Figure~\ref{fig:epav_hcal} shows \epav$_\mathrm{RAW}^\mathrm{Had}$, where RAW indicates that no correction has been applied for neutral backgrounds and Had indicates that only clusters for the hadronic calorimeter are included.
-The RAW and COR versions of \epav in this case are the same, as the neutral background is negligible in that calorimeter layer.
+The tracks selected with the \ac{MIP} requirements deposit almost all of their energy exclusively in the hadronic calorimeter.
+Figure~\ref{fig:epav_hcal} shows \epav$_\mathrm{RAW}^\mathrm{Had}$, where RAW indicates that no correction has been applied for neutral backgrounds and Had indicates that only clusters for the hadronic calorimeter are included\footnote{The RAW and COR versions of \epav in this case are the same, as the neutral background is negligible in that calorimeter layer.}.
 The distributions are shown both for the original EM scale calibration and after LCW calibration.
-The data and simulation agree very well in this comparison, except in the lowest momentum bin which has 5\% discrepancy that has already been seen in similar measurements.
+The data and simulation agree very well in this comparison, except in the lowest momentum bin where there is a 5\% discrepancy that has already been seen in the measurements in Section~\ref{sec:response}.
 
 \begin{figure}[h]
 \centering
@@ -333,6 +333,7 @@ The data and simulation agree very well in this comparison, except in the lowest
 A similar comparison can be made in the electromagnetic calorimeter by selecting particles which have no associated energy in the hadronic calorimeter. 
 These results are measured in terms of \epav$_{\mathrm{COR}}^{\mathrm{EM}}$, where EM designates that only clusters in the electromagnetic calorimeter are included and COR designates that the neutral background is subtracted as the neutral background is present in this case.
 Figure~\ref{fig:epcor_ecal} shows the analogous comparisons to Figure~\ref{fig:epav_hcal} in the electromagnetic calorimeter.
+The \epcor values are lower on average in the \ac{EM} calorimeter than in the hadronic calorimeter, which is an expected consequence of their different material types (discussed in Section~\ref{sec:calorimetry}). 
 In this case the disagreement between data and simulation is more pronounced, with discrepancies as high as 5\% over a larger range of momenta.
 This level of discrepancy indicates that the description of the electromagnetic calorimeter is actually the dominant source of discrepancy in the combined distributions in Section~\ref{sec:response}. 
 
@@ -349,9 +350,6 @@ This level of discrepancy indicates that the description of the electromagnetic 
 \label{fig:epcor_ecal}
 \end{figure}
 
-
-\textbf{NOTE: There are more studies that I skipped for brevity that could be included if interesting. E/p at different cluster threshold settings, E/p with pileup, E/p with cells. I also left out a lot of eta bins that appear in the paper so that this section didn't turn into 20 pages of plots.}
-
 % ----------------------------------------
 
 \section{Identified Particle Response}
@@ -364,13 +362,15 @@ Such decays can be identified by reconstructing secondary vertices with a requir
 In particular, \pL, \pLB, and \pKS can be used to select a pure sample of protons, antiprotons, and pions, respectively. 
 
 \subsection{Decay Reconstruction}
-The measurement of response for identified particles uses the same selection as for inclusive particles (Section~\ref{sec:inclusive_selection}) with a few additions.
-Each event used is required to have at least one secondary vertex, and the tracks are required to match to that vertex rather than the primary vertex.
+The measurement of the response for identified particles uses the same selection as for inclusive particles (Section~\ref{sec:inclusive_selection}) with a few additions.
+Each event used is required to have at least one secondary vertex, as described in Section~\ref{sec:vertices}, and the tracks are required to match to that vertex rather than the primary vertex.
 Pions are selected from decays of $\pKS \rightarrow \pip \pim$, which is the dominant decay for \pKS to charged particles.
 Protons are selected from decays of $\pL \rightarrow \pim \pP$ and antiprotons from $\pLB \rightarrow \pip \pAP$, which are similarly the dominant decays of \pL and \pLB to charged particles.
 The species of parent hadron in these decays is determined by reconstructing the mass of the tracks associated to the secondary vertex.
 The sign of the higher momentum decay particle can distinguish between \pL and \pLB, which of course have the same mass, as the proton or antiproton is kinematically favored to have higher momentum.
+The proton or antiproton will carry the higher momentum above 95\% of the time.
 Examples of the reconstructed masses used to select these decays are shown in Figure~\ref{fig:identified_mass}. 
+The mass peaks in data and both simulation models are very similar.
 
 \begin{figure}[htbp]
 \centering
@@ -396,10 +396,15 @@ After these requirements, the backgrounds are found to be negligible compared to
 \subsection{Identified Response}
 With these techniques the \ep distributions are extracted in data and simulation for each particle species and shown in Figure~\ref{fig:identified_eoverp}. 
 These distributions are shown for a particular bin of $\Ea$ ($2.2 < \Ea / \GeV < 2.8$),  rather than p. 
-$\Ea$ is the energy available to be deposited in the calorimeter: for pions $\Ea = \sqrt{p^2 + m^2}$, for protons $\Ea = \sqrt{p^2 + m^2} - m$, and for antiprotons $\Ea = \sqrt{p^2 + m^2} + m$.
-The features of the \ep distributions are similar to the inclusive case.
+$\Ea$ is the energy available to be deposited in the calorimeter: for pions $\Ea = \sqrt{p^2 + m_\pi^2}$, for protons $\Ea = \sqrt{p^2 + m_p^2} - m_p$, and for antiprotons $\Ea = \sqrt{p^2 + m_p^2} + m_p$.
+In the pion case, the entire energy of the pion is deposited in the calorimeter, so \Ea is just the usual energy.
+For protons, the proton remains after depositing its energy in the calorimeter, so its mass is not available and must be subtracted from \Ea.
+And for antiprotons, the antiproton constituents annihilate with the quarks in the protons and neutrons of the calorimeter material, so it deposits its entire energy as well as an the additional energy from the annihilation; this extra energy is equal to the mass of the antiproton and is added to the available energy.
+The features of the \ep distributions are similar to the inclusive case, with a peak around 0.5 at low momentum.
+The zero fraction is not as pronounced as in the inclusive case.
 There is a small negative tail from noise and a large fraction of tracks with zero energy from particles which do not reach the calorimeter.
-The long positive tail is noticeably more pronounced for antiprotons because of the additional energy generated by the annihilation in addition to the neutral background. 
+The long positive tail is noticeably more pronounced for antiprotons because of the additional energy generated by the annihilation of the antiproton with the material of the detector, and the peak of the distribution is also increased for the same reason.
+The simulation correctly captures these features, and the agreement between data and simulation is good to within the available statistical limitations.
 
 \begin{figure}[h]
 \centering
@@ -424,6 +429,8 @@ The long positive tail is noticeably more pronounced for antiprotons because of 
 
 The zero fraction is further explored in Figure~\ref{fig:identified_zero_fraction} for pions and protons in data and simulation. 
 The simulation consistently underestimates the zero fraction independent of particle species, which implies that this discrepancy is not caused by the model of a particular species but rather a feature common to all.
+The zero fraction is larger for \pim than \pip, which is evident in both data and simulation.
+However there is some suggestion that this increase in zero fraction leads to an even larger discrepancy in the modeling of \pim in simulation.
 
 \begin{figure}[h]
 \centering
@@ -442,9 +449,12 @@ It is also interesting to compare the response between the different particle sp
 One approach to do this is to measure the difference in \epav between two types, which has the advantage of removing the neutral background.
 These differences are shown in various combinations in Figure~\ref{fig:identified_epdiff}. 
 The response for \pip is greater on average than the response to \pim because of a charge-exchange effect which causes the production of additional neutral pions in the showers of \pip~\cite{particlebeam}. 
+This effect becomes less significant as the \epav increases, and the difference approaches zero.
+Both version of the simulation correctly model this trend.
 The response for \pip is also greater on average than the response to \pP, because a large fraction of the energy of \pip hadrons is converted to an electromagnetic shower~\cite{physicsg,TileTB}. 
-However, the \pAP response is significantly higher than the response to \pim because of the annihilation of the antiproton.
-\FTFP does a better job of modeling this effect than \QGSP because of their different descriptions of \pAP interactions with material.
+This effect is again reproduced by both simulations.
+The \pAP response, however, is significantly higher than the response to \pim because of the annihilation of the antiproton, but the difference decreases at higher energies where the additional energy has less relative importance.
+\FTFP models this effect more accurately than \QGSP because of their different descriptions of \pAP interactions with material.
 
 \begin{figure}[htbp]
 \centering
@@ -486,10 +496,12 @@ The agreement between data and simulation is significantly worse for the \pim di
 
 The techniques above provide a method to measure the response separately for only pions and protons. 
 However the hadrons which forms jets include a number of additional species such as kaons and neutrons. 
-The charged kaons are an important component of the inclusive charged hadron distribution, which is comprised of roughly 60-70\% pions, 15-20\% kaons, and 5-15\% protons.
-These are difficult to measure in data at the ATLAS detector, although a template subtraction technique has been proposed which may be effective with larger sample sizes~\cite{PERF-2015-05}.
-The simulation of these particles includes noticeable differences in response at low energies, which are shown in Figure~\ref{fig:simulated_response} for \FTFP.
-The significant differences in response between low energy protons and antiprotons are accounted for above in the definitions of \Ea. 
+The charged kaons are an important component of the inclusive charged hadron distribution, which is comprised of roughly 60-70\% pions, 15-20\% kaons, and 5-15\% protons~\cite{PERF-2015-05}.
+These fractions vary depending on the production mechanism, and the ranges are indicative of the variations between different events.
+These are difficult to measure in data at the ATLAS detector, as the particles which decay to kaons such as $\phi$ and $D$ mesons have shorter lifetimes and are comparatively rare. 
+These properties make it impractical to identify a sufficient number of decays to make statistically meaningful measurements.
+The simulation of these particles includes noticeable differences in response between species at low energies, which are shown in Figure~\ref{fig:simulated_response} for \FTFP.
+The significant differences in response between protons and antiprotons below 1 \GeV are accounted for above in the definitions of \Ea. 
 
 \begin{figure}[htbp]
 \centering
@@ -503,10 +515,12 @@ The significant differences in response between low energy protons and antiproto
 \section{Summary}
 
 These various measurements of calorimeter response shown above for data and simulation illuminate the accuracy of the simulation of hadronic interactions at the ATLAS detector. 
-The results were done using 2010 and 2012 data at 7 and 8 \TeV, but reflect the most current understanding of the detector alignment and geometry.
+The results were obtained using 2010 and 2012 data at 7 and 8 \TeV, but reflect the most current understanding of the detector alignment and geometry.
 A number of measurements focusing on a comparison between protons and antiprotons suggest that \FTFP models those interaction more accurately than \QGSP.
-These measurements, among others, were the motivation to switch the default \texttt{Geant4} simulation from \FTFP to \QGSP for all ATLAS samples. 
+These measurements, among others, were the motivation to switch the default \texttt{Geant4} simulation from \QGSP to \FTFP for all ATLAS samples. 
 
-Even with these updates, there are a number of small, approximately 5\%, discrepancies in response between the data and simulation at low energies.
-At higher energies the simulation of hadronic interactions is very consistent with data. 
+Even with these updates, there are a number of approximately 5\% discrepancies in response between the data and simulation.
+The differences result mostly from a difference in the modeling of the zero fraction, which is most significant at low energies.
+The difference in response without the zero fraction are primarily in the electromagnetic calorimeter, while the modeling of the hadronic calorimeter is accurate.
+At higher momenta the simulation of hadronic interactions is very consistent with data. 
 Chapter~\ref{ch:jes} discusses how to use these observed differences to constrain the jet energy scale and its associated uncertainties.

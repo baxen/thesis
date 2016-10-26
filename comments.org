@@ -22,11 +22,12 @@
 ** DONE Might actually want to rewrite this section on pileup?
 
 * Chapter 8
-** DONE In general when you show a figure you really need to describe all aspects of it, e.g. in all these figures you can comment on
+** TODO I need to go through each figure and check Beate's list
    a) if data agree with either of the two models
    b) if the two models agree with each other
    c) if 2010 and 2012 data agree
    d) if there is any dependence on the x-axis value
+** DONE In general when you show a figure you really need to describe all aspects of it, e.g. in all these figures you can comment on
 ** DONE the space on the right margin is very large. Can you please reduce it for now as it otherwise thros off my "calibration" on the number of pages somewhat!
 ** DONE in the introduction of a chapter, please don't just say "see XYZ" in the middle (e.g. as l346). Instead the introduction should just outline what comes and at the end you can say for instance "Sec. 8.1 describes the data and simulation. 8.2 and 8.3 present the results for the response measurements for inclusive and identified particles, respectively." or even describe it in more detail. But saying it just in the middle of a paragraph with a forward reference is not helpful as surely at this stage you are not proposing for people to look at this before reading the rest. If at all possible it is always good to avoid any forward referencing (apart from in the way I illustrate above).
 ** DONE in general you are not describing the figure sand what we learn from them in sufficient detail. If you show positive and negative charges in a figure together I expect to learn from the text how they compare.
@@ -54,8 +55,8 @@
 ** DONE l424: remove "particle"
 ** DONE l426: noise => cell noise
 ** DONE l429: what do you mean with the "additional layers"? Do you mean the cells with >0 energy? 
-** FOLLOWUP fig. 2: I think this figure is in the wrong place. It does not illustrate the clustering (as it says at l432/433) at all but instead shows the background determination. It uses a lot of terms not yet introduced, and so I suggest you move it to section 8.2.3. And, maybe you can find a better figure to illustrate the topoclustering I suggest either the recent paper or the ATLAS detector paper.
-** FOLLOWUP fig. 2 caption: I think the caption does not really do the figure justice either. E.g. it does not show what "E" is or what "p" is.
+** DONE fig. 2: I think this figure is in the wrong place. It does not illustrate the clustering (as it says at l432/433) at all but instead shows the background determination. It uses a lot of terms not yet introduced, and so I suggest you move it to section 8.2.3. And, maybe you can find a better figure to illustrate the topoclustering I suggest either the recent paper or the ATLAS detector paper.
+** DONE fig. 2 caption: I think the caption does not really do the figure justice either. E.g. it does not show what "E" is or what "p" is.
 ** DONE l442: what does "similar" mean? Remove it?
 ** DONE l443: we don't really know that they are noise clusters. Maybe say instead "are associated to a cluster with an energy below the noise threshold which then becomes negative after the noise subtraction." That's more correct, right?
 ** DONE l463: measurements => and for positively and negatively charged particles
@@ -82,7 +83,7 @@
    I don't think we can come up with a correct actual E/p per particle, only in the aggregate. 
    We can only estimate <E/p>_BG in bins of p, eta since it uses MIPs and doesn't have a value for each particle.
    I could make a plot of E/p - <E/p>_BG from the right bin, but it would just be left-shifted
-** FOLLOWUP l513: would be nice to show a plot of the E/p excluding the <=0 energies to show this.
+** DONE l513: would be nice to show a plot of the E/p excluding the <=0 energies to show this.
    This is seen a bit later in Figure 7 and mentioned in the text, but a version of this at the emscale would be nice to include here I agree.
    Note to self: if I don't add this plot I need to fix the text "The good agreement in that case again demonstrates..."
 ** DONE fig. 6a: there is a noticeable difference between the 2010 and 2012 data of ~5%? You don't comment on this in the text?
@@ -96,63 +97,63 @@
    Added a reference, but to our own paper which makes this claim.
    Also made the phrasing less speculative
 ** DONE l535-540: this makes it sounds like we are not placing any cut on the TRT hits but we do have the cut at >20. So, text needs a bit rewording to make this clear. Also, the particles can get stuck in the coil and then the TRT would not matter.
-** FOLLOWUP l538: where... are more likely => which selects tracks that are more likely to have undergone a hadronic interaction
-** TODO fig. 8: it would be interesting actually to see the 0-fraction for the two cases. That is presumably much larger for the tracks with <20 TRT hits?
-** TODO l549: and each compared to the data
-** TODO l550: if you want to comment on the difference betwen the two charges it would be *much* better to directly overlay the two charges, e.g. on the left for data and on the right for MC or something. It is very hard to see what you say given the small size of the plots etc. 
-** TODO fig. 9: there is a difference between 2010 and 2012 you don't comment on?
-** TODO l557: available => measured
-** TODO l557: layer => layer separately
-** TODO l565: clarify that this is for the MIP selection
-** TODO l567/568: "The RAW... background" move this to footnote
-** TODO l571: which has => where there is a
-** TODO l572: provide reference for the "similar measurements"
-** TODO Fig. 12 discussion: maybe remind the reader here that for the LAr calorimeter the material is lead while for the Tile it is steel. Also, did you make this vs lambda? Would be interesting!
-** TODO l598: response => the response
-** TODO l600: are you describing somewhere how secondary vertices are found? Should refer back to that.
-** TODO l606: say explicitly that the higher momentum particle is the proton in 98% of the cases (I think?)
-** TODO l623: explain the reason for these formulae. Also, these should be labelled m_\pi or m_p etc. I think? They are different masses depending on which particles it is I mean.
-** TODO l625: the fraction of 0s is actually not so large I think?
-** TODO l628: explain in more words? E.g. "annihilation of the antiquarks with quarks in the protons and neutrons of the atoms in the detector"
-** TODO fig. 15: it seems to me that it is worse for pi- than pi+? But hard to see!
-** TODO l638: the difference decreases with increasing p. Comment on this?
-** TODO l643: does a better job" is slang ;-)
-** TODO l660: where do these fractions come from? Why is there a range? You need a reference for this.
-** TODO l661-663: remove statement on template method. Instead, most people would think you can use phi->KK or D->Kpi. Explain why not.
-** TODO l663: "noticeable difference" w.r.t. what?
-** TODO l665: say explictly thathere with low you mean <1 GeV
-** TODO fig. 18: you can make this figure larger.
-** TODO l670: done => obtained
-** TODO l675: this is the wrong way around: we switched from QGSP (run1) to FTFP (run2)
-** TODO l677: remove "small", just say the number. 5% is not really "small" if one tries to have JES uncertainties of ~1-2%
-** TODO l678: there are some differences at high energies, e.g. in the 0-fraction, too.
-** TODO l679: energies => momenta (?)
-** TODO l681: say that the discrepancies mostly in LAr, not in Tile
+** DONE l538: where... are more likely => which selects tracks that are more likely to have undergone a hadronic interaction
+** DONE fig. 8: it would be interesting actually to see the 0-fraction for the two cases. That is presumably much larger for the tracks with <20 TRT hits?
+** DONE l549: and each compared to the data
+** DONE l550: if you want to comment on the difference betwen the two charges it would be *much* better to directly overlay the two charges, e.g. on the left for data and on the right for MC or something. It is very hard to see what you say given the small size of the plots etc. 
+** DONE fig. 9: there is a difference between 2010 and 2012 you don't comment on?
+** DONE l557: available => measured
+** DONE l557: layer => layer separately
+** DONE l565: clarify that this is for the MIP selection
+** DONE l567/568: "The RAW... background" move this to footnote
+** DONE l571: which has => where there is a
+** DONE l572: provide reference for the "similar measurements"
+** DONE Fig. 12 discussion: maybe remind the reader here that for the LAr calorimeter the material is lead while for the Tile it is steel. Also, did you make this vs lambda? Would be interesting!
+** DONE l598: response => the response
+** DONE l600: are you describing somewhere how secondary vertices are found? Should refer back to that.
+** DONE l606: say explicitly that the higher momentum particle is the proton in 98% of the cases (I think?)
+** DONE l623: explain the reason for these formulae. Also, these should be labelled m_\pi or m_p etc. I think? They are different masses depending on which particles it is I mean.
+** DONE l625: the fraction of 0s is actually not so large I think?
+** DONE l628: explain in more words? E.g. "annihilation of the antiquarks with quarks in the protons and neutrons of the atoms in the detector"
+** DONE fig. 15: it seems to me that it is worse for pi- than pi+? But hard to see!
+** DONE l638: the difference decreases with increasing p. Comment on this?
+** DONE l643: does a better job" is slang ;-)
+** DONE l660: where do these fractions come from? Why is there a range? You need a reference for this.
+** DONE l661-663: remove statement on template method. Instead, most people would think you can use phi->KK or D->Kpi. Explain why not.
+** DONE l663: "noticeable difference" w.r.t. what?
+** DONE l665: say explictly thathere with low you mean <1 GeV
+** DONE fig. 18: you can make this figure larger.
+** DONE l670: done => obtained
+** DONE l675: this is the wrong way around: we switched from QGSP (run1) to FTFP (run2)
+** DONE l677: remove "small", just say the number. 5% is not really "small" if one tries to have JES uncertainties of ~1-2%
+** DONE l678: there are some differences at high energies, e.g. in the 0-fraction, too.
+** DONE l679: energies => momenta (?)
+** DONE l681: say that the discrepancies mostly in LAr, not in Tile
 
 
 
 
 * Chapter 9
-** TODO general: you implicitly assume here that there are no uncertainties at all on the pi0 energy scale. This needs to be stated and justified.
-** TODO l687: have often => are often
-** TODO l688: photon=jet and Z-jet are also use, particularly at low and intermediate pt.
-** TODO l694: components => constituents
-** TODO l703: simulated distribution  => momentum distribution of simulated particles
-** TODO l707-709: not sure about this first sentence. Can phrase this better, e.g. "A correct modeling of jets in the data by simulation requires that both the particle production inside jets as well as the response of the calorimeter to particles are correctly modeled." 
-** TODO l708: table ref not resolved
-** TODO fig. 19: 
+** DONE general: you implicitly assume here that there are no uncertainties at all on the pi0 energy scale. This needs to be stated and justified.
+** DONE l687: have often => are often
+** DONE l688: photon=jet and Z-jet are also use, particularly at low and intermediate pt.
+** DONE l694: components => constituents
+** DONE l703: simulated distribution  => momentum distribution of simulated particles
+** DONE l707-709: not sure about this first sentence. Can phrase this better, e.g. "A correct modeling of jets in the data by simulation requires that both the particle production inside jets as well as the response of the calorimeter to particles are correctly modeled." 
+** DONE l708: table ref not resolved
+** DONE fig. 19: 
     - Is this really energy or p? Is it the truth value? presumably yes?
     - Comment more about the figure. Say e.g. that for 90-100 GeV jets less than 1% of the particles contributing have >20 GeV energy etc.
     - The y-axis label is not clear. 
-** TODO l721: why are there no uncertainties related to the particle composition? This needs to be justified. I presume it was considered to be beyond the scope of this? Normally there should be uncertainties on the composition.
-** TODO l725: are => is
-** TODO table 1: 
+** DONE l721: why are there no uncertainties related to the particle composition? This needs to be justified. I presume it was considered to be beyond the scope of this? Normally there should be uncertainties on the composition.
+** DONE l725: are => is
+** DONE table 1: 
     - is this E/p for the LCW?
     - how can I understand the 1-5% uncertainty in the "in situ E/p" row? Can I relate this to the plots from the previous chapter? If so, how exactly. Maybe the previous chapter should conclude on what the actual uncertainty on the response is then at the end.
     - remove "flat" from the last row. or say "independent of energy" instead of "flat"
-** TODO fig. 20: when describing it in the text on previous page, it would be good to comment on what we see, e.g. that the mean is slightly below 1.0, that it is pretty flat with jet pT, what the total uncertainty is...
-** TODO fig. 20 caption: The JES => The JES response 
-** TODO fig. 21: this caption should say a bit more and also the y-axis label needs to be pT and not log(pT).
+** DONE fig. 20: when describing it in the text on previous page, it would be good to comment on what we see, e.g. that the mean is slightly below 1.0, that it is pretty flat with jet pT, what the total uncertainty is...
+** DONE fig. 20 caption: The JES => The JES response 
+** DONE fig. 21: this caption should say a bit more and also the y-axis label needs to be pT and not log(pT).
 
 
 * Chapter 11

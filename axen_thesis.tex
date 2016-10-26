@@ -28,7 +28,7 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[
-                twoside,openright, BCOR=5mm,
+                %twoside,openright, BCOR=5mm,
                 titlepage,numbers=noenddot,headinclude,%1headlines,
 	 	footinclude=true,cleardoublepage=empty,
 		dottedtoc, % Make page numbers in the table of contents flushed right with dots leading to them
@@ -63,6 +63,8 @@
 \include{frontback/Titlepage} % Main title page
 
 \include{frontback/Titleback} % Back of the title page
+
+\cleardoublepage\include{frontback/Signatures} % Signature Page
 
 \cleardoublepage\include{frontback/Dedication} % Dedication page
 
@@ -103,7 +105,7 @@
 
 \include{chapters/ch02_standardmodel}
 \include{chapters/ch03_supersymmetry}
-\include{chapters/ch04_longlived}
+%\include{chapters/ch04_longlived}
 
 \ctparttext{You can put some informational part preamble text here.}
 \part{Experimental Structure and Reconstruction}

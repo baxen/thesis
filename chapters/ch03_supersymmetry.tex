@@ -5,19 +5,20 @@
 
 The theory of \ac{SUSY} presents an extension to the \ac{SM} that solves a number of the outstanding issues. 
 It is based an another proposed symmetry, one which introduces an equality between the fermionic particles and proposed bosonic partners.
-The symmetry is defined by extended spacetime into a superspace, which includes on dimension that describes a particle's spin: a transformation in this spacemoves a fermion with spin-1/2 to a boson with spin-0 or vice-versa.
+The symmetry is defined by extending spacetime into a superspace, which includes one dimension that describes a particle's spin: a transformation in this space moves a fermion with spin-1/2 to a boson with spin-0 or vice-versa.
 Requiring the \ac{SM} to be symmetrical under these transformations requires the existence of a bosonic partner for every current matter fermion in the \ac{SM} and a fermionic partner for every boson. 
-The partners are called sparticles, where quarks partner with squarks and leptons partner with sleptons, and each boson has a fermionic partner called a gaugino, such as the wino for the W boson.
+The partners are called superparticles (sparticles), where quarks partner with squarks and leptons partner with sleptons, and each boson has a fermionic partner called a gaugino, such as the wino for the W boson.
 The superpartners, in the original form of the theory, should be identical to the original particle in every way except for spin; that is they would have the same quantum charges and the same mass.
 
 However, the simplest version of the theory, where the symmetry is unbroken, is incompatible with current observations of physics in a number of systems.
-For example, the existence of an electron with spin-0 would introduce a stable, electrically charged constituent of atoms that would not folow the Pauli exclusion principle and would thus significantly change atomic structure.
+For example, the existence of an electron with spin-0 would introduce a stable, electrically charged constituent of atoms that would not follow the Pauli exclusion principle and would thus significantly change atomic structure.
 Various high energy physics measurements have also confirmed the spin of the W and Z bosons, for example, and a fermionic gaugino has never been produced at those masses.
 The solution to this incompatibility with observation is to conjecture that the symmetry exists but is broken, where the masses of the supersymmetric particles are significantly larger than those of the current \ac{SM} particles. 
 
 % ----------------------------------------
 
-\section{Structure and the MSSM}
+\section{Structure}
+\label{sec:mssm}
 
 There are a number of ways to model \ac{SUSY}, but many of the resulting phenomena are similar, and a discussion of an example is sufficient describe the structure and results of the theory.
 The \ac{MSSM} is one example of a complete description that includes the necessary symmetry breaking to result in the different masses between particles and sparticles.
@@ -46,9 +47,9 @@ Electroweak     & $(W^\pm, W^0)$ & $(\tilde{W}^\pm, \tilde{W}^0)$ \\
 \label{tab:sparticles}
 \end{table}
 
-To then provide the different masses for those sparticles, the \ac{MSSM} then introduces a second Higgs interaction.
+To then provide the different masses for those sparticles, the \ac{MSSM} introduces a second Higgs interaction.
 The resulting scalar field, along with the original Higgs field, generates five total particles, $h^0$, the original Higgs boson, $A^0$, $H^0$, and $H^\pm$, where the last two are electrically charged.
-These Higgs bosons can mix with the supersymmetric gauginos to form a series off mass eigenstates.
+These Higgs bosons can mix with the supersymmetric gauginos to form a series of mass eigenstates.
 These are usually referred to by the order of their masses, where the neutral gauginos (neutralinos) are labelled $\tilde{\chi}_1^0$, $\tilde{\chi}_2^0$, $\tilde{\chi}_3^0$, and $\tilde{\chi}_4^0$. 
 The charged gauginos (charginos) are similarly labelled $\tilde{\chi}_1^\pm$ and $\tilde{\chi}_2^\pm$. 
 
@@ -65,5 +66,73 @@ The remaining terms include all of the interactions of the \ac{SM} where two of 
 This also has an important significance in making the \ac{LSP}, the $\tilde{\chi}_1^0$, stable, as it cannot decay to only \ac{SM} particles without violating the conservation of R-parity.
 The heavier sparticles then decay in chains, emitting an \ac{SM} particle in each step, and leaving behind the \ac{LSP} at the end of the chain.
 
+\subsection{Simplified Models}
+
+The \ac{MSSM} is just one example of a large suite of \ac{SUSY} models with similar results.
+Each of those models can have hundreds of individual parameters that ultimately determine the masses and interactions of the supersymmetric particles.
+To avoid this complexity in making experimental measurements, the analyses of high energy collisions often rely on simplified models.
+These models produce events from a single process, and the observable parameters such as the mass of the particles and their lifetimes are controlled directly, rather than tuning the hundreds of underlying parameters.
+
+Experimental analyses use these models to search for new physics and to set limits on the production rates for a given type of process with working points of a few observable parameters.
+As one example, a simplified model may specify pair production of gluinos where the free parameters are the mass of the gluino and the types and masses of the particles it can decay into.
+The small number of parameters allows the phase space to be searched in a grid by simulating events with a few examples for the parameters and interpolating between them.
+The resulting analysis can set cross sectional limits as a function of the simplified parameters, and this allows for an easy interpretation of the result in a number of \ac{SUSY} models.
+
 \section{Motivation}
 
+\ac{SUSY} models, including The \ac{MSSM}, ameliorate many of the issues in the \ac{SM} discussed in Section~\ref{sec:limitations}.
+The first, a solution to the hierarchy problem, comes as a direct consequence of the introduction of massive superpartners for each \ac{SM} particle.
+The contributions to the Higgs mass from the much higher energy Planck scale come from a series of loop diagrams in the \ac{SM}, where each massive \ac{SM} particle has a loop contribution.
+The introduction of superpartners generates a series of corresponding diagrams for correction to the Higgs mass, with opposite sign contributions because the superpartners have different spins.
+Those oppostie sign contributions cancel the correction terms at high energies, leaving behind a correction to the Higgs mass that is at the same scale as the masses of the superpartners. 
+If the superpartners exist at the \TeV scale, then the Higgs mass of 125 \GeV can be explained without significant fine-tuning, and the theory becomes natural.
+
+\ac{SUSY} also has the potential to precisely enable the unification of the coupling constants at high energy.
+Without supersymmetric contributions, the coupling constants come close to a single value near the Planck scale, as shown in Figure~\ref{fig:unification_sm}, but they do not exactly merge.
+With the addition of the \ac{MSSM}, they join precisely at a single point, suggesting a unification into a single gauge theory at high energy, as shown in Figure~\ref{fig:unification_susy}. 
+This precise unification, like the naturalness argument, also requires that the masses of the superpartners be near the \TeV scale.
+
+\begin{figure}
+\includegraphics[width=\fullfig]{figures/unification_susy.jpg}
+\caption{An approximation of the running of the coupling constants in the \ac{SM} up to the Planck scale~\cite{unification_plot}.}
+\label{fig:unification_susy}
+\end{figure}
+
+The presence of R-parity in a \ac{SUSY} model also provides an explanation for dark matter.
+The \ac{LSP}, as discussed in Section~\ref{sec:mssm}, is a massive, neutral, and stable particle as long as R-parity is conserved.
+In the early universe, when the energy density was extremely high, \acp{LSP} could be spontaneously produced just as often as other particles like photons, and would result in a thermal equilibrium.
+Then, as the universe cooled, the average energy would be too low to create additional \acp{LSP}, and they would be left behind and only interact with the remaining matter gravitationally, a process called freeze out.
+Since those particles are stable, they would remain indefinitely. 
+With the existence of an \ac{LSP} at around the \TeV scale, this process can explain the observed amount of dark matter in the universe.
+
+Together, this variety of solutions to existing problems provides strong theoretical support for the existence of \ac{SUSY} near the \TeV scale.
+The \ac{LHC} is the first collider experiment to be able to probe into \TeV scale interactions, making it an exciting time to look for this extentsion to the \ac{SM}.
+A range of models have begun to be excluded with masses above 1 \TeV~\cite{pdg}, leading to a motivation to explore a wider variety of models with phenomena that may have been missed by the most direct search strategies.
+
+\section{Long-Lived Particles}
+\label{sec:llp_theory}
+
+Some proposed \ac{SUSY} models can produce \acp{LLP} other than just the \ac{LSP}.
+The most direct search strategies for \ac{SUSY} often assume that the various non-stable sparticles decay promptly, rather than propogating through some fraction of the detector.
+Although the processes involved are very similar, the long-lifetime of the produced particles can lead to very different experimental signatures, and often require separate dedicated searches.
+It is important to design and execute search strategies for \acp{LLP} in order to completely cover possible production of new physics. 
+
+There are a few ways to generate long lifetimes for the massive \ac{SUSY} particles, depending on the specific model.
+In examples like Spread Supersymmetry~\cite{spreadsusy} and Split Supersymmetry~\cite{split1,split2}, the introduction of a split between two mass scales supresses the decay of gluinos.
+In these and similar models, the squarks are much heavier than the gluino, and the gluino must decay through the production of a virtual squark, as shown in the diagram of Figure~\ref{fig:gluino_decay}.
+The large mass of the squarks in the split models suppresses the decay rate, and can result in lifetimes of the order of 1 ns~\cite{spreadsusy}.
+
+\begin{figure}
+\includegraphics[width=\fullfig]{figures/gluino_decay.png}
+\caption{The decay of a gluino to quarks and an \ac{LSP}, which precedes through a squark.}
+\label{fig:gluino_decay}
+\end{figure}
+
+Nearly degenerate particles is another mechanism that results in long lifetimes, again by supressing decay rates.
+When a particle must decay to another particle with nearly the same mass, the phase space factor in the decay results in a low decay rate.
+For example, a neutron has a lifetime of roughly fifteen minutes because its mass is so close to the proton.
+Models which result in a nearly degenerate chargino and \ac{LSP} provide a long-lived chargino as well.
+
+Again, because of the wide variety of models which can produce \acp{LLP} and the large number of parameters which determine their masses and lifetimes, the analysis presented here relies on simplified models.
+The models directly specify the decay mode of the \acp{LLP}  as well as their masses and lifetimes, using a grid of values.
+The results of searches using these simplified models can be interpreted over a very wide range of models that predict \acp{LLP}, even including non-supersymmetric extensions to the \ac{SM}.
