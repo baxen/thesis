@@ -4,10 +4,10 @@
 % --------------------------------------------------------------------------------
 
 The \ac{SM} of particle physics seeks to explain the symmetries and interactions of fundamental particles. 
-The \ac{SM} provides predictions in particle physics for interactions up to the Planck scale (10\tsup{15}-10\tsup{19} \GeV).
+The \ac{SM} provides predictions in particle physics for interactions up to the Planck scale (10\tsup{19} \GeV).
 It has been tested by several generations of experiments and has been remarkably successful; no significant deviations from its predictions have been found.
 
-The theory itself is a quantum field theory grown from an underlying symmetry, $SU(3) \times SU(2) \times U(1)$, that generates all of the interactions consistent with experimental observations.
+The theory itself is a quantum field theory grown from an underlying symmetry, $SU(3) \times SU(2) \times U(1)$, that generates all of the interactions consistent with experimental observations\footnote{excluding gravity}.
 These interactions are referred to as the Strong, Weak, and Electromagnetic forces.
 Each postulated symmetry necessitates the existence of an associated conserved charge, which appear as properties of the observed particles in nature. 
 
@@ -35,26 +35,27 @@ Because the  wavefunction of a particle can be completely determined through the
 
 So, in both classical and quantum mechanics, the Lagrangian of a system contains everything there is to know about the system, apart from initial conditions. 
 Thus, the most natural way to express that a system has a certain symmetry is to require that the Lagrangian is invariant under a corresponding symmetry transformation. 
-This makes the Lagrangian the central  piece of the discussion of gauge invariance; the mathematical representation of gauge invariance is that a gauge transformation on the appropriate components of the Lagrangian  returns an identical Lagrangian. That is,
+This makes the Lagrangian the central  piece of the discussion of gauge invariance; the mathematical representation of gauge invariance is that a gauge transformation on the appropriate components of the Lagrangian  returns an identical Lagrangian. 
+That is,
 
 \begin{align}
 \mL(\psi,D^{\mu}) = \mL(U\psi, D^{'\mu})
 \end{align}
 
-\noindent where $\psi$ is the wavefunction and $D^{\mu}$ is the covariant derivative, both of which transform under a symmetry operation.
+\noindent where $\psi$ is the wavefunction and $D^{\mu}$ is the derivative operator, both of which may transform under a symmetry operation.
 There are a number of immediate and surprisingly powerful consequences of requiring that the Lagrangian is invariant under a symmetry operation.
 
 \section{Gauge Invariance and Forces}
 
-The simplest possible relativistic, quantum Lagrangian is the free Dirac Lagrangian, which describes a relativistic fermion in a vacuum.
+The simplest possible relativistic, quantum Lagrangian for matter particles is the free Dirac Lagrangian, which describes a relativistic fermion in a vacuum.
 
 \begin{align}\label{eq:free_dirac} 
 \mL = i\bar{\psi}\slashed{\partial}\psi -m\bar{\psi}\psi 
 \end{align}
 
-\noindent A fermion denotes a particle with spin-1/2, and the kinematic term is chosen to correctly describe the free propagation of a fermionic particle with mass $m$. 
+\noindent A fermion denotes a particle with spin-1/2, and the kinematic term ($i\bar{\psi}\slashed{\partial}\psi$) is chosen to correctly describe the free propagation of a fermionic particle with mass $m$. 
 This equation is clearly invariant under a global $U(1)$ transformation, that is changing $\psi$ by a complex phase has no effect. 
-The derivative operator commutes with a constant phase factor, and wherever $\psi$ appears it's complex conjugate also appears so as to cancel out the change of phase. 
+The derivative operator commutes with a constant phase factor, and wherever $\psi$ appears its complex conjugate also appears so as to cancel out the change of phase. 
 However, the Lagrangian as written is not invariant under the local $U(1)$ symmetry postulated for the \ac{SM}, which can be written as $U = e^{i\alpha(x)}$. 
 The piece of the Lagrangian involving a derivative will return an extra term that will break the invariance of the Lagrangian under this transformation:
 
@@ -82,8 +83,8 @@ A generic form for such a derivative is given by
 
 \[  A'_\mu =  A_{\mu} - \frac{1}{q}\partial_\mu\alpha(x) \]
 
-The above procedure demonstrated that beginning with the Lagrangian for a free fermion and imposing a local $U(1)$ symmetry required the existence of a vector field $A^\mu$, and specified it's transformation under the $U(1)$ gauge group.
-The additional term in the derivative can expanded to form a completely separate term in the Lagrangian,
+The above procedure demonstrated that beginning with the Lagrangian for a free fermion and imposing a local $U(1)$ symmetry required the existence of a vector field $A^\mu$, and specified its transformation under the $U(1)$ gauge group.
+The additional term in the derivative can be expanded to form a completely separate term in the Lagrangian,
 
 \begin{align}
 \mL = i\bar{\psi}\slashed{\partial}\psi -m\bar{\psi}\psi - (q\bar{\psi}\gamma^\mu\psi)A^\mu
@@ -98,32 +99,35 @@ It is natural to also introduce a term to the Lagrangian at this point to descri
 \end{align}
 
 \noindent This then also describes the electromagnetic interactions in a vacuum and the propagation of a photon.
-The photon is an example of a gauge boson, a spin-0 particle required to exist by a gauge symmetry of the Lagrangian and one that corresponds to a force.
+This component of the Lagrangian should also potentially include a mass term, but such a term would not be gauge invariant and so must be excluded.
+The photon is an example of a gauge boson, a spin-1 particle required to exist by a gauge symmetry of the Lagrangian and one that corresponds to a force.
 In summary, requiring the $U(1)$ symmetry was enough to recover all of electromagnetism and to predict the existence of a photon in the \ac{SM}. 
 
 The interaction term that was placed into the Lagrangian by this procedure can be conveniently summarized with Feynman diagrams, which diagrammatically represent a transition from an initial state to a final state.
-All diagrams that start with the same initial state and end with the same final state must be considered, but more complicated diagrams can be built by linking together the simplest versions.
+The contribution of all diagrams that start with the same initial state and end with the same final state must be summed, but more complicated diagrams can be built by linking together the simplest versions.
 A diagram that corresponds to the above term, $(q\bar{\psi}\gamma^\mu\psi)A^\mu$, is shown in Figure~\ref{fig:feyn_aff}, for an interaction with a generic fermion.
 
 \begin{figure}
+\centering
 \includegraphics[width=\halffig]{figures/feyn_aff.pdf}
 \caption{A Feynman diagram representing the interaction of the $A$ field with a generic fermion, $f$.} 
 \label{fig:feyn_aff}
 \end{figure}
 
 
-\subsection{$SU(2)\times U(1)$ and the Electroweak Force}
+\subsection{SU(2) $\times$ U(1) and the Electroweak Force}
 
 The full picture of the electroweak section of the \ac{SM} is more complicated than the simplified explanation of the electromagnetic piece described above. 
 In practice, it is necessary to consider the entire $SU(2)\times U(1)$ symmetry together, but the procedure is the same.
 Enforcing the symmetry on the Lagrangian requires the introduction of a covariant derivative, this time with four total distinct terms, one for each of the generators of $SU(2)\times U(1)$.
-The result is a series of terms in the Lagrangian which describe the interaction of a fermion with four vector fields, the $W_1$, $W_2$, $W_3$, and $B$ fields.
+The result is a series of terms in the Lagrangian which describe the interaction of a fermion with four vector (spin-1) fields, the $W_1$, $W_2$, $W_3$, and $B$ fields.
 These fields can mix in the quantum sense, and linear combinations form the $W^+$, $W^-$, $Z$, and $A$ fields that are considered actual particles in the \ac{SM}\footnote{These states are the actual particles because they are mass eigenstates, but the full explanation of this will have to wait for the discussion of the Higgs mechanism.}.
 
 \subsection{$SU(3)$ and the Strong Force}
 
 The same procedure can be applied starting with the $SU(3)$ symmetry requirement, where eight additional fields must be introduced, one for each of the generators of $SU(3)$.
 The resulting Lagrangian describes \ac{QCD} and predicts the existence of eight gauge bosons known collectively as gluons. 
+The complexity of the interactions of those eight gluons leads to surprising phenomena, discussed in Section~\ref{sec:strong}.
 
 \section{Noether's Theorem, Charges, and Matter}
 
@@ -152,37 +156,39 @@ The particles in the \ac{SM} are summarized in Figure~\ref{fig:particle_content}
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.9\textwidth]{figures/particle_content.png}
-  \caption{The particle content of the \ac{SM}.}
+  \caption{The particle content of the \acs*{SM}.}
   \label{fig:particle_content}
 \end{figure}
 
 
 \subsection{Quarks}
 
-The three generations of quarks each have a particle with electric charge $+2/3$ and one with charge $-1/3$.
-They are referred to us up and down, charm and strange, and top and bottom respectively, and these are referred to as the quark flavors.
+The three generations of quarks each consist of a quark with electric charge $+2/3$ and one with charge $-1/3$.
+They are called up and down, charm and strange, and top and bottom respectively, and these are referred to as the quark flavors.
 Although Figure~\ref{fig:particle_content} only shows these six flavors, there is a unique particle for each combination of the three colors and flavor.
 And each quark has an anti-particle with the opposite electric and color charge values.
 
-However, individual quarks are never observed in nature, but instead form color-neutral bound states.
+However, individual quarks are never observed in nature, but instead form color-neutral bound states. 
+This is a consequence of interaction of gluons with color charge called confinement, discussed in Section~\ref{sec:strong}.
 One way to form a color neutral combination is a bound state of three quarks with three different color charges, called a baryon.
 Baryons are the most common type of quark configuration in conventional matter, and include protons and neutrons.
-The other common configuration is a bound state of a quark and an anti-quark, called a meson, where the two quarks have the same type but opposite colors. 
-The conservation of the various charges carried by quarks, along with the requirement that quarks appear in color-neutral states, result in the observed conservation of baryon number, $B$, where baryons have $B=1$ and mesons have $B=0$. 
+The other common configuration is a bound state of a quark and an anti-quark, called a meson, where the two quarks have opposite colors. 
+Although there is no direct conservation law resulting from the symmetries of the \ac{SM} Lagrangian, an accidental symmetry results in the approximate conservation of baryon number, $B$, where baryons have $B=1$ and mesons have $B=0$. That is, no interactions are present which directly\footnote{\label{foot:bl}There are combinations of interactions which can modify either B or L individually, but the combination $B-L$ appears to be conserved in the \ac*{SM}.} alter baryon number
 
 \subsection{Leptons}
 
 The remaining fermions, the leptons, do not carry color charge.
 Each generation contains an electrically charged lepton, the electron, muon, and tau, and an electrically neutral lepton called a neutrino.
 For the charged leptons, the flavors are mass eigenstates, with the masses listed in Figure~\ref{fig:particle_content}.
-The flavors of the neutrinos, on the other hand, are not mass eigenstates: they propagate in mass eigenstates and so can oscillate between different flavors.
+The flavors of the neutrinos, on the other hand, are not mass eigenstates: their propagation in quantum superpositions of flavor states leads to oscillations between different flavors.
 The absolute masses of the neutrinos are not currently known, but the phenomenon of oscillations shows that they have three different mass values.
-Although there is no direct conservation law resulting from the symmetries of the \ac{SM} Lagrangian, no interactions have been observe which alter lepton number, $L$, the difference in the number of leptons and anti-leptons. 
+Another accidental symmetry leads to an approximate\footnote{See footnote ~\ref{foot:bl}.} conservation of lepton number $L$, the difference in the number of leptons and anti-leptons; again there are no interactions present in the \ac{SM} which directly alter lepton number.
 
 \subsection{Chirality}
 
 All of the fermions described above have two possible values of the magnitude of weak isospin, $T$, either $0$ or $1/2$.
 The fermions with $T = 0$ are called right-handed, while those with $T=1/2$ are called left-handed.
+Because $T$ is the charge corresponding to the weak force, right-handed particles do not interact with the weak gauge bosons in the same way that neutral particles do not interact with photons.
 For left-handed fermions, each of the quark and lepton generations have one particle with $T_3 = -1/2$ and one with $T_3 = +1/2$.
 The neutrinos have $T_3 = +1/2$, while the charged leptons have $T_3 = -1/2$.
 Similarly, the positively charged quarks have $T_3 = +1/2$ and the negatively charged quarks have $T_3 = -1/2$.
@@ -193,6 +199,7 @@ Because the right-handed neutrinos would have no charge of any type, it is not c
 
 The description of the electroweak forces above left out an important part of the observed nature of the electroweak force.
 Many physical experiments observed phenomena corresponding to the interaction of the weak bosons that were best explained if they had significant masses.
+But as mentioned before, massive bosons would break the gauge invariance of the Lagrangian.
 A large mass for the W and Z bosons would explain the relative weakness of their interactions compared to the electromagnetic field.
 The Lagrangian's discussed above did not include a mass term for the gauge bosons, and in fact such a term would not be allowed by the requirement of gauge invariance. 
 This was a significant problem for the \ac{SM}, and the symmetry of the electroweak sector would have to be broken in order to allow for non zero masses for some of the gauge bosons.
@@ -204,14 +211,14 @@ It begins with a $SU(2)\times U(1)$ invariant Lagrangian of the form
   \mL = |D_\mu\phi|^2 - \frac{1}{2}\mu^2\phi^+\phi - \frac{1}{4}\lambda(\phi^+\phi)^2
 \end{equation}
 
-\noindent where $\phi$ is the new scalar field and, importantly, $\mu^2$ is negative.
+\noindent where $\phi$ is the new scalar field with two components and, importantly, $\mu^2$ is negative.
 This leads to a minimum value of the field at a non-zero value of $\phi$, specifically where
 
 \begin{equation}
  \langle \phi \rangle = \frac{1}{\sqrt{2}} \begin{pmatrix}0\\v\end{pmatrix} \quad \mathrm{with} \quad v = \frac{2\mu^2}{\lambda}
 \end{equation}
 
-\noindent Expanding the original Lagrangian about its expectation value, 
+\noindent Expanding the original Lagrangian about its expectation value in terms of the perturbation $H$,
 
 \begin{equation}
   \langle \phi \rangle = \frac{1}{\sqrt{2}} \begin{pmatrix}0\\v + H\end{pmatrix}
@@ -234,10 +241,10 @@ It has an additional important consequence on the description of the gauge boson
 where the $W_i$ and $B$ fields are the original $SU(2)\times U(1)$ gauge fields mentioned previously.
 The above equation can be rearranged using linear combinations of the fields to from mass terms for the gauge bosons, and the mass eigenstates are exactly the $W^\pm$, $Z$, and $A$ fields.
 Only the $A$ field, corresponding to the photon, results in a zero mass, and the remaining three fields acquire masses.
-Because the originally introduced Lagrangian, written in terms of $\phi$, was clearly gauge invariant, this resulting configuration must also be gauge invariant.
+Because the previously introduced Lagrangian, written in terms of $\phi$, was clearly gauge invariant, this resulting configuration must also be gauge invariant.
 
 This is the Higgs mechanism, where the introduction of a gauge invariant scalar field with a non-zero expectation value can generate masses for the gauge bosons without violating the underlying symmetries.
-The particle that is associated with the perturbations of this field, $H$, is called the Higgs boson, and is said to generate the masses of the remaining bosons.
+The particle that is associated with the perturbations of this field, $H$, is called the Higgs boson, and is said to generate the masses of the remaining bosons because the vacuum expectation value introduces mass-like terms for each of the bosons.
 The resulting masses are listed in Figure~\ref{fig:particle_content}.
 Because this mechanism was so successful in describing the observed properties of the $W$ and $Z$ bosons, it has been considered part of the \ac{SM} for decades, although the actual Higgs boson was only recently observed in 2012, confirming the theory.
 
@@ -266,15 +273,17 @@ For this reason, photons can be observed directly, while the other bosons are su
 \label{fig:feyn_weak}
 \end{figure}
 
-Because the $W$ and $Z$ bosons interact with both quarks and leptons, they are responsible for the production of leptons in proton-proton collisions.
-$Z$ bosons produce pairs of opposite sign, same flavor leptons.
+Because the electroweak bosons interact with both quarks and leptons, they are responsible for the production of leptons in proton-proton collisions.
+$Z$ bosons and photons produce pairs of opposite sign, same flavor leptons.
 $W$ bosons, on the other hand, produce a single lepton and the corresponding neutrino.
 
 \subsection{Strong Physics}
+\label{sec:strong}
 
 The phenomenology of the strong sector differs significantly from the weak sector because the gluons are massless but color charged.
 Because of this, gluons can interact with each other, and contributions from multiple gluon interactions lead to a significant growth in the strength of the field at low energies.
 The dependence of the field strength on the energy scale is described by renormalization, and in \ac{QCD} the coupling is only small at high energies.
+Below approximately 1 \GeV, the strength of those interactions results in confinement: the interactions are so strong that when quark-antiquark pairs separate, the fields between them generate additional quarks to form color neutral bound states. 
 Above around the \GeV scale, the interactions of quarks become perturbative, similar to the electroweak fields; this phenomenon is known as asymptotic freedom.
 
 At lower energies, however, the strength of the strong interaction is so significant that the interactions of color-charged particles create additional particles until they form neutral bound-states.
@@ -293,7 +302,7 @@ When a proton-proton collision takes place, it is these constituents that intera
 The fraction of the energy carried by each constituent varies moment to moment, but can be modelled probabilistically by \acp{PDF}.
 These are difficult to predict theoretically, as the \ac{QCD} calculations are extremely complex, and instead are measured in hard-scattering experiments.
 They are usually represented by how often a given type of particle carries a fraction $x$ of the total proton energy.
-Those fraction change significantly with the scale of the interaction; the \acp{PDF} of proton-proton collisions at both $Q^2 = 10$ \GeV\tsup{2} and $Q^2 = 10^4$ \GeV\tsup{2} are shown in Figure~\ref{fig:pdfs}.
+Those fraction change significantly with the scale of the interaction, $Q$; the \acp{PDF} of proton-proton collisions at both $Q^2 = 10\ \GeV^{2}$ and $Q^2 = 10^4\ \GeV^{2}$ are shown in Figure~\ref{fig:pdfs}.
 
 \begin{figure}
 \includegraphics[width=\fullfig]{figures/pdfs.png}
@@ -313,11 +322,11 @@ These limitations suggest the need for new, \ac{BSM} physics that would provide 
 
 \subsection{Theoretical Concerns}
 
-There have been no successful integrations of the \ac{SM}'s description of the electroweak and strong forces with the description of gravity, and it is still unclear how to account for the effects of gravity at the Planck scale of approximately $10^{19}$ \GeV, where it can no longer be ignored. 
+There have been no successful integrations of the \ac{SM}'s description of the electroweak and strong forces with the description of gravity, and it is still unclear how to account for the effects of gravity at the Planck scale of approximately $10^{19}$ \GeV, where its interactions are as strong as the remaining forces.
 The Planck scale is an important cutoff for the \ac{SM}, as it is clear that the \ac{SM} must break down somewhere between the current highest energy tests of the \ac{SM}, around 1 \TeV, and the Planck scale.
 
 One example of this is the Higgs mass, which is determined in the \ac{SM} by a sum of it's bare mass and the interactions in the vacuum with all massive particles.
-As their must be new physics at the Planck scale to describe gravity, some of those corrections would include contributions at a scale seventeen orders of magnitude above the mass of the Higgs.
+As there must be new physics at the Planck scale to describe gravity, some of those corrections would include contributions at a scale seventeen orders of magnitude above the mass of the Higgs.
 Either the bare mass of the Higgs boson precisely cancels those contributions to leave a remainder seventeen orders of magnitudes smaller, or a new theory exists at a lower scale the shields the Higgs mass from those terms.
 A theory where such a unlikely cancellation of free parameters occurs is called fine-tuned, and one that is free from such cancellations is called natural.
 Theories where the mass of the Higgs is natural are usually preferred, as the suggest an underlying, coherent structure.
@@ -337,14 +346,14 @@ An additional correction to the scaling of the coupling constants from new physi
 \subsection{Cosmological Observations}
 
 The \ac{SM} contains a symmetry in the description of matter and antimatter that is not reflected in cosmological observations.
-The process of the standard model create or remove matter and antimatter in equal amounts, so a universe that begins with an equal quantity of each should result in a universe with an approximate balance of matter and antimatter.
+The processes of the standard model create or remove matter and antimatter in equal amounts, so a universe that begins with an equal quantity of each should result in a universe with an approximate\footnote{There are some processes in the standard model which can result in a small imbalance of matter and antimatter, but not at the scale observed cosmologically.} balance of matter and antimatter.
 However, cosmological observations of the relative amount of each type clearly show that the directly observable mass of the universe is overwhelmingly made of matter.
 As this difference is largely a difference in the generation of baryons and anti-baryons, this discrepancy is often referred to as the baryogenesis problem.
 
 A number of astrophysical observations of large scale gravitational interactions suggest the presence of a significant amount of non-luminous matter that interacts with the normal matter only gravitationally.
 The first evidence of this came from the observation of galactic rotation curves, the velocities of stars as a function of the radius from the center of a galaxy.
 These can be directly predicted from the amount of matter contained within the sphere up to the radius of the star.
-An estimate based only on the luminous matter in the galaxies would predict a dependence that falls off with the radius, but the observed curves show a mostly constant distribution of velocities~\cite{rotation_curves}, as seen in Figure~\ref{fig:rotational_curve}.
+An estimate of velocity based only on the luminous matter in the galaxies would predict a dependence that falls off with the radius, but the observed curves show a mostly constant distribution of velocities~\cite{rotation_curves}, as seen in Figure~\ref{fig:rotational_curve}.
 The higher velocities than predicted by the luminous matter can be explained by a halo of dark matter that extends significantly outside the galactic disk.
 
 \begin{figure}

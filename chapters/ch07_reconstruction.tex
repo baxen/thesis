@@ -159,14 +159,14 @@ These can be identified using the shape of the cluster in the narrow $\eta$ gran
 Prompt electrons have a number of backgrounds, such as secondary electrons from hadron decays or misidentified hadronic jets, that can be rejected using additional information from the \ac{EM} calorimeter and the inner detector.
 The most basic level of electron identification, referred to as Loose, makes requirements on the shower shapes in the high granularity first layer of the \ac{EM} calorimeter as well as the quality of the inner detector track.
 It also requires a good match between the track and the calorimeter energy deposits and a small fraction of energy in the hadronic calorimeter behind the electromagnetic cluster.
-\ac{ATLAS} defines several additional working points, including Medium and Tight, which provide progressively lower background rates for electrons by imposing additionally strict requirements on the above variables as well as new requirements like the impact parameter of the inner detector track or the comparison of the cluster energy to the momentum in the inner detector.
+ATLAS defines several additional working points, including Medium and Tight, which provide progressively lower background rates for electrons by imposing additionally strict requirements on the above variables as well as new requirements like the impact parameter of the inner detector track or the comparison of the cluster energy to the momentum in the inner detector.
 
 % ----------------------------------------
 
 \section{Muons}
 \label{sec:muons}
 
-Muons produced in \ac{ATLAS} first traverse the inner detector and leave behind a track as described in Section~\ref{sec:tracks}.
+Muons produced in ATLAS first traverse the inner detector and leave behind a track as described in Section~\ref{sec:tracks}.
 The muon then passes through the calorimeter, leaving behind a small, characteristic amount of energy, and then passes through the muon spectrometer where it produces hits in the \acp{MDT} or \acp{CSC}.
 Muon tracks are formed from local segments of hits in each layer of the \acp{MDT} or \acp{CSC}, and then the final muon spectrometer track is formed by combining the two local segments~\cite{PERF-2015-10}.
 When a track is reconstructed in both the inner detector and the muon spectrometer, the track is refitted to include the hits in both the inner detector and the muon spectrometer, and forms a combined muon.
@@ -192,7 +192,7 @@ And finally the loose working point includes both medium and tight muons, but ad
 \label{sec:jets}
 
 A jet does not directly correspond to a physical particle, unlike all of the reconstructed objects described above, but instead tries to capture the conical cascade of particles produced in the hadronization of a quark or gluon from the proton-proton collision.
-The hadronization process creates a very large number of collimated particles, with a high enough density that individually reconstructing all of the produced particles in the calorimeter is not possible within \ac{ATLAS}.
+The hadronization process creates a very large number of collimated particles, with a high enough density that individually reconstructing all of the produced particles in the calorimeter is not possible within ATLAS.
 However most analyses are interested only in the kinematics of the particle which produced the cascade, rather than the individual products.
 Therefore, jets are a useful tool to measure the combined energy and direction of the ensemble of products and thus represents the kinematics of the original.
 Jet algorithms are very generic and can be used to group together a number of types of objects to form aggregate representations.
@@ -238,9 +238,9 @@ Using the topological clusters as inputs, a jet algorithm groups them together i
 Jet algorithms need a few key characteristics to be usable for physics analysis.
 First, the jets produced by the algorithm should have little dependence on the addition of soft particles to the event (infrared safety), as a negligible addition of energy should not significantly modify the event topology.
 Similarly, the jets produced by the algorithm should also not significantly depend on mostly collinear splitting of an input particle (collinear safety); that is, a single quark replaced by two, parallel quarks with half the original's momentum should not change the resulting jets, which are intended to capture only the properties of the aggregate and not those of individual particles.
-And finally the algorithm needs to be sufficiently simple and fast to be used for the large rate of collected proton-proton collisions on \ac{ATLAS}.
+And finally the algorithm needs to be sufficiently simple and fast to be used for the large rate of collected proton-proton collisions on ATLAS.
 
-The most commonly used algorithm on \ac{ATLAS} that satisfies these requirements is called the anti-$k_t$ algorithm, and is discussed in further detail in Reference~\cite{antikt}.
+The most commonly used algorithm on ATLAS that satisfies these requirements is called the anti-$k_t$ algorithm, and is discussed in further detail in Reference~\cite{antikt}.
 The anti-$k_t$, in brief, relies on iteratively combining the input objects that are closest together, where closest is defined by a particular distance metric, $d_{i,j}$, where the index $i$ represents the combination constructed so far and $j$ is an additional object being considered.
 The combinations stop when the closest remaining object is the beam itself, where the distance to the beam is called $d_{i,B}$. 
 An entire class of algorithms follows this procedure with the following distance metrics
@@ -293,16 +293,16 @@ An alternative method for deriving the \ac{JES} and \ac{JES} uncertainty that ca
 \section{Missing Transverse Energy}
 \label{sec:missing_energy}
 
-Among stable \ac{SM} particles, only the neutrino cannot be directly measured in the \ac{ATLAS} detector. 
+Among stable \ac{SM} particles, only the neutrino cannot be directly measured in the ATLAS detector. 
 Because the neutrino carries neither electric nor color charge, it is very unlikely to interact with the tracking detectors or the calorimeters, and instead passes through the detector completely unobserved.
 Some particles which have been conjectured to exist, like the \ac{LSP} in many \ac{SUSY} models, would also have the same behavior.
-Therefore, it is important for \ac{ATLAS} to provide some way to assess the momentum carried away by a neutral, colorless particle.
+Therefore, it is important for ATLAS to provide some way to assess the momentum carried away by a neutral, colorless particle.
 This can be accomplished through a measurement of missing energy in the transverse direction, or \met, which quantifies the momentum imbalance of the observed particles.
 From the conservation of momentum and the lack of the initial momentum in the transverse plane in the proton-proton collisions, any imbalance of momentum can be inferred to be carried away by an unmeasured particle.
 
 \met is more precisely defined as the magnitude of the vector sum of the $(p_x,p_y)$ components of each observed object's momentum.
 The definition is simple, but there can be significant complexity in defining the inputs.
-As of Run 2, \ac{ATLAS} uses a common algorithmic approach to carefully calculate missing energy, but each analysis is free to define it's own inputs.
+As of Run 2, ATLAS uses a common algorithmic approach to carefully calculate missing energy, but each analysis is free to define it's own inputs.
 For the analysis discussed throughout this thesis, the missing energy inputs consist of the electrons, photons, muons, and jets discussed in the previous sections, in addition to a track-based soft term.
 
 To produce the most precise measurement of \met, it is important to use the best representation of the momentum of each of the input objects, which can often be reconstructed as multiple different types in a single event.
