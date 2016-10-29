@@ -1,28 +1,7 @@
-* Chapter 5
-** DONE L563 : probably break this sentence in two
-** DONE L570 : maybe cite LEP somehow, like the TDR or something?
-** DONE L580 : maybe just cite them at first mention, idk what's better though
-** DONE L586 : something like "first full run" to avoid objections about 2008 quench
-** DONE L651 : drop "Specifically" since this is a new section
-** DONE L663 : drop "In all"
-** DONE L690 : cite RF cavities?
-** DONE L733-743 : beta vs beta star would probably be unclear to someone unfamiliar with this notation
-** DONE L735 : isn't it technically the normalized emittance in this equation? in particular, might be nice to note that epsilon_n decreases with energy (part of why we have such higher insta lumi at 13 TeV etc)
-** DONE L751 vs next paragraph : f_rev is pretty important and we did have 50ns data too, so maybe mention it here?
-** DONE L762 : might be good to be consistent with the use of bunches vs buckets (jargon anyway, so maybe in quotes or something the first time)
-** DONE L768 : "In practice,"
-** DONE L768 : we have gotten to full design lumi now, right?
-** DONE L771 : units for lumi??
-** DONE L727 vs L772 : insta lumi vs int lumi.  It might be easiest to just always attach one of these
-** DONE L774 : rewrite sentence
-** DONE L777 : I would write '"good" for physics ' since this not really explained beforehand. it's really jargon since we use a the Good-RL
-** DONE L780 : This sentence is pretty confusing to me
-** DONE L782 : mu isn't really a name for pileup. probably just have a sentence like "Pileup is the term used to describe the additional interactions per bunch crossing, which can be quantified by the number of additional proton-proton interactions npv"
-** DONE L783 vs L784 : use of "event" differs here.  Use event for each bunch crossing, and something like "additional proton-proton interaction" for pileup
-** DONE Might actually want to rewrite this section on pileup?
+Beate Round
 
 * Chapter 8
-** TODO I need to go through each figure and check Beate's list
+** DONE I need to go through each figure and check Beate's list
    a) if data agree with either of the two models
    b) if the two models agree with each other
    c) if 2010 and 2012 data agree
@@ -132,7 +111,6 @@
 
 
 
-
 * Chapter 9
 ** DONE general: you implicitly assume here that there are no uncertainties at all on the pi0 energy scale. This needs to be stated and justified.
 ** DONE l687: have often => are often
@@ -156,6 +134,30 @@
 ** DONE fig. 21: this caption should say a bit more and also the y-axis label needs to be pT and not log(pT).
 
 
+First Round
+
+* Chapter 5
+** DONE L563 : probably break this sentence in two
+** DONE L570 : maybe cite LEP somehow, like the TDR or something?
+** DONE L580 : maybe just cite them at first mention, idk what's better though
+** DONE L586 : something like "first full run" to avoid objections about 2008 quench
+** DONE L651 : drop "Specifically" since this is a new section
+** DONE L663 : drop "In all"
+** DONE L690 : cite RF cavities?
+** DONE L733-743 : beta vs beta star would probably be unclear to someone unfamiliar with this notation
+** DONE L735 : isn't it technically the normalized emittance in this equation? in particular, might be nice to note that epsilon_n decreases with energy (part of why we have such higher insta lumi at 13 TeV etc)
+** DONE L751 vs next paragraph : f_rev is pretty important and we did have 50ns data too, so maybe mention it here?
+** DONE L762 : might be good to be consistent with the use of bunches vs buckets (jargon anyway, so maybe in quotes or something the first time)
+** DONE L768 : "In practice,"
+** DONE L768 : we have gotten to full design lumi now, right?
+** DONE L771 : units for lumi??
+** DONE L727 vs L772 : insta lumi vs int lumi.  It might be easiest to just always attach one of these
+** DONE L774 : rewrite sentence
+** DONE L777 : I would write '"good" for physics ' since this not really explained beforehand. it's really jargon since we use a the Good-RL
+** DONE L780 : This sentence is pretty confusing to me
+** DONE L782 : mu isn't really a name for pileup. probably just have a sentence like "Pileup is the term used to describe the additional interactions per bunch crossing, which can be quantified by the number of additional proton-proton interactions npv"
+** DONE L783 vs L784 : use of "event" differs here.  Use event for each bunch crossing, and something like "additional proton-proton interaction" for pileup
+** DONE Might actually want to rewrite this section on pileup?
 * Chapter 11
 ** DONE l824: nice to provide a range (or even better a plot) of betas for a given mass ?
 ** DONE l829: I would say effective for its discriminating power and for its use in reconstructing particle mass. A feature is it can be used for many masses and lifetimes.
@@ -201,7 +203,6 @@
 ** DONE l1089: it's the ioniziation cut that causes the most mass dependence? not momentum or MET (at low mass?)
 ** DONE l1103: might be nice to include some of your accepctance / efficiency tables here, for more complete info than we put into the paper version
 
-
 * Chapter 12
 ** DONE 1110: "So" --> "Therefore"; so is too colloquial
 ** DONE 1111: "like" --> "including"; same as above
@@ -216,13 +217,12 @@
 ** DONE 1162-1163: need to reword slightly; the dE/dx template is not just in the signal region, also in the low dE/dx region used for normalization (techincally only the high dE/dx part is in the signal region)
 ** DONE 1179 and 1181: confusing chronology; you say "is then normalized" and then "this normalization takes place before"
 ** DONE 1205: "Their" --> "There"
-** FOLLOWUP 1207: Why does the background method underestimate the tail of the mass distribution? Why does this go away after the ionization requirement? You should at least provide some hypotheses.
+** DONE 1207: Why does the background method underestimate the tail of the mass distribution? Why does this go away after the ionization requirement? You should at least provide some hypotheses.
 ** DONE Do you discuss the uncertainties on the background estimate seperately? I think it's important to spell out the way that the statistical uncertainty is estimated, as well as the different systematics. But maybe you have a seperate uncertainty section. If so, reference it at the end here.
    In the next chapter, trying to avoid the forward reference.
 ** DONE About electron muon pt tails 
    muons: badly reconstructed p at high momentum. Muons are hard to reconstruct at high p, and the W' search makes very tight selections to ensure good reco.
    electrons: maybe background slipping in? I'm not as familiar with problems of high p electron performance, but it could be that you have some hadron contaimination. But I'm not sure how that could influence the tail you see.
-
 
 * Extensions
 ** E/p
@@ -232,3 +232,4 @@
 *** Optimization Procedure
 ** Background Method
 *** Detailed SR distributions
+
