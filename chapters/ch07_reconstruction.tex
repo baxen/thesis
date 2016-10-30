@@ -61,6 +61,7 @@ Then the tracks are required to have at most two holes in the Pixel detector, wh
 If the missing hit corresponds to an inactive module, however, it is not counted as a hole but instead as a hit for tracking as the lack of a measurement is expected in that case.
 
 \subsection{Pixel Neural Network}
+\label{sec:pixelnn}
 
 The hits in the Pixel detector are not typically confined to a single pixel, but rather the charge is spread over several pixels per layer which are grouped together into clusters.
 The clustering of these pixels for isolated tracks is relatively straightforward, but complications can arise in the high occupancy environment where hits from multiple particles can overlap in a single cluster.
@@ -179,6 +180,7 @@ And for muons produced within one of the few holes in the muon system, including
 These additional categories are used to achieve high efficiency over a larger range of acceptance, but the combined muons are the most reliable.
 
 \subsection{Muon Identification}
+\label{sec:muon_id}
 
 The various types of muons are incorporated into three working points: Loose, Medium, and Tight, which reflect the increasing muon purity for each of the selections definitions.
 Tight muons include only combined muons with a good track fit quality and momentum resolution and at least two hits in a precision muon system layer.

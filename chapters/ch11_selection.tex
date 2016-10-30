@@ -17,9 +17,9 @@ The use of ionization to reject \ac{SM} backgrounds relies on well-measured, hig
 A few additional requirements are placed on the tracks considered for \ac{LLP} candidates that increase background rejection by targeting specific types of \ac{SM} particles. 
 
 The ionization measurement with the Pixel detector can be calibrated to provide an estimator of $\beta\gamma$. That estimate, together with the momentum measurement provided by tracking, can be used to reconstruct a mass for each track which traverses the pixel detector,
-\begin{align*}
+\begin{align}\label{eq:mbetagamma}
 m = \frac{p}{\beta\gamma}
-\end{align*}
+\end{align}
 That mass variable will be peaked at the \ac{LLP} mass for any signal, and provides an additional tool to search for an excess.
 In addition to an explicit requirement on ionization, this search constructs a mass-window for each targeted signal mass in order to search for an excess of events.
 %Construction, calibration, and requirements for the mass variable are discussed in Section~\ref{sec:mass_requirement}.
@@ -131,7 +131,7 @@ At this point in the selection, there is a significant high-ionization backgroun
 Previous versions of this analysis have rejected these overlaps by an explicit overlap rejection between pairs of fully reconstructed tracks, typically by requiring no additional tracks within a cone around the candidate. 
 This technique, however, fails to remove the background from tracks that overlap so precisely that the tracks cannot be separately resolved, which can be produced in very collimated photon conversions.
 
-Another observable, which more directly targets track overlaps, identifies cluster shapes that are likely formed by multiple particles based on a neural network classification algorithm.
+Another observable, which more directly targets track overlaps, identifies cluster shapes that are likely formed by multiple particles based on a neural network classification algorithm, as discussed in Section~\ref{sec:pixelnn}.
 The number of clusters on a given track that are estimated to have contributions from more than one particle is called \Nsplit.
 As the shape of clusters requires significantly less spatial separation to identify overlaps than it does to reconstruct two fully resolved tracks, this variable is more effective at rejecting backgrounds from overlaps.
 Figure~\ref{fig:dedx_nsplit} shows the dependence of ionization on \Nsplit; as \Nsplit increases the most probable value of \dedx grows significantly up to twice the expected value when $\Nsplit = 4$. 
@@ -331,16 +331,16 @@ Between \ac{SM} rejection and ionization, the selection requirements reduce the 
 \centering
 \begin{tabular}{l r r r}
   \hline
-  Selection & Exp. Signal Events (Fraction) & Observed Events & Rejection Factor\\
+  Selection & Signal Events (\%) & Data Events & Rejection\\
   \hline
   Generated                    & 26.0 $\pm$ 0.3          & & \\
   \met Trigger                 & 24.8 $\pm$ 0.3 ($95\%$) & & \\
   $\met > 130$ \GeV            & 23.9 $\pm$ 0.3 ($92\%$) & & \\
-  Track Quality and $\pt > 50$ & 10.7 $\pm$ 0.2 ($41\%$) & 368324 & 1.0\\
+  Track Quality and \pt        & 10.7 $\pm$ 0.2 ($41\%$) & 368324 & 1.0\\
   Isolation Requirement        & 9.0  $\pm$ 0.2 ($35\%$) & 108079 & 3.4\\
   Track $p > 150$ \GeV         & 6.6  $\pm$ 0.2 ($25\%$) & 47463  & 7.8\\
   $\mt > 130$ \GeV             & 5.8  $\pm$ 0.2 ($22\%$) & 18746  & 20 \\
-  Electron and Hadron Veto     & 5.5  $\pm$ 0.2 ($21\%$) & 3612   & 100\\
+  Electron/Hadron Veto     & 5.5  $\pm$ 0.2 ($21\%$) & 3612   & 100\\
   Muon Veto                    & 5.5  $\pm$ 0.2 ($21\%$) & 1668   & 220\\
   Ionization Requirement       & 5.0  $\pm$ 0.1 ($19\%$) & 11     & 33000\\ 
   \hline
@@ -361,10 +361,10 @@ The lifetimes up to and including 30 ns are shown with the \ac{LL} selection and
 \begin{figure}
 \centering
 \subfloat[]{
-  \includegraphics[width=\halffig]{figures/efficiency_mass.pdf}
+  \includegraphics[width=\halffig]{figures/efficiency_mass.png}
 }
 \subfloat[]{
-  \includegraphics[width=\halffig]{figures/efficiency_lifetime.pdf}
+  \includegraphics[width=\halffig]{figures/efficiency_lifetime.png}
 }
 \caption{The acceptance $\times$ efficiency as a function of \rhadron (a) mass and (b) lifetime. (a) shows all of the combinations of mass and lifetime considered in this search, and (b) highlights the lifetime dependence for 1000 \GeV and 1600 \GeV \rhadrons.}
 \label{fig:efficiency}

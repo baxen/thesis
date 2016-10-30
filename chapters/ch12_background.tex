@@ -4,15 +4,15 @@
 % --------------------------------------------------------------------------------
 
 The event selection discussed in the previous section focuses on detector signatures, emphasizing a single high-momentum, highly-ionizing track.
-That track is then required to be in some way inconsistent with the expected properties of \ac{SM} particles, with various requirements designed to reject jets, hadrons, electrons, and muons (Section~\ref{sec:sm_rejection}).
-Therefore the background for this search comes entirely from reducible backgrounds that are outliers of various distributions including $\dedx$, \emfrac, and \ptcone.
+That track is then required to be inconsistent with the expected properties of \ac{SM} particles, with various requirements designed to reject jets, hadrons, electrons, and muons (Section~\ref{sec:sm_rejection}).
+Therefore the background for this search comes entirely from backgrounds that are outliers of various distributions including $\dedx$, \emfrac, and \ptcone.
 The simulation can be tuned in various ways to do an excellent job of modeling the average properties of each particle type~\cite{atlas_sim}, but it is not necessarily expected to accurately reproduce outliers.
 For this reasons, the background estimation used for this search is estimated entirely using data.
 
 \section{Background Sources}
 \label{sec:background_sources}
 \ac{SM} charged particles with lifetimes long enough to form tracks in the inner detector can be grouped into three major categories based on their detector interactions: hadrons, electrons, and muons. 
-Every particle that enters into the background for this search belongs to one of these types.
+Every particle that contributes to the background for this search belongs to one of these types.
 Relatively pure samples of tracks from each of these types can be formed in data by inverting the various rejection techniques in Section~\ref{sec:sm_rejection}.
 Specifically, muons are selected requiring medium muon identification, electrons requiring $\ep > 1.0$ and $\emfrac > 0.95$, and hadrons requiring $\ep > 1.0$ and $\emfrac < 0.95$. 
 
@@ -20,7 +20,7 @@ Figure~\ref{fig:background_species} shows the distributions of momentum and \ded
 Simulated signal events are included for reference.
 These distribution are only illustrative of the differences between types, as the rejection requirements could alter their shape. 
 This is especially significant for momentum which enters directly into \ep and can indirectly affect muon identification.
-However the various types show clear differences in both distributions.
+However it is clear that there are some differences between types in both distributions, even though the trends are similar.
 The distributions of momentum are not necessarily expected to match between the various types because the production mechanisms for each type result in different kinematic distributions.
 \dedx is also different between types because of incomplete isolation; although the requirement on $\Nsplit$ helps to reduce the contribution of nearby particles it does not completely remove the effect of overlaps.
 Muons are better isolated because they do not have the additional particle from hadronization present for hadrons and they are significantly less likely do interact with the detector and produce secondary particles compared to hadrons and electrons.
@@ -45,18 +45,18 @@ The background method will not have significant dependence on the relative contr
 
 \section{Prediction Method}
 \label{sec:background_method}
-The data-driven background estimation relies on the independence between ionization and other kinematic variables in the event.
+The data-driven background estimation relies on the independence between the ionization measurement and other kinematic variables in the event.
 For standard model particles with momenta above 50 \GeV, \dedx is not correlated with momentum; though there is a slight relativistic rise as momentum increases, the effect is small compared to the width of the distribution of ionization energy deposits..
-So, the proposed method to estimate the mass distribution of the signal region is to use momentum from a track with low \dedx (below the threshold value) and to combine it with a random \dedx value from a \dedx template.
-The resulting track is just as likely as the original, so a number of such random generations provide the expected distributions of momentum and ionization.
-These are then combined using the parametrization described in Section~\ref{sec:mass_requirement} to form a distribution of mass for the signal region.
+So, the proposed method to estimate the mass distribution of the signal region is to use the momentum from a track with low \dedx (below the threshold value) and to combine it with a random \dedx value from a \dedx template.
+The resulting track is just as likely as the original, so a large set of random generations provide the expected distributions of momentum and ionization.
+These are then combined using the parametrization described in Section~\ref{sec:mass_requirement} to estimate $\beta\gamma$ and then form a distribution of mass for the signal region using Equation~\ref{eq:mbetagamma}.
 
 Algorithmically this method is implemented by forming two distinct \acp{CR}.
-The first \ac{CR}, CR1, is formed by applying the entire event selection from Chapter~\ref{ch:selection} up to the \dedx and mass requirements.
+The first \ac{CR}, CR1, is formed by applying the entire event selection from Chapter~\ref{ch:selection} apart from the \dedx and mass requirements.
 The \dedx requirement is instead inverted for this region.
-Because of the independence of \dedx, the tracks in this control region have the same kinematic distribution as the tracks in the signal region, and are used to measure a two-dimensional template of $p$ and $\eta$. 
+Because of the independence of \dedx and $p$, the tracks in this control region have the same kinematic distribution as the tracks in the signal region, and are used to measure a two-dimensional template of $p$ and $\eta$. 
 The second \ac{CR}, CR2, is formed from the event selection through the \dedx requirement, but with an inverted \met requirement.
-The tracks in this control region are expected to have similar \dedx distributions to the signal region before the ionization requirement, and so this region is used to measure a two-dimensional template of \dedx and $\eta$. 
+The tracks in this control region are expected to have similar \dedx distributions as the signal region before the ionization requirement, and so this region is used to measure a two-dimensional template of \dedx and $\eta$. 
 
 The contribution of any signal to the control regions is minimized by the inverted selection requirements.
 Only less than 10\% of simulated signal events have either \dedx or \met below the threshold values in the original signal region, while the backgrounds are significantly enhanced by inverting those requirements.
@@ -93,7 +93,7 @@ With these modified selections, the simulated and randomly generated distributio
 This figure includes the mass distributions before and after the requirement on \dedx, which significantly shapes the distributions.
 In both cases the background estimation technique reproduces the shape of \mdedx in the signal region.
 There is a small difference in the positive tail of the mass distribution prior to the ionization cut, where the random events underestimate the fraction of tracks with mass above 150 \GeV by about 20\%.
-After the ionization requirement, however, this discrepancy is not present and the two distributions agree to within statistical uncertainties.
+After the ionization requirement, however, this discrepancy is not present and the two distributions agree to within statistical uncertainties in the positive tail.
 
 \begin{figure}[h]
 \centering
@@ -120,7 +120,7 @@ Any biases on the particle composition of the \acp{CR} for the signal region wil
 % Show the plots, talk about how the good agreement means the particle species are similar in CR2 
 
 Figure~\ref{fig:validation_mass} shows the measured and randomly generated mass distributions for data before and after the ionization requirement.
-The background estimate does an excellent job of modeling the actual background before the ionization requirement, with good agreement to within the statistical uncertainties out to the limit of the mass distribution.
+The background estimate models the actual background before the ionization requirement very well, with good agreement to within the statistical uncertainties out to the limit of the mass distribution.
 There are very few events in the validation region after the ionization requirement, but the few observed events are consistent with the background prediction.
 The good agreement in this validation region provides a confirmation that the technique works even in the full-complexity case with multiple particle types entering the distributions.
 Any bias from changes in particle composition between regions is small compared to statistical uncertainties.
@@ -137,3 +137,32 @@ Any bias from changes in particle composition between regions is small compared 
 \label{fig:validation_mass}
 \end{figure}
 % ----------------------------------------
+
+
+\section{Expected Background}
+
+Using the full technique in the primary regions described in Section~\ref{sec:background_method} provides a final background estimate for the signal region of this search.
+It predicts a total background of 11.1 $\pm$ 1.7 events in the \ac{LL} region and 17.2 $\pm$ 2.6 events in the \ac{VLL} region.
+Table~\ref{tab:background_yields} shows the number of events predicted in mass windows for the grid of mass points, for each of the \ac{LL} and \ac{VLL} signal regions.
+Only one to two events are expected in each mass window, as the background distribution falls with increasing mass.
+
+\begin{table}
+\centering
+\begin{tabular}{crr}
+  \hline
+  Mass & Expected Background, \ac{LL} & Expected Background, \ac{VLL} \\
+  \hline
+  1000 & $1.328 \pm 0.063 $ & $1.803 \pm 0.081 $ \\
+  1100 & $1.255 \pm 0.060 $ & $1.409 \pm 0.069 $ \\
+  1200 & $1.193 \pm 0.058 $ & $1.310 \pm 0.066 $ \\
+  1300 & $0.997 \pm 0.051 $ & $1.431 \pm 0.069 $ \\
+  1400 & $1.131 \pm 0.056 $ & $1.273 \pm 0.065 $ \\
+  1500 & $1.111 \pm 0.055 $ & $1.115 \pm 0.059 $ \\
+  1600 & $1.193 \pm 0.058 $ & $1.041 \pm 0.057 $ \\
+  1800 & $1.138 \pm 0.056 $ & $0.918 \pm 0.053 $ \\
+  \hline
+\end{tabular}
+\caption{The expected number of background events within each of the mass windows for the stable and metastable signal regions.}
+\label{tab:background_yields}
+\end{table}
+
