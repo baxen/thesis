@@ -4,7 +4,7 @@
 % --------------------------------------------------------------------------------
 
 The \ac{LHC}, a two-ring superconducting hadron accelerator, provides high energy proton-proton collisions for several large experiments at \ac{CERN} in Geneva, Switzerland~\cite{lhc_machine, lhc_guide}. 
-It is the largest, highest-luminosity, and highest-energy proton collider ever built, and was constructed by a collaboration of more than 10,000 scientists from the more than 100 countries that contribute to \ac{CERN}.
+It is the largest, highest-luminosity, and highest-energy proton collider ever built, and was constructed by a collaboration of more than 10,000 scientists and engineers from the more than 100 countries that contribute to \ac{CERN}.
 The original design of the \ac{LHC} focused on providing collision energies of up to 14 \TeV and generating enough collisions to reveal physics beyond the \ac{SM} which is predicted to exist at higher energy scales.
 
 The \ac{LHC} was installed in an existing 27 km tunnel at \ac{CERN} which was originally designed to house \ac{LEP}~\cite{lep_tdr}.
@@ -14,7 +14,7 @@ During this process the protons circulate around the tunnel millions of times, w
 These collision points correspond to the four major \ac{LHC} experiments: ATLAS, \ac{CMS}, \ac{LHCb}, and \ac{ALICE}, and Figure~\ref{fig:cern_locations} shows the layout of the experiments both on the surface and below.
 ATLAS and \ac{CMS} are both general purpose, high-luminosity detectors which search for a wide range of new types of physics~\cite{atlas_experiment, cms_experiment}.
 \ac{LHCb} studies the interactions of b-hadrons to explore the asymmetry between matter and antimatter~\cite{lhcb_experiment}.
-\ac{ALICE} focuses on the collisions of lead ions, which the \ac{LHC} also provides, in order to study the properties of quark-gluon plasma~\cite{alice_experiment}.
+\ac{ALICE} focuses on the collisions of lead ions, which the \ac{LHC} also provides for about one month per year, in order to study the properties of quark-gluon plasma~\cite{alice_experiment}.
 
 \begin{figure}
 \centering
@@ -31,18 +31,19 @@ The energy was then increased to 8 \TeV for the data collection during 2012, whi
 After the first long shutdown for 2013 and 2014, the \ac{LHC} resumed operation and increased the energy to 13 \TeV in 2015, where it delivered 4.2 \ifb with a peak luminosity of $5.5 \times 10^{33}$ \lcms. 
 The \ac{LHC} is currently providing additional 13 \TeV collisions in 2016 with higher luminosities than during any previous data collection periods.
 These running periods are summarized in Figure~\ref{fig:lumi_years}, which shows the total delivered luminosity over time for the ATLAS experiment during each of the four years of data collection since 2011.
+The full design energy of 14 \TeV can only be reached after further magnet training that is scheduled for the long shutdown over 2019-2020.
 
 \begin{figure}
 \centering
-\includegraphics[width=\fullfig]{figures/lumi_years.pdf}
-\caption{The cumulative luminosity over time delivered to the ATLAS experiment from high energy proton-proton collisions since 2011. The energies of the collisions are listed for each of the data-taking periods.}
+\includegraphics[width=\fullfig]{figures/lumi_years.png}
+\caption{The cumulative luminosity over time delivered to the ATLAS experiment from high energy proton-proton collisions since 2011. The energies of the collisions are listed for each of the data-taking periods. The figure shows the delivered luminosity  as of the conclusion of data collection in 2016.}
 \label{fig:lumi_years}
 \end{figure}
 
 \section{Injection Chain}
 The \ac{LHC} takes advantage of the presence of previously built accelerators at \ac{CERN} to work up to the target energy in consecutive stages.
 The series of accelerators that feed into the \ac{LHC} are known collectively as the injection chain, and together with the \ac{LHC} form the accelerator complex.
-The full complex is illustrated in Figure~\ref{fig:accelerator_complex}, which details the complex series required to reach collisions of 13 or 14 \TeV. 
+The full complex is illustrated in Figure~\ref{fig:accelerator_complex}, which details the complex series required to reach high energy collisions in the \ac{LHC} experiments.
 
 \begin{figure}[h]
 \centering
@@ -94,7 +95,7 @@ Because of these constraints, the \ac{LHC} uses superconducting magnets which ca
 
 \subsection{Magnets}
 
-The magnets chosen were Niobium and Titanium (NbTi) which allow for field strengths as high as 10 Tesla when cooled down to 1.9 K.
+The magnets chosen were made of Niobium and Titanium (NbTi) which allow for field strengths as high as 10 Tesla when cooled down to 1.9 K.
 Reaching the target temperature of  1.9 K for all of the magnets requires superfluid helium and a large cryogenic system along the entire length of the tunnel.
 During normal operation, the \ac{LHC} uses 120 tonnes of helium within the magnets, and the entire system is cooled by eight cryogenic helium refrigerators.
 The temperature increase that occurs during transit from the refrigerator along the beam necessitates that the refrigerators cool the helium down to 1.8 K.
@@ -123,9 +124,9 @@ Both the presence of these electromagnetic forces and the varying thermal contra
 The cold mass is carefully engineered to so that these stresses do not significantly alter the magnetic field shape, which must be maintained between magnets to a precision of approximately $10^{-4}$ for successful operation.
 
 The remaining 6800 magnets are a variety of quadrupole, sextapole, octopole, and single bore dipole magnets.
-These are used to damp oscillations, correct beam trajectories, focus the beams during circulation, and to squeeze the beams before collisions.
+These are used to damp oscillations, correct beam trajectories, focus the beams during circulation, and to focus the beams before collisions.
 
-\subsection{\acs{RF} Cavities}
+\subsection{Radio Frequency Cavities}
 \label{sec:rfcavity}
 
 Sixteen \ac{RF} cavities produce the  actual acceleration of the proton beam up to the design energy.
@@ -152,7 +153,7 @@ This produces separate clusters of protons which arrive in phase to the cavities
 
 \subsection{Beam}
 
-The beams of protons circulate within 54 km of 5 cm diameter beam pipe.
+The beams of protons circulate within 27 km of 5 cm diameter beam pipe.
 This entire structure is kept under vacuum at 1.9 K to prevent interactions between the beam pipe and the magnets as well as to prevent any interactions between the circulating protons and gas in the pipe. 
 The vacuum within the pipe establishes a pressure as low as 10\tsup{-9} mbar before the protons are introduced.
 
@@ -172,7 +173,7 @@ From the beam parameters, luminosity is given by
 \begin{align}
 \mathcal{L} = \frac{N_b^2 n_b f_{rev} \gamma}{4\pi \epsilon_n \beta^*} F \label{eq:luminosity} 
 \end{align}
-\noindent where $N_b$ is the number of protons per bunch, $n_b$ is the number of bunches per beam, $f_{rev}$ is the frequency of revolution, $\gamma$ is the Lorentz factor for the protons at the circulating energy, $\epsilon_n$ is the emittance, $\beta^*$ is the amplitude function at the collision point, and F is a geometric factor that accounts for the crossing angle of the beams at the collision point. 
+\noindent where $N_b$ is the number of protons per bunch, $n_b$ is the number of bunches colliding, $f_{rev}$ is the frequency of revolution, $\gamma$ is the Lorentz factor for the protons at the circulating energy, $\epsilon_n$ is the emittance, $\beta^*$ is the amplitude function at the collision point, and F is a geometric factor that accounts for the crossing angle of the beams at the collision point. 
 The emittance measures the average spread of particles in both position and momentum space, while the amplitude function is a beam parameter which measures how much the beam has been squeezed. 
 Together $\epsilon_n$ and $\beta^*$ give the size of the beam in the transverse direction, $\sigma = \sqrt{\epsilon\beta^*}$. 
 $\beta$ changes over the length of the beam as the accessory magnets shape the distribution of protons, but only the value at the point of collisions, $\beta^*$, affects the luminosity.
@@ -180,40 +181,40 @@ $\beta$ changes over the length of the beam as the accessory magnets shape the d
 The luminosity is maximized to the extent possible by tuning the parameters in Equation~\ref{eq:luminosity}.
 A number of these are constrained by the design decisions.
 The revolution frequency is determined entirely by the length of the tunnel, as the protons travel at very close to the speed of light.
-The geometric factor F is determined by the crossing angle of the beams at the collision points, again a component of the tunnel design; this angle is already very small at 285 $\mu$rad, which helps to maximize the geometric factor.
+The geometric factor F is determined by the crossing angle of the beams at the collision points, a tunable component of the tunnel design; this angle is already very small at 285 $\mu$rad, which helps to maximize the geometric factor.
 
 The major pieces that can be adjusted are the number of protons per bunch, $N_b$, the number of bunches in the beam, $n_b$, and the amplitude function $\beta$.
 Increasing either $N_b$ or $n_b$ increases the amount of energy stored in the beam, which presents a danger if control of the beam is lost.
 At design specifications, the beam stores 362 MJ, which is enough energy to damage the detectors or accelerator if the beam were to wander out of the beam pipe.
 So, the luminosity is primarily controlled at the \ac{LHC} by adjusting $\beta^*$, where lowering $\beta^*$ increases the luminosity.
-$\beta^*$ is tuned to provide the various values of luminosity used at the \ac{LHC} which can be raised to as much as 10\tsup{34}.
+$\beta^*$ is tuned to provide the various values of luminosity used at the \ac{LHC} which can be raised to as much as $1.4\times10^{34}$ \lcms.
 
 The nominal bunch structure consists of 3654 bunches, each holding 10\tsup{11} protons, which cross a collision point in 25 ns. 
 These are further subdivided into the buckets mentioned in Section~\ref{sec:rfcavity} by the clustering properties of the \ac{RF} cavities.
-The bunches are further grouped into trains of 72 bunches which are separated by a gap which would otherwise hold 12 bunches.
+In 2015, the bunches are further grouped into trains of 72 bunches which are separated by a gap which would otherwise hold 12 bunches.
 At nominal operation 2808 of the bunches will actually be filled with protons, while the remainder are left empty to form an abort gap that can be used in case the beam needs to be dumped.
 
 The various beam parameters are summarized in Table~\ref{tab:beam_parameters} for the designed operation.
 In practice, the beam has operated at lower energies and lower luminosities than the design values for the majority of its lifetime, but the \ac{LHC} has begun to operate at full design values during Run 2.
 
 \begin{table}
-\begin{tabular}{lccc}
+\begin{tabular}{lcccc}
 \hline
-Parameter & Unit & Injection & Nominal \\
+Parameter & Unit & Injection & Nominal  & 2015\\
 \hline
-Beam Energy & \TeV & 0.450 & 7 \\
-Peak Instantaneous Luminosity & \lcms & - & 10\tsup{34} \\
-Bunch Spacing & ns & 25 & 25 \\
-Number of Filled Bunches & - & 2808 & 2808 \\
-Normalized Transverse Emittance & $\mu$m & 3.75 & 3.75 \\
-Frequency & MHz &  400.789 & 400.790 \\
-RF Voltage/Beam & MV & 8 & 16 \\
-Stored Energy & MJ & - & 362 \\
-Magnetic Field & T & 0.54 & 8.33 \\
-Operating Temperature & K & 1.9 & 1.9 \\
+Beam Energy & \TeV & 0.450 & 7 & 6.5\\
+Peak Instantaneous Luminosity & \lcms & - & 10\tsup{34} & $5 \times 10^33$\\
+Bunch Spacing & ns & 25 & 25 & 25\\
+Number of Filled Bunches & - & 2808 & 2808 & 2240\\
+Normalized Transverse Emittance & $\mu$m & 3.75 & 3.75 & -\\
+Frequency & MHz &  400.789 & 400.790 & - \\
+RF Voltage/Beam & MV & 8 & 16 & -\\
+Stored Energy & MJ & - & 362 & -\\
+Magnetic Field & T & 0.54 & 8.33 & -\\
+Operating Temperature & K & 1.9 & 1.9 & 1.9\\
 \hline
 \end{tabular}
-\caption{The design parameters of the \ac{LHC} beam that determines the energy of collisions and the luminosity, for both the injection of protons and at the nominal circulation.}
+\caption{The design parameters of the \ac{LHC} beam that determines the energy of collisions and the luminosity, for both the injection of protons, at the nominal circulation, and during the 2015 data-taking period.}
 \label{tab:beam_parameters}
 \end{table}
 
