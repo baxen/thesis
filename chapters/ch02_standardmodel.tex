@@ -267,14 +267,17 @@ A qualitative understanding of the phenomenology produced by those interactions 
 \label{sec:smcalc}
 
 The terms in the Lagrangian describing interactions of particles can be used to evaluate cross sections or decay widths through perturbation theory.
-The feynman diagrams corresponding to those interactions provide a convenient tool to calculate those values, as each diagram encodes a transition amplitude between the initial and final state according to feynman rules.
-The transition amplitude includes a phase space component to account for the initial and final momenta, and an addition matrix element which describes the interaction from the \ac{SM}.
+Perturbation theory uses a diagrammatic expansion to approximate \ac{SM} interactions as a series of feynman diagrams, each representing an amplitude for the transition between initial and final state.
+The feynman diagrams uniquely specify that transition amplitude through the feynman rules~\cite{peskin}.
+The transition amplitude includes a phase space component to account for the initial and final momenta, and an addition matrix element which describes the interaction.
 The complex amplitude for each process with the same initial and final state must be summed, and then the cross section or decay width is calculated as the square of the amplitude integrated over all valid final state momenta.
 For example, the decay rate for a particle of mass $m_A$ to two final state particles with momenta $\vect{p}_i$ and $\vect{p}_j$ is given by
+
 \begin{align*}
 \Gamma = \int \frac{d^3p_i d^3 p_j}{(2\pi)^6 4E_i E_j} (2\pi)^4 \delta^{(4)}(\vect{p_A} - \vect{p_i} - \vect{p_j})\ |\mathcal{M}|^2 
 \end{align*}
-where the prefactor is the phase space term, the delta function enforces conservation of four-momentum, and $\mathcal{M}$ is the matrix element.
+
+\noindent where the prefactor is the phase space term, the delta function enforces conservation of four-momentum, and $\mathcal{M}$ is the matrix element.
 The matrix element includes dimensionless constant terms that describe the strength of the interaction, called coupling constants: $\alpha$ for the photon, $\alpha_W$ for the weak bosons, and $\alpha_s$ for the gluons.
 
 The sum over all diagrams with the same initial and final state leads to important consequences in the \ac{SM}.
@@ -286,22 +289,24 @@ A coupling constant greater than unity results in a non-perturbative regime, and
 However, even in a perturbative theory, the sum over all diagrams in the amplitude includes loop diagrams; for example any photon line in a feynman diagram can be replaced with the line in Figure~\ref{fig:loop_diagram} and still form a vaild interaction.
 These and other types of loop diagrams introduce divergent contributions to \ac{SM} processes, which would seem to make the theory inconsistent.
 The solution to this problem is to absorb those contributions into the coupling constants and charges in the Lagrangian, so that the combination of the bare value and the loop contributions gives the correct physical observables.
-This process is called renormalization, and a theory where the divergences can be consistently absorbed into the definition of the constants in the Lagrangian is called renormalizable.
+This process is called renormalization, and a theory where the divergences can consistently be absorbed into the definition of the constants in the Lagrangian is called renormalizable.
 
 \begin{figure}
+\centering
 \includegraphics[width=\halffig]{figures/loop.pdf}
 \caption{A feynman diagram for photon propagation including a loop of electrons.}
 \label{fig:loop_diagram}
 \end{figure}
 
-Setting the renormalized coupling constants requires a measurement at a specific energy scale, and at exactly that scale the contributions of the loop diagrams are precisely cancelled.
-At a different energy, however, the loop diagram contribution changes, and can be though of as a difference in the coupling constant.
+Setting the renormalized coupling constants requires a measurement at a specific energy scale, and only at that scale are the contributions of the loop diagrams precisely cancelled.
+At a different energy the loop diagram contribution changes, and can be though of as a modification to the coupling constant.
 The renormalization procedure thus predicts a variation of the coupling constants with the scale of the interaction, and specifies how they change with energy.
 The energy dependence is called the running of the coupling constants, and the effect on the three couplings in the \ac{SM} is shown in Figure~\ref{fig:unification_sm}.
 
 \begin{figure}
+\centering
 \includegraphics[width=\fullfig]{figures/unification_sm.jpg}
-\caption{An approximation of the running of the coupling constants in the \ac{SM} up to the Planck scale~\cite{unification_plot}.}
+\caption{An approximation of the running of the coupling constants in the \acs*{SM} up to the Planck scale~\cite{unification_plot}.}
 \label{fig:unification_sm}
 \end{figure}
 
@@ -357,7 +362,7 @@ Those fractions change significantly with the scale of the interaction, $Q$; the
 
 \begin{figure}
 \includegraphics[width=\textwidth]{figures/pdfs.png}
-\caption{The \acp{PDF} for proton-proton collisions at $Q^2 = 10$ \GeV\tsup{2} and $Q^2 = 10^4$ \GeV\tsup{2}. Each shows the fraction of particles which carry a fraction $x$ of the total proton energy at the specified scale~\cite{pdfs}. The distribution for gluons is scaled by 0.1 to fit within the axis range.}
+\caption{The \acsp*{PDF} for proton-proton collisions at $Q^2 = 10\ \GeV^{2}$ and $Q^2 = 10^4\ \GeV^{2}$. Each shows the fraction of particles which carry a fraction $x$ of the total proton energy at the specified scale~\cite{pdfs}. The distribution for gluons is scaled by 0.1 to fit within the axis range.}
 \label{fig:pdfs}
 \end{figure}
 

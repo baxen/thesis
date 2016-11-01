@@ -53,7 +53,7 @@ After trigger, each event is required to have exactly one reconstructed vertex, 
 The particles which are selected for the response measurements are first identified as tracks in the inner detector.
 The tracks are required to have at least 500 \MeV of transverse momentum.
 To ensure a reliable momentum measurement, these tracks are required to have at least one hit in the pixel detector, six hits in the SCT, and small longitudinal and transverse impact parameters with respect to the primary vertex~\cite{PERF-2011-05}.
-For the majority of the measurements in this chapter, the track is additionally required to have 20 hits in the TRT, which significantly reduces the contribution from tracks which undergo nuclear interactions.
+For the majority of the measurements in this chapter, the track is additionally required to have 20 hits in the \ac{TRT}, which significantly reduces the contribution from tracks which undergo nuclear interactions.
 This requirement and its effect is discussed in more detail in Section~\ref{sec:additional}. 
 In addition, tracks are rejected if there is any other reconstructed track which extrapolates to the calorimeter within a cone of $\Delta R = \sqrt{(\Delta\phi)^2 + (\Delta\eta)^2} < 0.4$.
 This requirement guarantees that the contamination of energy from nearby charged particles is negligible~\cite{PERF-2011-05}.
@@ -253,8 +253,8 @@ Because of the consistent discrepancy across pseudorapidity and interaction leng
 For example, a hadron that scatters off of a nucleus in the inner detector can be deflected through a significant angle and not reach the expected location in the calorimeter.
 In addition, these interactions can produce secondary particles that are difficult to model.
 
-The requirement used throughout the previous sections  on the number of hits in the TRT reduces these effects by preferentially selecting tracks that do not undergo nuclear interactions.
-It is interesting to check how well the simulation models tracks with low numbers of TRT hits, which selects tracks that are more likely to have undergone a hadronic interaction.
+The requirement used throughout the previous sections  on the number of hits in the \ac{TRT} reduces these effects by preferentially selecting tracks that do not undergo nuclear interactions.
+It is interesting to check how well the simulation models tracks with low numbers of \ac{TRT} hits, which selects tracks that are more likely to have undergone a hadronic interaction.
 Figure~\ref{fig:eoverp_trt} compares the distributions with $N_{\mathrm{TRT}} < 20$ to $N_{\mathrm{TRT}} > 20$ for real and simulated particles\footnote{The distribution with $N_{\mathrm{TRT}} > 20$ is the same as shown in Figure~\ref{fig:eoverp_corrected} (a) and is included again here for the comparison.}.
 As expected, the tracks with fewer hits are poorly modeled in the simulation as \epcor differs by as much as 25\% at low momentum.
 They also have significantly lower \epcor on average, because they are much less likely to have an associated cluster.
@@ -268,7 +268,7 @@ They also have significantly lower \epcor on average, because they are much less
 \subfloat[]{
   \includegraphics[width=\halffig]{figures/trt_dvmc_epcor_layer01_calib01_eta01_q00_nc00_trt02.pdf}
 }
-\caption{Comparison of the \epcor for tracks with (a) less than and (b) greater than 20 hits in the TRT.}
+\caption{Comparison of the \epcor for tracks with (a) less than and (b) greater than 20 hits in the \acs*{TRT}.}
 \label{fig:eoverp_trt}
 \end{figure}
 

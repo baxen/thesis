@@ -52,8 +52,6 @@
 %\renewcommand*{\bibname}{new name} % Uncomment to change the name of the bibliography
 %\setbibpreamble{} % Uncomment to include a preamble to the bibliography - some text before the reference list starts
 
-\pagenumbering{roman} % Roman page numbering prior to the start of the thesis content (i, ii, iii, etc)
-
 \pagestyle{plain} % Suppress headers for the pre-content pages
 
 %----------------------------------------------------------------------------------------
@@ -66,13 +64,17 @@
 
 \cleardoublepage\include{frontback/Signatures} % Signature Page
 
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\cleardoublepage\include{frontback/Abstract} % Abstract page
+
+\pagenumbering{roman}
+\setcounter{page}{1}
 \cleardoublepage\include{frontback/Dedication} % Dedication page
 
 %\cleardoublepage\include{frontback/Foreword} % Uncomment and create a Foreword.tex to include a foreword
 
-\cleardoublepage\include{frontback/Abstract} % Abstract page
-
-\cleardoublepage\include{frontback/Publications} % Publications from the thesis page
+%\cleardoublepage\include{frontback/Publications} % Publications from the thesis page
 
 \cleardoublepage\include{frontback/Acknowledgments} % Acknowledgements page
 
@@ -83,7 +85,7 @@
 \cleardoublepage
 
 \pagenumbering{arabic} % Arabic page numbering for thesis content (1, 2, 3, etc)
-%\setcounter{page}{90} % Uncomment to manually start the page counter at an arbitrary value (for example if you wish to count the pre-content pages in the page count)
+\setcounter{page}{1} % Uncomment to manually start the page counter at an arbitrary value (for example if you wish to count the pre-content pages in the page count)
 
 \cleardoublepage % Avoids problems with pdfbookmark
 

@@ -48,7 +48,7 @@
 \newcommand{\myUni}{University of California, Berkeley\xspace}
 \newcommand{\myLocation}{Berkeley, CA\xspace}
 \newcommand{\myTime}{September 2016\xspace}
-\newcommand{\myVersion}{Version 0.65\xspace}
+\newcommand{\myVersion}{Version 0.66\xspace}
 
 %----------------------------------------------------------------------------------------
 %	USEFUL COMMANDS
@@ -149,6 +149,10 @@ natbib=true % natbib compatibility mode (\citep and \citet still work)
 \usepackage{biblatex}
 \PassOptionsToPackage{fleqn}{amsmath} % Math environments and more by the AMS 
  \usepackage{amsmath}
+
+\makeatletter
+\def\blx@maxline{77}
+\makeatother
 
 % Disabled because xelatex
 %\PassOptionsToPackage{T1}{fontenc} % T2A for cyrillics
