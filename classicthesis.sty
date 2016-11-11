@@ -354,8 +354,11 @@
         {\relax}%
         {\renewcommand{\chaptermark}[1]{\markboth{\spacedallcaps{#1}}{\spacedallcaps{#1}}}}
     \renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedallcaps{#1}}} 
-    \lehead{\mbox{\llap{\small\thepage\kern2em}\headmark\hfil}}
-    \rohead{\mbox{\hfil{\headmark}\rlap{\small\kern2em\thepage}}}
+    %\lehead{\mbox{\llap{\small\thepage\kern2em}\headmark\hfil}}
+    \lehead{\mbox{\headmark\hfil}}
+    %\rohead{\mbox{\hfil{\headmark}\rlap{\small\kern2em\thepage}}}
+    \rohead{\mbox{\hfil{\headmark}}}
+    \cfoot{\thepage}
     \renewcommand{\headfont}{\small}  
 %    \DeclareRobustCommand{\fixBothHeadlines}[2]{} % <--- ToDo
     % hack to get the content headlines right (thanks, Lorenzo!)
@@ -379,7 +382,7 @@
         \newcommand{\ctparttext}[1]{\renewcommand{\ct@parttext}{#1 \relax}} 
     \titleformat{\part}[display]
         {\centering}%
-        {\thispagestyle{empty}\spacedallcaps{\partname~\thepart}}{1em}%
+        {\thispagestyle{plain}\spacedallcaps{\partname~\thepart}}{1em}%
         {\color{highlight}\Large\spacedallcaps}[\bigskip\normalfont\normalsize\color{Black}\begin{quote}\ct@parttext\end{quote}]
     }{\relax}
     % chapters

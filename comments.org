@@ -233,3 +233,46 @@ First Round
 ** Background Method
 *** Detailed SR distributions
 
+* Chapter 3
+** DONE - You are lacking references for many claims.
+** DONE - You are missing the running of the masses which explains why the gluino is heavier than the photino for instance. I think you should at least show a typical SUSY mass spectrum but maybe even the plot vs Q and show the running.
+** DONE l1220: sufficient => sufficient to
+** DONE l1224: this is not true it is the simplest extension of the Higgs sector. Non-minimal models have more scalars. 
+** DONE l1255: the statement that they all need sparticles at TeV scale is not really true. E.g. the unity of the forces just requires <100000 TeV if I remember well. Lawrence Hall studied things in this paper: https://arxiv.org/pdf/1206.5301.pdf. Maybe you can check the statement and/or add a reference for it?
+** DONE l1268: need references for statement
+** DONE l1276: need reference (see above)
+** DONE l1278: definte WIMP
+** DONE sec. 3.3: I don't agree with this introduction. Maybe check the SUSY primer again. The MSSM is the minimal model in the sense that it has a minimal extension of the Higgs sector. It has a lot of parameters and most others are part of it. Maybe you are confusing MSSM with mSUGRA?
+   I would just say that the "simplified models" are focussing on being model-independent in the sense that they focus just on the particles that matter for a given experimental search and don't assume relations between masses. 
+   This needs major rephrasing I think and it is probably best to not use the word "model" for the so-called simplified models as this is very confusing. 
+   You can get around using that In think in your case as you simply just look for one particle (gluino) which does either not decay or decay to the LSP. 
+   If you point to the mass spectrum, and where the squark masses are you can explain why they matter but that we use lifetime rather than squark mass (which you do later anyway).
+** DONE l1328/1329: reverse these two models to reflect chronological order (both are part of MSSM BTW)
+
+
+* Conclusion
+** DONE summary: here also a comparison with CMS is missing.
+** DONE l4056: most competitive => strongest
+** DONE l4063: would => will
+
+
+* General
+** DONE - I am missing still an explanation of what the cross section is and ideally a plot of the cross section vs mass also. I mean something like here on page 3:
+   https://gsalam.web.cern.ch/gsalam/repository/talks/2009-Bautzen-lecture2.pdf. This explains how the PDFs are convoluted with the ME to give the cross section. And, then you could show a cross section plot and say how many events are expected to be produced in 3.2.fb at some mass value.
+** DONE - I am also missing a discussion of what we know about SUSY experimentally. Including a run-1 summary plot of SUSY searches would be good. And, a discussion of it (brief)
+** DONE fig. 44 and 46: the plots are rotated
+
+* References:
+** DONE - I suggest you remove all DOI numbers. These are just supposed to be links and should not be written out. 
+** DONE - You sometimes have title in italics and sometimes in roman. Be consistent.
+** DONE - normally the volume should be bold
+** DONE - ref. 24: Einsweiller => Einsweiler
+** DONE - ref. 23: weird reference: needed?
+** DONE - ref. 25: weird reference!? Needed? 
+** DONE - ref. 28: missing author
+** DONE - ref. 16: missing author
+** DONE - ref. 61: pT => $p_T$
+** DONE - ref. 80: R. Barbieri et al.
+** DONE - ref. 105: author missing
+
+

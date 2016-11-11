@@ -17,7 +17,7 @@ These are the objects and quantities most often used in analysis to make measure
 
 As described in Section~\ref{sec:inner_detector}, charged particles that traverse the inner detector leave behind hits in the subdetectors.
 Each of these hits translates into a position measurement along the trajectory of that particle, with position resolutions depending on the subdetector that provided the measurement. 
-Track reconstruction uses these position measurements to collect hits in consecutive layers of the detector into a trajectory consistent with a particle curving in a magnetic field~\cite{newt, tracking_performance}.
+Track reconstruction uses these position measurements to collect hits in consecutive layers of the detector into a trajectory consistent with a particle curving in a magnetic field~\cite{newt, ATLAS-CONF-2012-042}.
 This reconstructed trajectory is called a track.
 The number of hits in the inner detector for each event makes a combinatorial method completely infeasible: the algorithms that form tracks must be significantly more intelligent so that event reconstruction does not exhaust computing resources.
 
@@ -25,7 +25,7 @@ The first and primary algorithm employed in track reconstruction is called the i
 Its purpose is to identify primary particles, those which originate in the proton-proton collisions and with a lifetime long enough to reach the inner detector.
 Combinations of three hits are considered from measurements in the Pixel detector and the \ac{SCT}, and form the seed for a track. 
 Specifically, the seeding algorithm looks for a seed using three pixel hits, two pixel hits and one \ac{SCT} hit, or three \ac{SCT} hits.
-The seed is then extrapolated forwards and backwards into the Pixel and \ac{SCT} detectors depending on the seed location, and hits in each layer are considered to be added to the track using a combinatorial Kalman filter~\cite{tracking_performance}.
+The seed is then extrapolated forwards and backwards into the Pixel and \ac{SCT} detectors depending on the seed location, and hits in each layer are considered to be added to the track using a combinatorial Kalman filter~\cite{ATLAS-CONF-2012-042}.
 After all of the silicon layers have been considered, tracks are filtered to reduce ambiguities from other nearby tracks or from combinatorial coincidences.
 Then the tracks are extended outwards into the \ac{TRT} in the same way.
 The result of this clustering algorithm is a collection of hits identified to belong to a single track.

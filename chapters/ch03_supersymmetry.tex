@@ -22,9 +22,9 @@ Like the spontaneous symmetry breaking of the electroweak system, this symmetry 
 \section{Structure}
 \label{sec:mssm}
 
-There are a number of ways to model the particulars of \ac{SUSY}, but many of the resulting phenomena are similar, and a discussion of an example is sufficient describe the structure and results of the theory.
+There are a number of ways to model the particulars of \ac{SUSY}, but many of the resulting phenomena are similar, and a discussion of an example is sufficient to describe the structure and results of the theory.
 The \ac{MSSM} is one example of a complete description that includes the necessary symmetry breaking to result in the different masses between particles and sparticles~\cite{mssm}.
-It is called minimal because it is designed to use the simplest possible extension to the \ac{SM} that incorporates \ac{SUSY}.
+It is called minimal because it is designed to use the simplest possible extension to the Higgs sector of the \ac{SM} that results in the split scale between \ac{SM} and \ac{SUSY} particles.
 However even a minimal version includes a remarkable number of free parameters, over 100, and the \ac{MSSM} is often further constrained to include fewer parameters in models such as the \ac{pMSSM} and the \ac{cMSSM}~\cite{pmssm}.
 
 The theory includes a sparticle partner for every \ac{SM} particle, which are listed in Table~\ref{tab:sparticles}.
@@ -57,6 +57,18 @@ Electroweak     & $(W^\pm, W^0)$ & $(\tilde{W}^\pm, \tilde{W}^0)$ \\
 \label{tab:sparticles}
 \end{table}
 
+The minimal extension of the Higgs sector in the \ac{MSSM} predicts relationships between the masses of the sparticles~\cite{susy_primer}.
+For example, to leading order the mass of the gluino is three times larger than the mass of the wino and six times larger than the mass of the bino.
+These mass parameters, like the gauge couplings in the \ac{SM}, run under renormalziation and predict the variation of the mass of the sparticles with the energy scale $Q$.
+An example of the running of the masses is shown in Figure~\ref{fig:susy_masses}~\cite{susy_primer}, which includes both scalar and gaugino sparticles.
+The result requires the selection of a specific set of parameters, and is intended to illustrate the overall trends rather than to predict actual mass values.
+
+\begin{figure}
+\centering
+\includegraphics[width=\fullfig]{figures/susy_masses.png}
+\caption{The evolution of the masses of sparticles with the energy scale $Q$~\cite{susy_primer}.}
+\label{fig:susy_masses}
+\end{figure}
 
 In addition to the new particle content, the \ac{MSSM} introduces new interactions for the gauge bosons and gauginos.
 All interaction terms are added to the Lagrangian which describe the interaction of a gauge boson or gaugino with a particle or sparticle with the appropriate charge.
@@ -79,18 +91,18 @@ The heavier sparticles then decay in chains, emitting an \ac{SM} particle in eac
 
 \ac{SUSY} models, including the \ac{MSSM}, ameliorate many of the issues in the \ac{SM} discussed in Section~\ref{sec:limitations}.
 \ac{SUSY} is particularly well motivated as a natural extension to the \ac{SM} because the simple underlying assumption solves three major, seemingly unrelated concerns.
-And these benefits all require that at least some of the sparticles exist at the \TeV scale, within the reach of modern collider experiments.
+And these benefits are all consistent with the existence of sparticles at the \TeV scale, within the reach of modern collider experiments~\cite{susy_motivation}.
 
 The first, a solution to the hierarchy problem, comes as a direct consequence of the introduction of massive superpartners for each \ac{SM} particle.
 The contributions to the Higgs mass from the much higher energy Planck scale come from a series of loop diagrams in the \ac{SM}, where each massive \ac{SM} particle has a loop contribution.
 The introduction of superpartners generates a series of corresponding diagrams for correction to the Higgs mass, with opposite sign contributions because the superpartners have different spins.
 Those opposite sign contributions cancel the divergences from the original loop diagrams at high energies, leaving behind a correction to the Higgs mass that is at the same scale as the masses of the superpartners. 
-If the superpartners exist at the \TeV scale, then the Higgs mass of 125 \GeV can be explained without significant fine-tuning, and the theory becomes natural.
+If the superpartners exist at the \TeV scale, then the Higgs mass of 125 \GeV can be explained without significant fine-tuning, and the theory becomes natural~\cite{susy_motivation}.
 
 \ac{SUSY} also has the potential to precisely enable the unification of the coupling constants at high energy.
 Without supersymmetric contributions, the coupling constants come close to a single value near the Planck scale suggesting an underlying trend, as shown in Figure~\ref{fig:unification_sm}, but they do not exactly merge.
 With the addition of the \ac{MSSM}, they can join almost exactly at a single point, enabling a unification into a single gauge theory at high energy, as shown in Figure~\ref{fig:unification_susy}. 
-This precise unification, like the naturalness argument, also requires that the masses of the superpartners be near the \TeV scale.
+This precise unification, like the naturalness argument, also requires that the masses of the superpartners be near the \TeV scale~\cite{susy_motivation}.
 
 \begin{figure}
 \includegraphics[width=\fullfig]{figures/unification_susy.jpg}
@@ -103,19 +115,29 @@ The \ac{LSP}, as discussed in Section~\ref{sec:mssm}, is a massive, neutral, and
 In the early universe, when the energy density was extremely high, \acp{LSP} could be spontaneously produced just as often as other particles like photons, and would result in a thermal equilibrium.
 Then, as the universe cooled, the average energy would be too low to create additional \acp{LSP}, and they would be left behind and only interact with the remaining matter gravitationally, a process called freeze out.
 Since those particles are stable, they would remain indefinitely. 
-With the existence of an \ac{LSP} at around the \TeV scale, this process can explain the observed amount of dark matter in the universe.
-A \ac{WIMP}, exactly what is proposed in the \ac{LSP}, provides the correct interaction rate to predict the currently observed ratio of dark matter to baryonic matter.
+A \ac{WIMP} at the \TeV scale provides the correct interaction rate to predict the currently observed ratio of dark matter to baryonic matter.
+A \ac{WIMP} is a massive particle that interacts only weakly and gravitationally, not strongly or electromagnetically, such as what is proposed in the \ac{LSP}. 
+Therefore \ac{SUSY} can explain the observed amount of dark matter in the universe.
 
 Together, this variety of solutions to existing problems provides strong theoretical support for the existence of \ac{SUSY} near the \TeV scale.
 The \ac{LHC} is the first collider experiment to be able to probe into \TeV scale interactions, providing a new opportunity to search for this extension to the \ac{SM}.
+The mass limits of various \ac{SUSY} searches using data from the first run of the \ac{LHC} on the ATLAS experiment are shown in Figure~\ref{fig:susy_summary_2015}.
 A range of models have begun to be excluded with masses above 1 \TeV~\cite{pdg}, leading to a motivation to explore a wider variety of models with phenomena that may have been missed by the most direct search strategies.
+
+\begin{figure}
+\includegraphics[width=\textwidth]{figures/ATLAS_SUSY_Summary_201507.pdf}
+\caption{Mass reach of ATLAS searches for Supersymmetry as of July 2015. Only a representative selection of the available results is shown~\cite{online_susy}.}
+\label{fig:susy_summary_2015}
+\end{figure}
 
 \section{Simplified Models}
 
-The \ac{MSSM} is just one example of a large suite of \ac{SUSY} models with similar results.
+There are a large suite of full \ac{SUSY} models that produce similar results.
 Each of those models can have hundreds of individual parameters that ultimately determine the masses and interactions of the supersymmetric particles.
 To avoid this complexity in making experimental measurements, the analyses of high energy collisions often rely on simplified models.
-These models focus on a single process predicted by a theory, and the observable parameters such as the mass of the particles and their lifetimes are controlled directly, rather than tuning the hundreds of underlying parameters.
+These models focus on a single process predicted by a theory, but are not full theoretical descriptions.
+They focus on the observable parameters such as the mass of the particles and their lifetimes, which are controlled directly rather than derived from underlying parameters.
+Unlike an actual model for \ac{SUSY}, simplified models only include particles and interactions relevant for a specific search and do not assume any relationships between the masses of the particles involved.
 This allows straightforward simulation of a specific event topology with control over the parameters that most directly influence the experimental signatures.
 
 Experimental analyses use these models to search for new physics and to set limits on the production rates for a given type of process with working points of a few observable parameters.
@@ -132,7 +154,7 @@ Although the processes involved are very similar, the long-lifetime of the produ
 It is important to design and execute search strategies for \acp{LLP} in order to completely cover possible production of new physics. 
 
 There are a several ways to generate long lifetimes for the massive \ac{SUSY} particles, depending on the specific model.
-In examples like Spread Supersymmetry~\cite{spreadsusy} and Split Supersymmetry~\cite{split1,split2}, the introduction of a split between two mass scales suppresses the decay of gluinos.
+In examples like Split Supersymmetry~\cite{split1,split2} and Spread Supersymmetry~\cite{spreadsusy}, the introduction of a split between two mass scales suppresses the decay of gluinos.
 In these and similar models, the squarks are much heavier than the gluino, where the mass scale of the squarks is roughly $10^6$ \GeV while the mass scale of the gluinos is roughly $10^3$ \GeV.
 The gluino must decay through the production of a virtual squark, as shown in the diagram of Figure~\ref{fig:gluino_decay}.
 The large mass of the squarks in the split models suppresses the decay rate, and can result in lifetimes of the order of 1 ns~\cite{spreadsusy}.

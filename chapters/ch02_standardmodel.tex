@@ -267,6 +267,7 @@ A qualitative understanding of the phenomenology produced by those interactions 
 \label{sec:smcalc}
 
 The terms in the Lagrangian describing interactions of particles can be used to evaluate cross sections or decay widths through perturbation theory.
+A cross section quantifies the probability of a given process to result in a scattering of particles, measured as an effective area, while a decay width measures the width of the mass distribution of a particle, which is inversely proportional to its lifetime.
 Perturbation theory uses a diagrammatic expansion to approximate \ac{SM} interactions as a series of feynman diagrams, each representing an amplitude for the transition between initial and final state.
 The feynman diagrams uniquely specify that transition amplitude through the feynman rules~\cite{peskin}.
 The transition amplitude includes a phase space component to account for the initial and final momenta, and an addition matrix element which describes the interaction.
@@ -326,8 +327,8 @@ For this reason, photons can be observed directly, while the other bosons are su
 \end{figure}
 
 Because the electroweak bosons interact with both quarks and leptons, they are responsible for the production of leptons in proton-proton collisions.
-$Z$~bosons and photons produce pairs of opposite sign, same flavor leptons.
-$W$~bosons, on the other hand, produce a single lepton and the corresponding neutrino.
+$Z$ bosons and photons produce pairs of opposite sign, same flavor leptons.
+$W$ bosons, on the other hand, produce a single lepton and the corresponding neutrino.
 The electroweak bosons also decay to hadrons by producing pairs of quarks, as shown in Figure~\ref{fig:feyn_weak}.
 The $Z$~boson decays to hadrons with a branching ratio of 69.9\%, to neutrinos with 20.0\%, and to charged leptons 10.1\% of the time~\cite{pdg}.
 The $W$~boson decays to hadrons with a branching ratio of 67.6\% and to leptons 32.4\%~\cite{pdg}.
@@ -356,7 +357,7 @@ The actual bound state includes a chaotic sea of additional gluons and $q\bar q$
 When a proton-proton collision takes place, it is these constituents that interact with each other, resulting in a highly variable collision energy even when the proton-proton energy is consistent.
 
 The fraction of the energy carried by each constituent varies moment to moment, but can be modelled probabilistically by \acp{PDF}.
-These are difficult to predict theoretically, as the \ac{QCD} calculations are non-perturbative, and instead are measured in hard-scattering experiments.
+These are difficult to predict theoretically, as the \ac{QCD} calculations are non-pertur\-bative, and instead are measured in hard-scattering experiments.
 They are usually represented by how often a given type of particle carries a fraction $x$ of the total proton energy.
 Those fractions change significantly with the scale of the interaction, $Q$; the \acp{PDF} of proton-proton collisions at both $Q^2 = 10\ \GeV^{2}$ and $Q^2 = 10^4\ \GeV^{2}$ are shown in Figure~\ref{fig:pdfs}.
 
@@ -365,6 +366,10 @@ Those fractions change significantly with the scale of the interaction, $Q$; the
 \caption{The \acsp*{PDF} for proton-proton collisions at $Q^2 = 10\ \GeV^{2}$ and $Q^2 = 10^4\ \GeV^{2}$. Each shows the fraction of particles which carry a fraction $x$ of the total proton energy at the specified scale~\cite{pdfs}. The distribution for gluons is scaled by 0.1 to fit within the axis range.}
 \label{fig:pdfs}
 \end{figure}
+
+The underlying \acp{PDF} of protons has important effects on the calculation of cross sections in proton-proton collisions.
+Instead of specifying an exact initial momentum for the cross section calculation, in a proton-proton collision it is necessary to integrate over the contribution to a given process from the \acp{PDF} for all possible constituent particles.
+The constituents are unlikely to carry the entire momentum of the proton, so the cross section for processes involving massive particle are supressed.
 
 \subsection{Simulation}
 

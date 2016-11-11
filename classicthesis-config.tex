@@ -32,7 +32,7 @@
 %----------------------------------------------------------------------------------------
 
 %\PassOptionsToPackage{eulerchapternumbers,listings,subfig,beramono,parts,manychapters}{classicthesis}
-\PassOptionsToPackage{eulerchapternumbers,listings,drafting,subfig,beramono,parts,manychapters}{classicthesis}
+\PassOptionsToPackage{eulerchapternumbers,listings,subfig,beramono,parts,manychapters}{classicthesis}
 % Available options: drafting parts nochapters linedheaders eulerchapternumbers beramono eulermath pdfspacing minionprospacing tocaligned dottedtoc manychapters listings floatperchapter subfig
 % Might want to turn of xelatex and re-enable pdfspacing
 
@@ -48,7 +48,7 @@
 \newcommand{\myUni}{University of California, Berkeley\xspace}
 \newcommand{\myLocation}{Berkeley, CA\xspace}
 \newcommand{\myTime}{September 2016\xspace}
-\newcommand{\myVersion}{Version 0.68\xspace}
+\newcommand{\myVersion}{Version 0.69\xspace}
 
 %----------------------------------------------------------------------------------------
 %	USEFUL COMMANDS
@@ -144,9 +144,14 @@ style=numeric-comp,%
 sorting=none, % name, year, title
 maxbibnames=10, % default: 3, et al.
 %backref=true,%
-natbib=true % natbib compatibility mode (\citep and \citet still work)
+natbib=true, % natbib compatibility mode (\citep and \citet still work)
+doi=false
 }{biblatex}
 \usepackage{biblatex}
+% Biblatex customization
+\DeclareFieldFormat[article]{volume}{\textbf{#1}\addcolon\space}
+\DeclareFieldFormat[book,booklet,report,techreport]{title}{\mkbibquote{#1\isdot}} 
+
 \PassOptionsToPackage{fleqn}{amsmath} % Math environments and more by the AMS 
  \usepackage{amsmath}
 
@@ -170,7 +175,6 @@ natbib=true % natbib compatibility mode (\citep and \citet still work)
 \usepackage{graphicx} 
 \usepackage[left]{lineno}
 \usepackage{slashed}
-\linenumbers
 
 %----------------------------------------------------------------------------------------
 %	FLOATS: TABLES, FIGURES AND CAPTIONS SETUP
