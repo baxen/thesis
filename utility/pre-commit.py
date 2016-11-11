@@ -57,7 +57,7 @@ def progress(counts):
     df = pd.DataFrame(counts, index=index)
 
     # Set relative to goals
-    goals = dict(words=35000, pages=200, figures=125)
+    goals = dict(words=38769, pages=184, figures=132)
     for col, goal in goals.items():
         df[col] /= goal
 
