@@ -48,7 +48,7 @@
 \newcommand{\myUni}{University of California, Berkeley\xspace}
 \newcommand{\myLocation}{Berkeley, CA\xspace}
 \newcommand{\myTime}{September 2016\xspace}
-\newcommand{\myVersion}{Version 0.70\xspace}
+\newcommand{\myVersion}{Version 0.71\xspace}
 
 %----------------------------------------------------------------------------------------
 %	USEFUL COMMANDS
@@ -186,7 +186,12 @@ doi=false
 \newcommand{\myfloatalign}{\centering} % To be used with each float for alignment
 \usepackage{caption}
 \captionsetup{font=small}
-\usepackage{subfig}  
+\usepackage{subfig} 
+
+% Center by default
+\makeatletter
+\g@addto@macro\@floatboxreset\centering
+\makeatother 
 
 %----------------------------------------------------------------------------------------
 %	CODE LISTINGS SETUP
